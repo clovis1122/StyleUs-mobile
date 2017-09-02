@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="StyleUs.View.RegisterStepOne">
+	<ContentPage.Content>
+               <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" BackgroundColor="White">
+            <StackLayout Orientation="Horizontal" Margin="0,20,0,0" HorizontalOptions="Center">
+                <Label Text="Style " TextColor="Gray" FontSize="80" />
+                <Label Text="US" TextColor="Red" FontSize="80" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="0,10,0,0" HorizontalOptions="Center">
+                <Label Text="Registrarse" FontAttributes="Bold" TextColor="Gray" FontSize="20" />
+            </StackLayout>
+            <StackLayout Orientation="Vertical" Padding="40,10">
+                <Label FontSize="12" TextColor="Gray" Text="Paso 1 de 2: Informacion Basica" />
+            </StackLayout>
+            
+            <StackLayout Orientation="Vertical" Margin="0,10,0,0" Padding="40,10">
+                <Label Text="Nombre" />
+                <Entry Placeholder="Juan" />
+                <Label Text="Apellido" Margin="0,10" />
+                <Entry Placeholder="Gonzales" />
+                <Label Text="Fecha de nacimiento" Margin="0,10" />
+                <DatePicker />
+                <Label Text="Sexo" Margin="0,10" />
+                <Picker>
+                    <Picker.Items>
+                        <x:String>Femenino</x:String> 
+                        <x:String>Masculino</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <StackLayout MinimumWidthRequest="100">
+                     <Button BackgroundColor="Gray" TextColor="White" Text="Cancelar" />
+                </StackLayout>
+                <StackLayout MinimumWidthRequest="100">
+                     <Button BackgroundColor="Gray" TextColor="White" Text="Continuar"/>
+                </StackLayout>
+               
+            </StackLayout>
+
+            
+        </StackLayout>
+	</ContentPage.Content>
+</ContentPage>
