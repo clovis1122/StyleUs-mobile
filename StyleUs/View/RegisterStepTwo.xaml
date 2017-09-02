@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentView 
+<ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="StyleUs.View.RegisterStepTwo">
-	   <ContentView.Content>
+	   <ContentPage.Content>
+        <ScrollView Orientation="Vertical" BackgroundColor="White" Padding="0,0,0,20">
+               
                <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" BackgroundColor="White">
             <StackLayout Orientation="Horizontal" Margin="0,20,0,0" HorizontalOptions="Center">
                 <Label Text="Style " TextColor="Gray" FontSize="80" />
@@ -13,35 +15,28 @@
                 <Label Text="Registrarse" FontAttributes="Bold" TextColor="Gray" FontSize="20" />
             </StackLayout>
             <StackLayout Orientation="Vertical" Padding="40,10">
-                <Label FontSize="12" TextColor="Gray" Text="Paso 1 de 2: Informacion Basica" />
+                <Label FontSize="12" TextColor="Gray" Text="Paso 2 de 2: credenciales de acceso" />
             </StackLayout>
             
             <StackLayout Orientation="Vertical" Margin="0,10,0,0" Padding="40,10">
-                <Label Text="Nombre" />
-                <Entry Placeholder="Juan" />
-                <Label Text="Apellido" Margin="0,10" />
-                <Entry Placeholder="Gonzales" />
-                <Label Text="Fecha de nacimiento" Margin="0,10" />
-                <DatePicker />
-                <Label Text="Sexo" Margin="0,10" />
-                <Picker>
-                    <Picker.Items>
-                        <x:String>Femenino</x:String> 
-                        <x:String>Masculino</x:String>
-                    </Picker.Items>
-                </Picker>
+                <Label Text="Correo Electrónico" />
+                <Entry Placeholder="Juan@example.com" />
+                <Label Text="Contraseña" Margin="0,10" />
+                <Entry Placeholder="***********" IsPassword="true" />
+                <Label Text="Confirmar contraseña" Margin="0,10" />
+                <Entry Placeholder="***********" IsPassword="true" />
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <StackLayout MinimumWidthRequest="100">
-                     <Button BackgroundColor="Gray" TextColor="White" Text="Cancelar" />
+                     <Button BackgroundColor="Gray" TextColor="White" Text="Cancelar" Command="{Binding cancel}" />
                 </StackLayout>
                 <StackLayout MinimumWidthRequest="100">
-                     <Button BackgroundColor="Gray" TextColor="White" Text="Continuar"/>
+                     <Button Clicked="onCreate" BackgroundColor="Gray" TextColor="White" Text="Crear cuenta"/>
                 </StackLayout>
                
             </StackLayout>
-
-            
+           
         </StackLayout>
-    </ContentView.Content>
-</ContentView>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

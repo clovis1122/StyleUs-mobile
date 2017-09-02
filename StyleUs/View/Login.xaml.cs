@@ -11,6 +11,11 @@ namespace StyleUs.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Login : ContentPage
     {
+        void notYet(object sender, System.EventArgs e)
+        {
+            DisplayAlert("Lo sentimos!", "Todavia no se ha implementado esta funcionalidad.", "Aceptar");
+        }
+
         public Login()
         {
             InitializeComponent();

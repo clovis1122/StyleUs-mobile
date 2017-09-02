@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="StyleUs.View.RegisterStepOne">
 	<ContentPage.Content>
+        <ScrollView Orientation="Vertical" BackgroundColor="White" Padding="0,0,0,20">
                <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" BackgroundColor="White">
             <StackLayout Orientation="Horizontal" Margin="0,20,0,0" HorizontalOptions="Center">
                 <Label Text="Style " TextColor="Gray" FontSize="80" />
@@ -18,9 +19,9 @@
             
             <StackLayout Orientation="Vertical" Margin="0,10,0,0" Padding="40,10">
                 <Label Text="Nombre" />
-                <Entry Placeholder="Juan" />
+                <Entry Text="{Binding name}" Placeholder="Juan" />
                 <Label Text="Apellido" Margin="0,10" />
-                <Entry Placeholder="Gonzales" />
+                <Entry Text="{Binding lastname}" Placeholder="Gonzales" />
                 <Label Text="Fecha de nacimiento" Margin="0,10" />
                 <DatePicker />
                 <Label Text="Sexo" Margin="0,10" />
@@ -33,15 +34,15 @@
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <StackLayout MinimumWidthRequest="100">
-                     <Button BackgroundColor="Gray" TextColor="White" Text="Cancelar" />
+                     <Button BackgroundColor="Gray" TextColor="White" Text="Cancelar" Command="{Binding cancel}" />
                 </StackLayout>
                 <StackLayout MinimumWidthRequest="100">
-                     <Button BackgroundColor="Gray" TextColor="White" Text="Continuar"/>
+                     <Button BackgroundColor="Gray" TextColor="White" Text="Continuar" Command="{Binding next}" />
                 </StackLayout>
                
             </StackLayout>
 
-            
         </StackLayout>
+            </ScrollView>
 	</ContentPage.Content>
 </ContentPage>

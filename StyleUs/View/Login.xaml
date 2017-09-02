@@ -7,27 +7,34 @@
     
     <ContentPage.Content>
         
-        <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" BackgroundColor="White">
+        <ScrollView Orientation="Vertical" BackgroundColor="White" Padding="0,0,0,20">
+            <StackLayout>
             <StackLayout Orientation="Horizontal" Margin="0,20,0,0" HorizontalOptions="Center">
                 <Label Text="Style " TextColor="Gray" FontSize="80" />
                 <Label Text="US" TextColor="Red" FontSize="80" />
             </StackLayout>
-            <StackLayout Orientation="Horizontal" Margin="0,50,0,0" HorizontalOptions="Center">
+            <StackLayout Orientation="Horizontal" Margin="0,30,0,0" HorizontalOptions="Center">
                 <Label Text="Bienvenido" FontSize="30" />
             </StackLayout>
             <StackLayout Orientation="Vertical" Margin="0,10,0,0" Padding="40,10">
-                <Entry Placeholder="Correo Electrónico" />
-                <Entry Placeholder="Contraseña" />
+                <Entry Text="{Binding username}" Placeholder="Correo Electrónico" />
+                <Entry Text="{Binding password}" Placeholder="Contraseña" IsPassword="true" />
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                 <Label Text="Olvidé mi contraseña" />
+                 <Label TextColor="Blue" Text="Olvidé mi contraseña">
+                 <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="notYet"
+                            NumberOfTapsRequired="1" />
+                     </Label.GestureRecognizers>
+                </Label>
             </StackLayout>
             <StackLayout Padding="40,50">
-                <Button BackgroundColor="Gray" TextColor="White" Text="Iniciar"/>
+                <Button Clicked="notYet" BackgroundColor="Gray" TextColor="White" Text="Iniciar"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
               <Label Text="¿No posee una cuenta?" />
-                <Label Text="Registrarme">
+                <Label TextColor="Blue" Text="Registrarme">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer
                             Command="{Binding registerClick}"
@@ -35,8 +42,8 @@
                      </Label.GestureRecognizers>
                  </Label>
             </StackLayout>
-            
-        </StackLayout>
+            </StackLayout>
+        </ScrollView>
        
     </ContentPage.Content>
     
