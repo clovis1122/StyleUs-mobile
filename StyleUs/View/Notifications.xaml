@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:local="clr-namespace:StyleUs" 
+	x:Class="StyleUs.View.Notifications">
+    <ContentPage.Content  >
+        <ScrollView Orientation="Vertical" BackgroundColor="White" Padding="0,0,0,20" >
+            <StackLayout >
+                <Label Text="Notifications" TextColor="Black" Margin="30" HorizontalOptions="Center" FontSize="30" FontAttributes="Bold"></Label>
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <ImageCell ImageSource="{Binding Image}" Text="{Binding Text}" ></ImageCell >
+                        
+                    </DataTemplate>
+                    
+                </ListView.ItemTemplate>
+            </StackLayout>
+            
+        </ScrollView>
+       
+    </ContentPage.Content>
+</ContentPage>

@@ -22,12 +22,13 @@
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                  <Label TextColor="Blue" Text="Olvidé mi contraseña">
-                 <Label.GestureRecognizers>
-                        <TapGestureRecognizer
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
                             Tapped="notYet"
                             NumberOfTapsRequired="1" />
-                     </Label.GestureRecognizers>
-                </Label>
+                        </Label.GestureRecognizers>
+
+                    </Label>
             </StackLayout>
             <StackLayout Padding="40,50">
                 <Button Clicked="notYet" BackgroundColor="Gray" TextColor="White" Text="Iniciar"/>
