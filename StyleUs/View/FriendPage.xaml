@@ -11,7 +11,15 @@
         <StackLayout>
 
             <SearchBar Placeholder="Find People"></SearchBar>
-        </StackLayout>
+
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <ImageCell ImageSource="{Binding Image}" Text="{Binding Text}" ></ImageCell >
+
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+            </StackLayout>
         </ContentPage.Content>
                
                />

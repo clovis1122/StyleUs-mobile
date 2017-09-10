@@ -17,8 +17,8 @@
                 <Label Text="Bienvenido" FontSize="30" />
             </StackLayout>
             <StackLayout Orientation="Vertical" Margin="0,10,0,0" Padding="40,10">
-                <Entry Text="{Binding username}" Placeholder="Correo Electrónico" />
-                <Entry Text="{Binding password}" Placeholder="Contraseña" IsPassword="true" />
+                <Entry Text="{Binding username}" Placeholder="Correo electronico" PlaceholderColor="Gray" />
+                <Entry Text="{Binding password}" Placeholder="Contraseña" IsPassword="true" PlaceholderColor="Gray" />
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                  <Label TextColor="Blue" Text="Olvidé mi contraseña">
