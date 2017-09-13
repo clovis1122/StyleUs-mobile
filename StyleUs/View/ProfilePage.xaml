@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:local="clr-namespace:StyleUs" 
+   x:Class="StyleUs.View.ProfilePage">
+    <ContentPage.Content>
+        <ScrollView BackgroundColor="White" Padding="30">
+            <StackLayout>
+            <Label Text="Profile" FontSize="30" HorizontalOptions="Center" FontAttributes="Bold" TextColor="Black"></Label>
+            <Image Margin="30"></Image>
+            <StackLayout Orientation="Horizontal" Padding="20,0,20,0" HorizontalOptions="FillAndExpand">
+                <Label Text="Name:" FontAttributes="Bold"></Label>
+                <Label Text="hola"></Label>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Padding="20,0,20,0" HorizontalOptions="FillAndExpand">
+                <Label Text="Genre:" FontAttributes="Bold"></Label>
+                <Label Text="hola"></Label>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Padding="20,0,20,0" HorizontalOptions="FillAndExpand">
+                <Label Text="Birhday:" FontAttributes="Bold"></Label>
+                <Label Text="hola}"></Label>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Padding="20,0,20,0" HorizontalOptions="FillAndExpand">
+                <Label Text="Email:" FontAttributes="Bold"></Label>
+                <Label Text="hola"></Label>
+            </StackLayout>
+
+            <Label Text="Recent Updates" TextColor="Black" FontAttributes="Bold" FontSize="30"></Label>
+
+       
+            </StackLayout>
+        </ScrollView>
+            
+    </ContentPage.Content>
+</ContentPage>
