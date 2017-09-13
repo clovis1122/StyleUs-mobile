@@ -4,6 +4,7 @@ using System.Windows.Input;
 using Xamarin.Forms;
 
 using StyleUs.View;
+using Prism.Navigation;
 
 namespace StyleUs.ViewModel
 {
@@ -13,32 +14,43 @@ namespace StyleUs.ViewModel
 		public ICommand cancel { get; set; }
 		public ICommand next { get; set; }
 
-		public INavigation navigation;
+		public INavigationService navigation;
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
 		public string name { get; set; }
 		public string lastname { get; set; }
 
-		public RegisterStepOneViewModel()
+		/**
+          *  [CONSTRUCTOR] Get the required parameters and initializes them as needed.
+          *  
+          *  @param INavigationService   the required navigation service.
+          */
+		public RegisterStepOneViewModel(INavigationService navigationService)
 		{
-			cancel = new Command(onCancel);
-			next = new Command(onNext);
+			navigation = navigationService;
 
-            // TODO: bind the birthdate and elected sex to the ViewModel.
+			// Commands
+            cancel = new Command(onCancel);
+            next = new Command(onNext);
+
+			// TODO: bind the birthdate and elected sex to the ViewModel.
 		}
 
+		/**
+    	  *  [EVENT] Fired once the user has decided to cancel.
+    	  */
 		public void onCancel()
 		{
-            navigation.PopAsync();
+            navigation.GoBackAsync();
 		}
 
+		/**
+          *  [EVENT] Fired once the user has decided to continue.
+          */
 		public void onNext()
 		{
-			navigation.PushAsync(new RegisterStepTwo());
-
+            navigation.NavigateAsync("RegisterStepTwo");
 		}
-
-
 	}
 }

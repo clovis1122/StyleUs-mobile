@@ -17,10 +17,6 @@ namespace StyleUs.View
         public Login()
         {
             InitializeComponent();
-
-            var viewModel = new LoginViewModel();
-            viewModel.navigation = Navigation;
-            BindingContext = viewModel;
         }
     }
 }

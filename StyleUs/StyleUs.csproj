@@ -30,6 +30,12 @@
     <EmbeddedResource Include="App.xaml" />
     <EmbeddedResource Include="StyleUsPage.xaml" />
     <EmbeddedResource Include="View\Login.xaml" />
+    <EmbeddedResource Include="View\ForgotPassword.xaml" />
+    <EmbeddedResource Include="View\FriendPage.xaml" />
+    <EmbeddedResource Include="View\Notifications.xaml" />
+    <EmbeddedResource Include="View\ProfilePage.xaml" />
+    <EmbeddedResource Include="View\RegisterStepOne.xaml" />
+    <EmbeddedResource Include="View\RegisterStepTwo.xaml" />
   </ItemGroup>
   <ItemGroup>
       <Compile Include="App.xaml.cs">
@@ -39,13 +45,6 @@
           <DependentUpon>StyleUsPage.xaml</DependentUpon>
       </Compile>
       <None Include="packages.config" />
-      <None Include="View\ForgotPassword.xaml" />
-      <None Include="View\FriendPage.xaml" />
-      <None Include="View\Notifications.xaml" />
-      <None Include="View\ProfilePage.xaml" />
-      <None Include="View\RegisterStepOne.xaml" />
-      <None Include="View\RegisterStepTwo.xaml" />
-
       <Compile Include="Properties\AssemblyInfo.cs" />
       <Compile Include="ViewModel\LoginViewModel.cs" />
       <Compile Include="ViewModel\RegisterStepOneViewModel.cs" />

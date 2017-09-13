@@ -6,6 +6,7 @@ using Prism.Unity;
 using Prism.Navigation;
 
 using StyleUs.View;
+using StyleUs.ViewModel;
 
 namespace StyleUs
 {
@@ -21,7 +22,9 @@ namespace StyleUs
 
 		protected override void RegisterTypes()
 		{
-			Container.RegisterTypeForNavigation<Login>();
+            Container.RegisterTypeForNavigation<Login,LoginViewModel>();
+            Container.RegisterTypeForNavigation<RegisterStepOne,RegisterStepOneViewModel>();
+            Container.RegisterTypeForNavigation<RegisterStepTwo,RegisterStepTwoViewModel>();
 			// Container.RegisterTypeForNavigation<HomePage, HomePageViewModel>();
 		}
 

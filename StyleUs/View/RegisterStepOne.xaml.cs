@@ -13,11 +13,7 @@ namespace StyleUs.View
     {
         public RegisterStepOne()
         {
-           // InitializeComponent();
-
-            var viewModel = new RegisterStepOneViewModel();
-			viewModel.navigation = Navigation;
-			BindingContext = viewModel;
+           InitializeComponent();
         }
     }
 }

@@ -28,7 +28,7 @@
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <StackLayout MinimumWidthRequest="100">
-                     <Button BackgroundColor="Gray" TextColor="White" Text="Cancelar" Command="{Binding cancel}" />
+                     <Button BackgroundColor="Gray" TextColor="White" Text="Atras" Command="{Binding goBack}" />
                 </StackLayout>
                 <StackLayout MinimumWidthRequest="100">
                      <Button Clicked="onCreate" BackgroundColor="Gray" TextColor="White" Text="Crear cuenta"/>
