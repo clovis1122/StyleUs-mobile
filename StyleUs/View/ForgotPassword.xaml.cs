@@ -14,7 +14,7 @@ namespace StyleUs.View
 	{
 		public ForgotPassword ()
 		{
-			// InitializeComponent ();
+			InitializeComponent ();
 		}
 	}
 }

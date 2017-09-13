@@ -36,6 +36,9 @@
     <EmbeddedResource Include="View\ProfilePage.xaml" />
     <EmbeddedResource Include="View\RegisterStepOne.xaml" />
     <EmbeddedResource Include="View\RegisterStepTwo.xaml" />
+    <EmbeddedResource Include="View\HomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
       <Compile Include="App.xaml.cs">
@@ -71,6 +74,11 @@
       <Compile Include="View\RegisterStepTwo.xaml.cs">
           <DependentUpon>View\RegisterStepTwo.xaml</DependentUpon>
       </Compile>
+      <Compile Include="View\HomePage.xaml.cs">
+        <DependentUpon>HomePage.xaml</DependentUpon>
+      </Compile>
+      <Compile Include="ViewModel\ForgotPasswordViewModel1.cs" />
+      <Compile Include="ViewModel\ForgotPasswordViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">

@@ -22,10 +22,11 @@ namespace StyleUs
 
 		protected override void RegisterTypes()
 		{
-            Container.RegisterTypeForNavigation<Login,LoginViewModel>();
+			Container.RegisterTypeForNavigation<Login, LoginViewModel>();
+            Container.RegisterTypeForNavigation<ForgotPassword,ForgotPasswordViewModel>();
             Container.RegisterTypeForNavigation<RegisterStepOne,RegisterStepOneViewModel>();
             Container.RegisterTypeForNavigation<RegisterStepTwo,RegisterStepTwoViewModel>();
-			// Container.RegisterTypeForNavigation<HomePage, HomePageViewModel>();
+			Container.RegisterTypeForNavigation<HomePage>();
 		}
 
 		protected override void OnStart()

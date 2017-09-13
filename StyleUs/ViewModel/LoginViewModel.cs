@@ -13,8 +13,10 @@ namespace StyleUs.ViewModel
 {
 	public class LoginViewModel : INotifyPropertyChanged
 	{
-        
-		public ICommand registerClick { get; set; }
+
+		public ICommand register { get; set; }
+		public ICommand login { get; set; }
+        public ICommand forgotPassword { get; set; }
         public INavigationService navigation;
 
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -31,7 +33,9 @@ namespace StyleUs.ViewModel
 		{
             navigation = navigationService;
 
-            registerClick = new Command(onRegisterClick);
+			register = new Command(onRegisterClick);
+			login = new Command(onLoginClick);
+            forgotPassword = new Command(onForgotPasswordClick);
 		}
 
 		/**
@@ -43,12 +47,22 @@ namespace StyleUs.ViewModel
 		}
 
 		/**
-          *  [EVENT] Fired when the user's tapped feature is not available.
+          *  [EVENT] Fired once the user has tapped the login button.
           */
-		public void notYet()
+		public void onLoginClick()
 		{
-            // TODO: Implement with Messaging Center.
-			// DisplayAlert("Lo sentimos!", "Todavia no se ha implementado esta funcionalidad.", "Aceptar");
+            //TODO: Validate the data!
+
+            // Make a fake page just so we can mark it as absolute.
+            navigation.NavigateAsync(new Uri("http://www.StyleUs.com/HomePage",UriKind.Absolute));
 		}
+		/**
+          *  [EVENT] Fired once the user has tapped the register button.
+          */
+		public void onForgotPasswordClick()
+		{
+			navigation.NavigateAsync("ForgotPassword");
+		}
+
     }
 }

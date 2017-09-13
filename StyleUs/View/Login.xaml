@@ -25,21 +25,21 @@
                  <Label TextColor="Blue" Text="Olvidé mi contraseña">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer
-                            Tapped="notYet"
+                            Command="{Binding forgotPassword}"
                             NumberOfTapsRequired="1" />
                         </Label.GestureRecognizers>
 
                     </Label>
             </StackLayout>
             <StackLayout Padding="40,50">
-                <Button Clicked="notYet" BackgroundColor="Gray" TextColor="White" Text="Iniciar"/>
+                <Button Command="{Binding login}" BackgroundColor="Gray" TextColor="White" Text="Iniciar"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
               <Label Text="¿No posee una cuenta?" />
                 <Label TextColor="Blue" Text="Registrarme">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer
-                            Command="{Binding registerClick}"
+                            Command="{Binding register}"
                             NumberOfTapsRequired="1" />
                      </Label.GestureRecognizers>
                  </Label>
