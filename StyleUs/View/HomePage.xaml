@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="StyleUs.View.HomePage">
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="StyleUs.View.HomePage"
+    xmlns:views="clr-namespace:StyleUs.View">
 	<ContentPage.Content>
-        <Label Text="PROFILE"/>
+        <ScrollView>
+       <StackLayout BackgroundColor="White">     
+        <StackLayout Margin="5,10" Orientation="Horizontal">
+                <Button BackgroundColor="Gray" TextColor="White" Text="Perfil"/>
+                <Button BackgroundColor="Gray" TextColor="White" Text="Amigos"/>
+                <Button BackgroundColor="Gray" TextColor="White" Text="Conjunto"/>
+                <Button BackgroundColor="Gray" TextColor="White" Text="Prenda"/>
+                <Button BackgroundColor="Gray" TextColor="White" Text="Notificaciones"/>
+        </StackLayout>
+
+         <views:MainPost />
+         <views:MainPost />
+         <views:MainPost />
+            
+       </StackLayout>
+            </ScrollView>
 	</ContentPage.Content>
 </ContentPage>

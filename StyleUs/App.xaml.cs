@@ -12,7 +12,14 @@ namespace StyleUs
 {
 	public partial class App : PrismApplication
 	{
-        public App(IPlatformInitializer initializer = null) : base(initializer) { }
+		public App()
+		{
+    		InitializeComponent();
+		}
+
+        public App(IPlatformInitializer initializer = null) : base(initializer) {
+            InitializeComponent();
+        }
 
         protected override void OnInitialized(){
 			InitializeComponent();
@@ -26,7 +33,7 @@ namespace StyleUs
             Container.RegisterTypeForNavigation<ForgotPassword,ForgotPasswordViewModel>();
             Container.RegisterTypeForNavigation<RegisterStepOne,RegisterStepOneViewModel>();
             Container.RegisterTypeForNavigation<RegisterStepTwo,RegisterStepTwoViewModel>();
-			Container.RegisterTypeForNavigation<HomePage>();
+            Container.RegisterTypeForNavigation<HomePage>();
 		}
 
 		protected override void OnStart()
