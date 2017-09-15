@@ -55,6 +55,7 @@ namespace StyleUs.ViewModel
 
             // Make a fake page just so we can mark it as absolute.
             navigation.NavigateAsync(new Uri("http://www.StyleUs.com/HomePage",UriKind.Absolute));
+
 		}
 		/**
           *  [EVENT] Fired once the user has tapped the register button.

@@ -3,23 +3,39 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="StyleUs.View.HomePage"
-    xmlns:views="clr-namespace:StyleUs.View">
-	<ContentPage.Content>
-        <ScrollView>
-       <StackLayout BackgroundColor="White">     
-        <StackLayout Margin="5,10" Orientation="Horizontal">
-                <Button BackgroundColor="Gray" TextColor="White" Text="Perfil"/>
-                <Button BackgroundColor="Gray" TextColor="White" Text="Amigos"/>
-                <Button BackgroundColor="Gray" TextColor="White" Text="Conjunto"/>
-                <Button BackgroundColor="Gray" TextColor="White" Text="Prenda"/>
-                <Button BackgroundColor="Gray" TextColor="White" Text="Notificaciones"/>
-        </StackLayout>
-
-         <views:MainPost />
-         <views:MainPost />
-         <views:MainPost />
-            
-       </StackLayout>
-            </ScrollView>
-	</ContentPage.Content>
+    xmlns:views="clr-namespace:StyleUs.ViewComponent">
+    <ContentPage.Content>
+       <RelativeLayout BackgroundColor="White">
+         <ScrollView VerticalOptions="FillAndExpand"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                             Property=Width,
+                             Factor=1,
+                             Constant=0}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                             Property=Height,
+                             Factor=1,
+                             Constant=0}">
+           <StackLayout HorizontalOptions="FillAndExpand">
+                <views:SmallPost />
+                <views:SmallPost />
+                <views:SmallPost /> 
+           </StackLayout>
+          </ScrollView>
+                
+            <!-- Uses relative layout to position the elements right
+            at the left side of the screen. -->
+          <views:FloatingMenu
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                         Property=Width,
+                         Factor=.9,
+                         Constant=0}"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                         Property=Height,
+                         Factor=.4,
+                         Constant=0}"
+                
+           />
+              
+           </RelativeLayout>
+      </ContentPage.Content>
 </ContentPage>
