@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace StyleUs.View
 {
-    public partial class FriendPage : ContentPage
+    public partial class ClothPiecePage : ContentPage
     {
-        public FriendPage()
+        public ClothPiecePage()
         {
             InitializeComponent();
         }

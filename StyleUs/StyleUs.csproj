@@ -29,48 +29,88 @@
   <ItemGroup>
     <EmbeddedResource Include="App.xaml" />
     <EmbeddedResource Include="StyleUsPage.xaml" />
-    <EmbeddedResource Include="View\Login.xaml" />
-    <EmbeddedResource Include="View\ForgotPassword.xaml" />
-    <EmbeddedResource Include="View\FriendPage.xaml" />
-    <EmbeddedResource Include="View\Notifications.xaml" />
+    <EmbeddedResource Include="View\LoginPage.xaml" />
+    <EmbeddedResource Include="View\ForgotPasswordPage.xaml" />
+    <EmbeddedResource Include="View\NotificationPage.xaml" />
     <EmbeddedResource Include="View\ProfilePage.xaml" />
-    <EmbeddedResource Include="View\RegisterStepOne.xaml" />
-    <EmbeddedResource Include="View\RegisterStepTwo.xaml" />
+    <EmbeddedResource Include="View\RegisterStepOnePage.xaml" />
+    <EmbeddedResource Include="View\RegisterStepTwoPage.xaml" />
+    <EmbeddedResource Include="View\HomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewComponent\SmallPost.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewComponent\FloatingMenu.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SampleTest.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ClothPiecePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FriendPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ClothCombinationPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-      <Compile Include="App.xaml.cs">
-          <DependentUpon>App.xaml</DependentUpon>
-      </Compile>
-      <Compile Include="StyleUsPage.xaml.cs">
-          <DependentUpon>StyleUsPage.xaml</DependentUpon>
-      </Compile>
-      <None Include="packages.config" />
-      <Compile Include="Properties\AssemblyInfo.cs" />
-      <Compile Include="ViewModel\LoginViewModel.cs" />
-      <Compile Include="ViewModel\RegisterStepOneViewModel.cs" />
-      <Compile Include="ViewModel\RegisterStepTwoViewModel.cs" />
-
-      <Compile Include="View\ForgotPassword.xaml.cs">
-        <DependentUpon>View\ForgotPassword.xaml</DependentUpon>
-      </Compile>
-      <Compile Include="View\FriendPage.xaml.cs">
-          <DependentUpon>View\FriendPage.xaml</DependentUpon>
-      </Compile>
-      <Compile Include="View\Login.xaml.cs">
-          <DependentUpon>View\Login.xaml</DependentUpon>
-      </Compile>
-      <Compile Include="View\Notifications.xaml.cs">
-          <DependentUpon>View\Notifications.xaml</DependentUpon>
-      </Compile>
-      <Compile Include="View\ProfilePage.xaml.cs">
-          <DependentUpon>View\ProfilePage.xaml</DependentUpon>
-      </Compile>
-      <Compile Include="View\RegisterStepOne.xaml.cs">
-          <DependentUpon>View\RegisterStepOne.xaml</DependentUpon>
-      </Compile>
-      <Compile Include="View\RegisterStepTwo.xaml.cs">
-          <DependentUpon>View\RegisterStepTwo.xaml</DependentUpon>
-      </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StyleUsPage.xaml.cs">
+      <DependentUpon>StyleUsPage.xaml</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\LoginPageViewModel.cs" />
+    <Compile Include="ViewModel\RegisterStepOnePageViewModel.cs" />
+    <Compile Include="ViewModel\RegisterStepTwoPageViewModel.cs" />
+    <Compile Include="View\ForgotPasswordPage.xaml.cs">
+      <DependentUpon>ForgotPasswordPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NotificationPage.xaml.cs">
+      <DependentUpon>NotificationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProfilePage.xaml.cs">
+      <DependentUpon>View\ProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegisterStepOnePage.xaml.cs">
+      <DependentUpon>RegisterStepOnePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegisterStepTwoPage.xaml.cs">
+      <DependentUpon>RegisterStepTwoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\ForgotPasswordPageViewModel.cs" />
+    <Compile Include="View\ViewComponent\SmallPost.xaml.cs">
+      <DependentUpon>SmallPost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewComponent\FloatingMenu.xaml.cs">
+      <DependentUpon>FloatingMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SampleTest.xaml.cs">
+      <DependentUpon>SampleTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\FloatingMenuViewModel.cs" />
+    <None Include="FodyWeavers.xml" />
+    <Compile Include="View\ClothPiecePage.xaml.cs">
+      <DependentUpon>ClothPiecePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FriendPage.xaml.cs">
+      <DependentUpon>FriendPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ClothCombinationPage.xaml.cs">
+      <DependentUpon>ClothCombinationPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">
@@ -100,11 +140,19 @@
     <Reference Include="Prism.Unity.Forms">
       <HintPath>..\packages\Prism.Unity.Forms.6.3.0\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Prism.Unity.Forms.dll</HintPath>
     </Reference>
+    <Reference Include="SkiaSharp">
+      <HintPath>..\packages\SkiaSharp.1.59.1\lib\portable-net45+win8+wpa81+wp8\SkiaSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp.Views.Forms">
+      <HintPath>..\packages\SkiaSharp.Views.Forms.1.59.1.1\lib\portable-net45+win8+wpa81+wp8\SkiaSharp.Views.Forms.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModel\" />
     <Folder Include="View\" />
+    <Folder Include="View\ViewComponent\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.4.270\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.270\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Fody.2.1.2\build\portable-net+sl+win+wpa+wp\Fody.targets" Condition="Exists('..\packages\Fody.2.1.2\build\portable-net+sl+win+wpa+wp\Fody.targets')" />
 </Project>

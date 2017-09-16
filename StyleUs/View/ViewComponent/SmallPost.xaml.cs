@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using Xamarin.Forms;
 
-namespace StyleUs.View
+namespace StyleUs.ViewComponent
 {
-    public partial class FriendPage : ContentPage
+    public partial class SmallPost : ContentView
     {
-        public FriendPage()
+        public SmallPost()
         {
             InitializeComponent();
         }

@@ -12,20 +12,34 @@ namespace StyleUs
 {
 	public partial class App : PrismApplication
 	{
-        public App(IPlatformInitializer initializer = null) : base(initializer) { }
+		public App()
+		{
+    		InitializeComponent();
+		}
+
+        public App(IPlatformInitializer initializer = null) : base(initializer) {
+            InitializeComponent();
+        }
 
         protected override void OnInitialized(){
 			InitializeComponent();
 
-            NavigationService.NavigateAsync("Login");
+            NavigationService.NavigateAsync("LoginPage");
 		}
 
 		protected override void RegisterTypes()
 		{
-            Container.RegisterTypeForNavigation<Login,LoginViewModel>();
-            Container.RegisterTypeForNavigation<RegisterStepOne,RegisterStepOneViewModel>();
-            Container.RegisterTypeForNavigation<RegisterStepTwo,RegisterStepTwoViewModel>();
-			// Container.RegisterTypeForNavigation<HomePage, HomePageViewModel>();
+			Container.RegisterTypeForNavigation<LoginPage, LoginPageViewModel>();
+            Container.RegisterTypeForNavigation<ForgotPasswordPage,ForgotPasswordPageViewModel>();
+            Container.RegisterTypeForNavigation<RegisterStepOnePage,RegisterStepOnePageViewModel>();
+            Container.RegisterTypeForNavigation<RegisterStepTwoPage,RegisterStepTwoPageViewModel>();
+			Container.RegisterTypeForNavigation<HomePage>();
+			Container.RegisterTypeForNavigation<NotificationPage>();
+			Container.RegisterTypeForNavigation<FriendPage>();
+			Container.RegisterTypeForNavigation<ClothPiecePage>();
+			Container.RegisterTypeForNavigation<ClothCombinationPage>();
+			Container.RegisterTypeForNavigation<ProfilePage>();
+            // Container.RegisterInstance<FloatingMenuViewModel>();
 		}
 
 		protected override void OnStart()

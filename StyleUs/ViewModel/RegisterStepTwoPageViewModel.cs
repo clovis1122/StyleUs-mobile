@@ -10,7 +10,7 @@ using Prism.Navigation;
 
 namespace StyleUs.ViewModel
 {
-	public class RegisterStepTwoViewModel : INotifyPropertyChanged
+	public class RegisterStepTwoPageViewModel : INotifyPropertyChanged
 	{
 
 		public ICommand goBack { get; set; }
@@ -28,7 +28,7 @@ namespace StyleUs.ViewModel
           *  
           *  @param INavigationService   the required navigation service.
           */
-		public RegisterStepTwoViewModel(INavigationService navigationService)
+		public RegisterStepTwoPageViewModel(INavigationService navigationService)
 		{
 			navigation = navigationService;
 

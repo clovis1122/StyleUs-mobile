@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="StyleUs.ViewComponent.SmallPost">
+	<ContentView.Content>
+        <StackLayout>
+            <BoxView HeightRequest="1" Color="Black"></BoxView>
+            <StackLayout
+                Padding="20,0,0,0"
+            Orientation="Horizontal">
+                <Label VerticalOptions="Center" Font="33" Text="O" />
+                <Label VerticalOptions="Center" Text="Juan Perez"></Label>
+            </StackLayout>
+            <BoxView HeightRequest="1" Color="Black"></BoxView>
+            <StackLayout>
+
+            </StackLayout>
+            <StackLayout Margin="20">
+                
+                <BoxView HeightRequest="180" Color="Black"></BoxView>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="20,0">
+                    <Button 
+                        WidthRequest="100"
+                        BackgroundColor="Aqua"
+                        TextColor="Black"
+                    Text="StyleUs"
+                    /> 
+                    <Button 
+                        WidthRequest="100"
+                        BackgroundColor="Aqua"
+                        TextColor="Black"
+                    HorizontalOptions="EndAndExpand" 
+                    Text="Comentar" />
+                </StackLayout>
+                <Label Font="14" Text="24 StyleUs" />
+                <Label Font="14" TextColor="Blue" Text="Ver los 5 comentarios." />
+            </StackLayout>
+             </StackLayout>
+	</ContentView.Content>
+</ContentView>
