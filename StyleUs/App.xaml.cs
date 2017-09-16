@@ -33,6 +33,7 @@ namespace StyleUs
             Container.RegisterTypeForNavigation<ForgotPassword,ForgotPasswordViewModel>();
             Container.RegisterTypeForNavigation<RegisterStepOne,RegisterStepOneViewModel>();
             Container.RegisterTypeForNavigation<RegisterStepTwo,RegisterStepTwoViewModel>();
+            Container.RegisterTypeForNavigation<HomePage>();
 		}
 
 		protected override void OnStart()
