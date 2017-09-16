@@ -7,14 +7,14 @@ using Prism.Events;
 
 namespace StyleUs.View
 {
-    public partial class Login : ContentPage
+    public partial class LoginPage : ContentPage
     {
 		void notYet(object sender, System.EventArgs e)
 		{
 			DisplayAlert("Lo sentimos!", "Todavia no se ha implementado esta funcionalidad.", "Aceptar");
 		}
 
-        public Login()
+        public LoginPage()
         {
             InitializeComponent();
         }

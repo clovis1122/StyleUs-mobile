@@ -11,7 +11,7 @@ using Prism.Commands;
 
 namespace StyleUs.ViewModel
 {
-	public class ForgotPasswordViewModel : INotifyPropertyChanged
+	public class ForgotPasswordPageViewModel : INotifyPropertyChanged
 	{
 
 		public ICommand send { get; set; }
@@ -27,7 +27,7 @@ namespace StyleUs.ViewModel
           *  
           *  @param INavigationService   the required navigation service.
           */
-		public ForgotPasswordViewModel(INavigationService navigationService)
+		public ForgotPasswordPageViewModel(INavigationService navigationService)
 		{
 			navigation = navigationService;
 

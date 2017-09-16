@@ -11,7 +11,7 @@ using Prism.Commands;
 
 namespace StyleUs.ViewModel
 {
-	public class LoginViewModel : INotifyPropertyChanged
+	public class LoginPageViewModel : INotifyPropertyChanged
 	{
 
 		public ICommand register { get; set; }
@@ -29,7 +29,7 @@ namespace StyleUs.ViewModel
           *  
           *  @param INavigationService   the required navigation service.
           */
-        public LoginViewModel(INavigationService navigationService)
+        public LoginPageViewModel(INavigationService navigationService)
 		{
             navigation = navigationService;
 
@@ -43,7 +43,7 @@ namespace StyleUs.ViewModel
           */
 		public void onRegisterClick()
         {
-            navigation.NavigateAsync("RegisterStepOne");
+            navigation.NavigateAsync("RegisterStepOnePage");
 		}
 
 		/**
@@ -62,7 +62,7 @@ namespace StyleUs.ViewModel
           */
 		public void onForgotPasswordClick()
 		{
-			navigation.NavigateAsync("ForgotPassword");
+			navigation.NavigateAsync("ForgotPasswordPage");
 		}
 
     }

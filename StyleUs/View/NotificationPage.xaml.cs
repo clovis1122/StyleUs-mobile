@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace StyleUs.View
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ForgotPassword : ContentPage
+	public partial class NotificationPage : ContentPage
 	{
-		public ForgotPassword ()
+		public NotificationPage ()
 		{
 			InitializeComponent ();
 		}

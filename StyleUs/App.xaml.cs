@@ -24,16 +24,22 @@ namespace StyleUs
         protected override void OnInitialized(){
 			InitializeComponent();
 
-            NavigationService.NavigateAsync("Login");
+            NavigationService.NavigateAsync("LoginPage");
 		}
 
 		protected override void RegisterTypes()
 		{
-			Container.RegisterTypeForNavigation<Login, LoginViewModel>();
-            Container.RegisterTypeForNavigation<ForgotPassword,ForgotPasswordViewModel>();
-            Container.RegisterTypeForNavigation<RegisterStepOne,RegisterStepOneViewModel>();
-            Container.RegisterTypeForNavigation<RegisterStepTwo,RegisterStepTwoViewModel>();
-            Container.RegisterTypeForNavigation<HomePage>();
+			Container.RegisterTypeForNavigation<LoginPage, LoginPageViewModel>();
+            Container.RegisterTypeForNavigation<ForgotPasswordPage,ForgotPasswordPageViewModel>();
+            Container.RegisterTypeForNavigation<RegisterStepOnePage,RegisterStepOnePageViewModel>();
+            Container.RegisterTypeForNavigation<RegisterStepTwoPage,RegisterStepTwoPageViewModel>();
+			Container.RegisterTypeForNavigation<HomePage>();
+			Container.RegisterTypeForNavigation<NotificationPage>();
+			Container.RegisterTypeForNavigation<FriendPage>();
+			Container.RegisterTypeForNavigation<ClothPiecePage>();
+			Container.RegisterTypeForNavigation<ClothCombinationPage>();
+			Container.RegisterTypeForNavigation<ProfilePage>();
+            // Container.RegisterInstance<FloatingMenuViewModel>();
 		}
 
 		protected override void OnStart()

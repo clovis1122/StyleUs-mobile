@@ -29,13 +29,12 @@
   <ItemGroup>
     <EmbeddedResource Include="App.xaml" />
     <EmbeddedResource Include="StyleUsPage.xaml" />
-    <EmbeddedResource Include="View\Login.xaml" />
-    <EmbeddedResource Include="View\ForgotPassword.xaml" />
-    <EmbeddedResource Include="View\FriendPage.xaml" />
-    <EmbeddedResource Include="View\Notifications.xaml" />
+    <EmbeddedResource Include="View\LoginPage.xaml" />
+    <EmbeddedResource Include="View\ForgotPasswordPage.xaml" />
+    <EmbeddedResource Include="View\NotificationPage.xaml" />
     <EmbeddedResource Include="View\ProfilePage.xaml" />
-    <EmbeddedResource Include="View\RegisterStepOne.xaml" />
-    <EmbeddedResource Include="View\RegisterStepTwo.xaml" />
+    <EmbeddedResource Include="View\RegisterStepOnePage.xaml" />
+    <EmbeddedResource Include="View\RegisterStepTwoPage.xaml" />
     <EmbeddedResource Include="View\HomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -48,6 +47,15 @@
     <EmbeddedResource Include="View\SampleTest.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ClothPiecePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FriendPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ClothCombinationPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -58,34 +66,31 @@
     </Compile>
     <None Include="packages.config" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModel\LoginViewModel.cs" />
-    <Compile Include="ViewModel\RegisterStepOneViewModel.cs" />
-    <Compile Include="ViewModel\RegisterStepTwoViewModel.cs" />
-    <Compile Include="View\ForgotPassword.xaml.cs">
-      <DependentUpon>View\ForgotPassword.xaml</DependentUpon>
+    <Compile Include="ViewModel\LoginPageViewModel.cs" />
+    <Compile Include="ViewModel\RegisterStepOnePageViewModel.cs" />
+    <Compile Include="ViewModel\RegisterStepTwoPageViewModel.cs" />
+    <Compile Include="View\ForgotPasswordPage.xaml.cs">
+      <DependentUpon>ForgotPasswordPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\FriendPage.xaml.cs">
-      <DependentUpon>View\FriendPage.xaml</DependentUpon>
+    <Compile Include="View\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Login.xaml.cs">
-      <DependentUpon>View\Login.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Notifications.xaml.cs">
-      <DependentUpon>View\Notifications.xaml</DependentUpon>
+    <Compile Include="View\NotificationPage.xaml.cs">
+      <DependentUpon>NotificationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ProfilePage.xaml.cs">
       <DependentUpon>View\ProfilePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\RegisterStepOne.xaml.cs">
-      <DependentUpon>View\RegisterStepOne.xaml</DependentUpon>
+    <Compile Include="View\RegisterStepOnePage.xaml.cs">
+      <DependentUpon>RegisterStepOnePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\RegisterStepTwo.xaml.cs">
-      <DependentUpon>View\RegisterStepTwo.xaml</DependentUpon>
+    <Compile Include="View\RegisterStepTwoPage.xaml.cs">
+      <DependentUpon>RegisterStepTwoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\ForgotPasswordViewModel.cs" />
+    <Compile Include="ViewModel\ForgotPasswordPageViewModel.cs" />
     <Compile Include="View\ViewComponent\SmallPost.xaml.cs">
       <DependentUpon>SmallPost.xaml</DependentUpon>
     </Compile>
@@ -97,6 +102,15 @@
     </Compile>
     <Compile Include="ViewModel\FloatingMenuViewModel.cs" />
     <None Include="FodyWeavers.xml" />
+    <Compile Include="View\ClothPiecePage.xaml.cs">
+      <DependentUpon>ClothPiecePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FriendPage.xaml.cs">
+      <DependentUpon>FriendPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ClothCombinationPage.xaml.cs">
+      <DependentUpon>ClothCombinationPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">

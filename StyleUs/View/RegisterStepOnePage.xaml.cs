@@ -9,9 +9,9 @@ using StyleUs.ViewModel;
 namespace StyleUs.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class RegisterStepOne : ContentPage
+    public partial class RegisterStepOnePage : ContentPage
     {
-        public RegisterStepOne()
+        public RegisterStepOnePage()
         {
            InitializeComponent();
         }
