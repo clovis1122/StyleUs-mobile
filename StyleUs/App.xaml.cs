@@ -29,17 +29,16 @@ namespace StyleUs
 
 		protected override void RegisterTypes()
 		{
+            Container.RegisterTypeForNavigation<HomePage, HomePageViewModel>();
+			Container.RegisterTypeForNavigation<FriendPage, FriendViewModel>();
 			Container.RegisterTypeForNavigation<LoginPage, LoginPageViewModel>();
+            Container.RegisterTypeForNavigation<ProfilePage, ProfileViewModel>();
+            Container.RegisterTypeForNavigation<ClothPiecePage, ClothPieceViewModel>();
+            Container.RegisterTypeForNavigation<NotificationPage, NotificationViewModel>();
             Container.RegisterTypeForNavigation<ForgotPasswordPage,ForgotPasswordPageViewModel>();
-            Container.RegisterTypeForNavigation<RegisterStepOnePage,RegisterStepOnePageViewModel>();
-            Container.RegisterTypeForNavigation<RegisterStepTwoPage,RegisterStepTwoPageViewModel>();
-            Container.RegisterTypeForNavigation<HomePage,HomePageViewModel>();
-			Container.RegisterTypeForNavigation<NotificationPage>();
-			Container.RegisterTypeForNavigation<FriendPage>();
-			Container.RegisterTypeForNavigation<ClothPiecePage>();
-			Container.RegisterTypeForNavigation<ClothCombinationPage>();
-			Container.RegisterTypeForNavigation<ProfilePage>();
-            // Container.RegisterInstance<FloatingMenuViewModel>();
+            Container.RegisterTypeForNavigation<ClothCombinationPage, ClothCombinationViewModel>();
+            Container.RegisterTypeForNavigation<RegisterStepOnePage, RegisterStepOnePageViewModel>();
+            Container.RegisterTypeForNavigation<RegisterStepTwoPage, RegisterStepTwoPageViewModel>();
 		}
 
 		protected override void OnStart()

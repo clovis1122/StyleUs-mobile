@@ -4,7 +4,7 @@ using Xamarin.Forms;
 using SkiaSharp;
 using SkiaSharp.Views.Forms;
 
-namespace StyleUs.ViewComponent
+namespace StyleUs.View.Component
 {
 
     /*

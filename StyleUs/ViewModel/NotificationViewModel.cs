@@ -12,11 +12,11 @@ using StyleUs.ViewModel.Component;
 
 namespace StyleUs.ViewModel
 {
-    public class HomePageViewModel
+    public class NotificationViewModel
     {
         public FloatingMenuViewModel MenuViewModel { get; set; }
 
-        public HomePageViewModel(INavigationService navigationService)
+        public NotificationViewModel(INavigationService navigationService)
         {
             MenuViewModel = new FloatingMenuViewModel(navigationService);
         }
