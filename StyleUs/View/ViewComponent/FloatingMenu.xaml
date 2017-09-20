@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             x:Class="StyleUs.ViewComponent.FloatingMenu">
+    <ContentView.Content>
+
+        <!--  MENUS (5) -->
+        
+        <StackLayout>
+            <skia:SKCanvasView PaintSurface="OnCanvasViewPaintSurface">
+                <skia:SKCanvasView.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding toggleMenu}" />
+                </skia:SKCanvasView.GestureRecognizers>
+            </skia:SKCanvasView>
+            <skia:SKCanvasView IsVisible="{Binding isMenuExpanded}" PaintSurface="OnCanvasViewPaintSurface">
+                <skia:SKCanvasView.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding notification}" />
+                </skia:SKCanvasView.GestureRecognizers>
+            </skia:SKCanvasView>
+            <skia:SKCanvasView IsVisible="{Binding isMenuExpanded}" PaintSurface="OnCanvasViewPaintSurface">
+                <skia:SKCanvasView.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding dashboard}" />
+                </skia:SKCanvasView.GestureRecognizers>
+            </skia:SKCanvasView>
+            <skia:SKCanvasView IsVisible="{Binding isMenuExpanded}" PaintSurface="OnCanvasViewPaintSurface">
+                <skia:SKCanvasView.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding clothPiece}" />
+                </skia:SKCanvasView.GestureRecognizers>
+            </skia:SKCanvasView>
+            <skia:SKCanvasView IsVisible="{Binding isMenuExpanded}" PaintSurface="OnCanvasViewPaintSurface">
+                <skia:SKCanvasView.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding clothCombination}" />
+                </skia:SKCanvasView.GestureRecognizers>
+            </skia:SKCanvasView>
+            <skia:SKCanvasView IsVisible="{Binding isMenuExpanded}" PaintSurface="OnCanvasViewPaintSurface">
+                <skia:SKCanvasView.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding friends}" />
+                </skia:SKCanvasView.GestureRecognizers>
+            </skia:SKCanvasView>
+            <skia:SKCanvasView IsVisible="{Binding isMenuExpanded}" PaintSurface="OnCanvasViewPaintSurface">
+                <skia:SKCanvasView.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding profile}" />
+                </skia:SKCanvasView.GestureRecognizers>
+            </skia:SKCanvasView>
+        </StackLayout>
+        
+    </ContentView.Content>
+</ContentView>

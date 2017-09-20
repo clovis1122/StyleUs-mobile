@@ -8,7 +8,7 @@ using Prism.Navigation;
 
 namespace StyleUs.ViewModel
 {
-	public class RegisterStepOneViewModel : INotifyPropertyChanged
+	public class RegisterStepOnePageViewModel : INotifyPropertyChanged
 	{
 
 		public ICommand cancel { get; set; }
@@ -26,7 +26,7 @@ namespace StyleUs.ViewModel
           *  
           *  @param INavigationService   the required navigation service.
           */
-		public RegisterStepOneViewModel(INavigationService navigationService)
+		public RegisterStepOnePageViewModel(INavigationService navigationService)
 		{
 			navigation = navigationService;
 
@@ -50,7 +50,7 @@ namespace StyleUs.ViewModel
           */
 		public void onNext()
 		{
-            navigation.NavigateAsync("RegisterStepTwo");
+            navigation.NavigateAsync("RegisterStepTwoPage");
 		}
 	}
 }

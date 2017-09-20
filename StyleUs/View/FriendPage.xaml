@@ -1,29 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="StyleUs.View.MainPageScreen"
-            BackgroundColor="White" >
-  <!--Pages can be added as references or inline-->
-
-    <ContentPage Title="Followers">
-
-        <ContentPage.Content>
-        <StackLayout>
-
-            <SearchBar Placeholder="Find People"></SearchBar>
-
-                <ListView.ItemTemplate >
-                    <DataTemplate>
-                        <ImageCell ImageSource="{Binding Image}" Text="{Binding Text}" ></ImageCell >
-
-                    </DataTemplate>
-
-                </ListView.ItemTemplate>
-            </StackLayout>
-        </ContentPage.Content>
-               
-               />
-        </ContentPage>
-  <ContentPage Title="Following" />
- 
-</TabbedPage>
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="StyleUs.View.FriendPage">
+	<ContentPage.Content>
+       <Label 
+        Text="Friend Page" 
+        TextColor="Black" 
+        HorizontalOptions="Center" />
+	</ContentPage.Content>
+</ContentPage>

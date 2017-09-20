@@ -10,11 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace StyleUs.View
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Notifications : ContentPage
+	public partial class ForgotPasswordPage : ContentPage
 	{
-		public Notifications ()
+		public ForgotPasswordPage ()
 		{
-			// InitializeComponent ();
+			InitializeComponent ();
 		}
 	}
 }
