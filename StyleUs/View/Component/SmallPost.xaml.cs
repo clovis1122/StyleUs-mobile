@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Xamarin.Forms;
 
-namespace StyleUs.ViewComponent
+namespace StyleUs.View.Component
 {
     public partial class SmallPost : ContentView
     {
