@@ -3,9 +3,8 @@ using Xamarin.Forms;
 
 using SkiaSharp;
 using SkiaSharp.Views.Forms;
-using StyleUs.ViewModel;
 
-namespace StyleUs.ViewComponent
+namespace StyleUs.View.Component
 {
 
     /*
@@ -18,7 +17,6 @@ namespace StyleUs.ViewComponent
         public FloatingMenu()
 		{
 			InitializeComponent();
-            this.BindingContext = new FloatingMenuViewModel();
 		}
 
 		void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

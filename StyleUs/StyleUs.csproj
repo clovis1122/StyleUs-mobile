@@ -38,13 +38,10 @@
     <EmbeddedResource Include="View\HomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ViewComponent\SmallPost.xaml">
+    <EmbeddedResource Include="View\Component\SmallPost.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ViewComponent\FloatingMenu.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\SampleTest.xaml">
+    <EmbeddedResource Include="View\Component\FloatingMenu.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ClothPiecePage.xaml">
@@ -91,16 +88,12 @@
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\ForgotPasswordPageViewModel.cs" />
-    <Compile Include="View\ViewComponent\SmallPost.xaml.cs">
+    <Compile Include="View\Component\SmallPost.xaml.cs">
       <DependentUpon>SmallPost.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ViewComponent\FloatingMenu.xaml.cs">
+    <Compile Include="View\Component\FloatingMenu.xaml.cs">
       <DependentUpon>FloatingMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SampleTest.xaml.cs">
-      <DependentUpon>SampleTest.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewModel\FloatingMenuViewModel.cs" />
     <None Include="FodyWeavers.xml" />
     <Compile Include="View\ClothPiecePage.xaml.cs">
       <DependentUpon>ClothPiecePage.xaml</DependentUpon>
@@ -111,6 +104,13 @@
     <Compile Include="View\ClothCombinationPage.xaml.cs">
       <DependentUpon>ClothCombinationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\HomePageViewModel.cs" />
+    <Compile Include="ViewModel\ClothCombinationViewModel.cs" />
+    <Compile Include="ViewModel\ClothPieceViewModel.cs" />
+    <Compile Include="ViewModel\NotificationViewModel.cs" />
+    <Compile Include="ViewModel\FriendViewModel.cs" />
+    <Compile Include="ViewModel\ProfileViewModel.cs" />
+    <Compile Include="ViewModel\Component\FloatingMenuViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">
@@ -150,7 +150,8 @@
   <ItemGroup>
     <Folder Include="ViewModel\" />
     <Folder Include="View\" />
-    <Folder Include="View\ViewComponent\" />
+    <Folder Include="View\Component\" />
+    <Folder Include="ViewModel\Component\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.4.270\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.270\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
