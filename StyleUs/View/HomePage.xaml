@@ -33,6 +33,7 @@
                          Property=Height,
                          Factor=.4,
                          Constant=0}"
+                BindingContext="{Binding MenuViewModel}"
                 
            />
               

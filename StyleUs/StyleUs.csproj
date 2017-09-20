@@ -111,6 +111,7 @@
     <Compile Include="View\ClothCombinationPage.xaml.cs">
       <DependentUpon>ClothCombinationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\HomePageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">

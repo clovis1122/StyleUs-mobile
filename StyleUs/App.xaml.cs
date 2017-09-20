@@ -33,7 +33,7 @@ namespace StyleUs
             Container.RegisterTypeForNavigation<ForgotPasswordPage,ForgotPasswordPageViewModel>();
             Container.RegisterTypeForNavigation<RegisterStepOnePage,RegisterStepOnePageViewModel>();
             Container.RegisterTypeForNavigation<RegisterStepTwoPage,RegisterStepTwoPageViewModel>();
-			Container.RegisterTypeForNavigation<HomePage>();
+            Container.RegisterTypeForNavigation<HomePage,HomePageViewModel>();
 			Container.RegisterTypeForNavigation<NotificationPage>();
 			Container.RegisterTypeForNavigation<FriendPage>();
 			Container.RegisterTypeForNavigation<ClothPiecePage>();

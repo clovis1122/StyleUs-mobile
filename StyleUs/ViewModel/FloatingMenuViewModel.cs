@@ -28,7 +28,7 @@ namespace StyleUs.ViewModel
 
         public INavigationService navigation;
 
-        public FloatingMenuViewModel(INavigationService navigationService = null)
+        public FloatingMenuViewModel(INavigationService navigationService)
         {
               isMenuExpanded = false;
               navigation = navigationService;
@@ -48,30 +48,35 @@ namespace StyleUs.ViewModel
         }
 
         void goToNotification() {
-          //  navigation.NavigateAsync(new Uri("http://www.StyleUs.com/NotificationPage", UriKind.Absolute));
+            navigation.NavigateAsync(new Uri("http://www.StyleUs.com/NotificationPage", UriKind.Absolute));
         }
 		void goToDashboard()
 		{
-            //navigation.NavigateAsync(new Uri("http://www.StyleUs.com/HomePage", UriKind.Absolute));
+            navigation.NavigateAsync(new Uri("http://www.StyleUs.com/HomePage", UriKind.Absolute));
 
 		}
 		void goToClothCombination()
 		{
-            //navigation.NavigateAsync(new Uri("http://www.StyleUs.com/ClothCombinationPage", UriKind.Absolute));
+            navigation.NavigateAsync(new Uri("http://www.StyleUs.com/ClothCombinationPage", UriKind.Absolute));
 
 		}
 		void goToClothPiece()
 		{
-            //navigation.NavigateAsync(new Uri("http://www.StyleUs.com/ClothPiecePage", UriKind.Absolute));
+            try
+            {
+                navigation.NavigateAsync(new Uri("http://www.StyleUs.com/ClothPiecePage", UriKind.Absolute));
+            } catch (Exception e) {
+                var du = e;
+            }
 
 		}
 		void goToFriends()
 		{
-            //navigation.NavigateAsync(new Uri("http://www.StyleUs.com/FriendPage", UriKind.Absolute));
+            navigation.NavigateAsync(new Uri("http://www.StyleUs.com/FriendPage", UriKind.Absolute));
 		}
 		void goToProfile()
 		{
-            //navigation.NavigateAsync(new Uri("http://www.StyleUs.com/ProfilePage", UriKind.Absolute));
+            navigation.NavigateAsync(new Uri("http://www.StyleUs.com/ProfilePage", UriKind.Absolute));
 		}
 
     }
