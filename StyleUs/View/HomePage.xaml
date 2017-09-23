@@ -5,7 +5,7 @@
     x:Class="StyleUs.View.HomePage"
     xmlns:views="clr-namespace:StyleUs.View.Component">
     <ContentPage.Content>
-       <RelativeLayout BackgroundColor="White">
+       <RelativeLayout >
          <ScrollView VerticalOptions="FillAndExpand"
                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
                              Property=Width,
