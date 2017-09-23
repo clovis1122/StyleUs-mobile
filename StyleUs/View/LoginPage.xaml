@@ -5,7 +5,8 @@
 	xmlns:local="clr-namespace:StyleUs"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
 	x:Class="StyleUs.View.LoginPage"
-    BackgroundImage="loginPage_Image_opt.jpg">
+
+    BackgroundImage="loginPage_Image.png">
     
     <ContentPage.Content >
         
