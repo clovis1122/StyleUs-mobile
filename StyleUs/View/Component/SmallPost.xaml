@@ -26,12 +26,14 @@
                         TextColor="Black"
                     Text="StyleUs"
                     /> 
+                    
                     <Button 
                         WidthRequest="100"
                         BackgroundColor="Aqua"
                         TextColor="Black"
                     HorizontalOptions="EndAndExpand" 
-                    Text="Comentar" />
+                    Text="Comentar"
+                       Command="{Binding ViewComment}" />
                 </StackLayout>
                 <Label Font="14" Text="24 StyleUs" />
                 <Label Font="14" TextColor="Blue" Text="Ver los 5 comentarios." />
