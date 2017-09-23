@@ -6,7 +6,7 @@
 	x:Class="StyleUs.View.NotificationPage"
     xmlns:views="clr-namespace:StyleUs.View.Component">
     <ContentPage.Content>
-       <RelativeLayout BackgroundColor="White">
+       <RelativeLayout >
          <ScrollView VerticalOptions="FillAndExpand"
                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
                              Property=Width,
@@ -17,6 +17,16 @@
                              Factor=1,
                              Constant=0}">
            <StackLayout HorizontalOptions="FillAndExpand">
+             <Label 
+                Text="NOTIFICACIONES" 
+                TextColor="Black" 
+                Margin="30" 
+                HorizontalOptions="Center" 
+                FontSize="30"
+                 FontFamily="monospace"
+                 FontAttributes="Bold"
+                 
+               />
              <ListView ItemsSource="{Binding notificationList}">
                <ListView.ItemTemplate>
                  <DataTemplate>

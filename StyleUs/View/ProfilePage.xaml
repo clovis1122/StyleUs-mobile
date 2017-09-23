@@ -4,9 +4,12 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 	xmlns:local="clr-namespace:StyleUs" 
     x:Class="StyleUs.View.ProfilePage"
-    xmlns:views="clr-namespace:StyleUs.View.Component">
+    xmlns:views="clr-namespace:StyleUs.View.Component"
+    NavigationPage.HasNavigationBar="True"
+    Title="hola" Icon="icon.png">
+
     <ContentPage.Content>
-       <RelativeLayout BackgroundColor="White">
+       <RelativeLayout >
          <ScrollView VerticalOptions="FillAndExpand"
                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
                              Property=Width,
@@ -17,7 +20,8 @@
                              Factor=1,
                              Constant=0}">
            <StackLayout HorizontalOptions="FillAndExpand">
-                         <Label Text="Profile" FontSize="30" HorizontalOptions="Center" FontAttributes="Bold" TextColor="Black"></Label>
+                         <Label Text="Profile" FontSize="30" HorizontalOptions="Center" FontAttributes="Bold"
+                                ></Label>
             <Image Margin="30"></Image>
             <StackLayout Orientation="Horizontal" Padding="20,0,20,0" HorizontalOptions="FillAndExpand">
                 <Label Text="Name:" FontAttributes="Bold"></Label>

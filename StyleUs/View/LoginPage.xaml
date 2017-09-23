@@ -4,11 +4,12 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 	xmlns:local="clr-namespace:StyleUs"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
-	x:Class="StyleUs.View.LoginPage">
+	x:Class="StyleUs.View.LoginPage"
+    BackgroundImage="loginPage_Image_opt.jpg">
     
-    <ContentPage.Content>
+    <ContentPage.Content >
         
-        <ScrollView Orientation="Vertical" BackgroundColor="White" Padding="0,0,0,20">
+        <ScrollView Orientation="Vertical"  Padding="0,0,0,20">
             <StackLayout>
             <StackLayout Orientation="Horizontal" Margin="0,20,0,0" HorizontalOptions="Center">
                 <Label Text="Style " TextColor="Gray" FontSize="80" />
@@ -18,11 +19,11 @@
                 <Label Text="Bienvenido" FontSize="30" />
             </StackLayout>
             <StackLayout Orientation="Vertical" Margin="0,10,0,0" Padding="40,10">
-                <Entry Text="{Binding username}" Placeholder="Correo electronico" PlaceholderColor="Gray" />
-                <Entry Text="{Binding password}" Placeholder="Contraseña" IsPassword="true" PlaceholderColor="Gray" />
+                <Entry Text="{Binding username}" Placeholder="Correo electronico" PlaceholderColor="Gray" Opacity="0.3" BackgroundColor="Blue" Keyboard="Email"  />
+                <Entry Text="{Binding password}" Placeholder="Contraseña" IsPassword="true" PlaceholderColor="Gray"  />
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                 <Label TextColor="Blue" Text="Olvidé mi contraseña">
+                 <Label TextColor="Gray" Text="Olvidé mi contraseña">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer
                             Command="{Binding forgotPassword}"
@@ -32,11 +33,11 @@
                     </Label>
             </StackLayout>
             <StackLayout Padding="40,50">
-                <Button Command="{Binding login}" BackgroundColor="Gray" TextColor="White" Text="Iniciar"/>
+                <Button Command="{Binding login}"  Text="Iniciar"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-              <Label Text="¿No posee una cuenta?" />
-                <Label TextColor="Blue" Text="Registrarme">
+              <Label Text="¿No posee una cuenta?" TextColor="Black"/>
+                <Label TextColor="Gray" Text="Registrarme" >
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer
                             Command="{Binding register}"
