@@ -27,11 +27,25 @@
                  FontAttributes="Bold"
                  
                />
+             <ListView ItemsSource="{Binding notificationList}">
+               <ListView.ItemTemplate>
+                 <DataTemplate>
+                   <ImageCell 
+                       Text="{Binding title}"
+                       TextColor="Black"
+                       Detail="{Binding detail}"
+                       DetailColor="Black"
+                       ImageSource="{Binding image}"/>
+                 </DataTemplate>
+               </ListView.ItemTemplate>
+             </ListView>
            </StackLayout>
           </ScrollView>
                 
             <!-- Uses relative layout to position the elements right
             at the left side of the screen. -->
+
+            
           <views:FloatingMenu
                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
                          Property=Width,
