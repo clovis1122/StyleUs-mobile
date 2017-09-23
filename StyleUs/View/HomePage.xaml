@@ -16,10 +16,8 @@
                              Factor=1,
                              Constant=0}">
            <StackLayout HorizontalOptions="FillAndExpand">
-                <views:SmallPost />
-                <views:SmallPost />
-                <views:SmallPost /> 
-           </StackLayout>
+                    <views:SmallPost BindingContext="{Binding .}" />
+                </StackLayout>
           </ScrollView>
                 
             <!-- Uses relative layout to position the elements right

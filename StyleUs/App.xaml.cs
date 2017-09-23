@@ -39,7 +39,9 @@ namespace StyleUs
             Container.RegisterTypeForNavigation<ClothCombinationPage, ClothCombinationViewModel>();
             Container.RegisterTypeForNavigation<RegisterStepOnePage, RegisterStepOnePageViewModel>();
             Container.RegisterTypeForNavigation<RegisterStepTwoPage, RegisterStepTwoPageViewModel>();
-		}
+            Container.RegisterTypeForNavigation<CommentsPage>();
+            Container.RegisterTypeForNavigation<AddCommentPage,AddCommentPageViewModel>();
+        }
 
 		protected override void OnStart()
 		{

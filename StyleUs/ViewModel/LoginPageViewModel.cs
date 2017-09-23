@@ -63,6 +63,7 @@ namespace StyleUs.ViewModel
 		public void onForgotPasswordClick()
 		{
 			navigation.NavigateAsync("ForgotPasswordPage");
+            // http://www.StyleUs/com/Login/ForgotPasswordPage/HomePage/LogiPage
 		}
 
     }
