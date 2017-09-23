@@ -17,19 +17,25 @@
                              Factor=1,
                              Constant=0}">
            <StackLayout HorizontalOptions="FillAndExpand">
-             <Label 
-                Text="Notifications" 
-                TextColor="Black" 
-                Margin="30" 
-                HorizontalOptions="Center" 
-                FontSize="30" 
-                FontAttributes="Bold" 
-               />
+             <ListView ItemsSource="{Binding notificationList}">
+               <ListView.ItemTemplate>
+                 <DataTemplate>
+                   <ImageCell 
+                       Text="{Binding title}"
+                       TextColor="Black"
+                       Detail="{Binding detail}"
+                       DetailColor="Black"
+                       ImageSource="{Binding image}"/>
+                 </DataTemplate>
+               </ListView.ItemTemplate>
+             </ListView>
            </StackLayout>
           </ScrollView>
                 
             <!-- Uses relative layout to position the elements right
             at the left side of the screen. -->
+
+            
           <views:FloatingMenu
                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
                          Property=Width,
