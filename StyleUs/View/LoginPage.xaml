@@ -4,11 +4,12 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 	xmlns:local="clr-namespace:StyleUs"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
-	x:Class="StyleUs.View.LoginPage">
+	x:Class="StyleUs.View.LoginPage"
+    BackgroundImage="loginPage_Image.png">
     
     <ContentPage.Content>
         
-        <ScrollView Orientation="Vertical" BackgroundColor="White" Padding="0,0,0,20">
+        <ScrollView Orientation="Vertical"  Padding="0,0,0,20">
             <StackLayout>
             <StackLayout Orientation="Horizontal" Margin="0,20,0,0" HorizontalOptions="Center">
                 <Label Text="Style " TextColor="Gray" FontSize="80" />
