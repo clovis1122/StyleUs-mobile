@@ -5,7 +5,7 @@
     x:Class="StyleUs.View.ClothCombinationPage"
 	xmlns:views="clr-namespace:StyleUs.View.Component">
     <ContentPage.Content>
-       <RelativeLayout BackgroundColor="White">
+       <RelativeLayout >
          <ScrollView VerticalOptions="FillAndExpand"
                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
                              Property=Width,
@@ -18,7 +18,7 @@
            <StackLayout HorizontalOptions="FillAndExpand">
              <Label 
                 Text="Cloth Combination Page" 
-                TextColor="Black" 
+                 
                 HorizontalOptions="Center" />
            </StackLayout>
           </ScrollView>

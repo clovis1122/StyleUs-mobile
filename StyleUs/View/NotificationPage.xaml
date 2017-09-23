@@ -6,7 +6,7 @@
 	x:Class="StyleUs.View.NotificationPage"
     xmlns:views="clr-namespace:StyleUs.View.Component">
     <ContentPage.Content>
-       <RelativeLayout BackgroundColor="White">
+       <RelativeLayout >
          <ScrollView VerticalOptions="FillAndExpand"
                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
                              Property=Width,
@@ -18,18 +18,34 @@
                              Constant=0}">
            <StackLayout HorizontalOptions="FillAndExpand">
              <Label 
-                Text="Notifications" 
+                Text="NOTIFICACIONES" 
                 TextColor="Black" 
                 Margin="30" 
                 HorizontalOptions="Center" 
-                FontSize="30" 
-                FontAttributes="Bold" 
+                FontSize="30"
+                 FontFamily="monospace"
+                 FontAttributes="Bold"
+                 
                />
+             <ListView ItemsSource="{Binding notificationList}">
+               <ListView.ItemTemplate>
+                 <DataTemplate>
+                   <ImageCell 
+                       Text="{Binding title}"
+                       TextColor="Black"
+                       Detail="{Binding detail}"
+                       DetailColor="Black"
+                       ImageSource="{Binding image}"/>
+                 </DataTemplate>
+               </ListView.ItemTemplate>
+             </ListView>
            </StackLayout>
           </ScrollView>
                 
             <!-- Uses relative layout to position the elements right
             at the left side of the screen. -->
+
+            
           <views:FloatingMenu
                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
                          Property=Width,
