@@ -6,7 +6,7 @@
     xmlns:views="clr-namespace:StyleUs.View.ClothPieces"
     Title="Amigos">
     
-    <views:NewClothPage Title="Amigos" BindingContext="{Binding .}" />
-    <views:NewClothPage Title="Nuevos" BindingContext="{Binding .}" />
+    <views:NewClothPage Title="Seguidores" BindingContext="{Binding .}" />
+    <views:NewClothPage Title="Seguidos" BindingContext="{Binding .}" />
     
 </TabbedPage>
