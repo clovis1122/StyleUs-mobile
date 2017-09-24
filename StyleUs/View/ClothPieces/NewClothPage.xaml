@@ -11,21 +11,20 @@
 	<ContentPage.Content>
            <StackLayout>
              <flv:FlowListView x:Name="flowListView" SeparatorVisibility="None" HasUnevenRows="true"
-                FlowColumnMinWidth="110" FlowItemsSource="{Binding imageList}">
+                FlowColumnMinWidth="150" FlowItemsSource="{Binding imageList}">
 
                 <flv:FlowListView.FlowColumnTemplate>
                     <DataTemplate>
-                        <Grid Padding="3">
+                        <Grid Padding="30">
                             
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
+                                <RowDefinition Height="250" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
 
-                            <ffimageloading:CachedImage HeightRequest="100" Aspect="AspectFill"
-                                DownsampleHeight="100" DownsampleUseDipUnits="false" 
+                            <ffimageloading:CachedImage Aspect="AspectFill" DownsampleUseDipUnits="false" 
                                 LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png"
                                 Source="{Binding imageUrl}"/>
 

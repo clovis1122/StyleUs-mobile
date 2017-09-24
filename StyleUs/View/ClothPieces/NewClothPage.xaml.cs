@@ -9,7 +9,13 @@ namespace StyleUs.View.ClothPieces
     {
         public NewClothPage()
         {
-            InitializeComponent();
+            try {
+                InitializeComponent();
+            } catch(Exception e) {
+                var f = e.Message;
+            }
+
+
         }
     }
 }

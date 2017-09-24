@@ -46,9 +46,6 @@
     <EmbeddedResource Include="View\Component\FloatingMenu.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FriendPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\ClothPieces\ClothPiecePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -56,6 +53,12 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ClothCombination\ClothCombinationPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Friend\FriendPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Friend\FriendTab.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -109,9 +112,6 @@
       <DependentUpon>FloatingMenu.xaml</DependentUpon>
     </Compile>
     <None Include="FodyWeavers.xml" />
-    <Compile Include="View\FriendPage.xaml.cs">
-      <DependentUpon>FriendPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ViewModel\HomePageViewModel.cs" />
     <Compile Include="ViewModel\ClothCombinationViewModel.cs" />
     <Compile Include="ViewModel\ClothPieceViewModel.cs" />
@@ -127,6 +127,12 @@
     </Compile>
     <Compile Include="View\ClothCombination\ClothCombinationPage.xaml.cs">
       <DependentUpon>ClothCombinationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Friend\FriendPage.xaml.cs">
+      <DependentUpon>FriendPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Friend\FriendTab.xaml.cs">
+      <DependentUpon>FriendTab.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -199,6 +205,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="View\ClothCombination\" />
+    <Folder Include="View\Friend\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.4.270\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.270\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
