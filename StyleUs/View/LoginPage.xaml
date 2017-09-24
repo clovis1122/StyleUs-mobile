@@ -5,7 +5,7 @@
 	xmlns:local="clr-namespace:StyleUs"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
 	x:Class="StyleUs.View.LoginPage"
-    BackgroundImage="loginPage_Image_opt.jpg">
+    BackgroundImage="loginPage_Image_opt.jpg" >
     
     <ContentPage.Content >
         
@@ -30,20 +30,33 @@
                             NumberOfTapsRequired="1" />
                         </Label.GestureRecognizers>
 
+                        <Label.Effects>
+                            <local:UnderlineEffect></local:UnderlineEffect>
+                        </Label.Effects>
+
                     </Label>
             </StackLayout>
             <StackLayout Padding="40,50">
                 <Button Command="{Binding login}"  Text="Iniciar"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-              <Label Text="¿No posee una cuenta?" TextColor="Black"/>
+                    <Label Text="¿No posee una cuenta?" TextColor="Black">
+
+                        
+                    </Label>
                 <Label TextColor="Gray" Text="Registrarme" >
-                    <Label.GestureRecognizers>
+
+                        <Label.Effects>
+                            <local:UnderlineEffect></local:UnderlineEffect>
+                        </Label.Effects>
+
+                        <Label.GestureRecognizers>
                         <TapGestureRecognizer
                             Command="{Binding register}"
                             NumberOfTapsRequired="1" />
                      </Label.GestureRecognizers>
-                 </Label>
+                       
+                    </Label>
             </StackLayout>
             </StackLayout>
         </ScrollView>
