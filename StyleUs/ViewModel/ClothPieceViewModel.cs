@@ -13,7 +13,7 @@ using System.Collections.ObjectModel;
 
 namespace StyleUs.ViewModel
 {
-    public class ClothPieceViewModel
+    public class ClothPieceViewModel : INotifyPropertyChanged
     {
 		public class Image
 		{
@@ -28,6 +28,7 @@ namespace StyleUs.ViewModel
 			}
 
 		}
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public FloatingMenuViewModel MenuViewModel { get; set; }
 
@@ -70,7 +71,7 @@ namespace StyleUs.ViewModel
 			};
 
 			int number = 0;
-			for (int n = 0; n < 20; n++)
+			for (int n = 0; n < 40; n++)
 			{
 				for (int i = 0; i < images.Length; i++)
 				{

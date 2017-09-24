@@ -3,40 +3,13 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="StyleUs.View.HomePage"
+    ControlTemplate="{StaticResource MenuPageTemplate}"
     xmlns:views="clr-namespace:StyleUs.View.Component">
     <ContentPage.Content>
-       <RelativeLayout >
-         <ScrollView VerticalOptions="FillAndExpand"
-                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
-                             Property=Width,
-                             Factor=1,
-                             Constant=0}"
-                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
-                             Property=Height,
-                             Factor=1,
-                             Constant=0}">
-           <StackLayout HorizontalOptions="FillAndExpand">
-                    <views:SmallPost BindingContext="{Binding .}" />
-                    <views:SmallPost BindingContext="{Binding .}" />
-                    <views:SmallPost BindingContext="{Binding .}" />
-                </StackLayout>
-          </ScrollView>
-                
-            <!-- Uses relative layout to position the elements right
-            at the left side of the screen. -->
-          <views:FloatingMenu
-                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
-                         Property=Width,
-                         Factor=.9,
-                         Constant=0}"
-                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
-                         Property=Height,
-                         Factor=.4,
-                         Constant=0}"
-                BindingContext="{Binding MenuViewModel}"
-                
-           />
-              
-           </RelativeLayout>
-      </ContentPage.Content>
+       <StackLayout HorizontalOptions="FillAndExpand">
+            <views:SmallPost BindingContext="{Binding .}" />
+            <views:SmallPost BindingContext="{Binding .}" />
+            <views:SmallPost BindingContext="{Binding .}" />
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>
