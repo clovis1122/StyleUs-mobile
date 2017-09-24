@@ -30,20 +30,43 @@
                             NumberOfTapsRequired="1" />
                         </Label.GestureRecognizers>
 
+                        <Label.Effects>
+                            <local:UnderlineEffect></local:UnderlineEffect>
+                        </Label.Effects>
+
                     </Label>
             </StackLayout>
             <StackLayout Padding="40,50">
                 <Button Command="{Binding login}"  Text="Iniciar" BackgroundColor="Black"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+<<<<<<< HEAD
+                    <Label Text="¿No posee una cuenta?" TextColor="Black">
+
+
+                    </Label>
+                <Label TextColor="Gray" Text="Registrarme" >
+
+                        <Label.Effects>
+                            <local:UnderlineEffect></local:UnderlineEffect>
+                        </Label.Effects>
+
+                        <Label.GestureRecognizers>
+||||||| merged common ancestors
+              <Label Text="¿No posee una cuenta?" TextColor="Black"/>
+                <Label TextColor="Gray" Text="Registrarme" >
+                    <Label.GestureRecognizers>
+=======
               <Label Text="¿No posee una cuenta?" TextColor="Black"/>
                 <Label TextColor="Gray" Text="Registrarme" BackgroundColor="Silver">
                     <Label.GestureRecognizers>
+>>>>>>> 988c3b50c8bd25505d75fbdf19eb7bcdcc6ab850
                         <TapGestureRecognizer
                             Command="{Binding register}"
                             NumberOfTapsRequired="1" />
                      </Label.GestureRecognizers>
-                 </Label>
+
+                    </Label>
             </StackLayout>
             </StackLayout>
         </ScrollView>
