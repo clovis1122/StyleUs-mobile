@@ -17,6 +17,8 @@
                              Constant=0}">
            <StackLayout HorizontalOptions="FillAndExpand">
                     <views:SmallPost BindingContext="{Binding .}" />
+                    <views:SmallPost BindingContext="{Binding .}" />
+                    <views:SmallPost BindingContext="{Binding .}" />
                 </StackLayout>
           </ScrollView>
                 

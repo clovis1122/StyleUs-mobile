@@ -20,31 +20,13 @@
                              Factor=1,
                              Constant=0}">
            <StackLayout HorizontalOptions="FillAndExpand">
-                         <Label Text="Profile" FontSize="30" HorizontalOptions="Center" FontAttributes="Bold"
-                                ></Label>
-            <Image Margin="30"></Image>
-            <StackLayout Orientation="Horizontal" Padding="20,0,20,0" HorizontalOptions="FillAndExpand">
-                <Label Text="Name:" FontAttributes="Bold"></Label>
-                <Label Text="hola"></Label>
-            </StackLayout>
-
-            <StackLayout Orientation="Horizontal" Padding="20,0,20,0" HorizontalOptions="FillAndExpand">
-                <Label Text="Genre:" FontAttributes="Bold"></Label>
-                <Label Text="hola"></Label>
-            </StackLayout>
-
-            <StackLayout Orientation="Horizontal" Padding="20,0,20,0" HorizontalOptions="FillAndExpand">
-                <Label Text="Birhday:" FontAttributes="Bold"></Label>
-                <Label Text="hola"></Label>
-            </StackLayout>
-
-            <StackLayout Orientation="Horizontal" Padding="20,0,20,0" HorizontalOptions="FillAndExpand">
-                <Label Text="Email:" FontAttributes="Bold"></Label>
-                <Label Text="hola"></Label>
-            </StackLayout>
-
-            <Label Text="Recent Updates" TextColor="Black" FontAttributes="Bold" FontSize="30"></Label>
- 
+           <Label Text="PERFIL" 
+                TextColor="Black" 
+                Margin="30" 
+                HorizontalOptions="Center" 
+                FontSize="30"
+                FontFamily="monospace"
+                FontAttributes="Bold" />
            </StackLayout>
           </ScrollView>
                 

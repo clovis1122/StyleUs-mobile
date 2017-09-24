@@ -5,7 +5,7 @@
     x:Class="StyleUs.View.FriendPage"
     xmlns:views="clr-namespace:StyleUs.View.Component">
     <ContentPage.Content>
-       <RelativeLayout BackgroundColor="White">
+       <RelativeLayout>
          <ScrollView VerticalOptions="FillAndExpand"
                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
                              Property=Width,
@@ -16,10 +16,13 @@
                              Factor=1,
                              Constant=0}">
            <StackLayout HorizontalOptions="FillAndExpand">
-             <Label 
-                Text="Friend Page" 
+             <Label Text="AMIGOS" 
                 TextColor="Black" 
-                HorizontalOptions="Center" />
+                Margin="30" 
+                HorizontalOptions="Center" 
+                FontSize="30"
+                FontFamily="monospace"
+                FontAttributes="Bold" />
            </StackLayout>
           </ScrollView>
                 
