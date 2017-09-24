@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage 
-	xmlns="http://xamarin.com/schemas/2014/forms" 
-	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+<ContentPage
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	xmlns:local="clr-namespace:StyleUs"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
 	x:Class="StyleUs.View.LoginPage"
-    BackgroundImage="loginPage_Image_opt.jpg" >
-    
+    BackgroundImage="login">
+
     <ContentPage.Content >
-        
+
         <ScrollView Orientation="Vertical"  Padding="0,0,0,20">
             <StackLayout>
             <StackLayout Orientation="Horizontal" Margin="0,20,0,0" HorizontalOptions="Center">
@@ -37,12 +37,13 @@
                     </Label>
             </StackLayout>
             <StackLayout Padding="40,50">
-                <Button Command="{Binding login}"  Text="Iniciar"/>
+                <Button Command="{Binding login}"  Text="Iniciar" BackgroundColor="Black"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+<<<<<<< HEAD
                     <Label Text="¿No posee una cuenta?" TextColor="Black">
 
-                        
+
                     </Label>
                 <Label TextColor="Gray" Text="Registrarme" >
 
@@ -51,16 +52,25 @@
                         </Label.Effects>
 
                         <Label.GestureRecognizers>
+||||||| merged common ancestors
+              <Label Text="¿No posee una cuenta?" TextColor="Black"/>
+                <Label TextColor="Gray" Text="Registrarme" >
+                    <Label.GestureRecognizers>
+=======
+              <Label Text="¿No posee una cuenta?" TextColor="Black"/>
+                <Label TextColor="Gray" Text="Registrarme" BackgroundColor="Silver">
+                    <Label.GestureRecognizers>
+>>>>>>> 988c3b50c8bd25505d75fbdf19eb7bcdcc6ab850
                         <TapGestureRecognizer
                             Command="{Binding register}"
                             NumberOfTapsRequired="1" />
                      </Label.GestureRecognizers>
-                       
+
                     </Label>
             </StackLayout>
             </StackLayout>
         </ScrollView>
-       
+
     </ContentPage.Content>
-    
+
 </ContentPage>

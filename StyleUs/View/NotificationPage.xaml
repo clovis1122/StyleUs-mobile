@@ -4,59 +4,30 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 	xmlns:local="clr-namespace:StyleUs" 
 	x:Class="StyleUs.View.NotificationPage"
+    ControlTemplate="{StaticResource MenuPageTemplate}"
     xmlns:views="clr-namespace:StyleUs.View.Component">
     <ContentPage.Content>
-       <RelativeLayout >
-         <ScrollView VerticalOptions="FillAndExpand"
-                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
-                             Property=Width,
-                             Factor=1,
-                             Constant=0}"
-                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
-                             Property=Height,
-                             Factor=1,
-                             Constant=0}">
-           <StackLayout HorizontalOptions="FillAndExpand">
-             <Label 
-                Text="NOTIFICACIONES" 
-                TextColor="Black" 
-                Margin="30" 
-                HorizontalOptions="Center" 
-                FontSize="30"
-                 FontFamily="monospace"
-                 FontAttributes="Bold"
-                 
-               />
-             <ListView ItemsSource="{Binding notificationList}">
-               <ListView.ItemTemplate>
-                 <DataTemplate>
-                   <ImageCell 
-                       Text="{Binding title}"
-                       TextColor="Black"
-                       Detail="{Binding detail}"
-                       DetailColor="Black"
-                       ImageSource="{Binding image}"/>
-                 </DataTemplate>
-               </ListView.ItemTemplate>
-             </ListView>
-           </StackLayout>
-          </ScrollView>
-                
-            <!-- Uses relative layout to position the elements right
-            at the left side of the screen. -->
-
-            
-          <views:FloatingMenu
-                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
-                         Property=Width,
-                         Factor=.9,
-                         Constant=0}"
-                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
-                         Property=Height,
-                         Factor=.4,
-                         Constant=0}"
-                BindingContext="{Binding MenuViewModel}" 
-           />
-           </RelativeLayout>
+      <StackLayout HorizontalOptions="FillAndExpand"> 
+       <Label 
+            Text="NOTIFICACIONES" 
+            TextColor="Black" 
+            Margin="30" FontSize="30"
+            HorizontalOptions="Center" 
+            FontFamily="monospace"
+            FontAttributes="Bold" 
+         />
+         <ListView ItemsSource="{Binding notificationList}">
+           <ListView.ItemTemplate>
+             <DataTemplate>
+               <ImageCell
+                   Text="{Binding title}"
+                   TextColor="Black"
+                   Detail="{Binding detail}"
+                   DetailColor="Black"
+                   ImageSource="{Binding image}"/>
+             </DataTemplate>
+           </ListView.ItemTemplate>
+         </ListView>
+        </StackLayout>
       </ContentPage.Content>
 </ContentPage>
