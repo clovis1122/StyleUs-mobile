@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 
-namespace StyleUs.View
+namespace StyleUs.View.Friend
 {
-    public partial class FriendPage : ContentPage
+    public partial class FriendTab : ContentPage
     {
-        public FriendPage()
+        public FriendTab()
         {
             InitializeComponent();
         }

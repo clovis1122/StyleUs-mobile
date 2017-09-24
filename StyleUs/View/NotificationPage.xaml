@@ -15,11 +15,11 @@
             HorizontalOptions="Center" 
             FontFamily="monospace"
             FontAttributes="Bold" 
-         />    
+         />
          <ListView ItemsSource="{Binding notificationList}">
            <ListView.ItemTemplate>
              <DataTemplate>
-               <ImageCell 
+               <ImageCell
                    Text="{Binding title}"
                    TextColor="Black"
                    Detail="{Binding detail}"
