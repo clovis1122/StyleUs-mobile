@@ -6,6 +6,8 @@ using Foundation;
 using Microsoft.Practices.Unity;
 using Prism.Unity;
 using UIKit;
+using FFImageLoading.Forms.Touch;
+
 
 // Quirk
 
@@ -16,7 +18,8 @@ namespace StyleUs.iOS
 	{
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
-			global::Xamarin.Forms.Forms.Init();
+            global::Xamarin.Forms.Forms.Init();
+            CachedImageRenderer.Init();
 
 			LoadApplication(new App(new iOSInitializer()));
 

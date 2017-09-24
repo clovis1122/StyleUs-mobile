@@ -15,6 +15,7 @@ namespace StyleUs
 		public App()
 		{
     		InitializeComponent();
+
 		}
 
         public App(IPlatformInitializer initializer = null) : base(initializer) {
