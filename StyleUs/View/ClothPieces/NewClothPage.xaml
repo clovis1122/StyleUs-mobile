@@ -5,11 +5,45 @@
     x:Class="StyleUs.View.ClothPieces.NewClothPage"
         xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
         xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-        Title="Recientes"
+        xmlns:views="clr-namespace:StyleUs.View.Component"
         Icon="icon1">
 	<ContentPage.Content>
-            <StackLayout>
-             <!--<flv:FlowListView SeparatorVisibility="None" HasUnevenRows="true"
+
+               <RelativeLayout>
+         <ScrollView VerticalOptions="FillAndExpand"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                             Property=Width,
+                             Factor=1,
+                             Constant=0}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                             Property=Height,
+                             Factor=1,
+                             Constant=0}">
+           <StackLayout HorizontalOptions="FillAndExpand">
+                    
+                </StackLayout>
+          </ScrollView>
+                
+            <!-- Uses relative layout to position the elements right
+            at the left side of the screen. -->
+          <views:FloatingMenu
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                         Property=Width,
+                         Factor=.9,
+                         Constant=0}"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                         Property=Height,
+                         Factor=.4,
+                         Constant=0}"
+                BindingContext="{Binding MenuViewModel}"
+                
+           />
+              
+           </RelativeLayout>
+
+        
+           <!-- <StackLayout>
+             <flv:FlowListView SeparatorVisibility="None" HasUnevenRows="true"
                 FlowColumnMinWidth="110">
 
                 <flv:FlowListView.FlowColumnTemplate>
@@ -39,8 +73,8 @@
                     </DataTemplate> 
                 </flv:FlowListView.FlowColumnTemplate>
             
-            </flv:FlowListView>-->
+            </flv:FlowListView>
             
-            </StackLayout>
+            </StackLayout>-->
 	</ContentPage.Content>
 </ContentPage>

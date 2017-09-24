@@ -33,11 +33,11 @@
                     </Label>
             </StackLayout>
             <StackLayout Padding="40,50">
-                <Button Command="{Binding login}"  Text="Iniciar"/>
+                <Button Command="{Binding login}"  Text="Iniciar" BackgroundColor="Black"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
               <Label Text="¿No posee una cuenta?" TextColor="Black"/>
-                <Label TextColor="Gray" Text="Registrarme" >
+                <Label TextColor="Gray" Text="Registrarme" BackgroundColor="Silver">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer
                             Command="{Binding register}"
