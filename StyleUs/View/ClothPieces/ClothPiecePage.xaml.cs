@@ -10,7 +10,13 @@ namespace StyleUs.View
     {
         public ClothPiecePage()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            } catch(Exception e) {
+                e.GetType();
+            }
+
         }
     }
 }

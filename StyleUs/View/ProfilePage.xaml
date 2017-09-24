@@ -4,22 +4,13 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 	xmlns:local="clr-namespace:StyleUs" 
     x:Class="StyleUs.View.ProfilePage"
+    ControlTemplate="{StaticResource MenuPageTemplate}"
     xmlns:views="clr-namespace:StyleUs.View.Component"
     NavigationPage.HasNavigationBar="True"
     Title="hola" Icon="icon.png">
 
     <ContentPage.Content>
-       <RelativeLayout >
-         <ScrollView VerticalOptions="FillAndExpand"
-                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
-                             Property=Width,
-                             Factor=1,
-                             Constant=0}"
-                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
-                             Property=Height,
-                             Factor=1,
-                             Constant=0}">
-           <StackLayout HorizontalOptions="FillAndExpand">
+       <StackLayout HorizontalOptions="FillAndExpand">
            <Label Text="PERFIL" 
                 TextColor="Black" 
                 Margin="30" 
@@ -28,21 +19,5 @@
                 FontFamily="monospace"
                 FontAttributes="Bold" />
            </StackLayout>
-          </ScrollView>
-                
-            <!-- Uses relative layout to position the elements right
-            at the left side of the screen. -->
-          <views:FloatingMenu
-                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
-                         Property=Width,
-                         Factor=.9,
-                         Constant=0}"
-                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
-                         Property=Height,
-                         Factor=.4,
-                         Constant=0}"
-                BindingContext="{Binding MenuViewModel}" 
-           />
-           </RelativeLayout>
       </ContentPage.Content>
 </ContentPage>
