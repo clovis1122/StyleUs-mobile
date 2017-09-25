@@ -31,9 +31,8 @@
                         </Label.GestureRecognizers>
 
                         <Label.Effects>
-                            <local:UnderlineEffect></local:UnderlineEffect>
+                            <local:UnderlineEffect />
                         </Label.Effects>
-
                     </Label>
             </StackLayout>
             <StackLayout Padding="40,50">

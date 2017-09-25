@@ -178,6 +178,7 @@
     <Folder Include="Assets.xcassets\image_error.imageset\" />
     <Folder Include="Assets.xcassets\image_loading.imageset\" />
     <Folder Include="Assets.xcassets\login.imageset\" />
+    <Folder Include="Effects\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -191,7 +192,7 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="UnderlineEffect.cs" />
+    <Compile Include="Effects\UnderlineEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\icon1.png" />

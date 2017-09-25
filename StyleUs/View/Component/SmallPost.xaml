@@ -1,43 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentView 
     xmlns="http://xamarin.com/schemas/2014/forms" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:local="clr-namespace:StyleUs"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="StyleUs.View.Component.SmallPost">
-	<ContentView.Content>
+    <ContentView.Content>
         <StackLayout>
-            <BoxView HeightRequest="1" Color="Black"></BoxView>
-            <StackLayout
-                Padding="20,0,0,0"
-            Orientation="Horizontal">
+            <BoxView HeightRequest="1" Color="Black">
+            </BoxView>
+            <StackLayout Padding="20,0,0,0" Orientation="Horizontal">
                 <Label VerticalOptions="Center" Font="33" Text="O" />
-                <Label VerticalOptions="Center" Text="Juan Perez"></Label>
+                <Label VerticalOptions="Center" Text="Juan Perez">
+                </Label>
             </StackLayout>
-            <BoxView HeightRequest="1" Color="Black"></BoxView>
+            <BoxView HeightRequest="1" Color="Black">
+            </BoxView>
             <StackLayout>
-
             </StackLayout>
             <StackLayout Margin="20">
-                
-                <BoxView HeightRequest="180" Color="Black"></BoxView>
-                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="20,0">
+                <BoxView HeightRequest="180" Color="Black">
+                </BoxView>
+                <StackLayout 
+                    Orientation="Horizontal" 
+                    HorizontalOptions="FillAndExpand" 
+                    Margin="20,0">
                     <Button 
-                        WidthRequest="100"
-                        BackgroundColor="Aqua"
-                        TextColor="Black"
-                    Text="StyleUs"
-                    /> 
-                    
-                    <Button 
-                        WidthRequest="100"
-                        BackgroundColor="Aqua"
-                        TextColor="Black"
-                    HorizontalOptions="EndAndExpand" 
-                    Text="Comentar"
-                       Command="{Binding ViewComment}" />
+                        WidthRequest="100" 
+                        BackgroundColor="Aqua" 
+                        TextColor="Black" 
+                        Text="StyleUs" />
+                        <Button 
+                            WidthRequest="100" 
+                            BackgroundColor="Aqua" 
+                            TextColor="Black" 
+                            HorizontalOptions="EndAndExpand" 
+                            Text="Comentar" 
+                            Command="{Binding ViewComment}" />
                 </StackLayout>
                 <Label Font="14" Text="24 StyleUs" />
-                <Label Font="14" TextColor="Blue" Text="Ver los 5 comentarios." />
+                <Label Font="14" TextColor="Blue" Text="Ver los 5 comentarios.">
+                    <Label.Effects>
+                        <local:UnderlineEffect />
+                    </Label.Effects>
+                </Label>
             </StackLayout>
-             </StackLayout>
-	</ContentView.Content>
+        </StackLayout>
+    </ContentView.Content>
 </ContentView>
