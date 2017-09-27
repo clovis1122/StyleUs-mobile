@@ -8,8 +8,8 @@ using StyleUs.iOS;
 using StyleUs;
 
 [assembly: ResolutionGroupName(StyleUs.UnderlineEffect.EffectNamespace)]
-[assembly: ExportEffect(typeof(UnderlineEffect), nameof(UnderlineEffect))]
-namespace UnderlineLabel.iOS
+[assembly: ExportEffect(typeof(StyleUs.iOS.UnderlineEffect), uniqueName: nameof(StyleUs.iOS.UnderlineEffect))]
+namespace StyleUs.iOS
 {
     public class UnderlineEffect : PlatformEffect
     {

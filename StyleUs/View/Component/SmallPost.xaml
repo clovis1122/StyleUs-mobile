@@ -33,10 +33,19 @@
                         TextColor="Black"
                     HorizontalOptions="EndAndExpand" 
                     Text="Comentar"
-                       Command="{Binding ViewComment}" />
+                       Command="{Binding AddCommentView}" />
                 </StackLayout>
                 <Label Font="14" Text="24 StyleUs" />
-                <Label Font="14" TextColor="Blue" Text="Ver los 5 comentarios." />
+                <Label Font="14" TextColor="Blue" Text="Ver los 5 comentarios." >
+
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer 
+                            Command="{Binding SeeCommentView}"
+                            NumberOfTapsRequired="1"
+                            ></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
+                      
             </StackLayout>
              </StackLayout>
 	</ContentView.Content>

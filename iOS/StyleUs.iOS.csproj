@@ -77,6 +77,18 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FFImageLoading, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.2.16\lib\Xamarin.iOS10\FFImageLoading.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.2.16\lib\Xamarin.iOS10\FFImageLoading.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms.Touch, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.2.16\lib\Xamarin.iOS10\FFImageLoading.Forms.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.2.16\lib\Xamarin.iOS10\FFImageLoading.Platform.dll</HintPath>
+    </Reference>
     <Reference Include="Rg.Plugins.Popup, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Rg.Plugins.Popup.1.0.4\lib\Xamarin.IOS\Rg.Plugins.Popup.dll</HintPath>
     </Reference>
@@ -89,6 +101,9 @@
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
+    <Reference Include="WebP.Touch, Version=1.0.6443.32796, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebP.Touch.1.0.4\lib\Xamarin.iOS10\WebP.Touch.dll</HintPath>
+    </Reference>
     <Reference Include="Xamarin.iOS" />
     <Reference Include="Xamarin.Forms.Core">
       <HintPath>..\packages\Xamarin.Forms.2.3.4.270\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
@@ -132,21 +147,6 @@
     <Reference Include="DLToolkit.Forms.Controls.FlowListView">
       <HintPath>..\packages\DLToolkit.Forms.Controls.FlowListView.2.0.6\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+netstandard1.0\DLToolkit.Forms.Controls.FlowListView.dll</HintPath>
     </Reference>
-    <Reference Include="WebP.Touch">
-      <HintPath>..\packages\WebP.Touch.1.0.3\lib\Xamarin.iOS10\WebP.Touch.dll</HintPath>
-    </Reference>
-    <Reference Include="FFImageLoading">
-      <HintPath>..\packages\Xamarin.FFImageLoading.2.2.15\lib\Xamarin.iOS10\FFImageLoading.dll</HintPath>
-    </Reference>
-    <Reference Include="FFImageLoading.Platform">
-      <HintPath>..\packages\Xamarin.FFImageLoading.2.2.15\lib\Xamarin.iOS10\FFImageLoading.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="FFImageLoading.Forms">
-      <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.2.15\lib\Xamarin.iOS10\FFImageLoading.Forms.dll</HintPath>
-    </Reference>
-    <Reference Include="FFImageLoading.Forms.Touch">
-      <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.2.15\lib\Xamarin.iOS10\FFImageLoading.Forms.Touch.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StyleUs\StyleUs.csproj">
@@ -161,23 +161,30 @@
     <ImageAsset Include="Assets.xcassets\Contents.json">
       <InProject>false</InProject>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\image_error.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\image_error.imageset\image_error.png" />
-    <ImageAsset Include="Assets.xcassets\image_loading.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\image_loading.imageset\image_loading.png" />
-    <ImageAsset Include="Assets.xcassets\login.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\login.imageset\login.png" />
+    <ImageAsset Include="Assets.xcassets\image_error.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\image_error.imageset\image_error.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\image_loading.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\image_loading.imageset\image_loading.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\login.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\login.imageset\login.png">
+      <InProject>false</InProject>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <Folder Include="Assets.xcassets\icon1.appiconset\" />
+    <Folder Include="Assets.xcassets\icon1.png.imageset\" />
     <Folder Include="Assets.xcassets\loginPage_Image.jpg.imageset\" />
     <Folder Include="Assets.xcassets\loginPage_Image_opt.jpg.imageset\" />
-    <Folder Include="Assets.xcassets\icon1.png.imageset\" />
-    <Folder Include="Assets.xcassets\icon1.appiconset\" />
-    <Folder Include="Assets.xcassets\login.imageset\" />
-    <Folder Include="Assets.xcassets\image_error.imageset\" />
-    <Folder Include="Assets.xcassets\image_loading.imageset\" />
-    <Folder Include="Assets.xcassets\login.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
