@@ -69,7 +69,11 @@
     <Compile Include="StyleUsPage.xaml.cs">
       <DependentUpon>StyleUsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\AnswersPageViewModel.cs" />
     <Compile Include="ViewModel\ViewCommentsViewModel.cs" />
+    <Compile Include="View\AnswersPage.xaml.cs">
+      <DependentUpon>AnswersPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ViewComments.xaml.cs">
       <DependentUpon>ViewComments.xaml</DependentUpon>
     </Compile>
@@ -200,6 +204,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="View\ViewComments.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\AnswersPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

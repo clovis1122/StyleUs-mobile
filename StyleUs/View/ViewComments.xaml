@@ -17,7 +17,7 @@
             FontAttributes="Bold" 
          />
 
-            <ListView  x:Name="listView" ItemsSource="{Binding CommentList}" HasUnevenRows="True" >
+            <ListView  x:Name="listView" ItemsSource="{Binding CommentList}"  HasUnevenRows="True" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -36,11 +36,14 @@
                                     <ColumnDefinition Width="auto"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
 
-                                <Image Grid.Row="0" Grid.Column="0" Source="{Binding ProfilePhoto}" Grid.RowSpan="2"   BackgroundColor="Green" ></Image>
-                                <Label x:Name="Nombre" Grid.Row="0" Grid.Column="1" Grid.RowSpan="1"  Text="{Binding Name }" FontSize="Large" BackgroundColor="Blue"></Label>
+                                <Image Grid.Row="0" Grid.Column="0" Source="{Binding ProfilePhoto}" Grid.RowSpan="2"    ></Image>
+                                <Label x:Name="Nombre" Grid.Row="0" Grid.Column="1" Grid.RowSpan="1"  Text="{Binding Name }" FontSize="Large" ></Label>
                                 <Label x:Name="Publicacion" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding DetailComment }"></Label>
-                                <Label x:Name="Tiempo" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Text="5 minutos" BackgroundColor="Pink"></Label>
-                                <Label x:Name="Respuestas" HorizontalTextAlignment="End" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Text=" 4 Respuestas" BackgroundColor="Aqua"></Label>
+                                <Label x:Name="Tiempo" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Text="5 minutos" ></Label>
+                                <Label x:Name="Respuestas" HorizontalTextAlignment="End" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Text=" 4 Respuestas">
+
+                             
+                                </Label>
                               
                             </Grid>
                     </ViewCell>

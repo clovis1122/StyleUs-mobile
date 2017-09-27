@@ -43,6 +43,7 @@ namespace StyleUs
             
             Container.RegisterTypeForNavigation<AddCommentPage,AddCommentPageViewModel>();
             Container.RegisterTypeForNavigation<ViewComments,ViewCommentsViewModel>();
+            Container.RegisterTypeForNavigation<AnswersPage,AnswersPageViewModel>();
         }
 
 		protected override void OnStart()

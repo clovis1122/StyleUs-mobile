@@ -6,6 +6,7 @@ using System.Linq;
 using Xamarin.Forms;
 using Prism.Navigation;
 using System.Collections.ObjectModel;
+using System.Windows.Input;
 
 namespace StyleUs.ViewModel
 
@@ -38,7 +39,8 @@ namespace StyleUs.ViewModel
 
     public class ViewCommentsViewModel : BindableBase
 	{
-
+        public ICommand SeeAnswers { get; set; }
+        public INavigationService navigation;
         public ObservableCollection<Comments> _commentList = new ObservableCollection<Comments>();
         public ObservableCollection<Comments> CommentList
         {
@@ -55,13 +57,19 @@ namespace StyleUs.ViewModel
         }
 
 
+
         public ViewCommentsViewModel( INavigationService navigationService )
         {
             CommentList.Add(new Comments("Chamuel Castillo", "Que cool esta", 5, 15, "https://www.anipedia.net/imagenes/como-nacen-los-hamsters.jpg"));
             CommentList.Add(new Comments("Adeury Camilo", "Vamos a echarnos", 1,10, "https://www.anipedia.net/imagenes/hamster-sirio-1.jpg"));
             CommentList.Add(new Comments("Andrea Polanco", "Soporto", 2, 3, "https://www.anipedia.net/imagenes/cuidados-hamster.jpg"));
+            SeeAnswers = new Command(GoToSeeAnswers);
 
+        }
 
+        public void GoToSeeAnswers()
+        {
+            navigation.NavigateAsync("AnswersPage");
         }
     }
 }
