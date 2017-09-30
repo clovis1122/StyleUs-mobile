@@ -1,7 +1,4 @@
-﻿using System;
-
-using System.ComponentModel;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 
 using Xamarin.Forms;
 
@@ -13,7 +10,7 @@ using System.Collections.ObjectModel;
 
 namespace StyleUs.ViewModel
 {
-    public class FriendProfileViewModel : INotifyPropertyChanged
+	public class SingleClothPieceViewModel
 	{
 		public class Image
 		{
@@ -28,7 +25,6 @@ namespace StyleUs.ViewModel
 			}
 
 		}
-		public event PropertyChangedEventHandler PropertyChanged;
 
 		public FloatingMenuViewModel MenuViewModel { get; set; }
 
@@ -45,15 +41,13 @@ namespace StyleUs.ViewModel
 			}
 		}
 
-		public FriendProfileViewModel(INavigationService navigationService)
+		public SingleClothPieceViewModel(INavigationService navigationService)
 		{
 			MenuViewModel = new FloatingMenuViewModel(navigationService);
 
 			// Fill the imageList with preset images.
 			ReloadData();
 		}
-
-		static Random rnd = new Random();
 
 		public void ReloadData()
 		{

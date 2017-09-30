@@ -33,6 +33,7 @@ namespace StyleUs
             
             // Container.RegisterTypeForNavigation<CommentsPage>();
             Container.RegisterTypeForNavigation<View.Friend.FriendProfile, FriendProfileViewModel>();
+            Container.RegisterTypeForNavigation<View.ClothPieces.SingleClothPiece, SingleClothPieceViewModel>();
 
             Container.RegisterTypeForNavigation<HomePage, HomePageViewModel>();
 			Container.RegisterTypeForNavigation<FriendPage, FriendViewModel>();

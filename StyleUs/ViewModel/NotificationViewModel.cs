@@ -17,12 +17,14 @@ namespace StyleUs.ViewModel
         
         public string title { get; set; }
         public string detail { get; set; }
+		public string type { get; set; }
         public ImageSource image { get; set; }
 
-        public Notification(string title, string detail, string image) {
+        public Notification(string title, string detail, string image, string type) {
             this.title = title;
             this.detail = detail;
             this.image = ImageSource.FromUri(new Uri(image));
+            this.type = type;
         }
 
     }
@@ -47,19 +49,31 @@ namespace StyleUs.ViewModel
         public NotificationViewModel(INavigationService navigationService)
         {
             MenuViewModel = new FloatingMenuViewModel(navigationService);
-			notificationList.Add(new Notification("Ramon Manuel", "Ramon ha cargado una nueva prenda.","https://www.anipedia.net/imagenes/como-nacen-los-hamsters.jpg"));
-			notificationList.Add(new Notification("Manuel Matos", "Ramon ha cargado un nuevo conjunto.", "https://www.anipedia.net/imagenes/hamster-sirio-1.jpg"));
-			notificationList.Add(new Notification("Andrea Martines","Andrea te ha enviado una solicitud de seguimiento.", "https://www.anipedia.net/imagenes/cuidados-hamster.jpg"));
-            ItemTappedCommand = new Command(onItemTapped);
+			notificationList.Add(new Notification("Ramon Manuel", "Ramon ha cargado una nueva prenda.","https://www.anipedia.net/imagenes/como-nacen-los-hamsters.jpg", "Piece"));
+			notificationList.Add(new Notification("Manuel Matos", "Ramon ha cargado un nuevo conjunto.", "https://www.anipedia.net/imagenes/hamster-sirio-1.jpg", "Combination"));
+			notificationList.Add(new Notification("Andrea Martines","Andrea te ha enviado una solicitud de seguimiento.", "https://www.anipedia.net/imagenes/cuidados-hamster.jpg", "Profile"));
+            ItemTappedCommand = new Command(
+                item => onItemTapped((Notification)item)
+            );
             navigation = navigationService;
         }
 
 		/**
           *  [EVENT] Fired once the user has tapped the register button.
           */
-		public void onItemTapped()
+        public void onItemTapped(Notification e)
 		{
-			navigation.NavigateAsync("FriendProfile");
+            switch(e.type) {
+                case "Piece":
+                case "Combination":
+                    navigation.NavigateAsync("SingleClothPiece");
+                    break;
+                case "Profile":
+                    navigation.NavigateAsync("FriendProfile");
+                    break;
+                default:
+                    break;
+            }
 		}
     }
 }

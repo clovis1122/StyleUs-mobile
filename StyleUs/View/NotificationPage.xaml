@@ -35,7 +35,8 @@
             <ListView.Behaviors>
                 <b:EventToCommandBehavior 
                     EventName="ItemTapped" 
-                    Command="{Binding ItemTappedCommand}" />
+                    Command="{Binding ItemTappedCommand}"
+                    EventArgsParameterPath="Item" />
             </ListView.Behaviors>
          </ListView>
         </StackLayout>

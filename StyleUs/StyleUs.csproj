@@ -64,6 +64,9 @@
     <EmbeddedResource Include="View\Friend\FriendProfile.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ClothPieces\SingleClothPiece.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -146,6 +149,10 @@
       <DependentUpon>FriendProfile.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\FriendProfileViewModel.cs" />
+    <Compile Include="View\ClothPieces\SingleClothPiece.xaml.cs">
+      <DependentUpon>SingleClothPiece.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\SingleClothPieceViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FFImageLoading, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
