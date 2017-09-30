@@ -61,22 +61,31 @@
     <EmbeddedResource Include="View\Friend\FriendTab.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Friend\FriendProfile.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ClothPieces\SingleClothPiece.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CommentsPage.xaml.cs">
-      <DependentUpon>CommentsPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="StyleUsPage.xaml.cs">
       <DependentUpon>StyleUsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\AnswersPageViewModel.cs" />
+    <Compile Include="ViewModel\ViewCommentsViewModel.cs" />
+    <Compile Include="View\AnswersPage.xaml.cs">
+      <DependentUpon>AnswersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewComments.xaml.cs">
+      <DependentUpon>ViewComments.xaml</DependentUpon>
+    </Compile>
     <None Include="packages.config" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnderlineEffect.cs" />
     <Compile Include="ViewModel\AddCommentPageViewModel.cs" />
-    <Compile Include="ViewModel\CommentsPageViewModel.cs" />
     <Compile Include="ViewModel\Component\SmallPostViewModel.cs" />
     <Compile Include="ViewModel\LoginPageViewModel.cs" />
     <Compile Include="ViewModel\RegisterStepOnePageViewModel.cs" />
@@ -112,7 +121,6 @@
     <Compile Include="View\Component\FloatingMenu.xaml.cs">
       <DependentUpon>FloatingMenu.xaml</DependentUpon>
     </Compile>
-    <None Include="FodyWeavers.xml" />
     <Compile Include="ViewModel\HomePageViewModel.cs" />
     <Compile Include="ViewModel\ClothCombinationViewModel.cs" />
     <Compile Include="ViewModel\ClothPieceViewModel.cs" />
@@ -135,6 +143,17 @@
     <Compile Include="View\Friend\FriendTab.xaml.cs">
       <DependentUpon>FriendTab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Friend\FriendProfile.xaml.cs">
+      <DependentUpon>FriendProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\FriendProfileViewModel.cs" />
+    <Compile Include="View\ClothPieces\SingleClothPiece.xaml.cs">
+      <DependentUpon>SingleClothPiece.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\SingleClothPieceViewModel.cs" />
+    <Compile Include="Effect\UnderlineEffect.cs" />
+    <Compile Include="Effect\ShadowEffect.cs" />
+    <None Include="FodyWeavers.xml" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">
@@ -148,15 +167,6 @@
     </Reference>
     <Reference Include="Rg.Plugins.Popup.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Rg.Plugins.Popup.1.0.4\lib\portable-win+net45+wp8+win8+wpa81\Rg.Plugins.Popup.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Core">
-      <HintPath>..\packages\Xamarin.Forms.2.3.4.270\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Platform">
-      <HintPath>..\packages\Xamarin.Forms.2.3.4.270\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Xaml">
-      <HintPath>..\packages\Xamarin.Forms.2.3.4.270\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.Unity">
       <HintPath>..\packages\Unity.4.0.1\lib\portable-net45+wp80+win8+wpa81+MonoAndroid10+MonoTouch10\Microsoft.Practices.Unity.dll</HintPath>
@@ -176,20 +186,32 @@
     <Reference Include="DLToolkit.Forms.Controls.FlowListView">
       <HintPath>..\packages\DLToolkit.Forms.Controls.FlowListView.2.0.6\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+netstandard1.0\DLToolkit.Forms.Controls.FlowListView.dll</HintPath>
     </Reference>
-    <Reference Include="FFImageLoading">
-      <HintPath>..\packages\Xamarin.FFImageLoading.2.2.15\lib\portable-net45+win8+wpa81+wp8\FFImageLoading.dll</HintPath>
-    </Reference>
-    <Reference Include="FFImageLoading.Platform">
-      <HintPath>..\packages\Xamarin.FFImageLoading.2.2.15\lib\portable-net45+win8+wpa81+wp8\FFImageLoading.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="FFImageLoading.Forms">
-      <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.2.15\lib\portable-net45+win8+wpa81+wp8+netstandard1.0\FFImageLoading.Forms.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
     <Reference Include="PropertyChanged">
       <HintPath>..\packages\PropertyChanged.Fody.2.1.2\lib\netstandard1.0\PropertyChanged.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.2.18\lib\portable-net45+win8+wpa81+wp8\FFImageLoading.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Platform">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.2.18\lib\portable-net45+win8+wpa81+wp8\FFImageLoading.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Transformations">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Transformations.2.2.18\lib\portable-net45+win8+wpa81+wp8+netstandard1.0\FFImageLoading.Transformations.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.2.3.4.270\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.2.3.4.270\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.2.3.4.270\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.2.16\lib\portable-net45+win8+wpa81+wp8+netstandard1.0\FFImageLoading.Forms.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -199,16 +221,21 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CommentsPage.xaml">
+    <EmbeddedResource Include="View\ViewComments.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="View\ClothCombination\" />
-    <Folder Include="View\Friend\" />
+    <EmbeddedResource Include="View\AnswersPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Effect\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
-  <Import Project="..\packages\Xamarin.Forms.2.3.4.270\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.270\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
   <Import Project="..\packages\Fody.2.1.2\build\portable-net+sl+win+wpa+wp\Fody.targets" Condition="Exists('..\packages\Fody.2.1.2\build\portable-net+sl+win+wpa+wp\Fody.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.2.3.4.270\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.270\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
 </Project>

@@ -13,7 +13,7 @@ using System.Collections.ObjectModel;
 
 namespace StyleUs.ViewModel
 {
-    public class ProfileViewModel : INotifyPropertyChanged
+    public class SingleClothPieceViewModel : INotifyPropertyChanged
 	{
 		public class Image
 		{
@@ -28,6 +28,7 @@ namespace StyleUs.ViewModel
 			}
 
 		}
+
 		public event PropertyChangedEventHandler PropertyChanged;
 
 		public FloatingMenuViewModel MenuViewModel { get; set; }
@@ -45,15 +46,13 @@ namespace StyleUs.ViewModel
 			}
 		}
 
-		public ProfileViewModel(INavigationService navigationService)
+		public SingleClothPieceViewModel(INavigationService navigationService)
 		{
 			MenuViewModel = new FloatingMenuViewModel(navigationService);
 
 			// Fill the imageList with preset images.
 			ReloadData();
 		}
-
-		static Random rnd = new Random();
 
 		public void ReloadData()
 		{

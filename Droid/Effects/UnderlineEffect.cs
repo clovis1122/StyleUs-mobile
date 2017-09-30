@@ -5,8 +5,9 @@ using StyleUs.Droid;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ResolutionGroupName(StyleUs.UnderlineEffect.EffectNamespace)]
+[assembly: ResolutionGroupName("StyleUs.Effect")]
 [assembly: ExportEffect(typeof(UnderlineEffect), nameof(UnderlineEffect))]
+
 namespace StyleUs.Droid
 {
     public class UnderlineEffect : PlatformEffect

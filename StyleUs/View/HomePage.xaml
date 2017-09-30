@@ -2,14 +2,19 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    x:Class="StyleUs.View.HomePage"
     ControlTemplate="{StaticResource MenuPageTemplate}"
+    x:Class="StyleUs.View.HomePage"
+    Title="Muro"
     xmlns:views="clr-namespace:StyleUs.View.Component">
     <ContentPage.Content>
        <StackLayout HorizontalOptions="FillAndExpand">
+            <Label />
             <views:SmallPost BindingContext="{Binding .}" />
+            <Label />
             <views:SmallPost BindingContext="{Binding .}" />
+            <Label />
             <views:SmallPost BindingContext="{Binding .}" />
+            <Label />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

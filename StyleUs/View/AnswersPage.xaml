@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<popup:PopupPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" 
+    xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms" 
+    prism:ViewModelLocator.AutowireViewModel="True" 
+    xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" 
+    x:Class="StyleUs.View.AnswersPage">
+    <StackLayout 
+        VerticalOptions="Center" 
+        HorizontalOptions="Center" 
+        Padding="0" 
+        Margin="0">
+        <Frame 
+            Margin="30" 
+            Padding="10" 
+            HorizontalOptions="CenterAndExpand" 
+            VerticalOptions="CenterAndExpand">
+            <StackLayout 
+                Orientation="Vertical" 
+                HorizontalOptions="FillAndExpand">
+                <Label 
+                    Text="RESPUESTAS" 
+                    TextColor="Black" 
+                    Margin="30" FontSize="30" 
+                    HorizontalOptions="Center" 
+                    FontFamily="monospace" 
+                    FontAttributes="Bold" />
+                <ListView>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ImageCell 
+                                Text="Manuel Manolo" 
+                                TextColor="Black" 
+                                Detail="Lo hicimos de lo mio" 
+                                DetailColor="Black" 
+                                ImageSource="icon.png" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.Behaviors>
+                        <b:EventToCommandBehavior 
+                            EventName="ItemTapped" 
+                            Command="{Binding ItemTappedCommand}" 
+                            CommandParameter="MyParameter" />
+                    </ListView.Behaviors>
+                </ListView>
+                <Entry Placeholder="Escriba su respuesta:" VerticalOptions="FillAndExpand">
+                </Entry>
+                <StackLayout 
+                    Orientation="Horizontal" 
+                    VerticalOptions="EndAndExpand" 
+                    HorizontalOptions="CenterAndExpand">
+                    <Button Text="Cancelar" />
+                    <Button Text="Comentar" />
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</popup:PopupPage>

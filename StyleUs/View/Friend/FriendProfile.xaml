@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage ControlTemplate="{StaticResource MenuPageTemplate}" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="StyleUs.View.Friend.FriendProfile" xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="BorderWidth" Value="1.8" />
+                <Setter Property="BorderColor" Value="Black" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <!-- MAIN GRID -->
+        <Grid RowSpacing="10" Padding="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="1.2*" />
+            </Grid.ColumnDefinitions>
+            <!-- TITLE -->
+            <Label Text="Fulano 2" HorizontalOptions="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" />
+            <!-- PROFILE PICTURE -->
+            <BoxView Color="Black" Grid.Row="1" Grid.RowSpan="1" Grid.Column="0" />
+            <!-- SIDE PROFILE BUTTONS-->
+            <StackLayout Grid.Row="1" Grid.Column="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Text="Seguidos" />
+                    <Button Grid.Column="1" Text="Seguidores" />
+                </Grid>
+                <Button Text="Siguiendo" />
+                <Button Text="Aceptar" />
+            </StackLayout>
+            <!-- PIECE, COMBINATION BUTTON-->
+            <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <BoxView Color="Black" HeightRequest="1" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" />
+                <Button Grid.Row="1" Grid.Column="0" Text="Piezas" />
+                <Button Grid.Row="1" Grid.Column="1" Text="Conjuntos" />
+            </Grid>
+            <StackLayout Grid.Row="3" Grid.ColumnSpan="2">
+                <BoxView Color="Black" HeightRequest="1" />
+                
+                <!-- IMAGES (Pieces or Combinations) -->
+                <flv:FlowListView x:Name="flowListView" SeparatorVisibility="None" FlowColumnMinWidth="100" FlowItemsSource="{Binding imageList}" HasUnevenRows="true">
+                    <flv:FlowListView.FlowColumnTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="300" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <ffimageloading:CachedImage Aspect="AspectFill" DownsampleUseDipUnits="false" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding imageUrl}" />
+                            </Grid>
+                        </DataTemplate>
+                    </flv:FlowListView.FlowColumnTemplate>
+                </flv:FlowListView>
+                
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

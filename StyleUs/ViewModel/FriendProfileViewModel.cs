@@ -13,7 +13,7 @@ using System.Collections.ObjectModel;
 
 namespace StyleUs.ViewModel
 {
-    public class ProfileViewModel : INotifyPropertyChanged
+    public class FriendProfileViewModel : INotifyPropertyChanged
 	{
 		public class Image
 		{
@@ -45,7 +45,7 @@ namespace StyleUs.ViewModel
 			}
 		}
 
-		public ProfileViewModel(INavigationService navigationService)
+		public FriendProfileViewModel(INavigationService navigationService)
 		{
 			MenuViewModel = new FloatingMenuViewModel(navigationService);
 

@@ -16,8 +16,5 @@ namespace StyleUs.View
 		{
 			InitializeComponent ();
 		}
-
-       
-      
 	}
 }

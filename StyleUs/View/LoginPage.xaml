@@ -2,18 +2,27 @@
 <ContentPage
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-	xmlns:local="clr-namespace:StyleUs"
+	xmlns:effect="clr-namespace:StyleUs.Effect"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
 	x:Class="StyleUs.View.LoginPage"
     BackgroundImage="login">
 
-    <ContentPage.Content >
+    <ContentPage.Content>
 
-        <ScrollView Orientation="Vertical"  Padding="0,0,0,20">
+        <ScrollView Orientation="Vertical" Padding="0,0,0,20">
             <StackLayout>
             <StackLayout Orientation="Horizontal" Margin="0,20,0,0" HorizontalOptions="Center">
-                <Label Text="Style " TextColor="Gray" FontSize="80" />
-                <Label Text="US" TextColor="Red" FontSize="80" />
+                <Label Text="Style " TextColor="Gray" FontSize="80">
+                        <Label.Effects>
+                            <effect:ShadowEffect Color="White" Radius="1" DistanceX="2" DistanceY="2" />
+                        </Label.Effects>
+
+                    </Label>
+                <Label Text="US" TextColor="Red" FontSize="80">
+                        <Label.Effects>
+                            <effect:ShadowEffect Color="White" Radius="1" DistanceX="2" DistanceY="2" />
+                        </Label.Effects>
+                </Label>
             </StackLayout>
             <StackLayout Orientation="Horizontal" Margin="0,30,0,0" HorizontalOptions="Center">
                 <Label Text="Bienvenido" FontSize="30" />
@@ -23,7 +32,7 @@
                 <Entry Text="{Binding password}" Placeholder="Contraseña" IsPassword="true" PlaceholderColor="Gray"  />
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                 <Label TextColor="Gray" Text="Olvidé mi contraseña">
+                 <Label TextColor="Black" Text="Olvidé mi contraseña">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer
                             Command="{Binding forgotPassword}"
@@ -31,9 +40,8 @@
                         </Label.GestureRecognizers>
 
                         <Label.Effects>
-                            <local:UnderlineEffect></local:UnderlineEffect>
+                            <effect:UnderlineEffect />
                         </Label.Effects>
-
                     </Label>
             </StackLayout>
             <StackLayout Padding="40,50">
@@ -44,10 +52,10 @@
 
 
                     </Label>
-                <Label TextColor="Gray" Text="Registrarme" >
+                <Label TextColor="Black" Text="Registrarme" >
 
                         <Label.Effects>
-                            <local:UnderlineEffect></local:UnderlineEffect>
+                            <effect:UnderlineEffect />
                         </Label.Effects>
 
                         <Label.GestureRecognizers>

@@ -5,11 +5,11 @@ using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 using StyleUs.iOS;
-using StyleUs;
 
-[assembly: ResolutionGroupName(StyleUs.UnderlineEffect.EffectNamespace)]
+[assembly: ResolutionGroupName("StyleUs.Effect")]
 [assembly: ExportEffect(typeof(UnderlineEffect), nameof(UnderlineEffect))]
-namespace UnderlineLabel.iOS
+
+namespace StyleUs.iOS
 {
     public class UnderlineEffect : PlatformEffect
     {
