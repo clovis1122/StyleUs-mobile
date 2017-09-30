@@ -15,19 +15,26 @@ namespace StyleUs.ViewModel
     public class HomePageViewModel
     {
         public FloatingMenuViewModel MenuViewModel { get; set; }
-        public ICommand ViewComment { get; set; }
+        public ICommand AddCommentView { get; set; }
+        public ICommand SeeCommentView { get; set; }
         public INavigationService navigation;
 
         public HomePageViewModel(INavigationService navigationService)
         {
             MenuViewModel = new FloatingMenuViewModel(navigationService);
             navigation = navigationService;
-            ViewComment = new Command(goToComment);
+            AddCommentView = new Command(GoToAddComment);
+            SeeCommentView = new Command(GoToSeeComment);
         }
 
-        public void goToComment()
+        public void GoToAddComment()
         {
             navigation.NavigateAsync("AddCommentPage");
+        }
+
+        public void GoToSeeComment()
+        {
+            navigation.NavigateAsync("ViewComments");
         }
         
     }

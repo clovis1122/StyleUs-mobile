@@ -5,7 +5,12 @@
 	xmlns:local="clr-namespace:StyleUs" 
 	x:Class="StyleUs.View.NotificationPage"
     ControlTemplate="{StaticResource MenuPageTemplate}"
+    xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms" 
     xmlns:views="clr-namespace:StyleUs.View.Component">
+    <ContentPage.ToolbarItems>
+      <ToolbarItem Text="notifications" />
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
       <StackLayout HorizontalOptions="FillAndExpand"> 
        <Label 
@@ -24,9 +29,14 @@
                    TextColor="Black"
                    Detail="{Binding detail}"
                    DetailColor="Black"
-                   ImageSource="{Binding image}"/>
+                   ImageSource="{Binding image}" />
              </DataTemplate>
            </ListView.ItemTemplate>
+            <ListView.Behaviors>
+                <b:EventToCommandBehavior 
+                    EventName="ItemTapped" 
+                    Command="{Binding ItemTappedCommand}" />
+            </ListView.Behaviors>
          </ListView>
         </StackLayout>
       </ContentPage.Content>

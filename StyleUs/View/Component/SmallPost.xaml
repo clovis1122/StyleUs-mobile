@@ -25,24 +25,34 @@
                     HorizontalOptions="FillAndExpand" 
                     Margin="20,0">
                     <Button 
-                        WidthRequest="100" 
-                        BackgroundColor="Aqua" 
-                        TextColor="Black" 
-                        Text="StyleUs" />
-                        <Button 
-                            WidthRequest="100" 
-                            BackgroundColor="Aqua" 
-                            TextColor="Black" 
-                            HorizontalOptions="EndAndExpand" 
-                            Text="Comentar" 
-                            Command="{Binding ViewComment}" />
+                        WidthRequest="100"
+                        BackgroundColor="Aqua"
+                        TextColor="Black"
+                    Text="StyleUs"
+                    /> 
+                    
+                    <Button 
+                        WidthRequest="100"
+                        BackgroundColor="Aqua"
+                        TextColor="Black"
+                    HorizontalOptions="EndAndExpand" 
+                    Text="Comentar"
+                       Command="{Binding AddCommentView}" />
                 </StackLayout>
                 <Label Font="14" Text="24 StyleUs" />
-                <Label Font="14" TextColor="Blue" Text="Ver los 5 comentarios.">
+                <Label Font="14" TextColor="Blue" Text="Ver los 5 comentarios." >
                     <Label.Effects>
                         <local:UnderlineEffect />
                     </Label.Effects>
+                    
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer 
+                            Command="{Binding SeeCommentView}"
+                            NumberOfTapsRequired="1"
+                            ></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
                 </Label>
+                     
             </StackLayout>
         </StackLayout>
     </ContentView.Content>

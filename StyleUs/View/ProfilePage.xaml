@@ -4,21 +4,23 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 	xmlns:local="clr-namespace:StyleUs" 
     x:Class="StyleUs.View.ProfilePage"
-    xmlns:views="clr-namespace:StyleUs.View.Component"
+    ControlTemplate="{StaticResource MenuPageTemplate}"
     xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-    ControlTemplate="{StaticResource MenuPageTemplate}"
+    xmlns:views="clr-namespace:StyleUs.View.Component"
+    NavigationPage.HasNavigationBar="True"
     Title="hola" Icon="icon.png">
 
     <ContentPage.Content>
-       <StackLayout Margin="30" HorizontalOptions="FillAndExpand">
-            <BoxView HeightRequest="250" Color="Black">
-            </BoxView>
-           <Label Text="Juan Perez Nuñez Macarajay" 
+       <StackLayout HorizontalOptions="FillAndExpand">
+           <Label Text="PERFIL" 
                 TextColor="Black" 
-                HorizontalOptions="Center"
+                Margin="30" 
+                HorizontalOptions="Center" 
                 FontSize="30"
+                FontFamily="monospace"
                 FontAttributes="Bold" />
+            
             <BoxView HeightRequest="1" Color="Black" />
             
             <StackLayout Margin="0,10,0,0">
@@ -38,11 +40,13 @@
                 TextColor="Black"
                 FontSize="25"
                 HorizontalOptions="Center"
-                Text="Ultimas Publicaciones">
+                Text="Últimas Publicaciones">
+                
                 <Label.Effects>
                     <local:UnderlineEffect />
                 </Label.Effects>
              </Label>
+            
              <flv:FlowListView x:Name="flowListView" SeparatorVisibility="None" HasUnevenRows="true"
                 FlowColumnMinWidth="130" FlowItemsSource="{Binding imageList}">
 
@@ -63,8 +67,7 @@
                     </DataTemplate> 
                 </flv:FlowListView.FlowColumnTemplate>
             </flv:FlowListView>
-
-
+            
            </StackLayout>
       </ContentPage.Content>
 </ContentPage>

@@ -40,6 +40,9 @@ namespace StyleUs.ViewModel
         }
 
         public FloatingMenuViewModel MenuViewModel { get; set; }
+        public ICommand ItemTappedCommand { get; set; }
+
+        public INavigationService navigation;
 
         public NotificationViewModel(INavigationService navigationService)
         {
@@ -47,7 +50,16 @@ namespace StyleUs.ViewModel
 			notificationList.Add(new Notification("Ramon Manuel", "Ramon ha cargado una nueva prenda.","https://www.anipedia.net/imagenes/como-nacen-los-hamsters.jpg"));
 			notificationList.Add(new Notification("Manuel Matos", "Ramon ha cargado un nuevo conjunto.", "https://www.anipedia.net/imagenes/hamster-sirio-1.jpg"));
 			notificationList.Add(new Notification("Andrea Martines","Andrea te ha enviado una solicitud de seguimiento.", "https://www.anipedia.net/imagenes/cuidados-hamster.jpg"));
-
+            ItemTappedCommand = new Command(onItemTapped);
+            navigation = navigationService;
         }
+
+		/**
+          *  [EVENT] Fired once the user has tapped the register button.
+          */
+		public void onItemTapped()
+		{
+			navigation.NavigateAsync("FriendProfile");
+		}
     }
 }
