@@ -18,7 +18,12 @@ namespace StyleUs.View
 
         public HomePage()
         {
-            InitializeComponent();
+            try {
+				InitializeComponent();
+            } catch(Exception e) {
+                var du = e.Message;
+            }
+           
         }
     }
 }

@@ -17,6 +17,7 @@ namespace StyleUs.View
         public LoginPage()
         {
             InitializeComponent();
+            BackgroundImage = "login";
         }
     }
 }

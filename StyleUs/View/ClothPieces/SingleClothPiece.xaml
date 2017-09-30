@@ -2,7 +2,7 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    xmlns:local="clr-namespace:StyleUs"
+    xmlns:effect="clr-namespace:StyleUs.Effect"
     ControlTemplate="{StaticResource MenuPageTemplate}"
     x:Class="StyleUs.View.ClothPieces.SingleClothPiece">
     <ContentPage.Resources>
@@ -70,29 +70,29 @@
                     <StackLayout Orientation="Horizontal">
                         <Label Text="#azulito">
                           <Label.Effects>
-                            <local:UnderlineEffect />
+                            <effect:UnderlineEffect />
                           </Label.Effects>
                         </Label>
                         <Label Text="#tuRealFrio">
                           <Label.Effects>
-                            <local:UnderlineEffect />
+                            <effect:UnderlineEffect />
                           </Label.Effects>
                         </Label>
                         <Label Text="#masLargo">
                           <Label.Effects>
-                            <local:UnderlineEffect />
+                            <effect:UnderlineEffect />
                           </Label.Effects>
                         </Label>
                         <Label Text="#Calientito">
                           <Label.Effects>
-                            <local:UnderlineEffect />
+                            <effect:UnderlineEffect />
                           </Label.Effects>
                         </Label>
                     </StackLayout>
                     
                     <Label FontAttributes="Bold" Margin="0,20,0,00" Text="Sin comentarios">
                       <Label.Effects>
-                        <local:UnderlineEffect />
+                        <effect:UnderlineEffect />
                       </Label.Effects>
                     </Label>
 

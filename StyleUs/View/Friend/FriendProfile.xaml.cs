@@ -9,7 +9,14 @@ namespace StyleUs.View.Friend
     {
         public FriendProfile()
         {
-            InitializeComponent();
+            try {
+                InitializeComponent();
+            } catch(Exception e) {
+                var du = e.Message;
+
+			}
+
+
         }
     }
 }

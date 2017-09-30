@@ -9,7 +9,15 @@ namespace StyleUs.View.ClothPieces
     {
         public SingleClothPiece()
         {
-            InitializeComponent();
+			try
+			{
+				InitializeComponent();
+			}
+			catch (Exception e)
+			{
+				var du = e.Message;
+
+			}
         }
     }
 }

@@ -71,8 +71,6 @@ namespace StyleUs.ViewModel
                 case "Profile":
                     navigation.NavigateAsync("FriendProfile");
                     break;
-                default:
-                    break;
             }
 		}
     }

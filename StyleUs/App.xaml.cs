@@ -29,9 +29,7 @@ namespace StyleUs
 		}
 
 		protected override void RegisterTypes()
-		{
-            
-            // Container.RegisterTypeForNavigation<CommentsPage>();
+        {
             Container.RegisterTypeForNavigation<View.Friend.FriendProfile, FriendProfileViewModel>();
             Container.RegisterTypeForNavigation<View.ClothPieces.SingleClothPiece, SingleClothPieceViewModel>();
 

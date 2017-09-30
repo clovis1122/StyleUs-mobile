@@ -1,4 +1,7 @@
-﻿using System.Windows.Input;
+﻿using System;
+
+using System.ComponentModel;
+using System.Windows.Input;
 
 using Xamarin.Forms;
 
@@ -10,7 +13,7 @@ using System.Collections.ObjectModel;
 
 namespace StyleUs.ViewModel
 {
-	public class SingleClothPieceViewModel
+    public class SingleClothPieceViewModel : INotifyPropertyChanged
 	{
 		public class Image
 		{
@@ -25,6 +28,8 @@ namespace StyleUs.ViewModel
 			}
 
 		}
+
+		public event PropertyChangedEventHandler PropertyChanged;
 
 		public FloatingMenuViewModel MenuViewModel { get; set; }
 

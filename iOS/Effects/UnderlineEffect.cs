@@ -5,10 +5,9 @@ using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 using StyleUs.iOS;
-using StyleUs;
 
-[assembly: ResolutionGroupName(StyleUs.UnderlineEffect.EffectNamespace)]
-[assembly: ExportEffect(typeof(StyleUs.iOS.UnderlineEffect), uniqueName: nameof(StyleUs.iOS.UnderlineEffect))]
+[assembly: ResolutionGroupName("StyleUs.Effect")]
+[assembly: ExportEffect(typeof(UnderlineEffect), nameof(UnderlineEffect))]
 
 namespace StyleUs.iOS
 {
