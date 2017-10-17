@@ -53,8 +53,10 @@ namespace StyleUs.ViewModel
 		{
             //TODO: Validate the data!
 
+            StyleUs.Services.AuthServices.login("clovis-@live.com","1234");
+
             // Make a fake page just so we can mark it as absolute.
-            navigation.NavigateAsync(new Uri("http://www.StyleUs.com/HomePage",UriKind.Absolute));
+            // navigation.NavigateAsync(new Uri("http://www.StyleUs.com/HomePage",UriKind.Absolute));
 
 		}
 		/**

@@ -154,6 +154,12 @@
     <Compile Include="Effect\UnderlineEffect.cs" />
     <Compile Include="Effect\ShadowEffect.cs" />
     <None Include="FodyWeavers.xml" />
+    <Compile Include="Services\ApiService.cs" />
+    <Compile Include="Services\IApiService.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Notification.cs" />
+    <Compile Include="Services\Constants.cs" />
+    <Compile Include="Services\AuthServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">
@@ -213,6 +219,12 @@
     <Reference Include="FFImageLoading.Forms">
       <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.2.16\lib\portable-net45+win8+wpa81+wp8+netstandard1.0\FFImageLoading.Forms.dll</HintPath>
     </Reference>
+    <Reference Include="Plugin.Connectivity.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.3.0.3\lib\netstandard1.0\Plugin.Connectivity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.3.0.3\lib\netstandard1.0\Plugin.Connectivity.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="View\AddCommentPage.xaml">
@@ -234,6 +246,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Effect\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Fody.2.1.2\build\portable-net+sl+win+wpa+wp\Fody.targets" Condition="Exists('..\packages\Fody.2.1.2\build\portable-net+sl+win+wpa+wp\Fody.targets')" />
