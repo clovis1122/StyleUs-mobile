@@ -21,7 +21,7 @@ namespace StyleUs.ViewModel
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
-		public string username { get; set; }
+		public string email { get; set; }
 		public string password { get; set; }
 
 		/**
@@ -53,12 +53,25 @@ namespace StyleUs.ViewModel
 		{
             //TODO: Validate the data!
 
-            StyleUs.Services.AuthServices.login("clovis-@live.com","1234");
-
-            // Make a fake page just so we can mark it as absolute.
-            // navigation.NavigateAsync(new Uri("http://www.StyleUs.com/HomePage",UriKind.Absolute));
-
+            AttemptLogin();
 		}
+
+        private async void AttemptLogin() {
+            
+            var res = await StyleUs.Services.AuthServices.login(email, password);
+
+            if (res.Key) {
+                
+                // Make a fake page just so we can mark it as absolute.
+
+                await navigation.NavigateAsync(new Uri("http://www.StyleUs.com/HomePage",UriKind.Absolute));
+            } else {
+                //AUTH FAILED.
+            }
+
+            return;
+        }
+
 		/**
           *  [EVENT] Fired once the user has tapped the register button.
           */

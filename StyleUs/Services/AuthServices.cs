@@ -5,32 +5,20 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Plugin.Connectivity;
 using StyleUs.Models;
+using System.Collections.Generic;
 
 namespace StyleUs.Services
 {
     public class AuthServices
     {
-        public static async Task<User> login(string email, string password)
+        public static async Task<KeyValuePair<bool,object>> login(string email, string password)
         {
-            HttpClient client = new HttpClient();
+            var resp = await ApiConnector.postJsonFromUrl("/auth/login/", new { email, password});
 
-            string url = Constants.API_ROOT + "/auth/login";
-
-            var obj = new
-            {
-                email = email,
-                password = password,
-            };
-
-            string data = JsonConvert.SerializeObject(obj);
-
-            var content = new StringContent(data, Encoding.UTF8, "application/json");
-
-            var result = await client.PostAsync(url,content);
-            var res = await result.Content.ReadAsStringAsync();
-
-           
-            return null;
+            if (resp.GetStatusCode() != 200) {
+                return new KeyValuePair<bool, object>(false,resp.GetResponseAsModel<Dictionary<string,ApiFieldError>>());
+            }
+            return new KeyValuePair<bool, object>(true, resp.GetResponseAsModel<User>());
         }
     }
 }

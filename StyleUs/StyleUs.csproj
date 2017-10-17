@@ -158,8 +158,10 @@
     <Compile Include="Services\IApiService.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Notification.cs" />
-    <Compile Include="Services\Constants.cs" />
+    <Compile Include="Services\ApiConnector.cs" />
     <Compile Include="Services\AuthServices.cs" />
+    <Compile Include="Services\IApiResponse.cs" />
+    <Compile Include="Services\ApiFieldError.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">

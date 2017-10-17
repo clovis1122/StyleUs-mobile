@@ -64,10 +64,10 @@ namespace StyleUs.ViewModel
         }
 
         public async void fetchNotifications() {
-            var serv = new StyleUs.Services.ApiService();
-            var data = await serv.GetNotification();
+            // var serv = new StyleUs.Services.ApiService();
+            // var data = await serv.GetNotification();
 
-            notificationList.Add(new Notification(data.title, data.detail, data.img,"profile"));
+            // notificationList.Add(new Notification(data.title, data.detail, data.img,"profile"));
         }
 
 		/**

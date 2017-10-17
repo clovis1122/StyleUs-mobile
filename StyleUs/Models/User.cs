@@ -9,5 +9,6 @@ namespace StyleUs.Models
         public string first_name { get; set; }
         public string is_male { get; set; }
         public string email { get; set; }
+        public string token { get; set; }
     }
 }
