@@ -165,25 +165,63 @@
     <ImageAsset Include="Assets.xcassets\Contents.json">
       <InProject>false</InProject>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\image_error.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\image_error.imageset\image_error.png" />
-    <ImageAsset Include="Assets.xcassets\image_loading.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\image_loading.imageset\image_loading.png" />
-    <ImageAsset Include="Assets.xcassets\login.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\login.imageset\login.png" />
-    <ImageAsset Include="Assets.xcassets\comb.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\comb.imageset\comb.png" />
-    <ImageAsset Include="Assets.xcassets\user.imageset\comb.png" />
-    <ImageAsset Include="Assets.xcassets\user.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\user.imageset\user.png" />
-    <ImageAsset Include="Assets.xcassets\news.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\news.imageset\news.png" />
-    <ImageAsset Include="Assets.xcassets\notification.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\notification.imageset\notification.png" />
-    <ImageAsset Include="Assets.xcassets\piece.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\piece.imageset\piece.png" />
-    <ImageAsset Include="Assets.xcassets\multi-user.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\multi-user.imageset\multi-user.png" />
+    <ImageAsset Include="Assets.xcassets\image_error.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\image_error.imageset\image_error.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\image_loading.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\image_loading.imageset\image_loading.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\login.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\login.imageset\login.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\comb.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\comb.imageset\comb.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\user.imageset\comb.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\user.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\user.imageset\user.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\news.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\news.imageset\news.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\notification.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\notification.imageset\notification.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\piece.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\piece.imageset\piece.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\multi-user.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\multi-user.imageset\multi-user.png">
+      <InProject>false</InProject>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
