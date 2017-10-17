@@ -8,13 +8,48 @@
     xmlns:views="clr-namespace:StyleUs.View.Component">
     <ContentPage.Content>
        <StackLayout HorizontalOptions="FillAndExpand">
-            <Label />
-            <views:SmallPost BindingContext="{Binding .}" />
-            <Label />
-            <views:SmallPost BindingContext="{Binding .}" />
-            <Label />
-            <views:SmallPost BindingContext="{Binding .}" />
-            <Label />
+            <ListView HasUnevenRows="True" SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout BackgroundColor="Red" Padding="5">
+
+                                <Frame HasShadow="True" BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Fill"   >
+
+
+                                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" BackgroundColor="Green" >
+                                            <Image Source="icon.png"  ></Image>
+                                            <Label Text="Miguel Chamuel" VerticalOptions="Center"></Label>
+                                            <Label Text="23 Min" VerticalOptions="Center" HorizontalOptions="EndAndExpand"></Label>
+                                        </StackLayout>
+                                        <Image BackgroundColor="Blue" Source="girl-prueba.jpg"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" WidthRequest="10000" HeightRequest="200"></Image>
+                                        <Label   TextColor="Black" BackgroundColor="Gray" Text="Esta ropa ha sido traida por Bla Bla Bla y ademas por bla bla bla" HorizontalOptions="Fill"></Label>
+
+                                        <StackLayout Orientation="Horizontal" BackgroundColor="Pink"  >
+
+                                            <Image x:Name="corazon" Source="corazon.png"  Margin="5,5,0,5" BackgroundColor="Green" WidthRequest="20" HeightRequest="20"
+                               ></Image>
+
+
+                                            <Label Text="23" TextColor="Gray" VerticalOptions="Center" ></Label>
+                                            <Image Source="comment.png" HorizontalOptions="EndAndExpand" Margin="5,5,0,5" BackgroundColor="Blue" WidthRequest="20" HeightRequest="20"></Image>
+                                            <Label Text="23" TextColor="Gray" VerticalOptions="Center"  Margin="0,0,5,0"></Label>
+                                        </StackLayout>
+
+
+                                    </StackLayout>
+
+
+                                </Frame>
+                            </StackLayout>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

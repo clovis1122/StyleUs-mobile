@@ -12,7 +12,7 @@
         <ScrollView Orientation="Vertical" Padding="0,0,0,20">
             <StackLayout>
             <StackLayout Orientation="Horizontal" Margin="0,20,0,0" HorizontalOptions="Center">
-                <Label Text="Style " TextColor="Gray" FontSize="80">
+                <Label  Text="Style " TextColor="Gray" FontSize="80">
                         <Label.Effects>
                             <effect:ShadowEffect Color="White" Radius="1" DistanceX="2" DistanceY="2" />
                         </Label.Effects>
