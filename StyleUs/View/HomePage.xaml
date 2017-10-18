@@ -8,35 +8,38 @@
     xmlns:views="clr-namespace:StyleUs.View.Component">
     <ContentPage.Content>
        <StackLayout HorizontalOptions="FillAndExpand">
-            <ListView HasUnevenRows="True" SeparatorVisibility="None">
+            <ListView ItemsSource="{Binding PostList}" HasUnevenRows="True" SeparatorVisibility="None">
                 <ListView.ItemTemplate>
 
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout BackgroundColor="Red" Padding="5">
+                            <StackLayout BackgroundColor="#353A41" Padding="5">
 
-                                <Frame HasShadow="True" BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Fill"   >
+                                <Frame HasShadow="True" BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Fill"  Margin="0" Padding="0">
 
 
-                                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Pink" >
 
                                         <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" BackgroundColor="Green" >
-                                            <Image Source="icon.png"  ></Image>
-                                            <Label Text="Miguel Chamuel" VerticalOptions="Center"></Label>
-                                            <Label Text="23 Min" VerticalOptions="Center" HorizontalOptions="EndAndExpand"></Label>
+                                            <Image Source="{Binding ProfileImage}"  HeightRequest="40" WidthRequest="40" ></Image>
+                                            <Label Text="{Binding UserName}" VerticalOptions="Center"></Label>
+                                            <Label Text="{Binding TimePost}" VerticalOptions="Center" HorizontalOptions="EndAndExpand"></Label>
                                         </StackLayout>
-                                        <Image BackgroundColor="Blue" Source="girl-prueba.jpg"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" WidthRequest="10000" HeightRequest="200"></Image>
-                                        <Label   TextColor="Black" BackgroundColor="Gray" Text="Esta ropa ha sido traida por Bla Bla Bla y ademas por bla bla bla" HorizontalOptions="Fill"></Label>
+                                        <Image BackgroundColor="Blue" Source="{Binding ImagePost}"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" WidthRequest="10000" HeightRequest="200" Aspect="AspectFill"></Image>
+                                        <Label   TextColor="Black" BackgroundColor="Gray" Text="{Binding Description}" HorizontalOptions="Fill"></Label>
 
+                                        <BoxView HeightRequest="0.5" Color="#AFB4BB"></BoxView>
                                         <StackLayout Orientation="Horizontal" BackgroundColor="Pink"  >
 
-                                            <Image x:Name="corazon" Source="corazon.png"  Margin="5,5,0,5" BackgroundColor="Green" WidthRequest="20" HeightRequest="20"
+                                            <Image x:Name="corazon" Source="icon.png"  Margin="5,5,0,5" BackgroundColor="Green" WidthRequest="20" HeightRequest="20"
                                ></Image>
 
 
-                                            <Label Text="23" TextColor="Gray" VerticalOptions="Center" ></Label>
-                                            <Image Source="comment.png" HorizontalOptions="EndAndExpand" Margin="5,5,0,5" BackgroundColor="Blue" WidthRequest="20" HeightRequest="20"></Image>
-                                            <Label Text="23" TextColor="Gray" VerticalOptions="Center"  Margin="0,0,5,0"></Label>
+                                            <Label x:Name="Likes Quantity" Text="{Binding LikesQuantity}" TextColor="Gray" VerticalOptions="Center" ></Label>
+                                            <Image Source="icon.png"  Margin="10,5,0,5" BackgroundColor="Blue" WidthRequest="20" HeightRequest="20"></Image>
+                                            <Label Text="{Binding CommentQuantity}" TextColor="Gray" VerticalOptions="Center"  Margin="0,0,5,0"></Label>
+                                            <Image Source="icon.png" WidthRequest="25" HeightRequest="25" HorizontalOptions="EndAndExpand"></Image>
+                                           
                                         </StackLayout>
 
 

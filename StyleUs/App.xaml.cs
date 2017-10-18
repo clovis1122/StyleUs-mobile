@@ -33,7 +33,7 @@ namespace StyleUs
             Container.RegisterTypeForNavigation<View.Friend.FriendProfile, FriendProfileViewModel>();
             Container.RegisterTypeForNavigation<View.ClothPieces.SingleClothPiece, SingleClothPieceViewModel>();
 
-            Container.RegisterTypeForNavigation<HomePage, HomePageViewModel>();
+            Container.RegisterTypeForNavigation<View.HomePage, HomePageViewModel>();
 			Container.RegisterTypeForNavigation<FriendPage, FriendViewModel>();
 			Container.RegisterTypeForNavigation<LoginPage, LoginPageViewModel>();
             Container.RegisterTypeForNavigation<ProfilePage, ProfileViewModel>();
@@ -47,6 +47,9 @@ namespace StyleUs
             Container.RegisterTypeForNavigation<AddCommentPage,AddCommentPageViewModel>();
             Container.RegisterTypeForNavigation<ViewComments,ViewCommentsViewModel>();
             Container.RegisterTypeForNavigation<AnswersPage,AnswersPageViewModel>();
+            
+            Container.RegisterTypeForNavigation<MasterDetailView,MasterDetailPageViewModel>();
+            Container.RegisterTypeForNavigation<NavigationPage>();
         }
 
 		protected override void OnStart()
