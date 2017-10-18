@@ -1,74 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage
-	xmlns="http://xamarin.com/schemas/2014/forms"
-	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-	xmlns:effect="clr-namespace:StyleUs.Effect"
-    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
-	x:Class="StyleUs.View.LoginPage"
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:effect="clr-namespace:StyleUs.Effect" 
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" 
+    x:Class="StyleUs.View.LoginPage" 
+    BackgroundColor="#6495ED"
     BackgroundImage="login">
-
     <ContentPage.Content>
+        <AbsoluteLayout Padding="20,0">
+            
+            <!--TITLE-->
 
-        <ScrollView Orientation="Vertical" Padding="0,0,0,20">
-            <StackLayout>
-            <StackLayout Orientation="Horizontal" Margin="0,20,0,0" HorizontalOptions="Center">
-                <Label  Text="Style " TextColor="Gray" FontSize="80">
-                        <Label.Effects>
-                            <effect:ShadowEffect Color="White" Radius="1" DistanceX="2" DistanceY="2" />
-                        </Label.Effects>
+            <!--PAGE WRAPPER-->
+            <StackLayout
+                x:Name="pageWrapper"
+                AbsoluteLayout.LayoutBounds="1,1,1,1"
+                BackgroundColor="#4682B4"
+                Margin="-20,0"
+                AbsoluteLayout.LayoutFlags="All" />
 
-                    </Label>
-                <Label Text="US" TextColor="Red" FontSize="80">
-                        <Label.Effects>
-                            <effect:ShadowEffect Color="White" Radius="1" DistanceX="2" DistanceY="2" />
-                        </Label.Effects>
+            <Label 
+                x:Name="title" 
+                FontSize="80"
+                Margin="0,25"
+                AbsoluteLayout.LayoutBounds="1,.5,1,.5"
+                AbsoluteLayout.LayoutFlags="All"
+                HorizontalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="Style" ForegroundColor="White" FontSize="80" />
+                            <Span Text=" Us" ForegroundColor="Red" FontSize="80" />
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+                <Label.Effects>
+                    <effect:ShadowEffect Color="Black" Radius="1" DistanceX="3" DistanceY="5" />
+                </Label.Effects>
+            </Label>
+
+            <StackLayout 
+                x:Name="content"
+                Opacity="0"
+                AbsoluteLayout.LayoutBounds="1,0.4,1,.5"
+                AbsoluteLayout.LayoutFlags="All">
+                
+                <!--SUBTITLE-->
+                <Label Text="Bienvenido" FontSize="30" HorizontalOptions="Center" Margin="0,20" />
+                <!--FORM ENTRIES-->
+                <Entry Text="{Binding email}" Placeholder="Correo electronico" PlaceholderColor="Gray" Keyboard="Email" />
+                <Entry Text="{Binding password}" Placeholder="Contraseña" IsPassword="true" PlaceholderColor="Gray" />
+                <Label TextColor="Black" Text="Olvidé mi contraseña" HorizontalOptions="Center" Margin="0,10">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding forgotPassword}" NumberOfTapsRequired="1" />
+                    </Label.GestureRecognizers>
+                    <Label.Effects>
+                        <effect:UnderlineEffect />
+                    </Label.Effects>
                 </Label>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal" Margin="0,30,0,0" HorizontalOptions="Center">
-                <Label Text="Bienvenido" FontSize="30" />
-            </StackLayout>
-            <StackLayout Orientation="Vertical" Margin="0,10,0,0" Padding="40,10">
-                <Entry Text="{Binding email}" Placeholder="Correo electronico" PlaceholderColor="Gray"   Keyboard="Email"  />
-                <Entry Text="{Binding password}" Placeholder="Contraseña" IsPassword="true" PlaceholderColor="Gray"  />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                 <Label TextColor="Black" Text="Olvidé mi contraseña">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer
-                            Command="{Binding forgotPassword}"
-                            NumberOfTapsRequired="1" />
-                        </Label.GestureRecognizers>
-
-                        <Label.Effects>
-                            <effect:UnderlineEffect />
-                        </Label.Effects>
-                    </Label>
-            </StackLayout>
-            <StackLayout Padding="40,50">
-                <Button Command="{Binding login}"  Text="Iniciar" BackgroundColor="Black"/>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                
+                <!--SUBMIT-->
+                <Button Command="{Binding login}" Text="Iniciar" BackgroundColor="Black" Margin="0,40" />
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,40">
                     <Label Text="¿No posee una cuenta?" TextColor="Black">
-
-
                     </Label>
-                <Label TextColor="Black" Text="Registrarme" >
-
+                    <Label TextColor="Black" Text="Registrarme">
                         <Label.Effects>
                             <effect:UnderlineEffect />
                         </Label.Effects>
-
                         <Label.GestureRecognizers>
-                        <TapGestureRecognizer
-                            Command="{Binding register}"
-                            NumberOfTapsRequired="1" />
-                     </Label.GestureRecognizers>
-
+                            <TapGestureRecognizer Command="{Binding register}" NumberOfTapsRequired="1" />
+                        </Label.GestureRecognizers>
                     </Label>
+                </StackLayout>
             </StackLayout>
-            </StackLayout>
-        </ScrollView>
-
+        </AbsoluteLayout>
     </ContentPage.Content>
-
 </ContentPage>

@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using Plugin.Connectivity;
 using StyleUs.Models;
 using System.Collections.Generic;
+using StyleUs.Services.API;
 
 namespace StyleUs.Services
 {

@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 using Plugin.Connectivity;
 using StyleUs.Models;
 
-namespace StyleUs.Services
+namespace StyleUs.Services.API
 {
     public class ApiConnector
     {

@@ -1,5 +1,5 @@
 ﻿using System;
-namespace StyleUs.Services
+namespace StyleUs.Services.API
 {
     public class ApiFieldError
     {
