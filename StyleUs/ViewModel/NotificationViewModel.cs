@@ -49,6 +49,11 @@ namespace StyleUs.ViewModel
         public NotificationViewModel(INavigationService navigationService)
         {
             MenuViewModel = new FloatingMenuViewModel(navigationService);
+
+
+
+            fetchNotifications();
+
 			notificationList.Add(new Notification("Ramon Manuel", "Ramon ha cargado una nueva prenda.","https://www.anipedia.net/imagenes/como-nacen-los-hamsters.jpg", "Piece"));
 			notificationList.Add(new Notification("Manuel Matos", "Ramon ha cargado un nuevo conjunto.", "https://www.anipedia.net/imagenes/hamster-sirio-1.jpg", "Combination"));
 			notificationList.Add(new Notification("Andrea Martines","Andrea te ha enviado una solicitud de seguimiento.", "https://www.anipedia.net/imagenes/cuidados-hamster.jpg", "Profile"));
@@ -56,6 +61,13 @@ namespace StyleUs.ViewModel
                 item => onItemTapped((Notification)item)
             );
             navigation = navigationService;
+        }
+
+        public async void fetchNotifications() {
+            // var serv = new StyleUs.Services.ApiService();
+            // var data = await serv.GetNotification();
+
+            // notificationList.Add(new Notification(data.title, data.detail, data.img,"profile"));
         }
 
 		/**
