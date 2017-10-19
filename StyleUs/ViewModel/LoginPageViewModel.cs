@@ -71,11 +71,11 @@ namespace StyleUs.ViewModel
             {
                 var res = await StyleUs.Services.AuthServices.login(email, password);
 
-                if (!res.Key)
+               /* if (!res.Key)
                 {
                     events.GetEvent<Events.displayMessage>().Publish("No hemos podido iniciar sesion. Por favor, verifique sus credenciales.");
                     return;
-                }
+                }*/
 
                 await navigation.NavigateAsync(new Uri("http://www.StyleUs.com/HomePage", UriKind.Absolute));
 

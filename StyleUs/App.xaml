@@ -25,6 +25,13 @@
              </AbsoluteLayout> 
         </ControlTemplate>
         <!-- END MENU PAGE TEMPLATE  -->
+        
+        
+        
+        
+        
+        
+        
 
 
 
@@ -44,7 +51,8 @@
           <Setter Property="FontFamily">
             <Setter.Value>
               <OnPlatform x:TypeArguments="x:String">
-                <OnPlatform.Android>SourceSansPro-Black.ttf#Source Sans Pro Black</OnPlatform.Android>
+                <OnPlatform.Android>Prompt-ExtraBold.ttf#"Prompt ExtraBold"</OnPlatform.Android>
+                <OnPlatform.iOS> Prompt Extrabold</OnPlatform.iOS>
                  
                 
               </OnPlatform>
