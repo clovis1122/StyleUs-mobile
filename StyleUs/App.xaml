@@ -54,13 +54,13 @@
         <Color x:Key="CaptionColor">#f5f5f5</Color>
         <Color x:Key="TitleColor">#f5f5f5</Color>
         <Color x:Key="BackGround">#f5f5f5</Color>
-     
-         
+
+        <!--
         <Style TargetType="Label" >
           <Setter Property="FontFamily">
             <Setter.Value>
               <OnPlatform x:TypeArguments="x:String">
-                <OnPlatform.Android>SourceSansPro-SemiBold.ttf#"Source Sans Pro SemiBold"</OnPlatform.Android>
+                <OnPlatform.Android>SourceSansPro-Black.ttf#Source Sans Pro Black</OnPlatform.Android>
                  
                 
               </OnPlatform>
@@ -71,6 +71,7 @@
           <Setter Property ="FontSize"
                   Value="15"></Setter>
         </Style>
+        -->
 
         <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
           <Setter Property="BackgroundColor" Value="#D5DADF" />

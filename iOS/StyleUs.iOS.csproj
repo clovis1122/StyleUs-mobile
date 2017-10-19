@@ -224,22 +224,19 @@
     </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
-    <Folder Include="Assets.xcassets\loginPage_Image.jpg.imageset\" />
-    <Folder Include="Assets.xcassets\loginPage_Image_opt.jpg.imageset\" />
-    <Folder Include="Assets.xcassets\icon1.png.imageset\" />
+    <Folder Include="Assets.xcassets\comb.imageset\" />
     <Folder Include="Assets.xcassets\icon1.appiconset\" />
-    <Folder Include="Assets.xcassets\login.imageset\" />
+    <Folder Include="Assets.xcassets\icon1.png.imageset\" />
     <Folder Include="Assets.xcassets\image_error.imageset\" />
     <Folder Include="Assets.xcassets\image_loading.imageset\" />
     <Folder Include="Assets.xcassets\login.imageset\" />
-    <Folder Include="Effects\" />
-    <Folder Include="Assets.xcassets\comb.imageset\" />
-    <Folder Include="Assets.xcassets\user.imageset\" />
+    <Folder Include="Assets.xcassets\loginPage_Image.jpg.imageset\" />
+    <Folder Include="Assets.xcassets\loginPage_Image_opt.jpg.imageset\" />
+    <Folder Include="Assets.xcassets\multi-user.imageset\" />
     <Folder Include="Assets.xcassets\news.imageset\" />
     <Folder Include="Assets.xcassets\notification.imageset\" />
     <Folder Include="Assets.xcassets\piece.imageset\" />
-    <Folder Include="Assets.xcassets\multi-user.imageset\" />
+    <Folder Include="Assets.xcassets\user.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -260,6 +257,15 @@
     <BundleResource Include="Resources\icon1.png" />
     <BundleResource Include="Resources\image_loading.png" />
     <BundleResource Include="Resources\image_error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\WriteComment-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\SeeComment-Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LikeHeart-Icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Fody.2.1.3\build\netstandard1.2\Fody.targets" Condition="Exists('..\packages\Fody.2.1.3\build\netstandard1.2\Fody.targets')" />

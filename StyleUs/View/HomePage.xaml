@@ -13,39 +13,40 @@
 
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout BackgroundColor="#353A41" Padding="5">
+                            <StackLayout BackgroundColor="#353A41" Padding="10">
 
-                                <Frame HasShadow="True" BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Fill"  Margin="0" Padding="0">
+                                <Frame HasShadow="True" BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Fill"  Padding="0,5,0,5" >
 
 
-                                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Pink" >
+                                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" >
 
-                                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" BackgroundColor="Green" >
-                                            <Image Source="{Binding ProfileImage}"  HeightRequest="40" WidthRequest="40" ></Image>
-                                            <Label Text="{Binding UserName}" VerticalOptions="Center"></Label>
-                                            <Label Text="{Binding TimePost}" VerticalOptions="Center" HorizontalOptions="EndAndExpand"></Label>
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Fill"  >
+                                            <Image Source="{Binding ProfileImage}"  Margin="5" HeightRequest="40" WidthRequest="40" ></Image>
+                                            <Label FontAttributes="Bold" TextColor="Black" Text="{Binding UserName}" VerticalOptions="Center"></Label>
+                                            <Label x:Name="Time Post" Text="{Binding TimePost}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,10,0"></Label>
                                         </StackLayout>
-                                        <Image BackgroundColor="Blue" Source="{Binding ImagePost}"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" WidthRequest="10000" HeightRequest="200" Aspect="AspectFill"></Image>
-                                        <Label   TextColor="Black" BackgroundColor="Gray" Text="{Binding Description}" HorizontalOptions="Fill"></Label>
+                                        <Image Source="{Binding ImagePost}"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" WidthRequest="10000" HeightRequest="200" Aspect="AspectFill"></Image>
+                                        <Label   TextColor="#AFB4BB"   Margin="10,0,5,0" Text="{Binding Description}" HorizontalOptions="Fill"></Label>
 
                                         <BoxView HeightRequest="0.5" Color="#AFB4BB"></BoxView>
-                                        <StackLayout Orientation="Horizontal" BackgroundColor="Pink"  >
+                                        <StackLayout Orientation="Horizontal" BackgroundColor="White"  >
 
-                                            <Image x:Name="corazon" Source="icon.png"  Margin="5,5,0,5" BackgroundColor="Green" WidthRequest="20" HeightRequest="20"
+                                            <Image x:Name="corazon" BackgroundColor="Blue" Source="if_heart34_216489.png"  Margin="5,5,0,5"  WidthRequest="20" HeightRequest="20"
                                ></Image>
 
 
-                                            <Label x:Name="Likes Quantity" Text="{Binding LikesQuantity}" TextColor="Gray" VerticalOptions="Center" ></Label>
-                                            <Image Source="icon.png"  Margin="10,5,0,5" BackgroundColor="Blue" WidthRequest="20" HeightRequest="20"></Image>
-                                            <Label Text="{Binding CommentQuantity}" TextColor="Gray" VerticalOptions="Center"  Margin="0,0,5,0"></Label>
-                                            <Image Source="icon.png" WidthRequest="25" HeightRequest="25" HorizontalOptions="EndAndExpand"></Image>
-                                           
+                                            <Label FontAttributes="Bold" x:Name="Likes Quantity" Text="25" TextColor="Gray" VerticalOptions="Center" ></Label>
+                                            <Image Source="SeeComment-Icon.png"  Margin="10,5,0,5"  WidthRequest="20" HeightRequest="20"></Image>
+                                            <Label FontAttributes="Bold" Text="35" TextColor="Gray" VerticalOptions="Center"  Margin="0,0,5,0"></Label>
+                                            <Image Source="icon.png" BackgroundColor="Blue"  WidthRequest="25"  HeightRequest="25" HorizontalOptions="EndAndExpand" Margin="0,0,10,5" ></Image>
+
                                         </StackLayout>
 
 
                                     </StackLayout>
                                 </Frame>
                             </StackLayout>
+
 
                         </ViewCell>
                     </DataTemplate>

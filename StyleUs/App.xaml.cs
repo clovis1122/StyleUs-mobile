@@ -48,7 +48,7 @@ namespace StyleUs
             Container.RegisterTypeForNavigation<ViewComments,ViewCommentsViewModel>();
             Container.RegisterTypeForNavigation<AnswersPage,AnswersPageViewModel>();
             
-            Container.RegisterTypeForNavigation<MasterDetailView,MasterDetailPageViewModel>();
+
             Container.RegisterTypeForNavigation<NavigationPage>();
         }
 
