@@ -16,7 +16,7 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
+    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -175,7 +175,8 @@
     <Compile Include="Effects\ShadowEffect.cs" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\SourceSansPro-Black.ttf" />
+    <AndroidAsset Include="Assets\SourceSansPro_Black.ttf" />
+    <AndroidAsset Include="Assets\Prompt_ExtraBold.ttf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
@@ -200,22 +201,13 @@
     <AndroidResource Include="Resources\drawable\comb.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\SeeComment-Icon.png" />
+    <AndroidResource Include="Resources\drawable\seeCommentIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\SeeComment-Icon.png" />
+    <AndroidResource Include="Resources\drawable\LikeHeartIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\LikeHeart-Icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\WriteComment-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\SeeComment-Icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\SeeComment-Icon.png" />
+    <AndroidResource Include="Resources\drawable\WriteCommentIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\corazon16.png" />
