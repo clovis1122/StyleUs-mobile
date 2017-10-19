@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage 
-    xmlns="http://xamarin.com/schemas/2014/forms" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    xmlns:effect="clr-namespace:StyleUs.Effect" 
-    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" 
-    x:Class="StyleUs.View.LoginPage" 
-    BackgroundColor="#6495ED"
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:effect="clr-namespace:StyleUs.Effect"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    x:Class="StyleUs.View.LoginPage"
+    BackgroundColor="#23272b"
     BackgroundImage="login">
     <ContentPage.Content>
         <AbsoluteLayout Padding="20,0">
-            
+
             <!--TITLE-->
 
             <!--PAGE WRAPPER-->
             <StackLayout
                 x:Name="pageWrapper"
-                BackgroundColor="#4682B4"
+               
+                BackgroundColor="#23272b"
                 Margin="-20,0"
                 AbsoluteLayout.LayoutBounds="1,1,1,1"
                 AbsoluteLayout.LayoutFlags="All" />
 
-            <Label 
-                x:Name="title" 
+            <Label
+                x:Name="title"
                 FontSize="80"
                 Margin="0,25"
                 AbsoluteLayout.LayoutBounds="1,.5,1,.5"
@@ -40,12 +41,12 @@
                 </Label.Effects>
             </Label>
 
-            <StackLayout 
+            <StackLayout
                 x:Name="content"
                 Opacity="0"
                 AbsoluteLayout.LayoutBounds="1,1,1,0.75"
                 AbsoluteLayout.LayoutFlags="All">
-                
+
                 <!--SUBTITLE-->
                 <Label Text="Bienvenido" FontSize="30" HorizontalOptions="Center" Margin="0,20" />
                 <!--FORM ENTRIES-->
@@ -59,7 +60,7 @@
                         <effect:UnderlineEffect />
                     </Label.Effects>
                 </Label>
-                
+
                 <!--SUBMIT-->
                 <Button Command="{Binding login}" Text="Iniciar" BackgroundColor="Black" Margin="0,40" />
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
@@ -69,7 +70,7 @@
                             <effect:UnderlineEffect />
                         </Label.Effects>
                         <Label.GestureRecognizers>
-                            <TapGestureRecognizer 
+                            <TapGestureRecognizer
                             Command="{Binding register}" />
                         </Label.GestureRecognizers>
                     </Label>

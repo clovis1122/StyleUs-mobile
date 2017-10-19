@@ -46,13 +46,13 @@
         <Color x:Key="TitleColor">#f5f5f5</Color>
         <Color x:Key="BackGround">#f5f5f5</Color>
 
-        <!--
+        
         <Style TargetType="Label" >
           <Setter Property="FontFamily">
             <Setter.Value>
               <OnPlatform x:TypeArguments="x:String">
-                <OnPlatform.Android>Prompt-ExtraBold.ttf#"Prompt ExtraBold"</OnPlatform.Android>
-                <OnPlatform.iOS> Prompt Extrabold</OnPlatform.iOS>
+                <OnPlatform.Android>SourceSansPro_SemiBold.ttf#Source Sans Pro SemiBold</OnPlatform.Android>
+                <OnPlatform.iOS> Source Sans Pro SemiBold</OnPlatform.iOS>
                  
                 
               </OnPlatform>
@@ -63,7 +63,7 @@
           <Setter Property ="FontSize"
                   Value="15"></Setter>
         </Style>
-        -->
+        
 
         <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
           <Setter Property="BackgroundColor" Value="#D5DADF" />
@@ -77,6 +77,23 @@
           
           
         </Style>
+        
+          
+             <Style TargetType="Entry">
+                
+               <Setter Property="FontFamily">
+            <Setter.Value>
+              <OnPlatform x:TypeArguments="x:String">
+                <OnPlatform.Android>SourceSansPro_SemiBold.ttf#Source Sans Pro SemiBold</OnPlatform.Android>
+                <OnPlatform.iOS> Source Sans Pro SemiBold</OnPlatform.iOS>
+                 
+                
+              </OnPlatform>
+            </Setter.Value>
+            </Setter>
+             
+            </Style>
+        
         
 
     

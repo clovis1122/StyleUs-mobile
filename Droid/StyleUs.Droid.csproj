@@ -177,6 +177,7 @@
   <ItemGroup>
     <AndroidAsset Include="Assets\SourceSansPro_Black.ttf" />
     <AndroidAsset Include="Assets\Prompt_ExtraBold.ttf" />
+    <AndroidAsset Include="Assets\SourceSansPro_SemiBold.ttf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />

@@ -245,6 +245,7 @@
     <ImageAsset Include="Assets.xcassets\Prompt_ExtraBold.ttf">
       <InProject>false</InProject>
     </ImageAsset>
+    <AndroidAsset Include="Assets.xcassets\SourceSansPro_SemiBold.ttf" />
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
     <None Include="packages.config" />
