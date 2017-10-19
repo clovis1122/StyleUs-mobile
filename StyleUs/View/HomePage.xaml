@@ -23,7 +23,20 @@
                                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" >
 
                                         <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Fill"  >
-                                            <Image Source="{Binding ProfileImage}"  Margin="5,0,5,0" HeightRequest="40" WidthRequest="40" ></Image>
+
+                                            <ffimageloading:CachedImage  
+                                                HeightRequest="40"
+                                                WidthRequest="40" 
+                                                DownsampleUseDipUnits="false" 
+                                                LoadingPlaceholder="image_loading.png"
+                                                ErrorPlaceholder="image_error.png" 
+                                                Source="{Binding ProfileImage}"
+                                                Margin="5,0,5,0">
+                                                <ffimageloading:CachedImage.Transformations>
+                                                    <fftransformations:CircleTransformation />
+                                                </ffimageloading:CachedImage.Transformations>
+                                            </ffimageloading:CachedImage>
+                                            
                                             <Label FontAttributes="Bold" FontSize="Medium" TextColor="Black" Text="{Binding UserName}" VerticalOptions="Center" ></Label>
                                             <Label x:Name="Time Post" Text="{Binding TimePost}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,15,0"></Label>
                                         </StackLayout>

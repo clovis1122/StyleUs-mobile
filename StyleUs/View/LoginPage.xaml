@@ -5,7 +5,7 @@
     xmlns:effect="clr-namespace:StyleUs.Effect" 
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" 
     x:Class="StyleUs.View.LoginPage" 
-    BackgroundColor="#6495ED"
+    BackgroundColor="#23272b"
     BackgroundImage="login">
     <ContentPage.Content>
         <AbsoluteLayout Padding="20,0">
@@ -16,7 +16,7 @@
             <StackLayout
                 x:Name="pageWrapper"
                 AbsoluteLayout.LayoutBounds="1,1,1,1"
-                BackgroundColor="#4682B4"
+                BackgroundColor="#23272b"
                 Margin="-20,0"
                 AbsoluteLayout.LayoutFlags="All" />
 

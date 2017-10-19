@@ -67,8 +67,8 @@
           <Setter Property="FontFamily">
             <Setter.Value>
               <OnPlatform x:TypeArguments="x:String">
-                <OnPlatform.Android>SourceSansPro_Black.ttf#Source Sans Pro Black</OnPlatform.Android>
-                <OnPlatform.iOS> Source Sans Pro Black</OnPlatform.iOS>
+                <OnPlatform.Android>SourceSansPro_SemiBold.ttf#Source Sans Pro SemiBold</OnPlatform.Android>
+                <OnPlatform.iOS> Source Sans Pro SemiBold</OnPlatform.iOS>
                  
                 
               </OnPlatform>
@@ -93,6 +93,23 @@
           
           
         </Style>
+        
+          
+             <Style TargetType="Entry">
+                
+               <Setter Property="FontFamily">
+            <Setter.Value>
+              <OnPlatform x:TypeArguments="x:String">
+                <OnPlatform.Android>SourceSansPro_SemiBold.ttf#Source Sans Pro SemiBold</OnPlatform.Android>
+                <OnPlatform.iOS> Source Sans Pro SemiBold</OnPlatform.iOS>
+                 
+                
+              </OnPlatform>
+            </Setter.Value>
+            </Setter>
+             
+            </Style>
+        
         
 
     
