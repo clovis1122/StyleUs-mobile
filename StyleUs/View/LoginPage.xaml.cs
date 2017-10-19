@@ -18,9 +18,13 @@ namespace StyleUs.View
 
             startAnimation();
 
+
             events.GetEvent<Events.onLoginEvent>().Subscribe(start => onLogin(start));
             events.GetEvent<Events.displayMessage>().Subscribe(message => {
-                DisplayAlert("¡Error!",message,"Vale");
+                DisplayAlert("¡Error!",message,"Vale").ContinueWith(async (task) => {
+                    await task;
+                    await onLoginEndAnimation();
+                }, TaskScheduler.FromCurrentSynchronizationContext());
             });
         }
 
@@ -47,7 +51,6 @@ namespace StyleUs.View
 
             pageWrapper.FadeTo(0, 2000);
             content.FadeTo(1, 2000);
-
         }
 
         public async void onLoginStartAnimation() 
@@ -56,10 +59,10 @@ namespace StyleUs.View
             await title.TranslateTo(0, 100, 1000);
         }
 
-        public async void onLoginEndAnimation()
+        public async Task onLoginEndAnimation()
         {
-            await content.FadeTo(1, 1000);
             await title.TranslateTo(0, -150, 1000);
+            await content.FadeTo(1, 1000);
         }
 
 

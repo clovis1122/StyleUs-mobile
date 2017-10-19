@@ -70,11 +70,9 @@ namespace StyleUs.ViewModel
             try
             {
                 var res = await StyleUs.Services.AuthServices.login(email, password);
-                await Task.Delay(4000);
 
                 if (!res.Key)
                 {
-                    events.GetEvent<Events.onLoginEvent>().Publish(false);
                     events.GetEvent<Events.displayMessage>().Publish("No hemos podido iniciar sesion. Por favor, verifique sus credenciales.");
                     return;
                 }
@@ -86,9 +84,6 @@ namespace StyleUs.ViewModel
             {
                 events.GetEvent<Events.displayMessage>().Publish("No hemos podido iniciar sesion. Por favor, verifique sus credenciales.");
             }
-
-            events.GetEvent<Events.onLoginEvent>().Publish(false);
-
         }
 
         /**
