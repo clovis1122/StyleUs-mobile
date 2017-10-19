@@ -60,7 +60,9 @@ namespace StyleUs.ViewModel
 
             events.GetEvent<Events.onLoginEvent>().Publish(true);
 
-            AttemptLogin();
+            // AttemptLogin();
+
+            navigation.NavigateAsync(new Uri("http://www.StyleUs.com/HomePage", UriKind.Absolute));
         }
 
         private async void AttemptLogin()

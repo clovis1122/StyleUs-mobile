@@ -11,34 +11,18 @@
      
         <!-- START MENU PAGE TEMPLATE  -->
         <ControlTemplate x:Key="MenuPageTemplate">
-            <RelativeLayout>
+            <AbsoluteLayout>
                <ScrollView 
-                    RelativeLayout.WidthConstraint="{ConstraintExpression 
-                             Type=RelativeToParent,
-                             Property=Width,
-                             Factor=1,
-                             Constant=0}"
-                    RelativeLayout.HeightConstraint="{ConstraintExpression 
-                             Type=RelativeToParent,
-                             Property=Height,
-                             Factor=1,
-                             Constant=0}">
+                    AbsoluteLayout.LayoutBounds="1,1,1,1"
+                    AbsoluteLayout.LayoutFlags="All">
                     <ContentPresenter />
                 </ScrollView>
                 <views:FloatingMenu
-                    RelativeLayout.XConstraint="{ConstraintExpression
-                             Type=RelativeToParent,
-                             Property=Width,
-                             Factor=.9,
-                             Constant=0}"
-                    RelativeLayout.YConstraint="{ConstraintExpression
-                             Type=RelativeToParent,
-                             Property=Height,
-                             Factor=.4,
-                             Constant=0}"
+                    AbsoluteLayout.LayoutBounds="1,.5,.2,1"
+                    AbsoluteLayout.LayoutFlags="All"
                     BindingContext="{TemplateBinding BindingContext.MenuViewModel}"   
                />
-             </RelativeLayout> 
+             </AbsoluteLayout> 
         </ControlTemplate>
         <!-- END MENU PAGE TEMPLATE  -->
         

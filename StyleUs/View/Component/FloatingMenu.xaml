@@ -7,38 +7,38 @@
 
         <!--  MENUS (5) -->
         
-        <StackLayout>
-            <skia:SKCanvasView PaintSurface="OnCanvasViewPaintSurface">
-                <skia:SKCanvasView.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding toggleMenu}" />
-                </skia:SKCanvasView.GestureRecognizers>
-            </skia:SKCanvasView>
-            <skia:SKCanvasView IsVisible="{Binding isMenuExpanded}" PaintSurface="OnCanvasViewPaintSurface">
+        <StackLayout VerticalOptions="Center" x:Name="menuList">
+            <skia:SKCanvasView IsVisible="{Binding isMenuExpanded}">
                 <skia:SKCanvasView.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding notification}" />
                 </skia:SKCanvasView.GestureRecognizers>
             </skia:SKCanvasView>
-            <skia:SKCanvasView IsVisible="{Binding isMenuExpanded}" PaintSurface="OnCanvasViewPaintSurface">
+            <skia:SKCanvasView IsVisible="{Binding isMenuExpanded}">
                 <skia:SKCanvasView.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding dashboard}" />
                 </skia:SKCanvasView.GestureRecognizers>
             </skia:SKCanvasView>
-            <skia:SKCanvasView IsVisible="{Binding isMenuExpanded}" PaintSurface="OnCanvasViewPaintSurface">
+            <skia:SKCanvasView IsVisible="{Binding isMenuExpanded}">
                 <skia:SKCanvasView.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding clothPiece}" />
                 </skia:SKCanvasView.GestureRecognizers>
             </skia:SKCanvasView>
-            <skia:SKCanvasView IsVisible="{Binding isMenuExpanded}" PaintSurface="OnCanvasViewPaintSurface">
+            <skia:SKCanvasView>
+                <skia:SKCanvasView.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding toggleMenu}" />
+                </skia:SKCanvasView.GestureRecognizers>
+            </skia:SKCanvasView>
+            <skia:SKCanvasView IsVisible="{Binding isMenuExpanded}">
                 <skia:SKCanvasView.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding clothCombination}" />
                 </skia:SKCanvasView.GestureRecognizers>
             </skia:SKCanvasView>
-            <skia:SKCanvasView IsVisible="{Binding isMenuExpanded}" PaintSurface="OnCanvasViewPaintSurface">
+            <skia:SKCanvasView IsVisible="{Binding isMenuExpanded}">
                 <skia:SKCanvasView.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding friends}" />
                 </skia:SKCanvasView.GestureRecognizers>
             </skia:SKCanvasView>
-            <skia:SKCanvasView IsVisible="{Binding isMenuExpanded}" PaintSurface="OnCanvasViewPaintSurface">
+            <skia:SKCanvasView IsVisible="{Binding isMenuExpanded}">
                 <skia:SKCanvasView.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding profile}" />
                 </skia:SKCanvasView.GestureRecognizers>
