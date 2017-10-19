@@ -43,7 +43,7 @@
             <StackLayout 
                 x:Name="content"
                 Opacity="0"
-                AbsoluteLayout.LayoutBounds="1,0.4,1,.5"
+                AbsoluteLayout.LayoutBounds="1,1,1,0.75"
                 AbsoluteLayout.LayoutFlags="All">
                 
                 <!--SUBTITLE-->
@@ -62,15 +62,15 @@
                 
                 <!--SUBMIT-->
                 <Button Command="{Binding login}" Text="Iniciar" BackgroundColor="Black" Margin="0,40" />
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,40">
-                    <Label Text="¿No posee una cuenta?" TextColor="Black">
-                    </Label>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="¿No posee una cuenta?" TextColor="Black" />
                     <Label TextColor="Black" Text="Registrarme">
                         <Label.Effects>
                             <effect:UnderlineEffect />
                         </Label.Effects>
                         <Label.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding register}" NumberOfTapsRequired="1" />
+                            <TapGestureRecognizer 
+                            Command="{Binding register}" />
                         </Label.GestureRecognizers>
                     </Label>
                 </StackLayout>
