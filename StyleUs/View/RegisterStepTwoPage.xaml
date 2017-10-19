@@ -20,18 +20,18 @@
             
             <StackLayout Orientation="Vertical" Margin="0,10,0,0" Padding="40,10">
                 <Label Text="Correo Electrónico" />
-                <Entry Placeholder="Juan@example.com" />
+                <Entry Text="{Binding email}" Placeholder="Juan@example.com" />
                 <Label Text="Contraseña" Margin="0,10" />
-                <Entry Placeholder="***********" IsPassword="true" />
+                <Entry Text="{Binding password}" Placeholder="***********" IsPassword="true" />
                 <Label Text="Confirmar contraseña" Margin="0,10" />
-                <Entry Placeholder="***********" IsPassword="true" />
+                <Entry Text="{Binding password_confirmation}" Placeholder="***********" IsPassword="true" />
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <StackLayout MinimumWidthRequest="100">
                      <Button BackgroundColor="Gray" TextColor="White" Text="Atras" Command="{Binding goBack}" />
                 </StackLayout>
                 <StackLayout MinimumWidthRequest="100">
-                     <Button Clicked="onCreate" BackgroundColor="Gray" TextColor="White" Text="Crear cuenta"/>
+                     <Button Command="{Binding finish}" BackgroundColor="Gray" TextColor="White" Text="Crear cuenta"/>
                 </StackLayout>
                
             </StackLayout>

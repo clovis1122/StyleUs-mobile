@@ -5,10 +5,12 @@ using Xamarin.Forms;
 
 using StyleUs.View;
 using Prism.Navigation;
+using System;
+using StyleUs.Models.App;
 
 namespace StyleUs.ViewModel
 {
-	public class RegisterStepOnePageViewModel : INotifyPropertyChanged
+    public class RegisterStepOnePageViewModel : INotifyPropertyChanged, INavigationAware
 	{
 
 		public ICommand cancel { get; set; }
@@ -18,9 +20,13 @@ namespace StyleUs.ViewModel
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
-		public string name { get; set; }
-		public string lastname { get; set; }
+        public string first_name { get { return registerUser.first_name; } set { registerUser.first_name = value; } }
+        public string last_name { get { return registerUser.last_name; } set { registerUser.last_name = value; } }
+        public DateTime birthday { get { return registerUser.birthday; } set { registerUser.birthday = value; } }
+        public bool is_male { get { return registerUser.is_male; } set { registerUser.is_male = value; } }
 
+        private RegisterUser registerUser;
+         
 		/**
           *  [CONSTRUCTOR] Get the required parameters and initializes them as needed.
           *  
@@ -34,7 +40,9 @@ namespace StyleUs.ViewModel
             cancel = new Command(onCancel);
             next = new Command(onNext);
 
-			// TODO: bind the birthdate and elected sex to the ViewModel.
+            // Attributes
+
+            registerUser = new RegisterUser();
 		}
 
 		/**
@@ -50,7 +58,35 @@ namespace StyleUs.ViewModel
           */
 		public void onNext()
 		{
-            navigation.NavigateAsync("RegisterStepTwoPage");
+            var param = new NavigationParameters();
+            param.Add("user", registerUser);
+
+            navigation.NavigateAsync("RegisterStepTwoPage",param);
 		}
-	}
+
+        // INavigationAware
+        public void OnNavigatedFrom(NavigationParameters parameters)
+        {
+            var user = parameters["user"];
+
+            if (user is RegisterUser)
+            {
+                this.registerUser = (RegisterUser)user;
+            }
+        }
+        public void OnNavigatedTo(NavigationParameters parameters)
+        {
+            var user = parameters["user"];
+
+            if (user is RegisterUser)
+            {
+                this.registerUser = (RegisterUser)user;
+            }
+        }
+
+        public void OnNavigatingTo(NavigationParameters parameters)
+        {
+            // stub
+        }
+    }
 }

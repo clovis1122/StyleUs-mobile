@@ -21,5 +21,16 @@ namespace StyleUs.Services
             }
             return new KeyValuePair<bool, object>(true, resp.GetResponseAsModel<User>());
         }
+
+        public static async Task<KeyValuePair<bool, object>> register(StyleUs.Models.App.RegisterUser user)
+        {
+            var resp = await ApiConnector.postJsonFromUrl("/auth/register/", user);
+
+            if (resp.GetStatusCode() != 200)
+            {
+                return new KeyValuePair<bool, object>(false, resp.GetResponseAsModel<Dictionary<string, ApiFieldError>>());
+            }
+            return new KeyValuePair<bool, object>(true, resp.GetResponseAsModel<User>());
+        }
     }
 }

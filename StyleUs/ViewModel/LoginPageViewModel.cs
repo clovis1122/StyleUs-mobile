@@ -28,8 +28,6 @@ namespace StyleUs.ViewModel
         public string email { get; set; }
         public string password { get; set; }
 
-        public class IsFunChangedEvent : PubSubEvent<bool> { }
-
         /**
           *  [CONSTRUCTOR] Get the required parameters and initializes them as needed.
           *  

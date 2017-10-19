@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Prism.Events;
 
 using Xamarin.Forms;
 
@@ -9,14 +10,17 @@ namespace StyleUs.View
 {
     public partial class RegisterStepTwoPage : ContentPage
     {
-        void onCreate(object sender, System.EventArgs e)
+        public RegisterStepTwoPage() { InitializeComponent(); }
+        public RegisterStepTwoPage(IEventAggregator events)
         {
-            DisplayAlert("Bien!", "Has completado el proceso de registro de StyleUs", "Aceptar");
-        }
-
-        public RegisterStepTwoPage()
-        {
+            try {
             InitializeComponent();
+            } catch(Exception ex) {
+                var du = ex.Message;
+            }
+            events.GetEvent<Events.displayMessage>().Subscribe(message => {
+                DisplayAlert("¡Error!", message, "Vale");
+            });
         }
     }
 }

@@ -161,6 +161,7 @@
     <Compile Include="Services\AuthServices.cs" />
     <None Include="FodyWeavers.xml" />
     <Compile Include="Events\onLoginEvent.cs" />
+    <Compile Include="Models\App\RegisterUser.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">
@@ -250,6 +251,8 @@
     <Folder Include="Models\" />
     <Folder Include="Services\API\" />
     <Folder Include="Events\" />
+    <Folder Include="Models\Api\" />
+    <Folder Include="Models\App\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Fody.2.1.2\build\portable-net+sl+win+wpa+wp\Fody.targets" Condition="Exists('..\packages\Fody.2.1.2\build\portable-net+sl+win+wpa+wp\Fody.targets')" />
