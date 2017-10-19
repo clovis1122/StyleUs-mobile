@@ -25,7 +25,7 @@ namespace StyleUs.ViewModel {
         public HomePage(string username, int timePost, string profileImage, string description,string postImage,int commentQuantity, int likesQuantity)
         {
             this.UserName = username;
-            this.TimePost = timePost.ToString() + "hr";
+            this.TimePost = timePost.ToString() + "h";
             this.ProfileImage = ImageSource.FromUri(new Uri(profileImage));
             this.ImagePost = ImageSource.FromUri(new Uri(postImage));
             this.Description = description;
@@ -63,10 +63,10 @@ namespace StyleUs.ViewModel {
             AddCommentView = new Command(GoToAddComment);
             SeeCommentView = new Command(GoToSeeComment);
 
-            PostList.Add(new HomePage("Andrea Polanco", 12, "https://freerangestock.com/thumbnail/27083/steampunk-woman-tips-hat.jpg", "Esta pieza se trata de un look expectacular", "https://freerangestock.com/thumbnail/22170/woman-poses-in-parking-garage.jpg", 28,12));
-            PostList.Add(new HomePage("Chamuel Castillo", 13, "https://freerangestock.com/thumbnail/27083/steampunk-woman-tips-hat.jpg", "Esta pieza se trata de un look expectacular", "https://freerangestock.com/thumbnail/22170/woman-poses-in-parking-garage.jpg", 28,10));
-            PostList.Add(new HomePage("Adeury Camilo",2, "https://freerangestock.com/thumbnail/27083/steampunk-woman-tips-hat.jpg", "Esta pieza se trata de un look expectacular", "https://freerangestock.com/thumbnail/22170/woman-poses-in-parking-garage.jpg", 28,14));
-            PostList.Add(new HomePage("Clovis Ramirez", 12, "https://freerangestock.com/thumbnail/27083/steampunk-woman-tips-hat.jpg", "Esta pieza se trata de un look expectacular", "https://freerangestock.com/thumbnail/22170/woman-poses-in-parking-garage.jpg", 28,9));
+            PostList.Add(new HomePage("Andrea Polanco", 1, "https://freerangestock.com/thumbnail/27083/steampunk-woman-tips-hat.jpg", "Esta pieza se trata de un look expectacular", "https://freerangestock.com/thumbnail/22170/woman-poses-in-parking-garage.jpg", 28,12));
+            PostList.Add(new HomePage("Chamuel Castillo", 5, "https://freerangestock.com/thumbnail/27083/steampunk-woman-tips-hat.jpg", "Traje del verano. Tu mejor estilo", "https://cdn.pixabay.com/photo/2017/08/10/08/00/suit-2619784__340.jpg", 28,10));
+            PostList.Add(new HomePage("Adeury Camilo",11, "https://freerangestock.com/thumbnail/29604/outdoor-model-photography-.jpg", "Esta pieza se trata de un look expectacular", "https://freerangestock.com/thumbnail/22170/woman-poses-in-parking-garage.jpg", 28,14));
+            PostList.Add(new HomePage("Clovis Ramirez", 15, "https://freerangestock.com/thumbnail/27083/steampunk-woman-tips-hat.jpg", "Esta pieza se trata de un look expectacular", "https://freerangestock.com/thumbnail/22170/woman-poses-in-parking-garage.jpg", 28,9));
         }
 
         public void GoToAddComment()

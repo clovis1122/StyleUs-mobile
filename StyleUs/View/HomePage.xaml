@@ -23,15 +23,15 @@
                                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" >
 
                                         <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Fill"  >
-                                            <Image Source="{Binding ProfileImage}"  Margin="5" HeightRequest="40" WidthRequest="40" ></Image>
-                                            <Label FontAttributes="Bold" TextColor="Black" Text="{Binding UserName}" VerticalOptions="Center"></Label>
-                                            <Label x:Name="Time Post" Text="{Binding TimePost}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,10,0"></Label>
+                                            <Image Source="{Binding ProfileImage}"  Margin="5,0,5,0" HeightRequest="40" WidthRequest="40" ></Image>
+                                            <Label FontAttributes="Bold" FontSize="Medium" TextColor="Black" Text="{Binding UserName}" VerticalOptions="Center" ></Label>
+                                            <Label x:Name="Time Post" Text="{Binding TimePost}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,15,0"></Label>
                                         </StackLayout>
                                         <Image Source="{Binding ImagePost}"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" WidthRequest="10000" HeightRequest="200" Aspect="AspectFill"></Image>
-                                        <Label   TextColor="#AFB4BB"   Margin="10,0,5,0" Text="{Binding Description}" HorizontalOptions="Fill"></Label>
+                                        <Label   TextColor="#AFB4BB"   Margin="10,0,5,0" Text="{Binding Description}" FontSize="Small" HorizontalOptions="Fill"></Label>
 
-                                        <BoxView HeightRequest="0.5" Color="#AFB4BB"></BoxView>
-                                        <StackLayout Orientation="Horizontal" BackgroundColor="White"  >
+                                        <BoxView HeightRequest="0.3" Color="#AFB4BB"></BoxView>
+                                        <StackLayout Orientation="Horizontal"   >
 
                                             <Image x:Name="corazon"  Source="LikeHeartIcon.png"  Margin="5,5,0,5"  WidthRequest="20" HeightRequest="20"
                                ></Image>
@@ -41,7 +41,7 @@
                                             <ffimageloading:CachedImage HeightRequest="20" WidthRequest="20" DownsampleUseDipUnits="false" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="seeCommentIcon.png">
                                             </ffimageloading:CachedImage>
                                             <Label FontAttributes="Bold" Text="35" TextColor="Gray" VerticalOptions="Center"  Margin="0,0,5,0"></Label>
-                                            <Image Source="WriteCommentIcon.png"  WidthRequest="25"  HeightRequest="25" HorizontalOptions="EndAndExpand" Margin="0,0,10,5" ></Image>
+                                            <Image Source="WriteCommentIcon.png"  WidthRequest="25"  HeightRequest="25" HorizontalOptions="EndAndExpand" Margin="0,0,15,5" ></Image>
 
                                         </StackLayout>
 

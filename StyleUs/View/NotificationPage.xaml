@@ -18,7 +18,7 @@
             TextColor="Black" 
             Margin="30" FontSize="30"
             HorizontalOptions="Center" 
-            FontFamily="monospace"
+            
             FontAttributes="Bold" 
          />
          <ListView ItemsSource="{Binding notificationList}">
