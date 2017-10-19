@@ -227,6 +227,15 @@
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\packages\Xamarin.Forms.2.4.0.282\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
+    <Reference Include="SkiaSharp.Extended.Iconify">
+      <HintPath>..\packages\SkiaSharp.Extended.Iconify.1.59.0\lib\portable-net45+win8+wpa81+wp8\SkiaSharp.Extended.Iconify.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp.Extended.Iconify.MaterialIcons">
+      <HintPath>..\packages\SkiaSharp.Extended.Iconify.MaterialIcons.3.0.1\lib\portable-net45+win8+wpa81+wp8\SkiaSharp.Extended.Iconify.MaterialIcons.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp.Extended.Iconify.MaterialDesignIcons">
+      <HintPath>..\packages\SkiaSharp.Extended.Iconify.MaterialDesignIcons.1.9.32\lib\portable-net45+win8+wpa81+wp8\SkiaSharp.Extended.Iconify.MaterialDesignIcons.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="View\AddCommentPage.xaml">

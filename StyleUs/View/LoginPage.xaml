@@ -15,9 +15,9 @@
             <!--PAGE WRAPPER-->
             <StackLayout
                 x:Name="pageWrapper"
-                AbsoluteLayout.LayoutBounds="1,1,1,1"
                 BackgroundColor="#4682B4"
                 Margin="-20,0"
+                AbsoluteLayout.LayoutBounds="1,1,1,1"
                 AbsoluteLayout.LayoutFlags="All" />
 
             <Label 
