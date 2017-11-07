@@ -25,7 +25,7 @@ namespace StyleUs
         protected override void OnInitialized(){
 			InitializeComponent();
 
-            NavigationService.NavigateAsync("LoginPage");
+           NavigationService.NavigateAsync(new Uri("/NavigationPage/LoginPage", UriKind.Absolute));
 		}
 
 		protected override void RegisterTypes()
@@ -50,6 +50,7 @@ namespace StyleUs
             
 
             Container.RegisterTypeForNavigation<NavigationPage>();
+            Container.RegisterTypeForNavigation<MainTabbedPage>();
         }
 
 		protected override void OnStart()
