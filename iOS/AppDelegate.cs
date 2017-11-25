@@ -7,8 +7,8 @@ using Microsoft.Practices.Unity;
 using Prism.Unity;
 using UIKit;
 using FFImageLoading.Forms.Touch;
-
-
+using FFImageLoading.Forms;
+using FFImageLoading.Transformations;
 // Quirk
 
 namespace StyleUs.iOS
@@ -22,6 +22,8 @@ namespace StyleUs.iOS
             CachedImageRenderer.Init();
 
 			LoadApplication(new App(new iOSInitializer()));
+
+            var ignore = new CircleTransformation();
 
 			return base.FinishedLaunching(app, options);
 		}

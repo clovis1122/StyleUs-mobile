@@ -58,7 +58,7 @@ namespace StyleUs.View.Component
 
             SKTextRunLookup.Instance.AddMaterialDesignIcons();
 
-            string icon1 = "{{ " + icon + " color=a4c639 }}";
+            string icon1 = "{{ " + icon + " color=FF0000 }}";
 
 			canvas.Clear();
 
