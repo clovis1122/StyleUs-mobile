@@ -5,7 +5,7 @@
     xmlns:effect="clr-namespace:StyleUs.Effect"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
     x:Class="StyleUs.View.LoginPage"
-    BackgroundColor="#23272b"
+    BackgroundColor="White"
     BackgroundImage="login">
     <ContentPage.Content>
         <AbsoluteLayout Padding="20,0">
@@ -16,7 +16,7 @@
             <StackLayout
                 x:Name="pageWrapper"
                
-                BackgroundColor="#23272b"
+                BackgroundColor="White"
                 Margin="-20,0"
                 AbsoluteLayout.LayoutBounds="1,1,1,1"
                 AbsoluteLayout.LayoutFlags="All" />
@@ -31,8 +31,8 @@
                 <Label.FormattedText>
                     <FormattedString>
                         <FormattedString.Spans>
-                            <Span Text="Style" ForegroundColor="White" FontSize="80" />
-                            <Span Text=" Us" ForegroundColor="Red" FontSize="80" />
+                            <Span Text="Style" ForegroundColor="#08fcff" FontSize="90" />
+                            <Span Text=" Us" ForegroundColor="Red" FontSize="90" />
                         </FormattedString.Spans>
                     </FormattedString>
                 </Label.FormattedText>
