@@ -60,30 +60,35 @@ namespace StyleUs.ViewModel
 
             events.GetEvent<Events.onLoginEvent>().Publish(true);
 
-            AttemptLogin();
+            // AttemptLogin();
+
+            navigation.NavigateAsync(new Uri("/MainTabbedPage/HomePage", UriKind.Absolute));
+
+      
+
         }
 
         private async void AttemptLogin()
         {
-            await navigation.NavigateAsync(new Uri("http://www.StyleUs.com/HomePage", UriKind.Absolute));
+            try
+            {
+                var res = await StyleUs.Services.AuthServices.login(email, password);
 
-            // try
-            //{
-            //    var res = await StyleUs.Services.AuthServices.login(email, password);
+               /* if (!res.Key)
+                {
+                    events.GetEvent<Events.displayMessage>().Publish("No hemos podido iniciar sesion. Por favor, verifique sus credenciales.");
+                    return;
+                }*/
 
-            //   if (!res.Key)
-            //    {
-            //        events.GetEvent<Events.displayMessage>().Publish("No hemos podido iniciar sesion. Por favor, verifique sus credenciales.");
-            //        return;
-            //    }
+                await navigation.NavigateAsync(new Uri("/MainTabbedPage/HomePage", UriKind.Absolute));
 
+            }
+            catch (Exception ex)
+            {
+                events.GetEvent<Events.displayMessage>().Publish("No hemos podido iniciar sesion. Por favor, verifique sus credenciales.");
+            }
 
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    events.GetEvent<Events.displayMessage>().Publish("No hemos podido iniciar sesion. Por favor, verifique sus credenciales.");
-            //}
+   
         }
 
         /**

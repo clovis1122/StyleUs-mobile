@@ -9,7 +9,7 @@
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:views="clr-namespace:StyleUs.View.Component"
     NavigationPage.HasNavigationBar="True"
-    Title="hola" Icon="icon.png">
+    Title="Profile">
 
     <ContentPage.Content>
        <StackLayout HorizontalOptions="FillAndExpand">

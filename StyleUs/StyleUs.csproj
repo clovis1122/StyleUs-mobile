@@ -80,6 +80,9 @@
     <Compile Include="View\AnswersPage.xaml.cs">
       <DependentUpon>AnswersPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\MainTabbedPage.xaml.cs">
+      <DependentUpon>MainTabbedPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ViewComments.xaml.cs">
       <DependentUpon>ViewComments.xaml</DependentUpon>
     </Compile>
@@ -256,12 +259,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Effect\" />
-    <Folder Include="Models\" />
-    <Folder Include="Services\API\" />
-    <Folder Include="Events\" />
     <Folder Include="Models\Api\" />
-    <Folder Include="Models\App\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\MainTabbedPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Fody.2.1.2\build\portable-net+sl+win+wpa+wp\Fody.targets" Condition="Exists('..\packages\Fody.2.1.2\build\portable-net+sl+win+wpa+wp\Fody.targets')" />
