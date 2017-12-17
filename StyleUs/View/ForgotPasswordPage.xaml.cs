@@ -14,6 +14,8 @@ namespace StyleUs.View
 	{
 		public ForgotPasswordPage ()
 		{
+            
+            BackgroundImage = "icon1.png";
 			InitializeComponent ();
 		}
 	}
