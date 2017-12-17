@@ -3,18 +3,24 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms" 
-    x:Class="StyleUs.View.Users.UserList">
+    x:Class="StyleUs.View.Users.FollowingLists">
     
 	<ContentPage.Content>
       <StackLayout HorizontalOptions="FillAndExpand"> 
+
+            <SearchBar Placeholder="buscar">
+
+            </SearchBar>
      
-         <ListView ItemsSource="{Binding userList}">
+         <ListView ItemsSource="{Binding userList}" >
            <ListView.ItemTemplate>
-             <DataTemplate>
+             <DataTemplate >
                <ImageCell
+
+                            
                    Text="{Binding last_name}"
                    TextColor="Black"
-                   Detail="{Binding email}"
+                  
                    DetailColor="Black"
                    ImageSource="{Binding image}" />
              </DataTemplate>
