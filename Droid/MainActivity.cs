@@ -9,6 +9,7 @@ using Android.Widget;
 using Android.OS;
 using Prism.Unity;
 using Microsoft.Practices.Unity;
+using Plugin.Permissions;
 
 namespace StyleUs.Droid
 {
@@ -29,6 +30,12 @@ namespace StyleUs.Droid
 			LoadApplication(new App(new AndroidInitializer()));
 
 		}
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+        {
+            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
 		public class AndroidInitializer : IPlatformInitializer
 		{
 			public void RegisterTypes(IUnityContainer container)
