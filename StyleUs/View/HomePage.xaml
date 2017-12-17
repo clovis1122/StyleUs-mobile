@@ -4,11 +4,15 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
              xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+    prism:ViewModelLocator.AutowireViewModel="True"
     ControlTemplate="{StaticResource MenuPageTemplate}"
     x:Class="StyleUs.View.HomePage"
-    Title="Muro"
-    xmlns:views="clr-namespace:StyleUs.View.Component">
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    Title="Home"
+    xmlns:views="clr-namespace:StyleUs.View.Component"
+    >
     <ContentPage.Content>
+        <ScrollView>
        <StackLayout HorizontalOptions="FillAndExpand">
             <ListView ItemsSource="{Binding PostList}" HasUnevenRows="True" SeparatorVisibility="None">
                 <ListView.ItemTemplate>
@@ -69,5 +73,6 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

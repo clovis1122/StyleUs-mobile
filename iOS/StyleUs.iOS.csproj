@@ -224,10 +224,6 @@
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Logo1.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Logo1x640.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Logo.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\LogoIOS8.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\LogoIOS8Plus.png" />
     <ImageAsset Include="Assets.xcassets\launch.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\launch.imageset\Logo1.png" />
   </ItemGroup>

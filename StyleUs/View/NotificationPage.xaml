@@ -6,21 +6,12 @@
 	x:Class="StyleUs.View.NotificationPage"
     ControlTemplate="{StaticResource MenuPageTemplate}"
     xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms" 
-    xmlns:views="clr-namespace:StyleUs.View.Component">
-    <ContentPage.ToolbarItems>
-      <ToolbarItem Text="notifications" />
-    </ContentPage.ToolbarItems>
+    xmlns:views="clr-namespace:StyleUs.View.Component" Title="Notificacion">
+    
     
     <ContentPage.Content>
       <StackLayout HorizontalOptions="FillAndExpand"> 
-       <Label 
-            Text="NOTIFICACIONES"
-            TextColor="Black" 
-            Margin="30" FontSize="30"
-            HorizontalOptions="Center" 
-            
-            FontAttributes="Bold" 
-         />
+     
          <ListView ItemsSource="{Binding notificationList}">
            <ListView.ItemTemplate>
              <DataTemplate>
