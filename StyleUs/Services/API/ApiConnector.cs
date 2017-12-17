@@ -10,7 +10,7 @@ namespace StyleUs.Services.API
 {
     public class ApiConnector
     {
-        public static string API_ROOT = "https://serene-scrubland-79664.herokuapp.com/api/v1";
+        public static string API_ROOT = "http://styleus.local/api/v1";
 
         /**
          * The idea is to return this class to remove some of the complexity
@@ -37,7 +37,7 @@ namespace StyleUs.Services.API
             }
         }
 
-        public static async Task<IApiResponse> postJsonFromUrl(string relativeUrl, object data = null ) 
+        public static async Task<IApiResponse> postJsonFromUrl(string relativeUrl, object data = null )
         {
             // The client to use in our connection.
             HttpClient client = new HttpClient();
@@ -50,6 +50,24 @@ namespace StyleUs.Services.API
             // Make the POST request
             var result = await client.PostAsync(url, requestData);
 
+            return new ApiResponse(
+                status: (int)result.StatusCode,
+                response: await result.Content.ReadAsStringAsync()
+            );
+        }
+
+        public static async Task<IApiResponse> getJsonFromUrl(string relativeUrl, object data = null)
+        {
+            // The client to use in our connection.
+            HttpClient client = new HttpClient();
+            string url = API_ROOT + relativeUrl;
+
+            // The data to send in our request.
+            var serializedData = JsonConvert.SerializeObject(data);
+            var requestData = new StringContent(serializedData, Encoding.UTF8, "application/json");
+
+            // Make the GET request
+            var result = await client.GetAsync(url);
             return new ApiResponse(
                 status: (int)result.StatusCode,
                 response: await result.Content.ReadAsStringAsync()

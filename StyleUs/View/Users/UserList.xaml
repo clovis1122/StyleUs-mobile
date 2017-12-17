@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms" 
+    x:Class="StyleUs.View.Users.UserList">
+    
+	<ContentPage.Content>
+      <StackLayout HorizontalOptions="FillAndExpand"> 
+     
+         <ListView ItemsSource="{Binding userList}">
+           <ListView.ItemTemplate>
+             <DataTemplate>
+               <ImageCell
+                   Text="{Binding last_name}"
+                   TextColor="Black"
+                   Detail="{Binding email}"
+                   DetailColor="Black"
+                   ImageSource="{Binding image}" />
+             </DataTemplate>
+           </ListView.ItemTemplate>
+           <ListView.Behaviors>
+                <b:EventToCommandBehavior 
+                    EventName="ItemTapped" 
+                    Command="{Binding ItemTappedCommand}"
+                    EventArgsParameterPath="Item" />
+            </ListView.Behaviors>
+         </ListView>
+            
+        </StackLayout>
+      </ContentPage.Content>
+</ContentPage>
