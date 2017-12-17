@@ -40,3 +40,4 @@ Thumbs.db
 *.dotCover
 .vs
 .bak
+bash.exe.stackdump
