@@ -67,6 +67,10 @@
     <EmbeddedResource Include="View\ClothPieces\SingleClothPiece.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\UserList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -165,6 +169,11 @@
     <None Include="FodyWeavers.xml" />
     <Compile Include="Events\onLoginEvent.cs" />
     <Compile Include="Models\App\RegisterUser.cs" />
+    <Compile Include="View\Users\UserList.xaml.cs">
+      <DependentUpon>UserList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\Users\UsersListViewModel.cs" />
+    <Compile Include="Services\UserServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">
@@ -260,6 +269,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\Api\" />
+    <Folder Include="View\Users\" />
+    <Folder Include="ViewModel\Users\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="View\MainTabbedPage.xaml">
