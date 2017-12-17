@@ -19,7 +19,7 @@
             
             <StackLayout Orientation="Vertical" Margin="0,10,0,0" Padding="40,10">
                 <Label Text="Nombre" />
-                <Entry Text="{Binding first_name}" Placeholder="Nombre" />
+                <Entry Text="{Binding first_name}" Placeholder="Nombre"/>
                 <Label Text="Apellido" Margin="0,10" />
                 <Entry Text="{Binding last_name}" Placeholder="Apellido" />
                 <Label Text="Fecha de nacimiento" Margin="0,10" />
@@ -34,10 +34,10 @@
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <StackLayout MinimumWidthRequest="100">
-                     <Button BackgroundColor="Gray" TextColor="White" Text="Cancelar" Command="{Binding cancel}" />
+                     <Button BackgroundColor="Gray" TextColor="White" Text="Cancelar" Command="{Binding cancel}" WidthRequest="110" />
                 </StackLayout>
                 <StackLayout MinimumWidthRequest="100">
-                     <Button BackgroundColor="Gray" TextColor="White" Text="Continuar" Command="{Binding next}" />
+                     <Button BackgroundColor="Gray" TextColor="White" Text="Continuar" Command="{Binding next}" WidthRequest="110" BorderRadius="22" BorderWidth="2" BorderColor="White"/>
                 </StackLayout>
                
             </StackLayout>

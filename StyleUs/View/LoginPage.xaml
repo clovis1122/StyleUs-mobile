@@ -5,8 +5,8 @@
     xmlns:effect="clr-namespace:StyleUs.Effect"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
     x:Class="StyleUs.View.LoginPage"
-    BackgroundColor="White"
-    BackgroundImage="login">
+    BackgroundColor="Black"
+    BackgroundImage="background.png">
     <ContentPage.Content>
         <AbsoluteLayout Padding="20,0">
 
@@ -27,7 +27,9 @@
                 Margin="0,25"
                 AbsoluteLayout.LayoutBounds="1,.5,1,.5"
                 AbsoluteLayout.LayoutFlags="All"
-                HorizontalOptions="Center">
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand">
+  
                 <Label.FormattedText>
                     <FormattedString>
                         <FormattedString.Spans>
@@ -47,35 +49,58 @@
                 AbsoluteLayout.LayoutBounds="1,1,1,0.75"
                 AbsoluteLayout.LayoutFlags="All">
 
-                <!--SUBTITLE-->
-                <Label Text="Bienvenido" FontSize="30" HorizontalOptions="Center" Margin="0,20" />
-                <!--FORM ENTRIES-->
-                <Entry Text="{Binding email}" Placeholder="Correo electronico" PlaceholderColor="Gray" Keyboard="Email" />
-                <Entry Text="{Binding password}" Placeholder="Contraseña" IsPassword="true" PlaceholderColor="Gray" />
-                <Label TextColor="Black" Text="Olvidé mi contraseña" HorizontalOptions="Center" Margin="0,10">
+                <Grid  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" ColumnSpacing="0" RowSpacing="10">
+                    <Grid.RowDefinitions>
+  
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        
+                     </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="90*"/>
+                        
+                     </Grid.ColumnDefinitions>
+                    <Label Text="Bienvenido" FontSize="12" HorizontalOptions="Center" Margin="0,20" Grid.Row="0" Grid.Column="1"/>
+                    <Image Source="mail.png" Grid.Column="0" Grid.Row="1"/>
+                    <Entry Text="{Binding email}" Placeholder="Correo electronico" PlaceholderColor="Gray" Keyboard="Email" Margin="0.8" Grid.Column="1" Grid.Row="1"/>
+                    <Image Source="password.png" Grid.Column="0" Grid.Row="2"/>
+                    <Entry Text="{Binding password}" Placeholder="Contraseña" IsPassword="true" PlaceholderColor="Gray" Margin="0.8" Grid.Column="1" Grid.Row="2"/>
+                   
+                    <Label TextColor="Aqua" Text="Olvidé mi contraseña" HorizontalOptions="Center" Margin="0,10" Grid.Column="1" Grid.Row="3">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding forgotPassword}" NumberOfTapsRequired="1" />
                     </Label.GestureRecognizers>
                     <Label.Effects>
                         <effect:UnderlineEffect />
                     </Label.Effects>
-                </Label>
+                    </Label>
+
+                    <Button Command="{Binding login}" Text="Iniciar" BackgroundColor="Gray" Margin="0,01" BorderRadius="22" BorderWidth="2" BorderColor="White" Grid.Column="1" Grid.Row="4"/>
+                    <Button Command="{Binding register}" Text="Registrarse" TextColor="Gray" BackgroundColor="White" Margin="0,01" BorderRadius="22" BorderWidth="2" BorderColor="Gray" Grid.Column="1" Grid.Row="5"/>
+
+
+                    </Grid>
+
+
+                
+                <!--SUBTITLE-->
+
+                <!--FORM ENTRIES-->
+
+
+
 
                 <!--SUBMIT-->
-                <Button Command="{Binding login}" Text="Iniciar" BackgroundColor="Black" Margin="0,40" />
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                    <Label Text="¿No posee una cuenta?" TextColor="Black" />
-                    <Label TextColor="Black" Text="Registrarme">
-                        <Label.Effects>
-                            <effect:UnderlineEffect />
-                        </Label.Effects>
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer
-                            Command="{Binding register}" />
-                        </Label.GestureRecognizers>
-                    </Label>
-                </StackLayout>
+
+               
+
             </StackLayout>
+
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
