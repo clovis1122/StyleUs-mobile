@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Xamarin.Forms;
 
-namespace StyleUs.View{
+namespace StyleUs.View.Users{
 
     public partial class TabbedPageFollow : TabbedPage
     {
