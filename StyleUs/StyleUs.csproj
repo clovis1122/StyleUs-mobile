@@ -67,7 +67,15 @@
     <EmbeddedResource Include="View\ClothPieces\SingleClothPiece.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Users\UserList.xaml">
+    <EmbeddedResource Include="View\Users\FollowerLists.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\FollowingLists.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TabbedPageFollow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -169,11 +177,18 @@
     <None Include="FodyWeavers.xml" />
     <Compile Include="Events\onLoginEvent.cs" />
     <Compile Include="Models\App\RegisterUser.cs" />
-    <Compile Include="View\Users\UserList.xaml.cs">
-      <DependentUpon>UserList.xaml</DependentUpon>
+    <Compile Include="View\Users\FollowerLists.cs">
+      <DependentUpon>FollowerLists.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\Users\UsersListViewModel.cs" />
+    <Compile Include="ViewModel\Users\FollowersListViewModel.cs" />
     <Compile Include="Services\UserServices.cs" />
+    <Compile Include="View\Users\FollowingLists.cs">
+      <DependentUpon>FollowingLists.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\Users\FollowingListViewModel.cs" />
+    <Compile Include="View\Users\TabbedPageFollow.xaml.cs">
+      <DependentUpon>TabbedPageFollow.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">

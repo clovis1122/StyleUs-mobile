@@ -2,10 +2,11 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    x:Class="StyleUs.View.RegisterStepOnePage">
+    x:Class="StyleUs.View.RegisterStepOnePage"
+    BackgroundImage="Forget_password_Background.png">
 	<ContentPage.Content>
-        <ScrollView Orientation="Vertical" BackgroundColor="White" Padding="0,0,0,20">
-               <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" BackgroundColor="White">
+        <ScrollView Orientation="Vertical" Padding="0,0,0,20">
+               <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
             <StackLayout Orientation="Horizontal" Margin="0,20,0,0" HorizontalOptions="Center">
                 <Label Text="Style " TextColor="Gray" FontSize="80" />
                 <Label Text="US" TextColor="Red" FontSize="80" />
@@ -32,12 +33,12 @@
                     </Picker.Items>
                 </Picker>
             </StackLayout>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="0,40">
                 <StackLayout MinimumWidthRequest="100">
-                     <Button BackgroundColor="Gray" TextColor="White" Text="Cancelar" Command="{Binding cancel}" WidthRequest="110" />
+                     <Button BackgroundColor="Gray" TextColor="White" Text="Cancelar" Command="{Binding cancel}" WidthRequest="140" BorderRadius="22" BorderWidth="2" BorderColor="White"/>
                 </StackLayout>
                 <StackLayout MinimumWidthRequest="100">
-                     <Button BackgroundColor="Gray" TextColor="White" Text="Continuar" Command="{Binding next}" WidthRequest="110" BorderRadius="22" BorderWidth="2" BorderColor="White"/>
+                     <Button BackgroundColor="Gray" TextColor="White" Text="Continuar" Command="{Binding next}" WidthRequest="140" BorderRadius="22" BorderWidth="2" BorderColor="White"/>
                 </StackLayout>
                
             </StackLayout>

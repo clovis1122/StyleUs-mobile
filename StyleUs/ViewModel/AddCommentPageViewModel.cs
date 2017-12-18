@@ -26,5 +26,6 @@ namespace StyleUs.ViewModel
         {
             navigation.GoBackAsync();
         }
+
     }
 }

@@ -25,7 +25,7 @@ namespace StyleUs
         protected override void OnInitialized(){
 			InitializeComponent();
 
-           NavigationService.NavigateAsync(new Uri("/NavigationPage/LoginPage", UriKind.Absolute));
+           NavigationService.NavigateAsync(new Uri("/NavigationPage/FollowerLists", UriKind.Absolute));
 		}
 
 		protected override void RegisterTypes()
@@ -47,10 +47,16 @@ namespace StyleUs
             Container.RegisterTypeForNavigation<AddCommentPage,AddCommentPageViewModel>();
             Container.RegisterTypeForNavigation<ViewComments,ViewCommentsViewModel>();
             Container.RegisterTypeForNavigation<AnswersPage,AnswersPageViewModel>();
-            
+            Container.RegisterTypeForNavigation<View.Users.FollowerLists, ViewModel.Users.FollowersListViewModel>();
+            Container.RegisterTypeForNavigation<View.Users.FollowingLists, ViewModel.Users.FollowingListViewModel>();
+           
+
 
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainTabbedPage>();
+
+
+
         }
 
 		protected override void OnStart()

@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace StyleUs.View.Users
 {
-    public partial class UserList : ContentPage
+    public partial class FollowingLists : ContentPage
     {
-        public UserList()
+        public FollowingLists()
         {
             InitializeComponent();
         }
