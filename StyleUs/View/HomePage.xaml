@@ -9,8 +9,9 @@
     x:Class="StyleUs.View.HomePage"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
     Title="Home"
-    xmlns:views="clr-namespace:StyleUs.View.Component"
-    >
+    xmlns:views="clr-namespace:StyleUs.View.Component" >
+
+
     <ContentPage.Content>
         <ScrollView>
        <StackLayout HorizontalOptions="FillAndExpand">
