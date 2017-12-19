@@ -12,6 +12,8 @@ namespace StyleUs
 {
 	public partial class App : PrismApplication
 	{
+        public static string AppName { get { return "TodoListApp"; } }
+
 		public App()
 		{
     		InitializeComponent();
@@ -23,8 +25,15 @@ namespace StyleUs
         }
 
         protected override void OnInitialized(){
-			    InitializeComponent();
-          NavigationService.NavigateAsync(new Uri("/NavigationPage/LoginPage", UriKind.Absolute));
+                    
+			InitializeComponent();
+
+            AccountManager acc = new AccountManager();
+
+            string navPage = acc.UserName != null ? "HomePage" : "LoginPage";
+
+            NavigationService.NavigateAsync(new Uri("/NavigationPage/" + navPage, UriKind.Absolute));
+
 		}
 
 		protected override void RegisterTypes()
@@ -33,8 +42,8 @@ namespace StyleUs
             Container.RegisterTypeForNavigation<View.ClothPieces.SingleClothPiece, SingleClothPieceViewModel>();
 
             Container.RegisterTypeForNavigation<View.HomePage, HomePageViewModel>();
-			      Container.RegisterTypeForNavigation<FriendPage, FriendViewModel>();
-		      	Container.RegisterTypeForNavigation<LoginPage, LoginPageViewModel>();
+			Container.RegisterTypeForNavigation<FriendPage, FriendViewModel>();
+		    Container.RegisterTypeForNavigation<LoginPage, LoginPageViewModel>();
             Container.RegisterTypeForNavigation<ProfilePage, ProfileViewModel>();
             Container.RegisterTypeForNavigation<ClothPiecePage, ClothPieceViewModel>();
             Container.RegisterTypeForNavigation<NotificationPage, NotificationViewModel>();
@@ -48,6 +57,7 @@ namespace StyleUs
             Container.RegisterTypeForNavigation<AnswersPage,AnswersPageViewModel>();
             Container.RegisterTypeForNavigation<View.Users.FollowerLists, ViewModel.Users.FollowersListViewModel>();
             Container.RegisterTypeForNavigation<View.Users.FollowingLists, ViewModel.Users.FollowingListViewModel>();
+<<<<<<< Updated upstream
             Container.RegisterTypeForNavigation<View.Users.FollowingLists, ViewModel.Users.FollowingListViewModel>();
 
             Container.RegisterTypeForNavigation<View.AddPicturePost, ViewModel.AddPicturePostViewModel>();
@@ -56,6 +66,12 @@ namespace StyleUs
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainTabbedPage>();
 
+=======
+            Container.RegisterTypeForNavigation<AddCameraButton, AddCameraButtonViewModel>();
+           
+            Container.RegisterTypeForNavigation<NavigationPage>();
+            Container.RegisterTypeForNavigation<MainTabbedPage>();
+>>>>>>> Stashed changes
         }
 
 		protected override void OnStart()
