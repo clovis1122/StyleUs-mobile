@@ -25,7 +25,6 @@ namespace StyleUs.Droid
 
             AccountManager.manager = AccountStore.Create(this);
 
-         
 			base.OnCreate(bundle);
 
 			global::Xamarin.Forms.Forms.Init(this, bundle);
