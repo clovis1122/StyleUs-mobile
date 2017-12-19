@@ -2673,7 +2673,7 @@ namespace StyleUs.Droid
 			public const int LikeHeartIcon = 2130837747;
 			
 			// aapt resource value: 0x7f0200f4
-			public const int login = 2130837748;
+			public const int Login = 2130837748;
 			
 			// aapt resource value: 0x7f0200f5
 			public const int mr_button_connected_dark = 2130837749;

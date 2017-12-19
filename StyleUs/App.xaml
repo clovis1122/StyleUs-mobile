@@ -40,12 +40,12 @@
             
             
 
-        <Color x:Key="BackGroundColor">#f5f5f5</Color>
+        <Color x:Key="BackGroundColor">gold</Color>
         <!--Font Colors-->
         <Color x:Key="FontColor">#475a68</Color>
-        <Color x:Key="CaptionColor">#f5f5f5</Color>
-        <Color x:Key="TitleColor">#f5f5f5</Color>
-        <Color x:Key="BackGround">#f5f5f5</Color>
+        <Color x:Key="CaptionColor">green</Color>
+        <Color x:Key="TitleColor">blue</Color>
+        <Color x:Key="BackGround">red</Color>
 
         
         <Style TargetType="Label" >

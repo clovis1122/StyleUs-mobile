@@ -4,6 +4,19 @@
             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
             prism:ViewModelLocator.AutowireViewModel="True"
             x:Class="StyleUs.View.MainTabbedPage"
-            xmlns:local="clr-namespace:StyleUs.View" BarTextColor="Black">
+            xmlns:local="clr-namespace:StyleUs.View" 
+            xmlns:localUsers="clr-namespace:StyleUs.View.Users" 
+            BarTextColor="Black">
 
+    <TabbedPage.Children>
+
+        <local:HomePage></local:HomePage>
+        <local:NotificationPage></local:NotificationPage>
+        <local:ProfilePage ></local:ProfilePage>
+        <local:ClothCombinationPage></local:ClothCombinationPage>
+        <localUsers:FollowerLists></localUsers:FollowerLists>
+        
+        
+    </TabbedPage.Children>
+  
 </TabbedPage>
