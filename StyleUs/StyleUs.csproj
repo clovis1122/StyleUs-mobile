@@ -79,6 +79,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Notification\NotificationList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -189,6 +193,11 @@
     <Compile Include="View\Users\TabbedPageFollow.xaml.cs">
       <DependentUpon>TabbedPageFollow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Notification\NotificationList.xaml.cs">
+      <DependentUpon>NotificationList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\Notification\NotificationListViewModel.cs" />
+    <Compile Include="Services\NotificationServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">
@@ -286,6 +295,8 @@
     <Folder Include="Models\Api\" />
     <Folder Include="View\Users\" />
     <Folder Include="ViewModel\Users\" />
+    <Folder Include="View\Notification\" />
+    <Folder Include="ViewModel\Notification\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="View\MainTabbedPage.xaml">

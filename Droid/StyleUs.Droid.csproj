@@ -201,6 +201,7 @@
     <AndroidResource Include="Resources\drawable\piece.png" />
     <AndroidResource Include="Resources\drawable\comb.png" />
     <AndroidResource Include="Resources\drawable\splashscreen.png" />
+    <AndroidResource Include="Resources\drawable\Unknown.jpg" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\seeCommentIcon.png" />

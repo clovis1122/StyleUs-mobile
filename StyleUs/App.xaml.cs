@@ -25,7 +25,7 @@ namespace StyleUs
         protected override void OnInitialized(){
 			InitializeComponent();
 
-           NavigationService.NavigateAsync(new Uri("/NavigationPage/FollowerLists", UriKind.Absolute));
+           NavigationService.NavigateAsync(new Uri("/NavigationPage/NotificationList", UriKind.Absolute));
 		}
 
 		protected override void RegisterTypes()
@@ -38,7 +38,7 @@ namespace StyleUs
 			Container.RegisterTypeForNavigation<LoginPage, LoginPageViewModel>();
             Container.RegisterTypeForNavigation<ProfilePage, ProfileViewModel>();
             Container.RegisterTypeForNavigation<ClothPiecePage, ClothPieceViewModel>();
-            Container.RegisterTypeForNavigation<NotificationPage, NotificationViewModel>();
+            Container.RegisterTypeForNavigation<View.Notification.NotificationList, ViewModel.Notification.NotificationListViewModel>();
             Container.RegisterTypeForNavigation<AddCommentPage, AddCommentPageViewModel>();
             Container.RegisterTypeForNavigation<ForgotPasswordPage,ForgotPasswordPageViewModel>();
             Container.RegisterTypeForNavigation<ClothCombinationPage, ClothCombinationViewModel>();
