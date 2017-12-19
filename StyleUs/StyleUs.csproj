@@ -79,6 +79,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\AddCameraButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -186,7 +190,7 @@
       <DependentUpon>FollowerLists.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\Users\FollowersListViewModel.cs" />
-    <Compile Include="Services\UserServices.cs" />
+    <Compile Include="Services\PostServices.cs" />
     <Compile Include="View\Users\FollowingLists.cs">
       <DependentUpon>FollowingLists.xaml</DependentUpon>
     </Compile>
@@ -194,6 +198,11 @@
     <Compile Include="View\Users\TabbedPageFollow.xaml.cs">
       <DependentUpon>TabbedPageFollow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\AddCameraButton.xaml.cs">
+      <DependentUpon>AddCameraButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\AddCameraButtonViewModel.cs" />
+    <Compile Include="Services\UserServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">
@@ -267,6 +276,11 @@
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Xaml.dll</HintPath>
+    <Reference Include="Plugin.Media.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Media.2.6.2\lib\portable-net45+wp80+win8+wpa81\Plugin.Media.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media">
+      <HintPath>..\packages\Xam.Plugin.Media.2.6.2\lib\portable-net45+wp80+win8+wpa81\Plugin.Media.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
