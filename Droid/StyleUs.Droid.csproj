@@ -224,7 +224,6 @@
     <AndroidResource Include="Resources\drawable\icon1.png" />
     <AndroidResource Include="Resources\drawable\image_error.png" />
     <AndroidResource Include="Resources\drawable\image_loading.png" />
-    <AndroidResource Include="Resources\drawable\login.png" />
     <AndroidResource Include="Resources\drawable\piece.png" />
     <AndroidResource Include="Resources\drawable\comb.png" />
     <AndroidResource Include="Resources\drawable\splashscreen.png" />
@@ -243,6 +242,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\if_heart34_216489.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Login.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets')" />
