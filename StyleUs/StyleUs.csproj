@@ -79,6 +79,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\AddCameraButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -181,7 +185,7 @@
       <DependentUpon>FollowerLists.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\Users\FollowersListViewModel.cs" />
-    <Compile Include="Services\UserServices.cs" />
+    <Compile Include="Services\PostServices.cs" />
     <Compile Include="View\Users\FollowingLists.cs">
       <DependentUpon>FollowingLists.xaml</DependentUpon>
     </Compile>
@@ -189,6 +193,11 @@
     <Compile Include="View\Users\TabbedPageFollow.xaml.cs">
       <DependentUpon>TabbedPageFollow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\AddCameraButton.xaml.cs">
+      <DependentUpon>AddCameraButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\AddCameraButtonViewModel.cs" />
+    <Compile Include="Services\UserServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">
