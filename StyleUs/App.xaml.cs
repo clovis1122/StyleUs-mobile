@@ -57,21 +57,11 @@ namespace StyleUs
             Container.RegisterTypeForNavigation<AnswersPage,AnswersPageViewModel>();
             Container.RegisterTypeForNavigation<View.Users.FollowerLists, ViewModel.Users.FollowersListViewModel>();
             Container.RegisterTypeForNavigation<View.Users.FollowingLists, ViewModel.Users.FollowingListViewModel>();
-<<<<<<< Updated upstream
-            Container.RegisterTypeForNavigation<View.Users.FollowingLists, ViewModel.Users.FollowingListViewModel>();
-
             Container.RegisterTypeForNavigation<View.AddPicturePost, ViewModel.AddPicturePostViewModel>();
             Container.RegisterTypeForNavigation<AddCameraButton, AddCameraButtonViewModel>();
 
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainTabbedPage>();
-
-=======
-            Container.RegisterTypeForNavigation<AddCameraButton, AddCameraButtonViewModel>();
-           
-            Container.RegisterTypeForNavigation<NavigationPage>();
-            Container.RegisterTypeForNavigation<MainTabbedPage>();
->>>>>>> Stashed changes
         }
 
 		protected override void OnStart()
