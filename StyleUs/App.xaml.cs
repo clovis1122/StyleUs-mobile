@@ -25,7 +25,7 @@ namespace StyleUs
         protected override void OnInitialized(){
 			InitializeComponent();
 
-           NavigationService.NavigateAsync(new Uri("/NavigationPage/FollowingLists", UriKind.Absolute));
+           NavigationService.NavigateAsync(new Uri("/LoginPage", UriKind.Absolute));
 		}
 
 		protected override void RegisterTypes()
