@@ -7,16 +7,19 @@ namespace StyleUs
 {
     public class AccountManager
     {
-        public string UserName
+        
+        public static AccountStore manager;
+
+        public static string UserName
         {
             get
             {
-                var account = AccountStore.Create().FindAccountsForService(App.AppName).FirstOrDefault();
+                var account = manager.FindAccountsForService(App.AppName).FirstOrDefault();
                 return account?.Username;
             }
         }
 
-        public string Password
+        public static string Password
         {
             get
             {
@@ -25,7 +28,7 @@ namespace StyleUs
             }
         }
 
-        public void SaveCredentials(string userName, string password)
+        public static void SaveCredentials(string userName, string password)
         {
             if (!string.IsNullOrWhiteSpace(userName) && !string.IsNullOrWhiteSpace(password))
             {
@@ -38,7 +41,7 @@ namespace StyleUs
             }
         }
 
-        public void DeleteCredentials()
+        public static void DeleteCredentials()
         {
             var account = AccountStore.Create().FindAccountsForService(App.AppName).FirstOrDefault();
             if (account != null)

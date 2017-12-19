@@ -10,6 +10,8 @@ using Android.OS;
 using Prism.Unity;
 using Microsoft.Practices.Unity;
 using Plugin.Permissions;
+using StyleUs;
+using Xamarin.Auth;
 
 namespace StyleUs.Droid
 {
@@ -21,8 +23,9 @@ namespace StyleUs.Droid
 			TabLayoutResource = Resource.Layout.Tabbar;
 			ToolbarResource = Resource.Layout.Toolbar;
 
-          
-            
+            AccountManager.manager = AccountStore.Create(this);
+
+         
 			base.OnCreate(bundle);
 
 			global::Xamarin.Forms.Forms.Init(this, bundle);
