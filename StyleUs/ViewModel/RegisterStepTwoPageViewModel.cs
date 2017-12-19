@@ -74,7 +74,7 @@ namespace StyleUs.ViewModel
                 return;
             }
 
-            await navigation.NavigateAsync(new Uri("http://www.StyleUs.com/HomePage", UriKind.Absolute));
+            await navigation.NavigateAsync(new Uri("http://www.StyleUs.com/HomePage/", UriKind.Absolute));
 		}
 
         // INavigationAware

@@ -20,7 +20,7 @@ namespace StyleUs.Droid
 			TabLayoutResource = Resource.Layout.Tabbar;
 			ToolbarResource = Resource.Layout.Toolbar;
 
-            base.SetTheme(Resource.Style.MyTheme);
+          
             
 			base.OnCreate(bundle);
 
