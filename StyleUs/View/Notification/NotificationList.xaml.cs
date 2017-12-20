@@ -10,6 +10,8 @@ namespace StyleUs.View.Notification
         public NotificationList()
         {
             InitializeComponent();
+
+           
         }
     }
 }
