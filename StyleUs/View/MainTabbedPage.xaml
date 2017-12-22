@@ -1,15 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
             prism:ViewModelLocator.AutowireViewModel="True"
             x:Class="StyleUs.View.MainTabbedPage"
-            xmlns:local="clr-namespace:StyleUs.View">
+            xmlns:local="clr-namespace:StyleUs.View"
+            xmlns:localNotification="clr-namespace:StyleUs.View.Notification">
 
     <TabbedPage.Children>
 
         <local:HomePage></local:HomePage>
-        <local:NotificationPage></local:NotificationPage>
+        <localNotification:NotificationList></localNotification:NotificationList>
         <local:ProfilePage ></local:ProfilePage>
         <local:ClothCombinationPage></local:ClothCombinationPage>
         

@@ -35,7 +35,7 @@ namespace StyleUs.ViewModel.Notification
                 var du = new StyleUs.Models.Notification();
                 du.title = "Notificacion " + (i+1);
                 du.detail = "Detalle de notificacion numero " + i;
-                du.img = "Unknown.jpg";
+                du.img = "ICONO2.png";
                 notificationList.Add(du);
 
             }

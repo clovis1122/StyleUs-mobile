@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="StyleUs.View.Menu"
+    NavigationPage.HasNavigationBar="False"
+    Padding="0,20,0,0">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="nombreBotones" TargetType="Label">
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="TextColor" Value="#a8afb8"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="Start"/>
+             </Style>
+             <Style x:Key="iconosBotones" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HeightRequest" Value="20"/>
+                <Setter Property="WidthRequest" Value="20"/>
+                <Setter Property="MinimumHeightRequest" Value="20"/>
+                <Setter Property="MinimumWidthRequest" Value="20"/>
+             </Style> 
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+            <Grid RowSpacing="0" ColumnSpacing="0" BackgroundColor="#e9eaed">
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.30*"/>
+                    <RowDefinition Height="0.10*"/>
+                    <RowDefinition Height="0.10*"/>
+                    <RowDefinition Height="0.10*"/>
+                    <RowDefinition Height="0.10*"/>
+                    <RowDefinition Height="*"/>
+                
+                </Grid.RowDefinitions>
+            
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.30*"/>
+                    
+                </Grid.ColumnDefinitions>
+
+                <!-- Cuadro 0,0 -->
+                <Label Grid.Row="0" Grid.Column="0" BackgroundColor="#a8afb8"/>
+
+                <Image x:Name="imagen_circular" Source="ICONO2.png" Grid.Row="0" Grid.Column="0" 
+                 HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HeightRequest="50" WidthRequest="50"
+                MinimumHeightRequest="50" MinimumWidthRequest="50"/>
+
+                <!--Cuadro 0,1 -->
+                <Label Grid.Row="0" Grid.Column="1" BackgroundColor="#a8afb8"/>
+
+                <Label TextColor="White" Grid.Row="0" Grid.Column="1"
+                    VerticalOptions="Center" HorizontalOptions="Start">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Adeury Camilo - " FontAttributes="Bold"/>
+                            <Span Text="Santo Domingo" FontSize="Micro"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            
+                <!-- Segundo cuadro 1,0 -->
+
+                <Label Grid.Row="1" Grid.Column="0" BackgroundColor="#e9eaed"/>
+            
+                <Image x:Name="imgPiezas" Source="Path668.png" Grid.Row="1" Grid.Column="0"
+                Style="{StaticResource iconosBotones}" />
+            
+                <!-- Segundo cuadro 1,1 -->
+                <Label Grid.Row="1" Grid.Column="1" BackgroundColor="#e9eaed"/>
+            
+                <Label Text="PIEZAS" Grid.Row="1" Grid.Column="1"
+                Style="{StaticResource nombreBotones}"/>
+                
+                <!-- Tercera fila 2,0 -->
+                <Label Grid.Row="2" Grid.Column="0" BackgroundColor="#e9eaed"/>
+
+                <Image x:Name="imgConjuntos" Source="Union57.png" Grid.Row="2" Grid.Column="0"
+                Style="{StaticResource iconosBotones}"/>
+            
+                <!-- Tercera fila 2,1 -->
+                <Label Grid.Row="2" Grid.Column="1" BackgroundColor="#e9eaed"/>
+
+               <Label Text="CONJUNTOS" Grid.Row="2" Grid.Column="1"
+                Style="{StaticResource nombreBotones}"/>
+            
+                <!-- Cuarta fila 3,0 -->
+                <Label Grid.Row="3" Grid.Column="0" BackgroundColor="#e9eaed"/>
+            
+                <Image x:Name="Sobre_nosotros" Source="Help.png" Grid.Row="3" Grid.Column="0"
+                Style="{StaticResource iconosBotones}"/>
+            
+                <!-- Cuarta fila 3,1 -->
+                <Label Grid.Row="3" Grid.Column="1" BackgroundColor="#e9eaed"/>
+
+                <Label Text="SOBRE NOSOTROS" Grid.Row="3" Grid.Column="1"
+                Style="{StaticResource nombreBotones}"/>
+                
+                <!-- Quinta fila 4,0-->
+                <Label Grid.Row="4" Grid.Column="0" BackgroundColor="#e9eaed"/>
+
+                <Image x:Name="Salir" Source="Export.png" Grid.Row="4" Grid.Column="0"
+                Style="{StaticResource iconosBotones}"/>
+            
+                <!-- Quinta fila 4,1-->
+                <Label Grid.Row="4" Grid.Column="1" BackgroundColor="#e9eaed"/>
+
+                <Label Text="SALIR" Grid.Row="4" Grid.Column="1"
+                Style="{StaticResource nombreBotones}"/>
+            
+               
+                
+            
+        </Grid>
+            
+         
+
+        
+	</ContentPage.Content>
+</ContentPage>
