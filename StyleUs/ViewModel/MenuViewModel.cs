@@ -17,6 +17,7 @@ namespace StyleUs.ViewModel
     {
         public ICommand pieza { get; set; }
         public ICommand conjunto { get; set; }
+        public ICommand sobreNosotros { get; set; }
         public ICommand salir { get; set; }
 
         INavigationService navigation;
@@ -31,6 +32,7 @@ namespace StyleUs.ViewModel
 
             pieza = new Command(onPiezasClick);
             conjunto = new Command(onConjuntoClick);
+            sobreNosotros = new Command(onSobreNosotrosClick);
             salir = new Command(onSalirClick);
 
         }
@@ -42,6 +44,10 @@ namespace StyleUs.ViewModel
         public void onConjuntoClick()
         {
             navigation.NavigateAsync("ClothCombinationPage");
+        }
+
+        public void onSobreNosotrosClick(){
+            navigation.NavigateAsync("");
         }
 
         public void onSalirClick()

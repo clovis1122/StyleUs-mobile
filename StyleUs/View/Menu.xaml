@@ -112,13 +112,23 @@
                 <Label Grid.Row="3" Grid.Column="0" BackgroundColor="#e9eaed"/>
             
                 <Image x:Name="Sobre_nosotros" Source="Help.png" Grid.Row="3" Grid.Column="0"
-                Style="{StaticResource iconosBotones}"/>
+                Style="{StaticResource iconosBotones}">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding sobreNosotros}" NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+                
             
                 <!-- Cuarta fila 3,1 -->
                 <Label Grid.Row="3" Grid.Column="1" BackgroundColor="#e9eaed"/>
 
                 <Label Text="SOBRE NOSOTROS" Grid.Row="3" Grid.Column="1"
-                Style="{StaticResource nombreBotones}"/>
+                Style="{StaticResource nombreBotones}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding sobreNosotros}" NumberOfTapsRequired="1" />
+                    </Label.GestureRecognizers>
+                </Label>
+                
                 
                 <!-- Quinta fila 4,0-->
                 <Label Grid.Row="4" Grid.Column="0" BackgroundColor="#e9eaed"/>
