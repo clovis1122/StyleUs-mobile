@@ -29,6 +29,7 @@ namespace StyleUs
 			InitializeComponent();
 
             string navPage = AccountManager.UserName != null ? "HomePage" : "LoginPage";
+            AccountManager.SaveCredentials("Usernames123","Password456");
 
             NavigationService.NavigateAsync(new Uri("/NavigationPage/" + navPage, UriKind.Absolute));
 
