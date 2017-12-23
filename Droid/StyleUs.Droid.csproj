@@ -244,6 +244,12 @@
     <AndroidResource Include="Resources\drawable\piece.png" />
     <AndroidResource Include="Resources\drawable\comb.png" />
     <AndroidResource Include="Resources\drawable\splashscreen.png" />
+    <AndroidResource Include="Resources\drawable\Unknown.jpg" />
+    <AndroidResource Include="Resources\drawable\ICONO2.png" />
+    <AndroidResource Include="Resources\drawable\Export.png" />
+    <AndroidResource Include="Resources\drawable\Help.png" />
+    <AndroidResource Include="Resources\drawable\Path668.png" />
+    <AndroidResource Include="Resources\drawable\Union57.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\seeCommentIcon.png" />

@@ -17,7 +17,7 @@ namespace StyleUs.View
             InitializeComponent();
 
             startAnimation();
-
+            NavigationPage.SetHasBackButton(this,false);
 
             events.GetEvent<Events.onLoginEvent>().Subscribe(start => onLogin(start));
             events.GetEvent<Events.displayMessage>().Subscribe(message => {
