@@ -28,8 +28,18 @@ namespace StyleUs
                     
 			InitializeComponent();
 
-            string navPage = AccountManager.UserName != null ? "HomePage" : "LoginPage";
-            AccountManager.SaveCredentials("Usernames123","Password456");
+            string navPage = "LoginPage";
+
+            try {
+                
+                // AccountManager.SaveCredentials("Usernames123","Password456");
+                if (AccountManager.UserName != null) {
+                    navPage = "HomePage";
+                }
+
+            } catch(Exception e) {
+                // No keychain :(
+            }
 
             NavigationService.NavigateAsync(new Uri("/NavigationPage/" + navPage, UriKind.Absolute));
 		}
