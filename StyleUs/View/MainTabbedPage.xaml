@@ -5,7 +5,7 @@
             prism:ViewModelLocator.AutowireViewModel="True"
             x:Class="StyleUs.View.MainTabbedPage"
             xmlns:local="clr-namespace:StyleUs.View"
-            xmlns:localNotification="clr-namespace:StyleUs.View.Notification">
+            xmlns:localNotification="clr-namespace:StyleUs.View.Notification"
             xmlns:localUsers="clr-namespace:StyleUs.View.Users" 
             BarTextColor="Black">
 
