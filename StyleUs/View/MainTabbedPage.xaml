@@ -11,13 +11,12 @@
 
     <TabbedPage.Children>
 
-        <local:HomePage></local:HomePage>
-        <localNotification:NotificationList></localNotification:NotificationList>
-        <local:ProfilePage ></local:ProfilePage>
-        <local:ClothCombinationPage></local:ClothCombinationPage>
-        <localUsers:FollowerLists></localUsers:FollowerLists>
-        
-        
+        <local:HomePage />
+        <localNotification:NotificationList />
+        <local:ProfilePage />
+        <local:ClothCombinationPage />
+        <localUsers:FollowerLists />
+
     </TabbedPage.Children>
   
 </TabbedPage>

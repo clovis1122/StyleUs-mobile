@@ -14,24 +14,22 @@ namespace StyleUs
 	{
         public static string AppName { get { return "TodoListApp"; } }
 
-		public App()
-		{
-    		InitializeComponent();
-
-		}
+		    public App()
+		    {
+	    		InitializeComponent();
+		    }
 
         public App(IPlatformInitializer initializer = null) : base(initializer) {
             InitializeComponent();
         }
 
         protected override void OnInitialized(){
-                    
-			InitializeComponent();
+
+			      InitializeComponent();
 
             string navPage = "LoginPage";
 
             try {
-                
                 // AccountManager.SaveCredentials("Usernames123","Password456");
                 if (AccountManager.UserName != null) {
                     navPage = "HomePage";
@@ -50,8 +48,8 @@ namespace StyleUs
             Container.RegisterTypeForNavigation<View.ClothPieces.SingleClothPiece, SingleClothPieceViewModel>();
 
             Container.RegisterTypeForNavigation<View.HomePage, HomePageViewModel>();
-			Container.RegisterTypeForNavigation<FriendPage, FriendViewModel>();
-		    Container.RegisterTypeForNavigation<LoginPage, LoginPageViewModel>();
+			      Container.RegisterTypeForNavigation<FriendPage, FriendViewModel>();
+		        Container.RegisterTypeForNavigation<LoginPage, LoginPageViewModel>();
             Container.RegisterTypeForNavigation<ProfilePage, ProfileViewModel>();
             Container.RegisterTypeForNavigation<ClothPiecePage, ClothPieceViewModel>();
             Container.RegisterTypeForNavigation<View.Notification.NotificationList,ViewModel.Notification.NotificationListViewModel>();
@@ -65,8 +63,8 @@ namespace StyleUs
             Container.RegisterTypeForNavigation<AnswersPage,AnswersPageViewModel>();
             Container.RegisterTypeForNavigation<View.Users.FollowerLists, ViewModel.Users.FollowersListViewModel>();
             Container.RegisterTypeForNavigation<View.Users.FollowingLists, ViewModel.Users.FollowingListViewModel>();
-            Container.RegisterTypeForNavigation<View.Menu, ViewModel.MenuViewModel>();
-            Container.RegisterTypeForNavigation<View.AddPicturePost, ViewModel.AddPicturePostViewModel>();
+            Container.RegisterTypeForNavigation<View.Menu, MenuViewModel>();
+            Container.RegisterTypeForNavigation<View.AddPicturePost, AddPicturePostViewModel>();
             Container.RegisterTypeForNavigation<AddCameraButton, AddCameraButtonViewModel>();
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainTabbedPage>();

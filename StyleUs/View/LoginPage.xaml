@@ -5,6 +5,7 @@
     xmlns:effect="clr-namespace:StyleUs.Effect"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
     x:Class="StyleUs.View.LoginPage"
+    prism:ViewModelLocator.AutowireViewModel="True"
     BackgroundColor="Black"
     BackgroundImage="Login.png">
     <ContentPage.Content>

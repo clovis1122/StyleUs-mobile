@@ -21,8 +21,8 @@ namespace StyleUs.ViewModel
         public ICommand TakePhoto { get; set; }
         public ICommand CreatePost { get; set; }
         public ImageSource image { get; set; }
-        public bool showSubmit { 
-            get { return file != null; } 
+        public bool showSubmit {
+            get { return file != null; }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -54,12 +54,10 @@ namespace StyleUs.ViewModel
             image = ImageSource.FromFile(file.Path);
         }
 
-        public async void createPost() 
+        public async void createPost()
         {
             var x = await StyleUs.Services.PostServices.createPost(file);
-
-            var du = "a";
-            
+            // Post created! 
         }
     }
 }

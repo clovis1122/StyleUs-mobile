@@ -9,15 +9,11 @@
 	<ContentPage.Content>
       <StackLayout HorizontalOptions="FillAndExpand"> 
 
-            <SearchBar Placeholder="buscar">
-
-            </SearchBar>
-     
+         <SearchBar Placeholder="buscar" />
          <ListView ItemsSource="{Binding followerList}" >
            <ListView.ItemTemplate>
              <DataTemplate >
                <ImageCell
-
                             
                    Text="{Binding last_name}"
                    TextColor="Black"
