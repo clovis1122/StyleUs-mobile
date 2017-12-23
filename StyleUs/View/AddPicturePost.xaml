@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="StyleUs.View.AddPicturePost"
+             Title="Subir foto" BackgroundColor="White"
+             >
+
+
+    <ContentPage.Content >
+
+        <StackLayout Orientation="Vertical" BackgroundColor="White"  >
+
+            <Label Text="Subir foto" TextColor="Red" ></Label>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Fill"  >
+
+                <!--<ffimageloading:CachedImage  
+                                                HeightRequest="40"
+                                                WidthRequest="40" 
+                                                DownsampleUseDipUnits="false" 
+                                                LoadingPlaceholder="image_loading.png"
+                                                ErrorPlaceholder="image_error.png" 
+                                                Source="{Binding ProfileImage}"
+                                                Margin="5,0,5,0">
+                    <ffimageloading:CachedImage.Transformations>
+                        <fftransformations:CircleTransformation />
+                    </ffimageloading:CachedImage.Transformations>
+                </ffimageloading:CachedImage>-->
+
+                <!--<Image Source="icon1.png" WidthRequest="40" HeightRequest="40"></Image>-->
+
+               
+               
+            </StackLayout>
+
+            <Frame OutlineColor="Black" HeightRequest="350" Padding="0">
+
+                <Image Source="https://freerangestock.com/thumbnail/27083/steampunk-woman-tips-hat.jpg" ></Image>
+                
+            </Frame>
+
+            <Editor BackgroundColor="White" VerticalOptions="FillAndExpand" ></Editor>
+            
+           <Button Command="{Binding login}"  Text="Subir Imagen" BackgroundColor="Gray" Margin="20" BorderRadius="50" BorderWidth="2" BorderColor="White" VerticalOptions="End" />
+
+            
+
+
+        </StackLayout>
+        
+        
+        
+    </ContentPage.Content>
+  
+</ContentPage>

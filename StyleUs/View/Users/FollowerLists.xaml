@@ -3,7 +3,8 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms" 
-    x:Class="StyleUs.View.Users.FollowerLists">
+    x:Class="StyleUs.View.Users.FollowerLists"
+    Title="Followers">
     
 	<ContentPage.Content>
       <StackLayout HorizontalOptions="FillAndExpand"> 

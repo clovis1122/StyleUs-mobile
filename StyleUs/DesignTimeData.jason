@@ -1,0 +1,15 @@
+﻿{
+Datos.xaml{
+  "id": "Sample id",
+  "age": "Sample age",
+  "image": "Sample image",
+  "last_name": "Sample last_name",
+  "first_name": "Sample first_name",
+  "is_male": "Sample is_male",
+  "email": "Sample email",
+  "token": "Sample token",
+  "created_at": "Sample created_at",
+  "updated_at": "Sample updated_at"
+}
+
+}

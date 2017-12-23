@@ -6,7 +6,7 @@
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
     x:Class="StyleUs.View.LoginPage"
     BackgroundColor="Black"
-    BackgroundImage="background.png">
+    BackgroundImage="Login.png">
     <ContentPage.Content>
         <AbsoluteLayout Padding="20,0">
 

@@ -6,6 +6,8 @@
             x:Class="StyleUs.View.MainTabbedPage"
             xmlns:local="clr-namespace:StyleUs.View"
             xmlns:localNotification="clr-namespace:StyleUs.View.Notification">
+            xmlns:localUsers="clr-namespace:StyleUs.View.Users" 
+            BarTextColor="Black">
 
     <TabbedPage.Children>
 
@@ -13,6 +15,7 @@
         <localNotification:NotificationList></localNotification:NotificationList>
         <local:ProfilePage ></local:ProfilePage>
         <local:ClothCombinationPage></local:ClothCombinationPage>
+        <localUsers:FollowerLists></localUsers:FollowerLists>
         
         
     </TabbedPage.Children>
