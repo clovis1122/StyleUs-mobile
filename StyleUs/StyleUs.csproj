@@ -79,6 +79,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Notification\NotificationList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu.xaml">
     <EmbeddedResource Include="View\AddCameraButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -199,6 +204,15 @@
     <Compile Include="View\Users\TabbedPageFollow.xaml.cs">
       <DependentUpon>TabbedPageFollow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Notification\NotificationList.xaml.cs">
+      <DependentUpon>NotificationList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\Notification\NotificationListViewModel.cs" />
+    <Compile Include="Services\NotificationServices.cs" />
+    <Compile Include="View\Menu.xaml.cs">
+      <DependentUpon>Menu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\MenuViewModel.cs" />
     <Compile Include="View\AddCameraButton.xaml.cs">
       <DependentUpon>AddCameraButton.xaml</DependentUpon>
     </Compile>
@@ -308,6 +322,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\Api\" />
+    <Folder Include="View\Users\" />
+    <Folder Include="ViewModel\Users\" />
+    <Folder Include="View\Notification\" />
+    <Folder Include="ViewModel\Notification\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="View\MainTabbedPage.xaml">

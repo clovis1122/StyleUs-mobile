@@ -306,6 +306,12 @@
     <BundleResource Include="Resources\mail.png" />
     <BundleResource Include="Resources\Forget_password_Background.png" />
     <BundleResource Include="Resources\Group 177.png" />
+    <BundleResource Include="Resources\Unknown.jpg" />
+    <BundleResource Include="Resources\ICONO2.png" />
+    <BundleResource Include="Resources\Export.png" />
+    <BundleResource Include="Resources\Help.png" />
+    <BundleResource Include="Resources\Path668.png" />
+    <BundleResource Include="Resources\Union57.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\LikeHeartIcon.png" />

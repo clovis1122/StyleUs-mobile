@@ -32,7 +32,6 @@ namespace StyleUs
             AccountManager.SaveCredentials("Usernames123","Password456");
 
             NavigationService.NavigateAsync(new Uri("/NavigationPage/" + navPage, UriKind.Absolute));
-
 		}
 
 		protected override void RegisterTypes()
@@ -45,7 +44,7 @@ namespace StyleUs
 		    Container.RegisterTypeForNavigation<LoginPage, LoginPageViewModel>();
             Container.RegisterTypeForNavigation<ProfilePage, ProfileViewModel>();
             Container.RegisterTypeForNavigation<ClothPiecePage, ClothPieceViewModel>();
-            Container.RegisterTypeForNavigation<NotificationPage, NotificationViewModel>();
+            Container.RegisterTypeForNavigation<View.Notification.NotificationList,ViewModel.Notification.NotificationListViewModel>();
             Container.RegisterTypeForNavigation<AddCommentPage, AddCommentPageViewModel>();
             Container.RegisterTypeForNavigation<ForgotPasswordPage,ForgotPasswordPageViewModel>();
             Container.RegisterTypeForNavigation<ClothCombinationPage, ClothCombinationViewModel>();
@@ -56,9 +55,9 @@ namespace StyleUs
             Container.RegisterTypeForNavigation<AnswersPage,AnswersPageViewModel>();
             Container.RegisterTypeForNavigation<View.Users.FollowerLists, ViewModel.Users.FollowersListViewModel>();
             Container.RegisterTypeForNavigation<View.Users.FollowingLists, ViewModel.Users.FollowingListViewModel>();
+            Container.RegisterTypeForNavigation<View.Menu, ViewModel.MenuViewModel>();
             Container.RegisterTypeForNavigation<View.AddPicturePost, ViewModel.AddPicturePostViewModel>();
             Container.RegisterTypeForNavigation<AddCameraButton, AddCameraButtonViewModel>();
-
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainTabbedPage>();
         }
