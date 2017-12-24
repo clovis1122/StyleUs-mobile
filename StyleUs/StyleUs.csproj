@@ -229,6 +229,8 @@
       <DependentUpon>Comments.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\CommentsViewModel.cs" />
+    <Compile Include="Models\Comment.cs" />
+    <Compile Include="Services\CommentServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">

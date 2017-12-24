@@ -5,9 +5,10 @@
     xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms" 
     x:Class="StyleUs.View.Comments"
     Title="Comments"
-    Padding="0,20,0,0">
+    Padding="0,20,0,0" 
+    BackgroundColor="White">
    
-	<ContentPage.Content BackgroundColor="White">
+	<ContentPage.Content>
         <Grid RowSpacing="0" ColumnSpacing="0" BackgroundColor="White">
             <Grid.RowDefinitions>
                 <RowDefinition Height="2.90*"/>
@@ -15,15 +16,31 @@
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
             </Grid.ColumnDefinitions>
-            <ListView ItemsSource="" Grid.Row="0" Grid.Column="0">
-                <ListView.ItemTemplate>
+            <ListView HasUnevenRows="true" ItemsSource="{Binding commentsList}" Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand">
+               <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ImageCell
-                            Text="Adeury Camilo"
-                            TextColor="Black"
-                            DetailColor="White"
-                            ImageSource="{Binding img}"
-                        />
+                           
+                        <ViewCell>
+                            <StackLayout Padding="30,10,30,10" Orientation="Vertical" BackgroundColor="White" VerticalOptions="FillAndExpand">
+                                <StackLayout Orientation="Horizontal" >
+                                    <Image Source="{Binding img}" WidthRequest="50" HeightRequest="50"
+                                    MinimumWidthRequest="50" MinimumHeightRequest="50"/>
+                                    <Label Text="{Binding name}" TextColor="Black" HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="Center"/>
+                                    <Label Text="{Binding time}" TextColor="Black" HorizontalOptions="End"
+                                    VerticalOptions="Center"/>
+
+                                    <Label Text="h" TextColor="Black" HorizontalOptions="End"
+                                    VerticalOptions="Center"/>
+                                    
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding descriptionComment}" HorizontalOptions="EndAndExpand"
+                                     TextColor="Gray"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>  
+
                     </DataTemplate>
                 </ListView.ItemTemplate>
                 <ListView.Behaviors>

@@ -8,21 +8,15 @@
 	<ContentPage.Content>
       <StackLayout HorizontalOptions="FillAndExpand"> 
 
-            
-          
-
      
          <ListView ItemsSource="{Binding notificationList}" >
            <ListView.ItemTemplate>
              <DataTemplate >
                <ImageCell
-
-                            
                    Text="{Binding title}"
                    TextColor="Black"
+                   Detail="{Binding detail}"
 
-                      
-                  
                    DetailColor="Black"
                    ImageSource="{Binding img}" />
              </DataTemplate>
