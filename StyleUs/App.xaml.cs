@@ -27,7 +27,7 @@ namespace StyleUs
 
 			      InitializeComponent();
 
-            string navPage = "LoginPage";
+            string navPage = "Comments";
 
             try {
                 // AccountManager.SaveCredentials("Usernames123","Password456");
@@ -65,6 +65,7 @@ namespace StyleUs
             Container.RegisterTypeForNavigation<View.Users.FollowingLists, ViewModel.Users.FollowingListViewModel>();
             Container.RegisterTypeForNavigation<View.Menu, MenuViewModel>();
             Container.RegisterTypeForNavigation<View.AddPicturePost, AddPicturePostViewModel>();
+            Container.RegisterTypeForNavigation<View.Comments, CommentsViewModel>();
             Container.RegisterTypeForNavigation<AddCameraButton, AddCameraButtonViewModel>();
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainTabbedPage>();

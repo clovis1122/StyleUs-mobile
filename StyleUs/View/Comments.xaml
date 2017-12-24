@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms" 
+    x:Class="StyleUs.View.Comments"
+    Title="Comments"
+    Padding="0,20,0,0">
+   
+	<ContentPage.Content BackgroundColor="White">
+        <Grid RowSpacing="0" ColumnSpacing="0" BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2.90*"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+            </Grid.ColumnDefinitions>
+            <ListView ItemsSource="" Grid.Row="0" Grid.Column="0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell
+                            Text="Adeury Camilo"
+                            TextColor="Black"
+                            DetailColor="White"
+                            ImageSource="{Binding img}"
+                        />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.Behaviors>
+                <b:EventToCommandBehavior 
+                    EventName="ItemTapped" 
+                    Command="{Binding ItemTappedCommand}"
+                    EventArgsParameterPath="Item" />
+                </ListView.Behaviors>
+            </ListView>
+            
+            <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="0" VerticalOptions="End" Padding="10">
+                <Entry TextColor="Black"
+                Placeholder="Di algo!" PlaceholderColor="Silver"
+                FontSize="Large" Margin="1" HorizontalOptions="FillAndExpand"
+                />
+            
+                <Image Source="send.png"  Grid.Row="1" Grid.Column="0" 
+                HeightRequest="50" WidthRequest="50"
+                MinimumHeightRequest="50" MinimumWidthRequest="50"/>
+            </StackLayout>
+
+
+
+        </Grid>
+	</ContentPage.Content>
+</ContentPage>

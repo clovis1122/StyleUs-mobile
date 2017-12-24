@@ -91,6 +91,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Comments.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountManager.cs" />
@@ -221,6 +225,10 @@
     </Compile>
     <Compile Include="ViewModel\AddCameraButtonViewModel.cs" />
     <Compile Include="Services\UserServices.cs" />
+    <Compile Include="View\Comments.xaml.cs">
+      <DependentUpon>Comments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\CommentsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">
