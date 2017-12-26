@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms" 
     x:Class="StyleUs.View.Comments"
-    Title="Comments"
+    Title="Comentarios"
     Padding="0,20,0,0" 
     BackgroundColor="White">
    
@@ -52,14 +52,18 @@
             </ListView>
             
             <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="0" VerticalOptions="End" Padding="10">
-                <Entry TextColor="Black"
+                <Entry TextColor="Black" x:Name="comentario"
                 Placeholder="Di algo!" PlaceholderColor="Silver"
                 FontSize="Large" Margin="1" HorizontalOptions="FillAndExpand"
                 />
             
                 <Image Source="send.png"  Grid.Row="1" Grid.Column="0" 
                 HeightRequest="50" WidthRequest="50"
-                MinimumHeightRequest="50" MinimumWidthRequest="50"/>
+                MinimumHeightRequest="50" MinimumWidthRequest="50">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding comment}" NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
             </StackLayout>
 
 

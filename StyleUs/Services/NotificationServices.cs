@@ -13,7 +13,7 @@ namespace StyleUs.Services
     public class NotificationServices
     {
         
-        public static async Task<KeyValuePair<bool, object>> get()
+        public static async Task<KeyValuePair<bool,object>> get()
         {
             var resp = await ApiConnector.getJsonFromUrl("/notification/");
             if (resp.GetStatusCode() != 200)

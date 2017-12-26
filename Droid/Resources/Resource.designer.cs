@@ -2253,8 +2253,8 @@ namespace StyleUs.Droid
 			// aapt resource value: 0x7f0200ac
 			public const int mr_ic_play_light = 2130837676;
 			
-			// aapt resource value: 0x7f0200b4
-			public const int notification_template_icon_bg = 2130837684;
+			// aapt resource value: 0x7f0200b5
+			public const int notification_template_icon_bg = 2130837685;
 			
 			// aapt resource value: 0x7f0200ad
 			public const int Path668 = 2130837677;
@@ -2266,16 +2266,19 @@ namespace StyleUs.Droid
 			public const int seeCommentIcon = 2130837679;
 			
 			// aapt resource value: 0x7f0200b0
-			public const int splashscreen = 2130837680;
+			public const int send = 2130837680;
 			
 			// aapt resource value: 0x7f0200b1
-			public const int Union57 = 2130837681;
+			public const int splashscreen = 2130837681;
 			
 			// aapt resource value: 0x7f0200b2
-			public const int Unknown = 2130837682;
+			public const int Union57 = 2130837682;
 			
 			// aapt resource value: 0x7f0200b3
-			public const int WriteCommentIcon = 2130837683;
+			public const int Unknown = 2130837683;
+			
+			// aapt resource value: 0x7f0200b4
+			public const int WriteCommentIcon = 2130837684;
 			
 			static Drawable()
 			{

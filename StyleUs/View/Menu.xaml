@@ -4,7 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="StyleUs.View.Menu"
     NavigationPage.HasNavigationBar="False"
-    Padding="0,20,0,0">
+    Padding="0,40,0,0"
+    Title="Menu">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="nombreBotones" TargetType="Label">

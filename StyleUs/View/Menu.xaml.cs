@@ -10,6 +10,8 @@ namespace StyleUs.View
         public Menu()
         {
             InitializeComponent();
+
+            BindingContext = new StyleUs.ViewModel.MenuViewModel();
         }
     }
 }

@@ -10,7 +10,7 @@ namespace StyleUs.View.Notification
         public NotificationList()
         {
             InitializeComponent();
-
+            BindingContext = new StyleUs.ViewModel.Notification.NotificationListViewModel();
            
         }
     }

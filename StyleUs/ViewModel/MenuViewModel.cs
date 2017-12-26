@@ -37,8 +37,13 @@ namespace StyleUs.ViewModel
 
         }
 
-        public void onPiezasClick(){
-            navigation.NavigateAsync("ClothPiecePage");
+        public MenuViewModel()
+        {
+            
+        }
+
+        public async void onPiezasClick(){
+            await navigation.NavigateAsync("ClothPiecePage");
         }
 
         public void onConjuntoClick()
