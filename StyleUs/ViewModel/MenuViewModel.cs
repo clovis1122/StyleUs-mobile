@@ -40,8 +40,8 @@ namespace StyleUs.ViewModel
 
 
         public void onPiezasClick(){
-            navigation.NavigateAsync(new Uri("/MainTabbedPage/ClothPiecePage", UriKind.Absolute));
-            //navigation.NavigateAsync("ClothPiecePage");
+            //navigation.NavigateAsync(new Uri("/MainTabbedPage/ClothPiecePage", UriKind.Absolute));
+            navigation.NavigateAsync("ClothPiecePage");
         }
 
         public void onConjuntoClick()
