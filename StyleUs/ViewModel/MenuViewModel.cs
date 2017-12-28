@@ -10,6 +10,7 @@ using Prism.Navigation;
 using Prism.Commands;
 using Prism.Events;
 using System.Threading.Tasks;
+using Prism.Mvvm;
 
 namespace StyleUs.ViewModel
 {
@@ -37,13 +38,10 @@ namespace StyleUs.ViewModel
 
         }
 
-        public MenuViewModel()
-        {
-            
-        }
 
-        public async void onPiezasClick(){
-            await navigation.NavigateAsync("ClothPiecePage");
+        public void onPiezasClick(){
+            navigation.NavigateAsync(new Uri("/MainTabbedPage/ClothPiecePage", UriKind.Absolute));
+            //navigation.NavigateAsync("ClothPiecePage");
         }
 
         public void onConjuntoClick()

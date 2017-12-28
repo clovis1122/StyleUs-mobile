@@ -17,6 +17,7 @@
         <local:Comments />
         <localUsers:FollowerLists />
         <local:Menu/>
+        <local:AddPicturePost/>
 
     </TabbedPage.Children>
   

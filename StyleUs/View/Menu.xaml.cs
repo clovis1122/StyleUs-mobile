@@ -11,7 +11,7 @@ namespace StyleUs.View
         {
             InitializeComponent();
 
-            BindingContext = new StyleUs.ViewModel.MenuViewModel();
+            //BindingContext = new StyleUs.ViewModel.MenuViewModel();
         }
     }
 }
