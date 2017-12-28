@@ -4,8 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
     x:Class="StyleUs.View.Menu"
-    prism:ViewModelLocator.AutowireViewModel="True"
-    NavigationPage.HasNavigationBar="True"
+    prism:ViewModelLocator.AutowireViewModel="true"
+    NavigationPage.HasNavigationBar="true"
     Padding="0,40,0,0"
     Title="Menu">
     <ContentPage.Resources>
@@ -88,6 +88,7 @@
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding pieza}" NumberOfTapsRequired="1" />
                     </Label.GestureRecognizers>
+
                 </Label>
             
             

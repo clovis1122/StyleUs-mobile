@@ -16,10 +16,10 @@ namespace StyleUs.ViewModel
 {
     public class MenuViewModel : INotifyPropertyChanged
     {
-        public ICommand pieza { get; set; }
-        public ICommand conjunto { get; set; }
-        public ICommand sobreNosotros { get; set; }
-        public ICommand salir { get; set; }
+        public DelegateCommand pieza { get; set; }
+        public DelegateCommand conjunto { get; set; }
+        public DelegateCommand sobreNosotros { get; set; }
+        public DelegateCommand salir { get; set; }
 
         INavigationService navigation;
         IEventAggregator events;
@@ -31,10 +31,10 @@ namespace StyleUs.ViewModel
             navigation = navigationService;
             events = eventAgregator;
 
-            pieza = new Command(onPiezasClick);
-            conjunto = new Command(onConjuntoClick);
-            sobreNosotros = new Command(onSobreNosotrosClick);
-            salir = new Command(onSalirClick);
+            pieza = new DelegateCommand(onPiezasClick);
+            conjunto = new DelegateCommand(onConjuntoClick);
+            sobreNosotros = new DelegateCommand(onSobreNosotrosClick);
+            salir = new DelegateCommand(onSalirClick);
 
         }
 
@@ -50,7 +50,7 @@ namespace StyleUs.ViewModel
         }
 
         public void onSobreNosotrosClick(){
-            navigation.NavigateAsync("");
+            navigation.NavigateAsync("ProfilePage");
         }
 
         public void onSalirClick()
