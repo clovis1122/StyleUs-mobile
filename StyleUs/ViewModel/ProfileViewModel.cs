@@ -45,7 +45,8 @@ namespace StyleUs.ViewModel
 			}
 		}
 
-		public ProfileViewModel(INavigationService navigationService)
+		
+        public ProfileViewModel(INavigationService navigationService)
 		{
 			MenuViewModel = new FloatingMenuViewModel(navigationService);
 
@@ -53,7 +54,11 @@ namespace StyleUs.ViewModel
 			ReloadData();
 		}
 
-		static Random rnd = new Random();
+        public ProfileViewModel()
+        {
+        }
+
+        static Random rnd = new Random();
 
 		public void ReloadData()
 		{
@@ -67,6 +72,7 @@ namespace StyleUs.ViewModel
 				"http://img.bekiamascotas.com/articulos/portada/41000/41059-h2.jpg",
 				"https://i.ytimg.com/vi/w6Z5XpJ_IHM/maxresdefault.jpg",
 				"http://s7d2.scene7.com/is/image/PetSmart/5081326?$sclp-prd-main_large$",
+
 			};
 
 			for (int i = 0; i < images.Length; i++)

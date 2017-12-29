@@ -2,44 +2,36 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    x:Class="StyleUs.View.RegisterStepTwoPage"
-    BackgroundImage="Forget_password_Background.png">
+    x:Class="StyleUs.View.RegisterStepTwoPage">
 	   <ContentPage.Content>
-        <ScrollView Orientation="Vertical" Padding="0,0,0,20">
+        <ScrollView Orientation="Vertical" BackgroundColor="White" Padding="0,0,0,20">
                
-               <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
-            <StackLayout Orientation="Horizontal" Margin="0,20,0,0" HorizontalOptions="Center" Padding="0,40">
+               <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" BackgroundColor="White">
+            <StackLayout Orientation="Horizontal" Margin="0,20,0,0" HorizontalOptions="Center">
                 <Label Text="Style " TextColor="Gray" FontSize="80" />
                 <Label Text="US" TextColor="Red" FontSize="80" />
             </StackLayout>
             <StackLayout Orientation="Horizontal" Margin="0,10,0,0" HorizontalOptions="Center">
-                <Label Text="Registrarse" FontAttributes="Bold" TextColor="White" FontSize="20" />
+                <Label Text="Registrarse" FontAttributes="Bold" TextColor="Gray" FontSize="20" />
             </StackLayout>
-            <StackLayout Orientation="Vertical" Padding="40,10" HorizontalOptions="Center">
-                <Label FontSize="12" TextColor="White" Text="Paso 2 de 2: credenciales de acceso" />
+            <StackLayout Orientation="Vertical" Padding="40,10">
+                <Label FontSize="12" TextColor="Gray" Text="Paso 2 de 2: credenciales de acceso" />
             </StackLayout>
-
-            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Padding="0,20">
-                    <Image Source="icon1.png"></Image>
-                    <Entry Text="{Binding email}" Placeholder="Juan@example.com" WidthRequest="250" HeightRequest="20"/>
+            
+            <StackLayout Orientation="Vertical" Margin="0,10,0,0" Padding="40,10">
+                <Label Text="Correo Electrónico" />
+                <Entry Text="{Binding email}" Placeholder="Juan@example.com" />
+                <Label Text="Contraseña" Margin="0,10" />
+                <Entry Text="{Binding password}" Placeholder="***********" IsPassword="true" />
+                <Label Text="Confirmar contraseña" Margin="0,10" />
+                <Entry Text="{Binding password_confirmation}" Placeholder="***********" IsPassword="true" />
             </StackLayout>
-
-             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Padding="0,20">
-                    <Image Source="icon1.png"></Image>
-                    <Entry Text="{Binding password}" Placeholder="***********" IsPassword="true" WidthRequest="250" HeightRequest="20"/>
-            </StackLayout>
-
-            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Padding="0,20">
-                    <Image Source="icon1.png"></Image>
-                    <Entry Text="{Binding password_confirmation}" Placeholder="***********" IsPassword="true" WidthRequest="250" HeightRequest="20"/>
-            </StackLayout>
-                
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="0,30">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <StackLayout MinimumWidthRequest="100">
-                     <Button BackgroundColor="Gray" TextColor="White" Text="Atras" Command="{Binding goBack}" WidthRequest="110" BorderRadius="22" BorderWidth="2" BorderColor="White"/>
+                     <Button BackgroundColor="Gray" TextColor="White" Text="Atras" Command="{Binding goBack}" />
                 </StackLayout>
                 <StackLayout MinimumWidthRequest="100">
-                     <Button Command="{Binding finish}" BackgroundColor="Gray" TextColor="White" Text="Crear cuenta" WidthRequest="110" BorderRadius="22" BorderWidth="2" BorderColor="White"/>
+                     <Button Command="{Binding finish}" BackgroundColor="Gray" TextColor="White" Text="Crear cuenta"/>
                 </StackLayout>
                
             </StackLayout>

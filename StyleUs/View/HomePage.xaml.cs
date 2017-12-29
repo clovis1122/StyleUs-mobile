@@ -11,7 +11,7 @@ namespace StyleUs.View
         public HomePage()
         {
 			InitializeComponent();
-           
+
         }
     }
 }

@@ -11,6 +11,7 @@ namespace StyleUs.View
         public ClothPiecePage()
         {
             InitializeComponent();
+            NavigationPage.SetHasBackButton(this, true);
         }
     }
 }

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage
-    xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
     xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     prism:ViewModelLocator.AutowireViewModel="True"
-
     x:Class="StyleUs.View.HomePage"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
     Title="Home"
@@ -29,19 +28,19 @@
 
                                         <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Fill"  >
 
-                                            <ffimageloading:CachedImage
+                                            <ffimageloading:CachedImage  
                                                 HeightRequest="40"
-                                                WidthRequest="40"
-                                                DownsampleUseDipUnits="false"
+                                                WidthRequest="40" 
+                                                DownsampleUseDipUnits="false" 
                                                 LoadingPlaceholder="image_loading.png"
-                                                ErrorPlaceholder="image_error.png"
+                                                ErrorPlaceholder="image_error.png" 
                                                 Source="{Binding ProfileImage}"
                                                 Margin="5,0,5,0">
                                                 <ffimageloading:CachedImage.Transformations>
                                                     <fftransformations:CircleTransformation />
                                                 </ffimageloading:CachedImage.Transformations>
                                             </ffimageloading:CachedImage>
-
+                                            
                                             <Label FontAttributes="Bold" FontSize="Medium" TextColor="Black" Text="{Binding UserName}" VerticalOptions="Center" ></Label>
                                             <Label x:Name="Time Post" Text="{Binding TimePost}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,15,0"></Label>
                                         </StackLayout>
@@ -51,20 +50,20 @@
                                         <BoxView HeightRequest="0.3" Color="#AFB4BB"></BoxView>
                                         <StackLayout Orientation="Horizontal"   >
 
-                                            <Image x:Name="corazon"  Source="LikeHeartIcon.png"  Margin="5,5,0,5"  WidthRequest="20" HeightRequest="20"
-                               ></Image>
+                                            <Image x:Name="corazon"  Source="LikeHeartIcon.png" Margin="5,5,0,5"  WidthRequest="20" HeightRequest="20"/>
+                             
 
 
                                             <Label FontAttributes="Bold" Text="25" TextColor="Gray" VerticalOptions="Center" ></Label>
                                             <ffimageloading:CachedImage HeightRequest="20" WidthRequest="20" DownsampleUseDipUnits="false" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="seeCommentIcon.png">
                                             </ffimageloading:CachedImage>
                                             <Label FontAttributes="Bold" Text="35" TextColor="Gray" VerticalOptions="Center"  Margin="0,0,5,0"></Label>
-                                            <Image Source="WriteCommentIcon.png"  WidthRequest="25"  HeightRequest="25" HorizontalOptions="EndAndExpand" Margin="0,0,15,5" ></Image>
+<!-- Aqui va el comentario -->              <Image Source="WriteCommentIcon.png"  WidthRequest="25"  HeightRequest="25" HorizontalOptions="EndAndExpand" Margin="0,0,15,5" ></Image>
 
                                         </StackLayout>
 
 
-                                    </StackLayout>
+                                    </StackLayout>  
                                 </Frame>
                             </StackLayout>
 

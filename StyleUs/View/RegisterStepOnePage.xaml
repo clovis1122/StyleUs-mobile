@@ -12,48 +12,33 @@
                 <Label Text="US" TextColor="Red" FontSize="80" />
             </StackLayout>
             <StackLayout Orientation="Horizontal" Margin="0,10,0,0" HorizontalOptions="Center">
-                <Label Text="Registrarse" FontAttributes="Bold" TextColor="White" FontSize="20" />
+                <Label Text="Registrarse" FontAttributes="Bold" TextColor="Gray" FontSize="20" />
             </StackLayout>
-            <StackLayout Orientation="Vertical" Padding="40,20" HorizontalOptions="CenterAndExpand">
-                <Label FontSize="12" TextColor="White" Text="Paso 1 de 2: Informacion Basica" />
+            <StackLayout Orientation="Vertical" Padding="40,10">
+                <Label FontSize="12" TextColor="Gray" Text="Paso 1 de 2: Informacion Basica" />
             </StackLayout>
-
-                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Padding="0,20">
-                    <Image Source="icon1.png"></Image>
-                    <Entry Text="{Binding first_name}" Placeholder="Nombre" WidthRequest="250" HeightRequest="20"/>
-                </StackLayout>
-
-                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Padding="0,20" HeightRequest="20">
-                <Image Source="icon1.png"></Image>
-                <Entry Text="{Binding last_name}" Placeholder="Apellido" WidthRequest="250"/>
-                </StackLayout>
-
-                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Padding="0,20" HeightRequest="20">
-                <Image Source="icon1.png"></Image>
-                <DatePicker Format="MM/dd/yyyy" Date="{Binding birthdate}" WidthRequest="250"/>
-                </StackLayout>
-
-                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Padding="0,20" HeightRequest="20">
-                <Image Source="icon1.png"></Image>
-                <Picker SelectedIndex="{Binding is_male}" WidthRequest="250">
+            
+            <StackLayout Orientation="Vertical" Margin="0,10,0,0" Padding="40,10">
+                <Label Text="Nombre" />
+                <Entry Text="{Binding first_name}" Placeholder="Nombre"/>
+                <Label Text="Apellido" Margin="0,10" />
+                <Entry Text="{Binding last_name}" Placeholder="Apellido" />
+                <Label Text="Fecha de nacimiento" Margin="0,10" />
+                <DatePicker Format="MM/dd/yyyy" Date="{Binding birthdate}" />
+                <Label Text="Sexo" Margin="0,10" />
+                <Picker SelectedIndex="{Binding is_male}">
                     <Picker.Items>
                         <x:String>Femenino</x:String> 
                         <x:String>Masculino</x:String>
                     </Picker.Items>
                 </Picker>
-
-                </StackLayout>
-            
-            <StackLayout Orientation="Vertical" Margin="0,10,0,0" Padding="40,10">
-   
-                
             </StackLayout>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="0,-10">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="0,40">
                 <StackLayout MinimumWidthRequest="100">
-                     <Button BackgroundColor="Gray" TextColor="White" Text="Cancelar" Command="{Binding cancel}" WidthRequest="100" BorderRadius="22" BorderWidth="2" BorderColor="White"/>
+                     <Button BackgroundColor="Gray" TextColor="White" Text="Cancelar" Command="{Binding cancel}" WidthRequest="140" BorderRadius="22" BorderWidth="2" BorderColor="White"/>
                 </StackLayout>
                 <StackLayout MinimumWidthRequest="100">
-                     <Button BackgroundColor="Gray" TextColor="White" Text="Continuar" Command="{Binding next}" WidthRequest="100" BorderRadius="22" BorderWidth="2" BorderColor="White"/>
+                     <Button BackgroundColor="Gray" TextColor="White" Text="Continuar" Command="{Binding next}" WidthRequest="140" BorderRadius="22" BorderWidth="2" BorderColor="White"/>
                 </StackLayout>
                
             </StackLayout>

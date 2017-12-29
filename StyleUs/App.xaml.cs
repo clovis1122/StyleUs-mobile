@@ -61,19 +61,12 @@ namespace StyleUs
             Container.RegisterTypeForNavigation<AddCommentPage,AddCommentPageViewModel>();
             Container.RegisterTypeForNavigation<ViewComments,ViewCommentsViewModel>();
             Container.RegisterTypeForNavigation<AnswersPage,AnswersPageViewModel>();
-
             Container.RegisterTypeForNavigation<View.Users.FollowerLists, ViewModel.Users.FollowersListViewModel>();
             Container.RegisterTypeForNavigation<View.Users.FollowingLists, ViewModel.Users.FollowingListViewModel>();
-<<<<<<< HEAD
-            Container.RegisterTypeForNavigation<View.Users.TabbedPageFollow>();
-
-
-
-=======
-            Container.RegisterTypeForNavigation<View.Menu, MenuViewModel>();
+            Container.RegisterTypeForNavigation<View.Menu, ViewModel.MenuViewModel>();
             Container.RegisterTypeForNavigation<View.AddPicturePost, AddPicturePostViewModel>();
+            Container.RegisterTypeForNavigation<View.Comments, CommentsViewModel>();
             Container.RegisterTypeForNavigation<AddCameraButton, AddCameraButtonViewModel>();
->>>>>>> b81fa39dce658f4c6a5c9067460185d3f4476187
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainTabbedPage>();
         }

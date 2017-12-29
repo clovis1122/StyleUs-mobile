@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage
-	xmlns="http://xamarin.com/schemas/2014/forms"
-	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-	xmlns:effect="clr-namespace:StyleUs.Effect"
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:effect="clr-namespace:StyleUs.Effect" 
     x:Class="StyleUs.View.ProfilePage"
-
     xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:views="clr-namespace:StyleUs.View.Component"
@@ -13,16 +12,16 @@
 
     <ContentPage.Content>
        <StackLayout HorizontalOptions="FillAndExpand">
-           <Label Text="PERFIL"
-                TextColor="Black"
-                Margin="30"
-                HorizontalOptions="Center"
+           <Label Text="PERFIL" 
+                TextColor="Black" 
+                Margin="30" 
+                HorizontalOptions="Center" 
                 FontSize="30"
                 FontFamily="monospace"
                 FontAttributes="Bold" />
-
+            
             <BoxView HeightRequest="1" Color="Black" />
-
+            
             <StackLayout Margin="0,10,0,0">
                 <StackLayout Orientation="Horizontal">
                     <Label FontAttributes="Bold" TextColor="Black" Text="Fecha de nacimiento:" />
@@ -36,17 +35,17 @@
 
             <Label
                 Margin="0,20,0,0"
-                FontAttributes="Bold"
+                FontAttributes="Bold" 
                 TextColor="Black"
                 FontSize="25"
                 HorizontalOptions="Center"
                 Text="Últimas Publicaciones">
-
+                
                 <Label.Effects>
                     <effect:UnderlineEffect />
                 </Label.Effects>
              </Label>
-
+            
              <flv:FlowListView x:Name="flowListView" SeparatorVisibility="None" HasUnevenRows="true"
                 FlowColumnMinWidth="130" FlowItemsSource="{Binding imageList}">
 
@@ -60,14 +59,14 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
 
-                            <ffimageloading:CachedImage Aspect="AspectFill" DownsampleUseDipUnits="false"
+                            <ffimageloading:CachedImage Aspect="AspectFill" DownsampleUseDipUnits="false" 
                                 LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png"
                                 Source="{Binding imageUrl}"/>
                         </Grid>
-                    </DataTemplate>
+                    </DataTemplate> 
                 </flv:FlowListView.FlowColumnTemplate>
             </flv:FlowListView>
-
+            
            </StackLayout>
       </ContentPage.Content>
 </ContentPage>
