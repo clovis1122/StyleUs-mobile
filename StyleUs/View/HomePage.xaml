@@ -50,15 +50,15 @@
                                         <BoxView HeightRequest="0.3" Color="#AFB4BB"></BoxView>
                                         <StackLayout Orientation="Horizontal"   >
 
-                                            <Image x:Name="corazon"  Source="LikeHeartIcon.png"  Margin="5,5,0,5"  WidthRequest="20" HeightRequest="20"
-                               ></Image>
+                                            <Image x:Name="corazon"  Source="LikeHeartIcon.png" Margin="5,5,0,5"  WidthRequest="20" HeightRequest="20"/>
+                             
 
 
                                             <Label FontAttributes="Bold" Text="25" TextColor="Gray" VerticalOptions="Center" ></Label>
                                             <ffimageloading:CachedImage HeightRequest="20" WidthRequest="20" DownsampleUseDipUnits="false" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="seeCommentIcon.png">
                                             </ffimageloading:CachedImage>
                                             <Label FontAttributes="Bold" Text="35" TextColor="Gray" VerticalOptions="Center"  Margin="0,0,5,0"></Label>
-                                            <Image Source="WriteCommentIcon.png"  WidthRequest="25"  HeightRequest="25" HorizontalOptions="EndAndExpand" Margin="0,0,15,5" ></Image>
+<!-- Aqui va el comentario -->              <Image Source="WriteCommentIcon.png"  WidthRequest="25"  HeightRequest="25" HorizontalOptions="EndAndExpand" Margin="0,0,15,5" ></Image>
 
                                         </StackLayout>
 

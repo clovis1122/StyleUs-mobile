@@ -69,6 +69,10 @@ namespace StyleUs.ViewModel {
             PostList.Add(new HomePage("Clovis Ramirez", 15, "https://freerangestock.com/thumbnail/27083/steampunk-woman-tips-hat.jpg", "Esta pieza se trata de un look expectacular", "https://freerangestock.com/thumbnail/22170/woman-poses-in-parking-garage.jpg", 28,9));
         }
 
+        public HomePageViewModel()
+        {
+        }
+
         public void GoToAddComment()
         {
             navigation.NavigateAsync("AddCommentPage");

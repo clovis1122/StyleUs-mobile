@@ -15,6 +15,7 @@ namespace StyleUs.View
 		public ProfilePage ()
 		{
 			InitializeComponent ();
+            BindingContext = new StyleUs.ViewModel.ProfileViewModel();
 		}
 	}
 }

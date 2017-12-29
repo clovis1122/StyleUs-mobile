@@ -63,8 +63,9 @@ namespace StyleUs
             Container.RegisterTypeForNavigation<AnswersPage,AnswersPageViewModel>();
             Container.RegisterTypeForNavigation<View.Users.FollowerLists, ViewModel.Users.FollowersListViewModel>();
             Container.RegisterTypeForNavigation<View.Users.FollowingLists, ViewModel.Users.FollowingListViewModel>();
-            Container.RegisterTypeForNavigation<View.Menu, MenuViewModel>();
+            Container.RegisterTypeForNavigation<View.Menu, ViewModel.MenuViewModel>();
             Container.RegisterTypeForNavigation<View.AddPicturePost, AddPicturePostViewModel>();
+            Container.RegisterTypeForNavigation<View.Comments, CommentsViewModel>();
             Container.RegisterTypeForNavigation<AddCameraButton, AddCameraButtonViewModel>();
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainTabbedPage>();

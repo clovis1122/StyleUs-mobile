@@ -68,6 +68,7 @@ namespace StyleUs.ViewModel
                 "http://www.mistermoda.com/wp-content/uploads/2010/09/Jon-Kortajarena-for-HM-Fall-Winter-201011-02.jpg",
 				"https://thumbs.dreamstime.com/z/mujer-modelo-de-la-belleza-en-ropa-del-invierno-22551783.jpg",
 				"nocarga",
+
 			};
 
 			for (int i = 0; i < images.Length; i++)

@@ -33,7 +33,7 @@ namespace StyleUs.ViewModel.Notification
             for (int i = 0; i < 20; i++)
             {
                 var du = new StyleUs.Models.Notification();
-                du.title = "Notificacion " + (i+1);
+                du.title = "Notificacion " + (i + 1);
                 du.detail = "Detalle de notificacion numero " + i;
                 du.img = "ICONO2.png";
                 notificationList.Add(du);
@@ -41,11 +41,30 @@ namespace StyleUs.ViewModel.Notification
             }
         }
 
-        public async void loadNotification(){
-            var du = await StyleUs.Services.NotificationServices.get();
 
-            if (du.Key){
-                notificationList = new ObservableCollection<StyleUs.Models.Notification>(du.Value as List<StyleUs.Models.Notification>);
+        public async void loadNotification(){
+
+            try{
+
+                var du = await StyleUs.Services.NotificationServices.get();
+
+                if (du.Key)
+                {
+                    notificationList = new ObservableCollection<StyleUs.Models.Notification>(du.Value as List<StyleUs.Models.Notification>);
+                }
+            }
+            catch
+            {
+                for (int i = 0; i < 20; i++)
+                {
+                    var du = new StyleUs.Models.Notification();
+                    du.title = "Notificacion " + (i + 1);
+                    du.detail = "Detalle de notificacion numero " + i;
+                    du.img = "ICONO2.png";
+                    notificationList.Add(du);
+
+                }
+
             }
         }
     }
