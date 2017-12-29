@@ -28,23 +28,28 @@ namespace StyleUs.ViewModel.Users
 
         public FollowersListViewModel()
         {
-            for (int i = 0; i < 5; i++) {
-                var du = new StyleUs.Models.User();
-                du.first_name = "Juan";
-                du.last_name = "Perez";
-                du.email = "dududu@chamuel.co";
-                du.image = "icon1.png";
-                followerList.Add(du);
-            }
+            loadUsers();
         }
 
         public async void loadUsers() {
-            var du = await UserServices.get();
+            try {
+                var du = await UserServices.get();
 
-            if (du.Key) {
-                followerList = new ObservableCollection<User>(du.Value as List<User>);
+                if (du.Key)
+                {
+                    followerList = new ObservableCollection<User>(du.Value as List<User>);
+                }
+            } catch {
+                for (int i = 0; i < 5; i++)
+                {
+                    var du = new StyleUs.Models.User();
+                    du.first_name = "Juan";
+                    du.last_name = "Perez";
+                    du.email = "dududu@chamuel.co";
+                    du.image = "icon1.png";
+                    followerList.Add(du);
+                }
             }
-
         }
     }
 }

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage 
-	xmlns="http://xamarin.com/schemas/2014/forms" 
-	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-	xmlns:local="clr-namespace:StyleUs" 
+<ContentPage
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:local="clr-namespace:StyleUs"
 	x:Class="StyleUs.View.NotificationPage"
     
-    xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms" 
+    xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
     xmlns:views="clr-namespace:StyleUs.View.Component" Title="Notificacion">
-    
-    
+
+
     <ContentPage.Content>
-      <StackLayout HorizontalOptions="FillAndExpand"> 
-     
+      <StackLayout HorizontalOptions="FillAndExpand">
+
          <ListView ItemsSource="{Binding notificationList}">
            <ListView.ItemTemplate>
              <DataTemplate>
@@ -24,8 +24,8 @@
              </DataTemplate>
            </ListView.ItemTemplate>
             <ListView.Behaviors>
-                <b:EventToCommandBehavior 
-                    EventName="ItemTapped" 
+                <b:EventToCommandBehavior
+                    EventName="ItemTapped"
                     Command="{Binding ItemTappedCommand}"
                     EventArgsParameterPath="Item" />
             </ListView.Behaviors>

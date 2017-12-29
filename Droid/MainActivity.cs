@@ -9,6 +9,9 @@ using Android.Widget;
 using Android.OS;
 using Prism.Unity;
 using Microsoft.Practices.Unity;
+using Plugin.Permissions;
+using StyleUs;
+using Xamarin.Auth;
 
 namespace StyleUs.Droid
 {
@@ -20,8 +23,8 @@ namespace StyleUs.Droid
 			TabLayoutResource = Resource.Layout.Tabbar;
 			ToolbarResource = Resource.Layout.Toolbar;
 
-            base.SetTheme(Resource.Style.MyTheme);
-            
+            AccountManager.manager = AccountStore.Create(this);
+
 			base.OnCreate(bundle);
 
 			global::Xamarin.Forms.Forms.Init(this, bundle);
@@ -29,6 +32,12 @@ namespace StyleUs.Droid
 			LoadApplication(new App(new AndroidInitializer()));
 
 		}
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+        {
+            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
 		public class AndroidInitializer : IPlatformInitializer
 		{
 			public void RegisterTypes(IUnityContainer container)

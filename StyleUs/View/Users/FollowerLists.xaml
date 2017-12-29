@@ -1,39 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage 
-    xmlns="http://xamarin.com/schemas/2014/forms" 
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms" 
+    xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
     x:Class="StyleUs.View.Users.FollowerLists"
     Title="Followers" >
-    
+
 	<ContentPage.Content>
-      <StackLayout HorizontalOptions="FillAndExpand"> 
+      <StackLayout HorizontalOptions="FillAndExpand">
 
-            <SearchBar Placeholder="buscar">
-
-            </SearchBar>
-     
+         <SearchBar Placeholder="buscar" />
          <ListView ItemsSource="{Binding followerList}" >
            <ListView.ItemTemplate>
              <DataTemplate >
                <ImageCell
 
-                            
                    Text="{Binding last_name}"
                    TextColor="Black"
-                  
+
                    DetailColor="Black"
                    ImageSource="{Binding image}" />
              </DataTemplate>
            </ListView.ItemTemplate>
            <ListView.Behaviors>
-                <b:EventToCommandBehavior 
-                    EventName="ItemTapped" 
+                <b:EventToCommandBehavior
+                    EventName="ItemTapped"
                     Command="{Binding ItemTappedCommand}"
                     EventArgsParameterPath="Item" />
             </ListView.Behaviors>
          </ListView>
-            
+
         </StackLayout>
       </ContentPage.Content>
 </ContentPage>

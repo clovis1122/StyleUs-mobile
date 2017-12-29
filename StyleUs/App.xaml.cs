@@ -12,20 +12,34 @@ namespace StyleUs
 {
 	public partial class App : PrismApplication
 	{
-		public App()
-		{
-    		InitializeComponent();
+        public static string AppName { get { return "TodoListApp"; } }
 
-		}
+		    public App()
+		    {
+	    		InitializeComponent();
+		    }
 
         public App(IPlatformInitializer initializer = null) : base(initializer) {
             InitializeComponent();
         }
 
         protected override void OnInitialized(){
-			InitializeComponent();
 
-           NavigationService.NavigateAsync(new Uri("/LoginPage", UriKind.Absolute));
+			      InitializeComponent();
+
+            string navPage = "LoginPage";
+
+            try {
+                // AccountManager.SaveCredentials("Usernames123","Password456");
+                if (AccountManager.UserName != null) {
+                    navPage = "HomePage";
+                }
+
+            } catch(Exception e) {
+                // No keychain :(
+            }
+
+            NavigationService.NavigateAsync(new Uri("/NavigationPage/" + navPage, UriKind.Absolute));
 		}
 
 		protected override void RegisterTypes()
@@ -34,11 +48,11 @@ namespace StyleUs
             Container.RegisterTypeForNavigation<View.ClothPieces.SingleClothPiece, SingleClothPieceViewModel>();
 
             Container.RegisterTypeForNavigation<View.HomePage, HomePageViewModel>();
-			Container.RegisterTypeForNavigation<FriendPage, FriendViewModel>();
-			Container.RegisterTypeForNavigation<LoginPage, LoginPageViewModel>();
+			      Container.RegisterTypeForNavigation<FriendPage, FriendViewModel>();
+		        Container.RegisterTypeForNavigation<LoginPage, LoginPageViewModel>();
             Container.RegisterTypeForNavigation<ProfilePage, ProfileViewModel>();
             Container.RegisterTypeForNavigation<ClothPiecePage, ClothPieceViewModel>();
-            Container.RegisterTypeForNavigation<NotificationPage, NotificationViewModel>();
+            Container.RegisterTypeForNavigation<View.Notification.NotificationList,ViewModel.Notification.NotificationListViewModel>();
             Container.RegisterTypeForNavigation<AddCommentPage, AddCommentPageViewModel>();
             Container.RegisterTypeForNavigation<ForgotPasswordPage,ForgotPasswordPageViewModel>();
             Container.RegisterTypeForNavigation<ClothCombinationPage, ClothCombinationViewModel>();
@@ -50,15 +64,18 @@ namespace StyleUs
 
             Container.RegisterTypeForNavigation<View.Users.FollowerLists, ViewModel.Users.FollowersListViewModel>();
             Container.RegisterTypeForNavigation<View.Users.FollowingLists, ViewModel.Users.FollowingListViewModel>();
+<<<<<<< HEAD
             Container.RegisterTypeForNavigation<View.Users.TabbedPageFollow>();
 
 
 
+=======
+            Container.RegisterTypeForNavigation<View.Menu, MenuViewModel>();
+            Container.RegisterTypeForNavigation<View.AddPicturePost, AddPicturePostViewModel>();
+            Container.RegisterTypeForNavigation<AddCameraButton, AddCameraButtonViewModel>();
+>>>>>>> b81fa39dce658f4c6a5c9067460185d3f4476187
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainTabbedPage>();
-
-
-
         }
 
 		protected override void OnStart()

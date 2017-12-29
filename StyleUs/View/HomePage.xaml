@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage 
-    xmlns="http://xamarin.com/schemas/2014/forms" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
-             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     prism:ViewModelLocator.AutowireViewModel="True"
-   
+
     x:Class="StyleUs.View.HomePage"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
     Title="Home"
-    xmlns:views="clr-namespace:StyleUs.View.Component"
-    >
+    xmlns:views="clr-namespace:StyleUs.View.Component" >
+
+
     <ContentPage.Content>
         <ScrollView>
        <StackLayout HorizontalOptions="FillAndExpand">
@@ -28,19 +29,19 @@
 
                                         <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Fill"  >
 
-                                            <ffimageloading:CachedImage  
+                                            <ffimageloading:CachedImage
                                                 HeightRequest="40"
-                                                WidthRequest="40" 
-                                                DownsampleUseDipUnits="false" 
+                                                WidthRequest="40"
+                                                DownsampleUseDipUnits="false"
                                                 LoadingPlaceholder="image_loading.png"
-                                                ErrorPlaceholder="image_error.png" 
+                                                ErrorPlaceholder="image_error.png"
                                                 Source="{Binding ProfileImage}"
                                                 Margin="5,0,5,0">
                                                 <ffimageloading:CachedImage.Transformations>
                                                     <fftransformations:CircleTransformation />
                                                 </ffimageloading:CachedImage.Transformations>
                                             </ffimageloading:CachedImage>
-                                            
+
                                             <Label FontAttributes="Bold" FontSize="Medium" TextColor="Black" Text="{Binding UserName}" VerticalOptions="Center" ></Label>
                                             <Label x:Name="Time Post" Text="{Binding TimePost}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,15,0"></Label>
                                         </StackLayout>
@@ -63,7 +64,7 @@
                                         </StackLayout>
 
 
-                                    </StackLayout>  
+                                    </StackLayout>
                                 </Frame>
                             </StackLayout>
 

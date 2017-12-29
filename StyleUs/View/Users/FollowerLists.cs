@@ -10,6 +10,7 @@ namespace StyleUs.View.Users
         public FollowerLists()
         {
             InitializeComponent();
+            BindingContext = new StyleUs.ViewModel.Users.FollowersListViewModel();
         }
     }
 }

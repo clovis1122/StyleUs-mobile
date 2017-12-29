@@ -9,7 +9,7 @@ using UIKit;
 using FFImageLoading.Forms.Touch;
 using FFImageLoading.Forms;
 using FFImageLoading.Transformations;
-// Quirk
+using Xamarin.Auth;
 
 namespace StyleUs.iOS
 {
@@ -20,6 +20,8 @@ namespace StyleUs.iOS
 		{
             global::Xamarin.Forms.Forms.Init();
             CachedImageRenderer.Init();
+
+            AccountManager.manager = AccountStore.Create();
 
 			LoadApplication(new App(new iOSInitializer()));
 
