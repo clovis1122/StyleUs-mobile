@@ -14,49 +14,50 @@ using Prism.Mvvm;
 
 namespace StyleUs.ViewModel
 {
-    public class MenuViewModel : INotifyPropertyChanged
+    public class MenuPageViewModel : INotifyPropertyChanged
     {
         public DelegateCommand pieza { get; set; }
         public DelegateCommand conjunto { get; set; }
         public DelegateCommand sobreNosotros { get; set; }
         public DelegateCommand salir { get; set; }
 
-        INavigationService navigation;
+        readonly INavigationService navigation;
         IEventAggregator events;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public MenuViewModel(INavigationService navigationService, IEventAggregator eventAgregator)
+        public MenuPageViewModel(INavigationService navigationService, IEventAggregator eventAgregator)
         {
             navigation = navigationService;
             events = eventAgregator;
 
-            pieza = new DelegateCommand(onPiezasClick);
-            conjunto = new DelegateCommand(onConjuntoClick);
-            sobreNosotros = new DelegateCommand(onSobreNosotrosClick);
-            salir = new DelegateCommand(onSalirClick);
+            pieza = new DelegateCommand(OnPiezasClick);
+            conjunto = new DelegateCommand(OnConjuntoClick);
+            sobreNosotros = new DelegateCommand(OnSobreNosotrosClick);
+            salir = new DelegateCommand(OnSalirClick);
 
         }
 
 
-        public void onPiezasClick()
+        public void OnPiezasClick()
         {
 
-            //navigation.NavigateAsync(new Uri("/MainTabbedPage/ClothPiecePage", UriKind.Absolute));
-            //navigation.NavigateAsync("AboutUsPage");
-            navigation.NavigateAsync(new Uri("/NavigationPage/AboutUsPage", UriKind.Absolute));
+            //navigation.NavigateAsync(new Uri("/MainTabbedPage/AboutUsPage", UriKind.Absolute));
+            navigation.NavigateAsync("AboutUsPage");
+            //navigation.NavigateAsync(new Uri("/NavigationPage/AboutUsPage", UriKind.Absolute));
         }
 
-        public void onConjuntoClick()
+        public void OnConjuntoClick()
         {
             navigation.NavigateAsync("AboutUsPage");
         }
 
-        public void onSobreNosotrosClick(){
+        public void OnSobreNosotrosClick()
+        {
             navigation.NavigateAsync("AboutUsPage");
         }
 
-        public void onSalirClick()
+        public void OnSalirClick()
         {
             navigation.NavigateAsync("LoginPage");
         }

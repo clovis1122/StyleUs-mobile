@@ -14,11 +14,9 @@
         <local:HomePage />
         <localNotification:NotificationList />
         <local:ProfilePage />
-        <local:Comments />
-        <localUsers:FollowerLists />
-        <local:Menu/>
-        <local:AddPicturePost/>
+        <local:MenuPage/>
 
     </TabbedPage.Children>
+   
   
 </TabbedPage>

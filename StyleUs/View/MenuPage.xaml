@@ -2,11 +2,10 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    x:Class="StyleUs.View.Menu"
+    x:Class="StyleUs.View.MenuPage"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
     prism:ViewModelLocator.AutowireViewModel="true"
     NavigationPage.HasNavigationBar="true"
-    Padding="0,40,0,0"
     Title="Menu">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -162,5 +161,5 @@
          
 
         
-	</ContentPage.Content>
+    </ContentPage.Content>
 </ContentPage>

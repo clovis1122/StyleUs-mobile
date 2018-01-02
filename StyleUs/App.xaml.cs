@@ -27,7 +27,7 @@ namespace StyleUs
 
 			      InitializeComponent();
 
-            string navPage = "LoginPage";
+            string navPage = "MenuPage";
 
             try {
                 // AccountManager.SaveCredentials("Usernames123","Password456");
@@ -51,7 +51,7 @@ namespace StyleUs
 			      Container.RegisterTypeForNavigation<FriendPage, FriendViewModel>();
 		        Container.RegisterTypeForNavigation<LoginPage, LoginPageViewModel>();
             Container.RegisterTypeForNavigation<ProfilePage, ProfileViewModel>();
-            Container.RegisterTypeForNavigation<ClothPiecePage, ClothPieceViewModel>();
+            Container.RegisterTypeForNavigation<View.ClothPieces.NewClothPage>();
             Container.RegisterTypeForNavigation<View.Notification.NotificationList,ViewModel.Notification.NotificationListViewModel>();
             Container.RegisterTypeForNavigation<AddCommentPage, AddCommentPageViewModel>();
             Container.RegisterTypeForNavigation<ForgotPasswordPage,ForgotPasswordPageViewModel>();
@@ -69,6 +69,8 @@ namespace StyleUs
             Container.RegisterTypeForNavigation<AddCameraButton, AddCameraButtonViewModel>();
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainTabbedPage>();
+            Container.RegisterTypeForNavigation<AboutUsPage,AboutUsPageViewModel>();
+            Container.RegisterTypeForNavigation<MenuPage,MenuPageViewModel>();
         }
 
 		protected override void OnStart()
