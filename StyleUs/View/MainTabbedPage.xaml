@@ -10,15 +10,13 @@
             BarTextColor="Black">
 
     <TabbedPage.Children>
-
-        <local:HomePage />
-        <localNotification:NotificationList />
+        <local:AddPicturePost Icon="AddPhotos.png"/>
+        <localUsers:FollowerLists Icon="followers.png"  />
+        <local:HomePage  Icon="Home.png" />
+        <localNotification:NotificationList Icon="Notifications.png" />
+        <local:Menu Icon="Menu.png"/>
         <local:ProfilePage />
         <local:Comments />
-        <localUsers:FollowerLists />
-        <local:Menu/>
-        <local:AddPicturePost/>
-
     </TabbedPage.Children>
   
 </TabbedPage>
