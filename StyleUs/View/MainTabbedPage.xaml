@@ -15,8 +15,8 @@
         <local:HomePage  Icon="Home.png" />
         <localNotification:NotificationList Icon="Notifications.png" />
         <local:Menu Icon="Menu.png"/>
-        
-
+        <local:ProfilePage />
+        <local:Comments />
     </TabbedPage.Children>
   
 </TabbedPage>
