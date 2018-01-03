@@ -10,9 +10,8 @@ namespace StyleUs.View
         public AboutUsPage()
         {
             InitializeComponent();
-            NavigationPage.SetHasBackButton(this, true);
-            //NavigationPage.SetHasNavigationBar(this, false);
-       
+            NavigationPage.SetHasNavigationBar(this, false);
+            
 
         }
     }

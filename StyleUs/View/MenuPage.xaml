@@ -114,23 +114,29 @@
                 <!-- Cuarta fila 3,0 -->
                 <Label Grid.Row="3" Grid.Column="0" BackgroundColor="#e9eaed"/>
             
-                <Image x:Name="Sobre_nosotros" Source="Help.png" Grid.Row="3" Grid.Column="0"
+               <!-- <Image x:Name="Sobre_nosotros" Source="Help.png" Grid.Row="3" Grid.Column="0"
                 Style="{StaticResource iconosBotones}">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding sobreNosotros}" NumberOfTapsRequired="1" />
                     </Image.GestureRecognizers>
-                </Image>
-                
+                </Image>-->
+                <Button Image="Help.png" Grid.Row="3" Grid.Column="0" 
+                    Style="{StaticResource iconosBotones}" Command="{Binding sobreNosotros}">
+                    <!--<Button.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding sobreNosotros}" NumberOfTapsRequired="1" />
+                    </Button.GestureRecognizers>-->
+                </Button>
             
                 <!-- Cuarta fila 3,1 -->
                 <Label Grid.Row="3" Grid.Column="1" BackgroundColor="#e9eaed"/>
 
-                <Label Text="SOBRE NOSOTROS" Grid.Row="3" Grid.Column="1"
-                Style="{StaticResource nombreBotones}">
-                    <Label.GestureRecognizers>
+                <Button Text="SOBRE NOSOTROS" Grid.Row="3" Grid.Column="1"
+                Style="{StaticResource nombreBotones}"  Command="{Binding sobreNosotros}">
+                    <!--<Button.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding sobreNosotros}" NumberOfTapsRequired="1" />
-                    </Label.GestureRecognizers>
-                </Label>
+                    </Button.GestureRecognizers>-->
+                </Button>
+                
                 
                 
                 <!-- Quinta fila 4,0-->

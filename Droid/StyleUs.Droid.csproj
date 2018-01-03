@@ -251,6 +251,7 @@
     <AndroidResource Include="Resources\drawable\Path668.png" />
     <AndroidResource Include="Resources\drawable\Union57.png" />
     <AndroidResource Include="Resources\drawable\send.png" />
+    <AndroidResource Include="Resources\drawable\backIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\seeCommentIcon.png" />

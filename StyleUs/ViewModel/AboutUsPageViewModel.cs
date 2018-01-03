@@ -26,11 +26,18 @@ namespace StyleUs.ViewModel
 
         public AboutUsPageViewModel(INavigationService navigationService, IEventAggregator eventAgregator)
         {
+            navigation = navigationService;
+            events = eventAgregator;
+
             back = new DelegateCommand(OnBackClick);
         }
 
+
         public void OnBackClick(){
-            navigation.NavigateAsync("MenuPage");
+            //navigation.NavigateAsync("AboutUsPage");
+            navigation.GoBackAsync();
+            //navigation.NavigateAsync(new Uri("/MainTabbedPage/MenuPage", UriKind.Absolute));
+           
         }
     }
 }

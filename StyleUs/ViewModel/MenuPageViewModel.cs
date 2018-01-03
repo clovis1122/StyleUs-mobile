@@ -16,13 +16,15 @@ namespace StyleUs.ViewModel
 {
     public class MenuPageViewModel : INotifyPropertyChanged
     {
-        public DelegateCommand pieza { get; set; }
-        public DelegateCommand conjunto { get; set; }
-        public DelegateCommand sobreNosotros { get; set; }
-        public DelegateCommand salir { get; set; }
+        public ICommand pieza { get; set; }
+        public ICommand conjunto { get; set; }
+        public ICommand sobreNosotros { get; set; }
+        public ICommand salir { get; set; }
 
         readonly INavigationService navigation;
         IEventAggregator events;
+
+        NavigationPage navegacion;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -31,10 +33,10 @@ namespace StyleUs.ViewModel
             navigation = navigationService;
             events = eventAgregator;
 
-            pieza = new DelegateCommand(OnPiezasClick);
-            conjunto = new DelegateCommand(OnConjuntoClick);
-            sobreNosotros = new DelegateCommand(OnSobreNosotrosClick);
-            salir = new DelegateCommand(OnSalirClick);
+            pieza = new Command(OnPiezasClick);
+            conjunto = new Command(OnConjuntoClick);
+            sobreNosotros = new Command(OnSobreNosotrosClick);
+            salir = new Command(OnSalirClick);
 
         }
 
@@ -43,18 +45,21 @@ namespace StyleUs.ViewModel
         {
 
             //navigation.NavigateAsync(new Uri("/MainTabbedPage/AboutUsPage", UriKind.Absolute));
-            navigation.NavigateAsync("AboutUsPage");
+            navigation.NavigateAsync("ClothPieces");
+            //navegacion.PushAsync(new AboutUsPage());
             //navigation.NavigateAsync(new Uri("/NavigationPage/AboutUsPage", UriKind.Absolute));
         }
 
         public void OnConjuntoClick()
         {
-            navigation.NavigateAsync("AboutUsPage");
+            navigation.NavigateAsync("ClothCombinationPage");
         }
 
         public void OnSobreNosotrosClick()
         {
             navigation.NavigateAsync("AboutUsPage");
+            //navigation.NavigateAsync(new Uri("/MainTabbedPage/AboutUsPage", UriKind.Absolute));
+
         }
 
         public void OnSalirClick()

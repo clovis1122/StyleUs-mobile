@@ -7,10 +7,22 @@
     prism:ViewModelLocator.AutowireViewModel="true"
     NavigationPage.HasNavigationBar="true"
     Title="Sobre Nosotros">
+     <ContentPage.Resources>
+        <ResourceDictionary>
+             <Style x:Key="iconosBotones" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HeightRequest" Value="20"/>
+                <Setter Property="WidthRequest" Value="20"/>
+                <Setter Property="MinimumHeightRequest" Value="20"/>
+                <Setter Property="MinimumWidthRequest" Value="20"/>
+             </Style> 
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <!--Padding="0,40,0,0"-->
 	<ContentPage.Content>
 
-        <Grid RowSpacing="0">
+        <Grid RowSpacing="20" BackgroundColor="Silver">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.30*"/>
                 <RowDefinition Height="0.50*"/>
@@ -18,30 +30,33 @@
             </Grid.RowDefinitions>
 
             <StackLayout Grid.Row="0" BackgroundColor="Silver" Orientation="Horizontal" 
-                HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
-                <Button Text="Back" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center">
-                    <Button.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding conjunto}" NumberOfTapsRequired="1" />
-                    </Button.GestureRecognizers>
-                </Button>
+                <Button Image="backIcon.png" 
+                    Command="{Binding back}" Style="{StaticResource iconosBotones}"/>
+              
+                <Label Text="Sobre Nosotros" FontAttributes="Bold" BackgroundColor="Silver" 
+                TextColor="Black" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+
+
+            </StackLayout>
+            
+            <StackLayout Grid.Row="1" BackgroundColor="White" Orientation="Horizontal" 
+                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                 
-                <Label Text="Style " FontAttributes="Bold" BackgroundColor="Silver" 
+                <Label Text="Style " FontAttributes="Bold" 
                 TextColor="Black" FontSize="Large"/>
                 
-                <Label Text="Us" FontAttributes="Bold" BackgroundColor="Silver" 
-                TextColor="Red" FontSize="Large"/>
-                <!--<Label VerticalOptions="Center" HorizontalOptions="Center" >
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="Style " FontAttributes="Bold" ForegroundColor="Black" FontSize="Large"/>
-                            <Span Text="Us" FontAttributes="Bold" ForegroundColor="Red" FontSize="Large"/>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>-->
+                <Label Text="Us" FontAttributes="Bold"  
+                TextColor="Red" FontSize="Large" />
             </StackLayout>
-            <StackLayout Grid.Row="1" BackgroundColor="Aqua"/>
-            <StackLayout Grid.Row="2" BackgroundColor="Green"/>
+            
+            <StackLayout Grid.Row="2" BackgroundColor="White" Orientation="Vertical"
+                HorizontalOptions="CenterAndExpand">
+                <Label Text="Style Us es una red social diseñada y desarrollada para compartir prendas de vestir y conjuntos, permitiendo a los usuarios crear tendencia entre sus conocidos y, de ese modo, expandir sus conocimientos sobre vestimenta a la hora de elegir cierto tipo de ropa una determinada ocasión. "
+                    TextColor="Black" HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
                 
 
         </Grid>
