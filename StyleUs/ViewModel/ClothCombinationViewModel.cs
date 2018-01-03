@@ -10,6 +10,7 @@ using Prism.Navigation;
 using Prism.Commands;
 using StyleUs.ViewModel.Component;
 using System.Collections.ObjectModel;
+using Prism.Events;
 
 namespace StyleUs.ViewModel
 {
@@ -28,7 +29,13 @@ namespace StyleUs.ViewModel
 			}
 
 		}
-		public event PropertyChangedEventHandler PropertyChanged;
+
+        public DelegateCommand back { get; set; }
+
+        INavigationService navigation;
+        IEventAggregator events;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
 		public FloatingMenuViewModel MenuViewModel { get; set; }
 
@@ -45,12 +52,18 @@ namespace StyleUs.ViewModel
 			}
 		}
 
-		public ClothCombinationViewModel(INavigationService navigationService)
+        public ClothCombinationViewModel(INavigationService navigationService, IEventAggregator eventAgregator)
 		{
 			MenuViewModel = new FloatingMenuViewModel(navigationService);
 
 			// Fill the imageList with preset images.
 			ReloadData();
+
+            navigation = navigationService;
+            events = eventAgregator;
+
+            back = new DelegateCommand(OnBackClick);
+        
 		}
 
         static Random rnd = new Random();
@@ -80,6 +93,11 @@ namespace StyleUs.ViewModel
 
 			imageList = list;
 		}
+
+        public void OnBackClick()
+        {
+            navigation.GoBackAsync();
+        }
 
 	}
 }

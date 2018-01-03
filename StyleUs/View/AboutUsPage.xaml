@@ -12,30 +12,30 @@
              <Style x:Key="iconosBotones" TargetType="Label">
                 <Setter Property="HorizontalOptions" Value="Start"/>
                 <Setter Property="VerticalOptions" Value="Center"/>
-                <Setter Property="HeightRequest" Value="20"/>
-                <Setter Property="WidthRequest" Value="20"/>
-                <Setter Property="MinimumHeightRequest" Value="20"/>
-                <Setter Property="MinimumWidthRequest" Value="20"/>
+                <Setter Property="HeightRequest" Value="40"/>
+                <Setter Property="WidthRequest" Value="40"/>
+                <Setter Property="MinimumHeightRequest" Value="40"/>
+                <Setter Property="MinimumWidthRequest" Value="40"/>
              </Style> 
         </ResourceDictionary>
     </ContentPage.Resources>
     <!--Padding="0,40,0,0"-->
 	<ContentPage.Content>
 
-        <Grid RowSpacing="20" BackgroundColor="Silver">
+        <Grid RowSpacing="20" BackgroundColor="#e9eaed">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.30*"/>
                 <RowDefinition Height="0.50*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <StackLayout Grid.Row="0" BackgroundColor="Silver" Orientation="Horizontal" 
+            <StackLayout Grid.Row="0" BackgroundColor="#a8afb8" Orientation="Horizontal" 
                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
                 <Button Image="backIcon.png" 
                     Command="{Binding back}" Style="{StaticResource iconosBotones}"/>
               
-                <Label Text="Sobre Nosotros" FontAttributes="Bold" BackgroundColor="Silver" 
+                <Label Text="Sobre Nosotros" FontAttributes="Bold" 
                 TextColor="Black" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
 
 
