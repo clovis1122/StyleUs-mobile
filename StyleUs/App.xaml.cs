@@ -25,31 +25,31 @@ namespace StyleUs
 
         protected override void OnInitialized(){
 
-			      InitializeComponent();
+			InitializeComponent();
 
             string navPage = "LoginPage";
 
             try {
-                // AccountManager.SaveCredentials("Usernames123","Password456");
+                AccountManager.SaveCredentials("Usernames123","Password456");
                 if (AccountManager.UserName != null) {
                     navPage = "HomePage";
                 }
 
             } catch(Exception e) {
                 // No keychain :(
+                var du = "a";
             }
-
             NavigationService.NavigateAsync(new Uri("/NavigationPage/" + navPage, UriKind.Absolute));
 		}
 
 		protected override void RegisterTypes()
-        {
+        { 
             Container.RegisterTypeForNavigation<View.Friend.FriendProfile, FriendProfileViewModel>();
             Container.RegisterTypeForNavigation<View.ClothPieces.SingleClothPiece, SingleClothPieceViewModel>();
 
             Container.RegisterTypeForNavigation<View.HomePage, HomePageViewModel>();
-			      Container.RegisterTypeForNavigation<FriendPage, FriendViewModel>();
-		        Container.RegisterTypeForNavigation<LoginPage, LoginPageViewModel>();
+			Container.RegisterTypeForNavigation<FriendPage, FriendViewModel>();
+		    Container.RegisterTypeForNavigation<LoginPage, LoginPageViewModel>();
             Container.RegisterTypeForNavigation<ProfilePage, ProfileViewModel>();
             Container.RegisterTypeForNavigation<ClothPiecePage, ClothPieceViewModel>();
             Container.RegisterTypeForNavigation<View.Notification.NotificationList,ViewModel.Notification.NotificationListViewModel>();
