@@ -40,7 +40,7 @@
 
 
 
-        <Color x:Key="Dark">#353A41</Color>
+        <Color x:Key="dark">#353A41</Color>
         <Color x:Key="semiDark">#475a68</Color>
         <Color x:Key="grayMedium">#A8AFB8</Color>
         <Color x:Key="light">#E9EAED</Color>

@@ -19,9 +19,9 @@
 
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout BackgroundColor="#353A41" Padding="10">
+                                <StackLayout BackgroundColor="{StaticResource light}" Padding="10">
 
-                                <Frame HasShadow="True" BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Fill"  Padding="0,5,0,5" >
+                                <Frame HasShadow="False" BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Fill"  Padding="0,5,0,5" >
 
 
                                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" >
