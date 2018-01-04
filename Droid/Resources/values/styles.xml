@@ -6,6 +6,13 @@
         <item name="android:windowIsTranslucent">false</item>
         <item name="android:windowIsFloating">false</item>
         <item name="android:backgroundDimEnabled">true</item>
+      <!-- colorPrimary is used for the default action bar background azul claro-->
+      <item name="colorPrimary">#2a2d33</item>
+      <!-- colorPrimaryDark is used for the status bar  azul claro -->
+      <item name="colorPrimaryDark">#131417</item>
+      <!-- colorAccent is used as the default value for colorControlActivated
+         which is used to tint widgets -->
+      <item name="colorAccent">#353A41</item>
     </style>
 	
     <style name="MyTheme" parent="MyTheme.Base">

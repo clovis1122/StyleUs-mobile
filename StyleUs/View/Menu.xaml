@@ -7,7 +7,7 @@
     prism:ViewModelLocator.AutowireViewModel="true"
     NavigationPage.HasNavigationBar="true"
     Padding="0,40,0,0"
-    Title="Menu">
+    >
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="nombreBotones" TargetType="Label">

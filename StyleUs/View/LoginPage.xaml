@@ -7,7 +7,8 @@
     x:Class="StyleUs.View.LoginPage"
     prism:ViewModelLocator.AutowireViewModel="True"
     BackgroundColor="Black"
-    BackgroundImage="Login.png">
+    BackgroundImage="Login.png"
+    NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <AbsoluteLayout Padding="20,0">
 

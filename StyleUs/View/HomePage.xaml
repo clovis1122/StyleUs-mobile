@@ -7,7 +7,7 @@
     prism:ViewModelLocator.AutowireViewModel="True"
     x:Class="StyleUs.View.HomePage"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
-    Title="Home"
+   
     xmlns:views="clr-namespace:StyleUs.View.Component" >
 
 
