@@ -5,13 +5,12 @@ using Xamarin.Forms;
 
 namespace StyleUs.View
 {
-    public partial class Menu : ContentPage
+    public partial class MenuPage : ContentPage
     {
-        public Menu()
+        public MenuPage()
         {
             InitializeComponent();
-
-            //BindingContext = new StyleUs.ViewModel.MenuViewModel();
         }
+
     }
 }

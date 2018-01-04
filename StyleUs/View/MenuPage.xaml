@@ -2,11 +2,10 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="StyleUs.View.MenuPage"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
-    x:Class="StyleUs.View.Menu"
     prism:ViewModelLocator.AutowireViewModel="true"
     NavigationPage.HasNavigationBar="true"
-    Padding="0,40,0,0"
     Title="Menu">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -72,95 +71,59 @@
 
                 <Label Grid.Row="1" Grid.Column="0" BackgroundColor="#e9eaed"/>
             
-                <Image x:Name="imgPiezas" Source="Path668.png" Grid.Row="1" Grid.Column="0"
-                Style="{StaticResource iconosBotones}">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding pieza}" NumberOfTapsRequired="1" />
-                    </Image.GestureRecognizers>
-                </Image>
+                <Button Image="Path668.png" Grid.Row="1" Grid.Column="0"
+                Style="{StaticResource iconosBotones}"/>
 
-                
                 <!-- Segundo cuadro 1,1 -->
                 <Label Grid.Row="1" Grid.Column="1" BackgroundColor="#e9eaed"/>
             
-                <Label Text="PIEZAS" Grid.Row="1" Grid.Column="1"
-                Style="{StaticResource nombreBotones}">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding pieza}" NumberOfTapsRequired="1" />
-                    </Label.GestureRecognizers>
-
-                </Label>
+                <Button Text="PIEZAS" Grid.Row="1" Grid.Column="1"
+                Style="{StaticResource nombreBotones}" Command="{Binding pieza}"/>
             
             
                 <!-- Tercera fila 2,0 -->
                 <Label Grid.Row="2" Grid.Column="0" BackgroundColor="#e9eaed"/>
 
-                <Image x:Name="imgConjuntos" Source="Union57.png" Grid.Row="2" Grid.Column="0"
-                Style="{StaticResource iconosBotones}">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding conjunto}" NumberOfTapsRequired="1" />
-                    </Image.GestureRecognizers>
-                </Image>
+                <Button Image="Union57.png" Grid.Row="2" Grid.Column="0"
+                Style="{StaticResource iconosBotones}" Command="{Binding conjunto}"/>
             
                 <!-- Tercera fila 2,1 -->
                 <Label Grid.Row="2" Grid.Column="1" BackgroundColor="#e9eaed"/>
 
-               <Label Text="CONJUNTOS" Grid.Row="2" Grid.Column="1"
-                Style="{StaticResource nombreBotones}">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding conjunto}" NumberOfTapsRequired="1" />
-                    </Label.GestureRecognizers>
-                </Label>
+               <Button Text="CONJUNTOS" Grid.Row="2" Grid.Column="1"
+                Style="{StaticResource nombreBotones}" Command="{Binding conjunto}"/>
             
                 <!-- Cuarta fila 3,0 -->
                 <Label Grid.Row="3" Grid.Column="0" BackgroundColor="#e9eaed"/>
             
-                <Image x:Name="Sobre_nosotros" Source="Help.png" Grid.Row="3" Grid.Column="0"
-                Style="{StaticResource iconosBotones}">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding sobreNosotros}" NumberOfTapsRequired="1" />
-                    </Image.GestureRecognizers>
-                </Image>
-                
+              
+                <Button Image="Help.png" Grid.Row="3" Grid.Column="0" 
+                    Style="{StaticResource iconosBotones}" Command="{Binding sobreNosotros}"/>
             
                 <!-- Cuarta fila 3,1 -->
                 <Label Grid.Row="3" Grid.Column="1" BackgroundColor="#e9eaed"/>
 
-                <Label Text="SOBRE NOSOTROS" Grid.Row="3" Grid.Column="1"
-                Style="{StaticResource nombreBotones}">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding sobreNosotros}" NumberOfTapsRequired="1" />
-                    </Label.GestureRecognizers>
-                </Label>
-                
+                <Button Text="SOBRE NOSOTROS" Grid.Row="3" Grid.Column="1"
+                Style="{StaticResource nombreBotones}"  Command="{Binding sobreNosotros}"/>
+
                 
                 <!-- Quinta fila 4,0-->
                 <Label Grid.Row="4" Grid.Column="0" BackgroundColor="#e9eaed"/>
 
-                <Image x:Name="Salir" Source="Export.png" Grid.Row="4" Grid.Column="0"
-                Style="{StaticResource iconosBotones}">
-                     <Image.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding salir}" NumberOfTapsRequired="1" />
-                    </Image.GestureRecognizers>
-                </Image>
+                <Button Image="Export.png" Grid.Row="4" Grid.Column="0"
+                Style="{StaticResource iconosBotones}" Command="{Binding salir}"/>
             
                 <!-- Quinta fila 4,1-->
                 <Label Grid.Row="4" Grid.Column="1" BackgroundColor="#e9eaed"/>
 
-                <Label Text="SALIR" Grid.Row="4" Grid.Column="1"
-                Style="{StaticResource nombreBotones}">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding salir}" NumberOfTapsRequired="1" />
-                    </Label.GestureRecognizers>
-                </Label>
-            
-               
-                
+                <Button Text="SALIR" Grid.Row="4" Grid.Column="1"
+                Style="{StaticResource nombreBotones}" Command="{Binding salir}"/>
+     
             
         </Grid>
             
          
 
         
-	</ContentPage.Content>
+    </ContentPage.Content>
 </ContentPage>

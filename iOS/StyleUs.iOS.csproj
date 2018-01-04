@@ -313,6 +313,7 @@
     <BundleResource Include="Resources\Path668.png" />
     <BundleResource Include="Resources\Union57.png" />
     <BundleResource Include="Resources\send.png" />
+    <BundleResource Include="Resources\backIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\LikeHeartIcon.png" />
