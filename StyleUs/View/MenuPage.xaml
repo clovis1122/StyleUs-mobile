@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage 
-    xmlns="http://xamarin.com/schemas/2014/forms" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="StyleUs.View.MenuPage"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
     prism:ViewModelLocator.AutowireViewModel="true"
     NavigationPage.HasNavigationBar="true"
-    Title="Menu">
+    Title="Menu"
+    Padding="0,40,0,0">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="nombreBotones" TargetType="Label">
@@ -22,14 +23,14 @@
                 <Setter Property="WidthRequest" Value="20"/>
                 <Setter Property="MinimumHeightRequest" Value="20"/>
                 <Setter Property="MinimumWidthRequest" Value="20"/>
-             </Style> 
+             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
     <ContentPage.Content>
 
             <Grid RowSpacing="0" ColumnSpacing="0" BackgroundColor="#e9eaed">
-                
+
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.30*"/>
                     <RowDefinition Height="0.10*"/>
@@ -37,18 +38,18 @@
                     <RowDefinition Height="0.10*"/>
                     <RowDefinition Height="0.10*"/>
                     <RowDefinition Height="*"/>
-                
+
                 </Grid.RowDefinitions>
-            
+
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.30*"/>
-                    
+
                 </Grid.ColumnDefinitions>
 
                 <!-- Cuadro 0,0 -->
                 <Label Grid.Row="0" Grid.Column="0" BackgroundColor="#a8afb8"/>
 
-                <Image x:Name="imagen_circular" Source="ICONO2.png" Grid.Row="0" Grid.Column="0" 
+                <Image x:Name="imagen_circular" Source="ICONO2.png" Grid.Row="0" Grid.Column="0"
                  HorizontalOptions="Center"
                 VerticalOptions="Center"
                 HeightRequest="50" WidthRequest="50"
@@ -66,64 +67,64 @@
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
-            
+
                 <!-- Segundo cuadro 1,0 -->
 
                 <Label Grid.Row="1" Grid.Column="0" BackgroundColor="#e9eaed"/>
-            
+
                 <Button Image="Path668.png" Grid.Row="1" Grid.Column="0"
                 Style="{StaticResource iconosBotones}"/>
 
                 <!-- Segundo cuadro 1,1 -->
                 <Label Grid.Row="1" Grid.Column="1" BackgroundColor="#e9eaed"/>
-            
+
                 <Button Text="PIEZAS" Grid.Row="1" Grid.Column="1"
                 Style="{StaticResource nombreBotones}" Command="{Binding pieza}"/>
-            
-            
+
+
                 <!-- Tercera fila 2,0 -->
                 <Label Grid.Row="2" Grid.Column="0" BackgroundColor="#e9eaed"/>
 
                 <Button Image="Union57.png" Grid.Row="2" Grid.Column="0"
                 Style="{StaticResource iconosBotones}" Command="{Binding conjunto}"/>
-            
+
                 <!-- Tercera fila 2,1 -->
                 <Label Grid.Row="2" Grid.Column="1" BackgroundColor="#e9eaed"/>
 
                <Button Text="CONJUNTOS" Grid.Row="2" Grid.Column="1"
                 Style="{StaticResource nombreBotones}" Command="{Binding conjunto}"/>
-            
+
                 <!-- Cuarta fila 3,0 -->
                 <Label Grid.Row="3" Grid.Column="0" BackgroundColor="#e9eaed"/>
-            
-              
-                <Button Image="Help.png" Grid.Row="3" Grid.Column="0" 
+
+
+                <Button Image="Help.png" Grid.Row="3" Grid.Column="0"
                     Style="{StaticResource iconosBotones}" Command="{Binding sobreNosotros}"/>
-            
+
                 <!-- Cuarta fila 3,1 -->
                 <Label Grid.Row="3" Grid.Column="1" BackgroundColor="#e9eaed"/>
 
                 <Button Text="SOBRE NOSOTROS" Grid.Row="3" Grid.Column="1"
                 Style="{StaticResource nombreBotones}"  Command="{Binding sobreNosotros}"/>
 
-                
+
                 <!-- Quinta fila 4,0-->
                 <Label Grid.Row="4" Grid.Column="0" BackgroundColor="#e9eaed"/>
 
                 <Button Image="Export.png" Grid.Row="4" Grid.Column="0"
                 Style="{StaticResource iconosBotones}" Command="{Binding salir}"/>
-            
+
                 <!-- Quinta fila 4,1-->
                 <Label Grid.Row="4" Grid.Column="1" BackgroundColor="#e9eaed"/>
 
                 <Button Text="SALIR" Grid.Row="4" Grid.Column="1"
                 Style="{StaticResource nombreBotones}" Command="{Binding salir}"/>
-     
-            
-        </Grid>
-            
-         
 
-        
+
+        </Grid>
+
+
+
+
     </ContentPage.Content>
 </ContentPage>
