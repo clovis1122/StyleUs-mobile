@@ -30,7 +30,6 @@
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml" />
-    <EmbeddedResource Include="StyleUsPage.xaml" />
     <EmbeddedResource Include="View\LoginPage.xaml" />
     <EmbeddedResource Include="View\ForgotPasswordPage.xaml" />
     <EmbeddedResource Include="View\NotificationPage.xaml" />
@@ -104,9 +103,6 @@
     <Compile Include="AccountManager.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="StyleUsPage.xaml.cs">
-      <DependentUpon>StyleUsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\AddPicturePostViewModel.cs" />
     <Compile Include="ViewModel\AnswersPageViewModel.cs" />

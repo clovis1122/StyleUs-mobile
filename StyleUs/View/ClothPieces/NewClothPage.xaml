@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage 
-    xmlns="http://xamarin.com/schemas/2014/forms" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="StyleUs.View.ClothPieces.NewClothPage"
     Padding="0,20,0,0"
     xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:views="clr-namespace:StyleUs.View.Component"
-    Icon="icon1">
+    Icon="icon1"
+    Title="Piezas">
     <ContentPage.Resources>
        <ResourceDictionary>
              <Style x:Key="iconosBotones" TargetType="Label">
@@ -17,46 +18,48 @@
                 <Setter Property="WidthRequest" Value="40"/>
                 <Setter Property="MinimumHeightRequest" Value="40"/>
                 <Setter Property="MinimumWidthRequest" Value="40"/>
-             </Style> 
+             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 	<ContentPage.Content>
            <StackLayout>
-            
-            <Button Image="backIcon.png" 
+
+            <Button Image="backIcon.png"
                     Command="{Binding back}" Style="{StaticResource iconosBotones}"/>
             
+
              <flv:FlowListView x:Name="flowListView" SeparatorVisibility="None" HasUnevenRows="true"
-                FlowColumnMinWidth="150" FlowItemsSource="{Binding imageList}">
+                FlowColumnMinWidth="100" FlowItemsSource="{Binding imageList}">
 
                 <flv:FlowListView.FlowColumnTemplate>
                     <DataTemplate>
-                        <Grid Padding="30">
-                            
+                        <Grid Padding="5">
+
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="250" />
+                                <RowDefinition Height="100" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
+                                 <ColumnDefinition Width="*" />
+
                             </Grid.ColumnDefinitions>
 
-                            <ffimageloading:CachedImage Aspect="AspectFill" DownsampleUseDipUnits="false" 
+                            <ffimageloading:CachedImage Aspect="AspectFill" DownsampleUseDipUnits="false"
                                 LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png"
                                 Source="{Binding imageUrl}"/>
 
-                            <Label x:Name="Label" 
-                                HorizontalOptions="Fill" 
-                                HorizontalTextAlignment="Center" 
+                            <Label x:Name="Label"
+                                HorizontalOptions="Fill"
+                                HorizontalTextAlignment="Center"
                                 VerticalOptions="End"
-                                BackgroundColor="Silver" 
-                                Opacity="0.5" 
+                                BackgroundColor="Silver"
+                                Opacity="0.5"
                                 Text="{Binding fileName}" />
                         </Grid>
-                    </DataTemplate> 
+                    </DataTemplate>
                 </flv:FlowListView.FlowColumnTemplate>
-            
+
             </flv:FlowListView>
-            
+
             </StackLayout>
 	</ContentPage.Content>
 </ContentPage>

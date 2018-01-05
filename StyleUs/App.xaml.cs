@@ -25,20 +25,20 @@ namespace StyleUs
 
         protected override void OnInitialized(){
 
-			      InitializeComponent();
+			InitializeComponent();
 
             string navPage = "LoginPage";
 
             try {
-                // AccountManager.SaveCredentials("Usernames123","Password456");
+                AccountManager.SaveCredentials("Usernames123","Password456");
                 if (AccountManager.UserName != null) {
                     navPage = "HomePage";
                 }
 
             } catch(Exception e) {
                 // No keychain :(
+                var du = "a";
             }
-
             NavigationService.NavigateAsync(new Uri("/NavigationPage/" + navPage, UriKind.Absolute));
 		}
 
