@@ -21,6 +21,8 @@ namespace StyleUs.ViewModel
     {
 
         public DelegateCommand back { get; set; }
+        public DelegateCommand edit { get; set; }
+        public DelegateCommand followers { get; set; }
 
         readonly INavigationService navigation;
         IEventAggregator events;
@@ -33,6 +35,8 @@ namespace StyleUs.ViewModel
             events = eventAgregator;
 
             back = new DelegateCommand(OnBackClick);
+            edit = new DelegateCommand(OnEditClick);
+            followers = new DelegateCommand(OnFollowersClick);
         }
 
 
@@ -41,6 +45,19 @@ namespace StyleUs.ViewModel
             //navigation.NavigateAsync("AboutUsPage");
             navigation.GoBackAsync();
             //navigation.NavigateAsync(new Uri("/MainTabbedPage/MenuPage", UriKind.Absolute));
+
+        }
+
+        public void OnEditClick()
+        {
+            //Poner navigation a la pantalla de miguel
+
+        }
+
+        public void OnFollowersClick()
+        {
+
+            navigation.NavigateAsync("FollowerLists");
 
         }
 

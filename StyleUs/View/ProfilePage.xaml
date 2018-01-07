@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage 
-	xmlns="http://xamarin.com/schemas/2014/forms" 
-	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-	xmlns:effect="clr-namespace:StyleUs.Effect" 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:effect="clr-namespace:StyleUs.Effect" 
     x:Class="StyleUs.View.ProfilePage"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
-    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:views="clr-namespace:StyleUs.View.Component"
     NavigationPage.HasNavigationBar="True"
     Padding="0,20,0,0"
@@ -63,10 +64,21 @@
                <!-- Parte para visualizar la imagen -->
 
                 <StackLayout Orientation="Vertical" BackgroundColor="White"
-                    Grid.Column="0">
-                    <Image Source="ProfileImage.JPG" HorizontalOptions="Center" VerticalOptions="Start"
-                        WidthRequest="100" HeightRequest="100" MinimumWidthRequest="40" MinimumHeightRequest="40"
-                        Margin="15"/>
+                    Grid.Column="0" VerticalOptions="StartAndExpand" Margin="5">
+
+                    <ffimageloading:CachedImage  
+                                                HeightRequest="100"
+                                                WidthRequest="100" 
+                                                DownsampleUseDipUnits="false" 
+                                                LoadingPlaceholder="image_loading.png"
+                                                ErrorPlaceholder="image_error.png" 
+                                                Source="ProfileImage.JPG"
+                                                Margin="5,0,5,0">
+                                                <ffimageloading:CachedImage.Transformations>
+                                                    <fftransformations:CircleTransformation />
+                                                </ffimageloading:CachedImage.Transformations>
+                                            </ffimageloading:CachedImage>
+                    
                 </StackLayout>
                 
                <!-- Parte para visualizar la informacion y el boton editar -->
@@ -75,22 +87,23 @@
 
                     <!-- Layout para el correo -->
                     <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <Image Source="email.png"/> 
                         <Label Text="adeury09@gmail.com" TextColor="Gray" FontSize="Medium" 
                         HorizontalOptions="Center" VerticalOptions="Center"/>
                     </StackLayout>
 
                     <!-- Layout para el numero -->
                     <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                        <Image Source="phoneIcon.png"/> 
                         <Label Text="8098045245" TextColor="Gray" FontSize="Medium" 
                         HorizontalOptions="Center" VerticalOptions="Center"/>
                     </StackLayout>
                     
                     <!-- Layout para el boton editar -->
                     <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" HorizontalOptions="End">
-                        <!--<Label Text="Editar" TextColor="Gray" FontSize="Large" 
-                        HorizontalOptions="End" VerticalOptions="End"/>-->
-                        <Button Image="send.png" HeightRequest="50" WidthRequest="50" MinimumHeightRequest="30"
-                            MinimumWidthRequest="30" HorizontalOptions="End" VerticalOptions="End"/>
+                        <Button Image="EditProfile.png" HeightRequest="50" WidthRequest="50" MinimumHeightRequest="30"
+                            MinimumWidthRequest="30" HorizontalOptions="End" VerticalOptions="End"
+                            />
                     </StackLayout>
                 </StackLayout>
                 
@@ -107,14 +120,103 @@
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                     </Grid.ColumnDefinitions>
-
-                    <Label Text="Seguidores" TextColor="Black" FontAttributes="Bold" FontSize="Medium"
+                    <!-- Titulo -->
+                    <Label Text="SEGUIDORES" TextColor="Black" FontAttributes="Bold" FontSize="Medium"
                         HorizontalOptions="Start" VerticalOptions="CenterAndExpand" Margin="10"
                     Grid.Row="0"/>
 
-                    <StackLayout Grid.Row="1" BackgroundColor="Blue">
+                    <!-- Usuarios y mas -->
+                    <Grid Grid.Row="1" Margin="10">
+                        <Grid.RowDefinitions>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.10*"/>
+                            <ColumnDefinition Width="0.10*"/>
+                            <ColumnDefinition Width="0.10*"/>
+                            <ColumnDefinition Width="0.10*"/>
+                            <ColumnDefinition Width="0.15*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- imagne 1 -->
+
+                        <ffimageloading:CachedImage  
+                                                Grid.Column="0"
+                                                HeightRequest="100"
+                                                WidthRequest="100" 
+                                                DownsampleUseDipUnits="false" 
+                                                LoadingPlaceholder="image_loading.png"
+                                                ErrorPlaceholder="image_error.png" 
+                                                Source="PhotoPerfil1.jpg"
+                                                Margin="5,0,5,0">
+                                                <ffimageloading:CachedImage.Transformations>
+                                                    <fftransformations:CircleTransformation />
+                                                </ffimageloading:CachedImage.Transformations>
+                                            </ffimageloading:CachedImage>
+
+                        <!-- imagne 2 -->                        
+
+
+                        <ffimageloading:CachedImage  
+                                                Grid.Column="1"
+                                                HeightRequest="100"
+                                                WidthRequest="100" 
+                                                DownsampleUseDipUnits="false" 
+                                                LoadingPlaceholder="image_loading.png"
+                                                ErrorPlaceholder="image_error.png" 
+                                                Source="PhotoPerfil2.png"
+                                                Margin="5,0,5,0">
+                                                <ffimageloading:CachedImage.Transformations>
+                                                    <fftransformations:CircleTransformation />
+                                                </ffimageloading:CachedImage.Transformations>
+                                            </ffimageloading:CachedImage>
+
+                        <!-- imagne 3 -->                        
+
+
+                        <ffimageloading:CachedImage  
+                                                Grid.Column="2"
+                                                HeightRequest="100"
+                                                WidthRequest="100" 
+                                                DownsampleUseDipUnits="false" 
+                                                LoadingPlaceholder="image_loading.png"
+                                                ErrorPlaceholder="image_error.png" 
+                                                Source="PhotoPerfil3.jpg"
+                                                Margin="5,0,5,0">
+                                                <ffimageloading:CachedImage.Transformations>
+                                                    <fftransformations:CircleTransformation />
+                                                </ffimageloading:CachedImage.Transformations>
+                                            </ffimageloading:CachedImage>
+
+                        <!-- imagne 4 -->                        
+
+
+                        <ffimageloading:CachedImage  
+                                                Grid.Column="3"
+                                                HeightRequest="100"
+                                                WidthRequest="100" 
+                                                DownsampleUseDipUnits="false" 
+                                                LoadingPlaceholder="image_loading.png"
+                                                ErrorPlaceholder="image_error.png" 
+                                                Source="PhotoPerfil4.jpg"
+                                                Margin="5,0,5,0">
+                                                <ffimageloading:CachedImage.Transformations>
+                                                    <fftransformations:CircleTransformation />
+                                                </ffimageloading:CachedImage.Transformations>
+                                            </ffimageloading:CachedImage>
+
+                        <!-- imagne 5 -->  
+                        <StackLayout HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand" Grid.Column="4"  >
+                             <Button Text="24K"  BackgroundColor="#e9eaed"
+                                TextColor="White" FontAttributes="Bold" FontSize="Large"
+                                HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"
+                                BorderRadius="20" BorderWidth="1"
+                                Command="{Binding followers}"/>
+                             
                         
-                    </StackLayout>
+                        </StackLayout>
+                       
+                    </Grid>
 
                 </Grid>
 
@@ -126,27 +228,40 @@
 
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="0.50*"/>
+                        <RowDefinition Height="0.30*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                     </Grid.ColumnDefinitions>
-
-                    <Label Text="Recientes" TextColor="Black" FontAttributes="Bold" FontSize="Medium"
+                    <!-- Titulo -->
+                    
+                    <Label Text="RECIENTES" TextColor="Black" FontAttributes="Bold" FontSize="Medium"
                         HorizontalOptions="Start" VerticalOptions="CenterAndExpand" Margin="10"
                     Grid.Row="0"/>
 
-                    <StackLayout Grid.Row="1" BackgroundColor="Blue" Orientation="Horizontal">
+                    <!-- Grid para las fotos -->
+                    <Grid Grid.Row="1" Margin="10" ColumnSpacing="10">
 
-                        <ListView HasUnevenRows="true">
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <ImageCell/>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
-                        
-                    </StackLayout>
+                        <Grid.RowDefinitions>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.30*"/>
+                            <ColumnDefinition Width="0.30*"/>
+                            <ColumnDefinition Width="0.30*"/>
+                            
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="Profile11.jpg" Grid.Column="0" 
+                        HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+                        <Image Source="Profile22.jpg" Grid.Column="1" 
+                          HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                         
+                        <Image Source="Profile33.jpg" Grid.Column="2" 
+                        HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+
+                    </Grid>
 
                 </Grid>
                 
@@ -154,4 +269,4 @@
                     
        </Grid>
       </ContentPage.Content>
-</ContentPage>
+</ContentPage> 

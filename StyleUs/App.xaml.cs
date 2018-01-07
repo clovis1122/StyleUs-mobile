@@ -41,7 +41,7 @@ namespace StyleUs
 
             }
 
-            NavigationService.NavigateAsync(new Uri("/NavigationPage/" + navPage, UriKind.Absolute));
+            NavigationService.NavigateAsync(new Uri("/NavigationPage/MainTabbedPage/" + navPage, UriKind.Absolute));
 		}
 
 		protected override void RegisterTypes()
