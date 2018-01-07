@@ -57,9 +57,13 @@
                 FontSize="Large" Margin="1" HorizontalOptions="FillAndExpand"
                 />
             
-                <Button Image="send.png"  Grid.Row="1" Grid.Column="0" 
+                <Image Source="send.png"  Grid.Row="1" Grid.Column="0" 
                 HeightRequest="50" WidthRequest="50"
-                MinimumHeightRequest="50" MinimumWidthRequest="50" Command="{Binding comment}"/>
+                MinimumHeightRequest="50" MinimumWidthRequest="50">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding comment}" NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
             </StackLayout>
 
 

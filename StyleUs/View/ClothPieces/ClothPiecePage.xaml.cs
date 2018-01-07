@@ -8,8 +8,6 @@ namespace StyleUs.View
 {
     public partial class ClothPiecePage : TabbedPage
     {
-       
-
         public ClothPiecePage()
         {
             InitializeComponent();

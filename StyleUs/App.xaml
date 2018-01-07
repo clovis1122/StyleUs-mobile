@@ -40,12 +40,13 @@
 
 
 
-        <Color x:Key="dark">#353A41</Color>
-        <Color x:Key="semiDark">#475a68</Color>
-        <Color x:Key="grayMedium">#A8AFB8</Color>
-        <Color x:Key="light">#E9EAED</Color>
-        <Color x:Key="white">#FFFFFF</Color>
-        <Color x:Key="red">#F84D58</Color>
+        <Color x:Key="BackGroundColor">gold</Color>
+        <!--Font Colors-->
+        <Color x:Key="FontColor">#475a68</Color>
+        <Color x:Key="CaptionColor">green</Color>
+        <Color x:Key="TitleColor">blue</Color>
+        <Color x:Key="BackGround">red</Color>
+
 
         <Style TargetType="Label" >
           <Setter Property="FontFamily">

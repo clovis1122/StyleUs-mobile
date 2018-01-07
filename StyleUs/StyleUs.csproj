@@ -30,6 +30,7 @@
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml" />
+    <EmbeddedResource Include="StyleUsPage.xaml" />
     <EmbeddedResource Include="View\LoginPage.xaml" />
     <EmbeddedResource Include="View\ForgotPasswordPage.xaml" />
     <EmbeddedResource Include="View\NotificationPage.xaml" />
@@ -82,6 +83,10 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\AddCameraButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -90,11 +95,7 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\AboutUsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\MenuPage.xaml">
+    <EmbeddedResource Include="View\EditProfilePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -103,6 +104,9 @@
     <Compile Include="AccountManager.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StyleUsPage.xaml.cs">
+      <DependentUpon>StyleUsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\AddPicturePostViewModel.cs" />
     <Compile Include="ViewModel\AnswersPageViewModel.cs" />
@@ -216,6 +220,10 @@
     </Compile>
     <Compile Include="ViewModel\Notification\NotificationListViewModel.cs" />
     <Compile Include="Services\NotificationServices.cs" />
+    <Compile Include="View\Menu.xaml.cs">
+      <DependentUpon>Menu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\MenuViewModel.cs" />
     <Compile Include="View\AddCameraButton.xaml.cs">
       <DependentUpon>AddCameraButton.xaml</DependentUpon>
     </Compile>
@@ -227,14 +235,10 @@
     <Compile Include="ViewModel\CommentsViewModel.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Services\CommentServices.cs" />
-    <Compile Include="View\AboutUsPage.xaml.cs">
-      <DependentUpon>AboutUsPage.xaml</DependentUpon>
+    <Compile Include="View\EditProfilePage.xaml.cs">
+      <DependentUpon>EditProfilePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\AboutUsPageViewModel.cs" />
-    <Compile Include="View\MenuPage.xaml.cs">
-      <DependentUpon>MenuPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewModel\MenuPageViewModel.cs" />
+    <Compile Include="ViewModel\EditProfilePageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">

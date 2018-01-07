@@ -10,8 +10,6 @@ namespace StyleUs.View
         public ClothCombinationPage()
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false);
-
         }
     }
 }

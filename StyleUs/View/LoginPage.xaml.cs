@@ -39,9 +39,9 @@ namespace StyleUs.View
                 name: "colorchange",
                 animation: new Animation((val) =>
                 {
-                    //var newValue = (int)(255 * (1 - (val * 0.5)));
-                    //var newColor = Color.FromRgb(newValue, newValue, newValue);
-                    //title.FormattedText.Spans[0].ForegroundColor = newColor;
+                    var newValue = (int)(255 * (1 - (val * 0.5)));
+                    var newColor = Color.FromRgb(newValue, newValue, newValue);
+                    title.FormattedText.Spans[0].ForegroundColor = newColor;
                 }),
                 length: 1500,
                 repeat: () => { return false; }
