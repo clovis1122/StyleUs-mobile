@@ -27,19 +27,19 @@ namespace StyleUs
 
 			InitializeComponent();
 
-            string navPage = "MenuPage";
+            string navPage = "ProfilePage";
 
-            try {
-                AccountManager.SaveCredentials("Usernames123","Password456");
-                if (AccountManager.UserName != null) {
-                    navPage = "HomePage";
-                }
+            //try {
+            //    AccountManager.SaveCredentials("Usernames123","Password456");
+            //    if (AccountManager.UserName != null) {
+            //        navPage = "HomePage";
+            //    }
 
-            } catch(Exception e) {
-                // No keychain :(
-                var du = "a";
+            //} catch(Exception e) {
+            //    // No keychain :(
+            //    var du = "a";
 
-            }
+            //}
 
             NavigationService.NavigateAsync(new Uri("/NavigationPage/MainTabbedPage/" + navPage, UriKind.Absolute));
 		}
@@ -52,7 +52,7 @@ namespace StyleUs
             Container.RegisterTypeForNavigation<View.HomePage, HomePageViewModel>("HomePage");
             Container.RegisterTypeForNavigation<FriendPage, FriendViewModel>("FriendPage");
             Container.RegisterTypeForNavigation<LoginPage, LoginPageViewModel>("LoginPage");
-            Container.RegisterTypeForNavigation<ProfilePage, ProfileViewModel>("ProfilePage");
+            Container.RegisterTypeForNavigation<View.ProfilePage, ViewModel.ProfileViewModel>("ProfilePage");
             Container.RegisterTypeForNavigation<View.ClothPieces.NewClothPage,ViewModel.ClothPieceViewModel>("ClothPieces");
             Container.RegisterTypeForNavigation<View.Notification.NotificationList,ViewModel.Notification.NotificationListViewModel>("NotificationList");
             Container.RegisterTypeForNavigation<AddCommentPage, AddCommentPageViewModel>();

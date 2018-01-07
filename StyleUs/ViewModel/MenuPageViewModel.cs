@@ -20,6 +20,7 @@ namespace StyleUs.ViewModel
         public ICommand conjunto { get; set; }
         public ICommand sobreNosotros { get; set; }
         public ICommand salir { get; set; }
+        public DelegateCommand perfil { get; set; }
 
         readonly INavigationService navigation;
         IEventAggregator events;
@@ -37,9 +38,15 @@ namespace StyleUs.ViewModel
             conjunto = new Command(OnConjuntoClick);
             sobreNosotros = new Command(OnSobreNosotrosClick);
             salir = new Command(OnSalirClick);
+            perfil = new DelegateCommand(OnPerfilClick);
 
         }
 
+        public void OnPerfilClick(){
+
+            navigation.NavigateAsync("ProfilePage");
+
+        }
 
         public void OnPiezasClick()
         {
