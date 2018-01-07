@@ -46,13 +46,15 @@
                 </Grid.ColumnDefinitions>
 
                 <!-- Cuadro 0,0 -->
-                <Label Grid.Row="0" Grid.Column="0" BackgroundColor="#a8afb8"/>
+               <!-- <Label Grid.Row="0" Grid.Column="0" BackgroundColor="#a8afb8"/>
 
                 <Image x:Name="imagen_circular" Source="ICONO2.png" Grid.Row="0" Grid.Column="0"
                  HorizontalOptions="Center"
                 VerticalOptions="Center"
                 HeightRequest="50" WidthRequest="50"
-                MinimumHeightRequest="50" MinimumWidthRequest="50"/>
+                MinimumHeightRequest="50" MinimumWidthRequest="50"/>-->
+
+                
 
                 <!--Cuadro 0,1 -->
                 <Label Grid.Row="0" Grid.Column="1" BackgroundColor="#a8afb8"/>
