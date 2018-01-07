@@ -76,7 +76,7 @@
     <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer: David Tavarez (6K45SX2XG7)</CodesignKey>
+    <CodesignKey>iPhone Developer: adeury08@hotmail.com (N9Q2XNRW4H)</CodesignKey>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
@@ -320,6 +320,7 @@
     <BundleResource Include="Resources\Union57.png" />
     <BundleResource Include="Resources\send.png" />
     <BundleResource Include="Resources\backIcon.png" />
+    <BundleResource Include="Resources\ProfileImage.JPG" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\LikeHeartIcon.png" />

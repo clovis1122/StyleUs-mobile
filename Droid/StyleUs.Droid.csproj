@@ -252,6 +252,7 @@
     <AndroidResource Include="Resources\drawable\Union57.png" />
     <AndroidResource Include="Resources\drawable\send.png" />
     <AndroidResource Include="Resources\drawable\backIcon.png" />
+    <AndroidResource Include="Resources\drawable\ProfileImage.JPG" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\seeCommentIcon.png" />

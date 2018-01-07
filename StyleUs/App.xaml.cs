@@ -27,7 +27,7 @@ namespace StyleUs
 
 			InitializeComponent();
 
-            string navPage = "LoginPage";
+            string navPage = "ProfilePage";
 
             try {
                 AccountManager.SaveCredentials("Usernames123","Password456");
@@ -38,7 +38,9 @@ namespace StyleUs
             } catch(Exception e) {
                 // No keychain :(
                 var du = "a";
+
             }
+
             NavigationService.NavigateAsync(new Uri("/NavigationPage/" + navPage, UriKind.Absolute));
 		}
 
