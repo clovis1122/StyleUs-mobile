@@ -57,23 +57,26 @@
                 <StackLayout Grid.Row="0" Grid.Column="0" BackgroundColor="#a8afb8"
                     HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
-                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                    <Button Image="ICONO2.png"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    HeightRequest="50" WidthRequest="50"
-                    MinimumHeightRequest="50" MinimumWidthRequest="50"
-                    Command="{Binding perfil}"
-                    BackgroundColor="White"
-                    BorderRadius="50" BorderWidth="0"/>
-                </StackLayout>
+                        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                            <Button Image="ICONO2.png"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            HeightRequest="50" WidthRequest="50"
+                            MinimumHeightRequest="50" MinimumWidthRequest="50"
+                            Command="{Binding perfil}"
+                            BackgroundColor="White"
+                            BorderRadius="45" BorderWidth="0"/>
+                        </StackLayout>
 
                 
                 </StackLayout> 
 
 
                 <!--Cuadro 0,1 -->
-                <Label Grid.Row="0" Grid.Column="1" BackgroundColor="#a8afb8"/>
+
+
+            
+                <!--<Label Grid.Row="0" Grid.Column="1" BackgroundColor="#a8afb8"/>
 
                 <Label TextColor="White" Grid.Row="0" Grid.Column="1"
                     VerticalOptions="Center" HorizontalOptions="Start">
@@ -83,7 +86,23 @@
                             <Span Text="Santo Domingo" FontSize="Micro"/>
                         </FormattedString>
                     </Label.FormattedText>
-                </Label>
+                </Label>-->
+
+                <StackLayout Grid.Row="0" Grid.Column="1"  BackgroundColor="#a8afb8" 
+                    Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+
+                    <StackLayout HorizontalOptions="Start" VerticalOptions="CenterAndExpand">
+
+                        <Label Text="Adeury Camilo" TextColor="White" FontSize="Large"
+                        FontAttributes="Bold"/>
+                        <Label Text="Santo Domingo" TextColor="White"/>
+
+                    </StackLayout>
+                    
+                </StackLayout>
+
+            
 
                 <!-- Segundo cuadro 1,0 -->
 
