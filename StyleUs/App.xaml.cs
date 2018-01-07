@@ -29,20 +29,21 @@ namespace StyleUs
 
             string navPage = "LoginPage";
 
-            try {
-                // AccountManager.SaveCredentials("Usernames123","Password456");
-                if (AccountManager.UserName != null) {
-                    navPage = "HomePage";
-                }
+            //try {
+            //    // AccountManager.SaveCredentials("Usernames123","Password456");
+            //    if (AccountManager.UserName != null) {
+            //        navPage = "HomePage";
+            //    }
 
-            } catch(Exception e) {
-                // No keychain :(
-            }
+            //} catch(Exception e) {
+            //    // No keychain :(
+            //}
 
-            NavigationService.NavigateAsync(new Uri("/NavigationPage/" + navPage, UriKind.Absolute));
+            NavigationService.NavigateAsync(new Uri("/NavigationPage/MainTabbedPage/" + navPage, UriKind.Absolute));
 		}
 
 		protected override void RegisterTypes()
+
         {
             Container.RegisterTypeForNavigation<View.Friend.FriendProfile, FriendProfileViewModel>();
             Container.RegisterTypeForNavigation<View.ClothPieces.SingleClothPiece, SingleClothPieceViewModel>();
