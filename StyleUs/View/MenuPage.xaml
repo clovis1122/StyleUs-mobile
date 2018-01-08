@@ -73,7 +73,6 @@
                                                 Source="ICONO2.png"
                                                 Margin="5,0,5,0">
                                                 <ffimageloading:CachedImage.Transformations>
-                                                   
                                                     <fftransformations:CircleTransformation />
                                                 </ffimageloading:CachedImage.Transformations>
                                                 <ffimageloading:CachedImage.GestureRecognizers>

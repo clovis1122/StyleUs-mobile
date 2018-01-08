@@ -27,7 +27,7 @@ namespace StyleUs
 
 			InitializeComponent();
 
-            string navPage = "LoginPage";
+            string navPage = "Comments";
 
             //try {
             //    AccountManager.SaveCredentials("Usernames123","Password456");
