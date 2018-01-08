@@ -25,6 +25,11 @@ namespace StyleUs.ViewModel
             get { return file != null; }
         }
 
+        /*
+         *  THIS FILE IS A SAMPLE!! NOT REAL FILE LINKED.
+         * 
+         */
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public AddCameraButtonViewModel()
