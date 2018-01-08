@@ -20,6 +20,7 @@ namespace StyleUs.ViewModel
         public ICommand conjunto { get; set; }
         public ICommand sobreNosotros { get; set; }
         public ICommand salir { get; set; }
+
         public DelegateCommand perfil { get; set; }
 
         readonly INavigationService navigation;

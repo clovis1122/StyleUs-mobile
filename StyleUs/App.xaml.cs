@@ -27,24 +27,23 @@ namespace StyleUs
 
 			InitializeComponent();
 
-            string navPage = "Comments";
+            string navPage = "/NavigationPage/LoginPage";
 
-            //try {
-            //    AccountManager.SaveCredentials("Usernames123","Password456");
-            //    if (AccountManager.UserName != null) {
-            //        navPage = "HomePage";
-            //    }
+            try {
+                AccountManager.SaveCredentials("Usernames123","Password456");
+                if (AccountManager.UserName != null) {
+                    navPage = "/MainTabbedPage/HomePage";
+                }
 
-            //} catch(Exception e) {
-            //    // No keychain :(
-            //    var du = "a";
-
-            //}
-
-            NavigationService.NavigateAsync(new Uri("/NavigationPage/MainTabbedPage/" + navPage, UriKind.Absolute));
+            } catch(Exception e) {
+                // No keychain :(
+                var du = "a";
+            }
+            NavigationService.NavigateAsync(new Uri(navPage, UriKind.Absolute));
 		}
 
 		protected override void RegisterTypes()
+
         {
             Container.RegisterTypeForNavigation<View.Friend.FriendProfile, FriendProfileViewModel>();
             Container.RegisterTypeForNavigation<View.ClothPieces.SingleClothPiece, SingleClothPieceViewModel>();
@@ -53,6 +52,7 @@ namespace StyleUs
             Container.RegisterTypeForNavigation<FriendPage, FriendViewModel>("FriendPage");
             Container.RegisterTypeForNavigation<LoginPage, LoginPageViewModel>("LoginPage");
             Container.RegisterTypeForNavigation<View.ProfilePage, ViewModel.ProfileViewModel>("ProfilePage");
+            Container.RegisterTypeForNavigation<ProfilePage, ProfileViewModel>("ProfilePage");
             Container.RegisterTypeForNavigation<View.ClothPieces.NewClothPage,ViewModel.ClothPieceViewModel>("ClothPieces");
             Container.RegisterTypeForNavigation<View.Notification.NotificationList,ViewModel.Notification.NotificationListViewModel>("NotificationList");
             Container.RegisterTypeForNavigation<AddCommentPage, AddCommentPageViewModel>();

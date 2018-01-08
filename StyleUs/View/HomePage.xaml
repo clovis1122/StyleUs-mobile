@@ -7,6 +7,8 @@
     prism:ViewModelLocator.AutowireViewModel="True"
     x:Class="StyleUs.View.HomePage"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+  NavigationPage.TitleIcon="icon.png"
+    
    
     xmlns:views="clr-namespace:StyleUs.View.Component" >
 
