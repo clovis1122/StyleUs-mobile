@@ -251,14 +251,11 @@
                             
                         </Grid.ColumnDefinitions>
 
-                        <Image Source="Profile11.jpg" Grid.Column="0" 
-                        HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                        <Image Source="Profile11.jpg" Grid.Column="0"/>
 
-                        <Image Source="Profile22.jpg" Grid.Column="1" 
-                          HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                        <Image Source="Profile11.jpg" Grid.Column="1" />
                          
-                        <Image Source="Profile33.jpg" Grid.Column="2" 
-                        HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                        <Image Source="Profile11.jpg" Grid.Column="2"/>
 
 
                     </Grid>

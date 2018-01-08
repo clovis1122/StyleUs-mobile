@@ -321,6 +321,14 @@
     <BundleResource Include="Resources\send.png" />
     <BundleResource Include="Resources\backIcon.png" />
     <BundleResource Include="Resources\ProfileImage.JPG" />
+    <BundleResource Include="Resources\PhotoPerfil1.jpg" />
+    <BundleResource Include="Resources\PhotoPerfil2.png" />
+    <BundleResource Include="Resources\PhotoPerfil3.jpg" />
+    <BundleResource Include="Resources\PhotoPerfil4.jpg" />
+    <BundleResource Include="Resources\Profile11.jpg" />
+    <BundleResource Include="Resources\EditProfile.png" />
+    <BundleResource Include="Resources\email.png" />
+    <BundleResource Include="Resources\phoneIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\LikeHeartIcon.png" />
