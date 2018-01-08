@@ -216,6 +216,7 @@
     <Compile Include="Effects\UnderlineEffect.cs" />
     <Compile Include="Effects\ShadowEffect.cs" />
     <Compile Include="MainApplication.cs" />
+    <Compile Include="PhotoReader.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\SourceSansPro_Black.ttf" />

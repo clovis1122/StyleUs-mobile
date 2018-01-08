@@ -1,16 +1,22 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="StyleUs.View.AddPicturePost"
-             
-             >
+             xmlns:Converter="clr-namespace:StyleUs.Converter">
 
+      <ContentPage.Resources>
+    <ResourceDictionary>
+      <Converter:IsValueConverter x:Key="isValue"/>
+    </ResourceDictionary>
+  </ContentPage.Resources>
 
-    <ContentPage.Content >
+ 
+    <ContentPage.Content>
 
-        <StackLayout Orientation="Vertical" BackgroundColor="White"  >
+        <ScrollView>
+        <StackLayout Orientation="Vertical" BackgroundColor="White">
 
             <Label Text="Subir foto" TextColor="Red" ></Label>
 
@@ -31,24 +37,30 @@
 
                 <!--<Image Source="icon1.png" WidthRequest="40" HeightRequest="40"></Image>-->
 
-               
-               
             </StackLayout>
 
             <Frame OutlineColor="Black" HeightRequest="350" Padding="0">
-
-                <Image Source="https://freerangestock.com/thumbnail/27083/steampunk-woman-tips-hat.jpg" ></Image>
-                
+                <Image Source="{Binding image}" />
             </Frame>
 
-            <Editor BackgroundColor="White" VerticalOptions="FillAndExpand" ></Editor>
+            <Editor Text="{Binding body, Mode=TwoWay}" BackgroundColor="White" VerticalOptions="FillAndExpand" />
             
-           <Button Command="{Binding login}"  Text="Subir Imagen" BackgroundColor="Gray" Margin="20" BorderRadius="50" BorderWidth="2" BorderColor="White" VerticalOptions="End" />
-
+           <Button
+            Command="{Binding TakePhoto}"  
+            Text="Subir Imagen" 
+            BackgroundColor="Gray" 
+            Margin="20" 
+            BorderRadius="50" BorderWidth="2" BorderColor="White" VerticalOptions="End" />
+            <Button 
+            IsVisible="{Binding showSubmit}"
+            Command="{Binding CreatePost}"  
+            Text="Crear publicación"
+            BackgroundColor="Gray" 
+            Margin="20" 
+            BorderRadius="50" BorderWidth="2" BorderColor="White" VerticalOptions="End" />
             
-
-
         </StackLayout>
+            </ScrollView>
         
         
         

@@ -29,16 +29,15 @@ namespace StyleUs
 
             string navPage = "/NavigationPage/LoginPage";
 
-            try {
-                AccountManager.SaveCredentials("Usernames123","Password456");
-                if (AccountManager.UserName != null) {
-                    navPage = "/MainTabbedPage/HomePage";
-                }
+            // TODO: this is insecure.
 
-            } catch(Exception e) {
-                // No keychain :(
-                var du = "a";
+            if (Application.Current.Properties.ContainsKey("token") || true) {
+                navPage = "/MainTabbedPage/HomePage";
             }
+
+            //Application.Current.Properties["token"] = "123";
+            //Application.Current.SavePropertiesAsync();
+
             NavigationService.NavigateAsync(new Uri(navPage, UriKind.Absolute));
 		}
 

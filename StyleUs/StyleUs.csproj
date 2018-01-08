@@ -82,10 +82,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\AddCameraButton.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\Comments.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
@@ -98,18 +94,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\PictureUpload\AddPicturePost.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PictureUpload\AddCameraButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountManager.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\AddPicturePostViewModel.cs" />
     <Compile Include="ViewModel\AnswersPageViewModel.cs" />
     <Compile Include="ViewModel\ViewCommentsViewModel.cs" />
-    <Compile Include="View\AddPicturePost.xaml.cs">
-      <DependentUpon>AddPicturePost.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\AnswersPage.xaml.cs">
       <DependentUpon>AnswersPage.xaml</DependentUpon>
     </Compile>
@@ -190,7 +190,7 @@
     <Compile Include="ViewModel\SingleClothPieceViewModel.cs" />
     <Compile Include="Effect\UnderlineEffect.cs" />
     <Compile Include="Effect\ShadowEffect.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Post.cs" />
     <Compile Include="Models\Notification.cs" />
     <Compile Include="Services\API\ApiConnector.cs" />
     <Compile Include="Services\API\ApiFieldError.cs" />
@@ -216,10 +216,6 @@
     </Compile>
     <Compile Include="ViewModel\Notification\NotificationListViewModel.cs" />
     <Compile Include="Services\NotificationServices.cs" />
-    <Compile Include="View\AddCameraButton.xaml.cs">
-      <DependentUpon>AddCameraButton.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewModel\AddCameraButtonViewModel.cs" />
     <Compile Include="Services\UserServices.cs" />
     <Compile Include="View\Comments.xaml.cs">
       <DependentUpon>Comments.xaml</DependentUpon>
@@ -235,6 +231,17 @@
       <DependentUpon>MenuPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\MenuPageViewModel.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="View\PictureUpload\AddPicturePost.xaml.cs">
+      <DependentUpon>AddPicturePost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\IsValueConverter.cs" />
+    <Compile Include="ViewModel\PictureUpload\AddPicturePostViewModel.cs" />
+    <Compile Include="ViewModel\PictureUpload\AddCameraButtonViewModel.cs" />
+    <Compile Include="IPhoto.cs" />
+    <Compile Include="View\PictureUpload\AddCameraButton.xaml.cs">
+      <DependentUpon>AddCameraButton.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">
@@ -343,15 +350,12 @@
     <Folder Include="ViewModel\Users\" />
     <Folder Include="View\Notification\" />
     <Folder Include="ViewModel\Notification\" />
+    <Folder Include="View\PictureUpload\" />
+    <Folder Include="Converter\" />
+    <Folder Include="ViewModel\PictureUpload\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="View\MainTabbedPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="View\AddPicturePost.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
