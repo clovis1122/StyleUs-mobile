@@ -51,6 +51,7 @@ namespace StyleUs
             Container.RegisterTypeForNavigation<View.HomePage, HomePageViewModel>("HomePage");
             Container.RegisterTypeForNavigation<FriendPage, FriendViewModel>("FriendPage");
             Container.RegisterTypeForNavigation<LoginPage, LoginPageViewModel>("LoginPage");
+            Container.RegisterTypeForNavigation<View.ProfilePage, ViewModel.ProfileViewModel>("ProfilePage");
             Container.RegisterTypeForNavigation<ProfilePage, ProfileViewModel>("ProfilePage");
             Container.RegisterTypeForNavigation<View.ClothPieces.NewClothPage,ViewModel.ClothPieceViewModel>("ClothPieces");
             Container.RegisterTypeForNavigation<View.Notification.NotificationList,ViewModel.Notification.NotificationListViewModel>("NotificationList");

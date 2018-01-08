@@ -10,80 +10,57 @@ using Prism.Navigation;
 using Prism.Commands;
 using StyleUs.ViewModel.Component;
 using System.Collections.ObjectModel;
+using Prism.Events;
+using System.Threading.Tasks;
+using Prism.Mvvm;
+
 
 namespace StyleUs.ViewModel
 {
-    public class ProfileViewModel : INotifyPropertyChanged
-	{
-		public class Image
-		{
+    public class ProfileViewModel : ContentPage
+    {
 
-			public string imageUrl { get; set; }
-			public string fileName { get; set; }
+        public DelegateCommand back { get; set; }
+        public DelegateCommand edit { get; set; }
+        public DelegateCommand followers { get; set; }
 
-			public Image(string imageUrl, string fileName)
-			{
-				this.imageUrl = imageUrl;
-				this.fileName = fileName;
-			}
+        readonly INavigationService navigation;
+        IEventAggregator events;
 
-		}
-		public event PropertyChangedEventHandler PropertyChanged;
+        public new event PropertyChangedEventHandler PropertyChanged;
 
-		public FloatingMenuViewModel MenuViewModel { get; set; }
-
-		public ObservableCollection<Image> _imageList = new ObservableCollection<Image>();
-		public ObservableCollection<Image> imageList
-		{
-			get
-			{
-				return _imageList;
-			}
-			set
-			{
-				_imageList = value;
-			}
-		}
-
-		
-        public ProfileViewModel(INavigationService navigationService)
-		{
-			MenuViewModel = new FloatingMenuViewModel(navigationService);
-
-			// Fill the imageList with preset images.
-			ReloadData();
-		}
-
-        public ProfileViewModel()
+        public ProfileViewModel(INavigationService navigationService, IEventAggregator eventAgregator)
         {
+            navigation = navigationService;
+            events = eventAgregator;
+
+            back = new DelegateCommand(OnBackClick);
+            edit = new DelegateCommand(OnEditClick);
+            followers = new DelegateCommand(OnFollowersClick);
         }
 
-        static Random rnd = new Random();
 
-		public void ReloadData()
-		{
+        public void OnBackClick()
+        {
+            //navigation.NavigateAsync("AboutUsPage");
+            navigation.GoBackAsync();
+            //navigation.NavigateAsync(new Uri("/MainTabbedPage/MenuPage", UriKind.Absolute));
 
-			var list = new ObservableCollection<Image>();
+        }
 
-			string[] images = {
-				"https://www.anipedia.net/imagenes/cuidados-hamster.jpg",
-				"http://i1.wp.com/tuhamster.com/wp-content/uploads/2015/10/como-criar-un-hamster_opt.jpg",
-				"http://www.petwebsite.com/hamsters/hamsters_images/hamster_000009248846.jpg",
-				"http://img.bekiamascotas.com/articulos/portada/41000/41059-h2.jpg",
-				"https://i.ytimg.com/vi/w6Z5XpJ_IHM/maxresdefault.jpg",
-				"http://s7d2.scene7.com/is/image/PetSmart/5081326?$sclp-prd-main_large$",
+        public void OnEditClick()
+        {
+            //Poner navigation a la pantalla de miguel
 
-			};
+        }
 
-			for (int i = 0; i < images.Length; i++)
-			{
-				var item = new Image(images[i], string.Format("image_{0}.jpg", i));
+        public void OnFollowersClick()
+        {
 
-				list.Add(item);
-			}
+            navigation.NavigateAsync("FollowerLists");
 
-			imageList = list;
-		}
+        }
 
-	}
+
+    }
 }
