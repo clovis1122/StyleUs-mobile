@@ -6,8 +6,7 @@
             x:Class="StyleUs.View.MainTabbedPage"
             xmlns:local="clr-namespace:StyleUs.View"
             xmlns:localNotification="clr-namespace:StyleUs.View.Notification"
-            xmlns:localUsers="clr-namespace:StyleUs.View.Users" 
-            >
+            xmlns:localUsers="clr-namespace:StyleUs.View.Users">
 
 
     <TabbedPage.Children>
@@ -15,9 +14,8 @@
         <localUsers:FollowerLists Icon="followers.png" />
         <local:HomePage  Icon="Home.png" />
         <localNotification:NotificationList Icon="Notifications.png" />
-        <local:Menu Icon="Menu.png"/>
-        
-
+        <local:MenuPage Icon="Menu.png"/>
     </TabbedPage.Children>
-  
+
+
 </TabbedPage>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="StyleUs.View.AboutUsPage"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    prism:ViewModelLocator.AutowireViewModel="true"
+    NavigationPage.HasNavigationBar="true"
+    Title="Sobre Nosotros">
+     <ContentPage.Resources>
+        <ResourceDictionary>
+             <Style x:Key="iconosBotones" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HeightRequest" Value="40"/>
+                <Setter Property="WidthRequest" Value="40"/>
+                <Setter Property="MinimumHeightRequest" Value="40"/>
+                <Setter Property="MinimumWidthRequest" Value="40"/>
+             </Style> 
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <!--Padding="0,40,0,0"-->
+	<ContentPage.Content>
+
+        <Grid RowSpacing="20" BackgroundColor="#e9eaed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.30*"/>
+                <RowDefinition Height="0.50*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0" BackgroundColor="#a8afb8" Orientation="Horizontal" 
+                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                <Button Image="backIcon.png" 
+                    Command="{Binding back}" Style="{StaticResource iconosBotones}"/>
+              
+                <Label Text="Sobre Nosotros" FontAttributes="Bold" 
+                TextColor="Black" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+
+
+            </StackLayout>
+            
+            <StackLayout Grid.Row="1" BackgroundColor="White"  
+                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="20,0,20,0">
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Orientation="Horizontal">
+
+                <Label Text="Style " FontAttributes="Bold" 
+                TextColor="Black" FontSize="Large" />
+                
+                <Label Text="Us" FontAttributes="Bold"  
+                TextColor="Red" FontSize="Large"  />
+                    
+                </StackLayout>
+
+            </StackLayout>
+            
+            <StackLayout Grid.Row="2" BackgroundColor="White" Orientation="Vertical"
+                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="20,0,20,20">
+
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Orientation="Horizontal">
+
+                <Label Text="Style Us es una red social diseñada y desarrollada para compartir prendas de vestir y conjuntos, permitiendo a los usuarios crear tendencia entre sus conocidos y, de ese modo, expandir sus conocimientos sobre vestimenta a la hora de elegir cierto tipo de ropa una determinada ocasión. "
+                    TextColor="Black"/>
+                    
+                </StackLayout>
+
+
+            </StackLayout>
+                
+
+        </Grid>
+
+	</ContentPage.Content>
+</ContentPage>
