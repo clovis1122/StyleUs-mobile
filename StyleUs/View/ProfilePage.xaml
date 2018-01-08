@@ -225,7 +225,7 @@
 
             </Grid>
 
-            <!-- Cuerto bloque -->
+            <!-- Cuarto bloque -->
 
             <Grid BackgroundColor="White" Grid.Row="3">
 
@@ -241,17 +241,28 @@
                         HorizontalOptions="Start" VerticalOptions="CenterAndExpand" Margin="10"
                     Grid.Row="0"/>
 
-                    <StackLayout Grid.Row="1" BackgroundColor="Blue" Orientation="Horizontal">
+                    <Grid Grid.Row="1" Margin="10" ColumnSpacing="10">
 
-                        <ListView HasUnevenRows="true">
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <ImageCell/>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
-                        
-                    </StackLayout>
+                        <Grid.RowDefinitions>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.30*"/>
+                            <ColumnDefinition Width="0.30*"/>
+                            <ColumnDefinition Width="0.30*"/>
+                            
+                        </Grid.ColumnDefinitions>
+
+                       <Image Source="Profile11.jpg" Grid.Column="0" 
+                        />
+
+                        <Image Source="Profile11.jpg" Grid.Column="1" 
+                          />
+                         
+                        <Image Source="Profile11.jpg" Grid.Column="2" 
+                        />
+
+
+                    </Grid>
 
                 </Grid>
                 
