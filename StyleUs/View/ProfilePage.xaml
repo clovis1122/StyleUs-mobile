@@ -80,6 +80,7 @@
                          </ffimageloading:CachedImage.Transformations>
                     </ffimageloading:CachedImage>
 
+
                     
                 </StackLayout>
                 
@@ -89,22 +90,23 @@
 
                     <!-- Layout para el correo -->
                     <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <Image Source="email.png"/> 
                         <Label Text="adeury09@gmail.com" TextColor="Gray" FontSize="Medium" 
                         HorizontalOptions="Center" VerticalOptions="Center"/>
                     </StackLayout>
 
                     <!-- Layout para el numero -->
                     <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                        <Image Source="phoneIcon.png"/> 
                         <Label Text="8098045245" TextColor="Gray" FontSize="Medium" 
                         HorizontalOptions="Center" VerticalOptions="Center"/>
                     </StackLayout>
                     
                     <!-- Layout para el boton editar -->
                     <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" HorizontalOptions="End">
-                        <!--<Label Text="Editar" TextColor="Gray" FontSize="Large" 
-                        HorizontalOptions="End" VerticalOptions="End"/>-->
-                        <Button Image="send.png" HeightRequest="50" WidthRequest="50" MinimumHeightRequest="30"
-                            MinimumWidthRequest="30" HorizontalOptions="End" VerticalOptions="End"/>
+                        <Button Image="EditProfile.png" HeightRequest="50" WidthRequest="50" MinimumHeightRequest="30"
+                            MinimumWidthRequest="30" HorizontalOptions="End" VerticalOptions="End"
+                            />
                     </StackLayout>
                 </StackLayout>
                 
@@ -121,14 +123,103 @@
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                     </Grid.ColumnDefinitions>
-
-                    <Label Text="Seguidores" TextColor="Black" FontAttributes="Bold" FontSize="Medium"
+                    <!-- Titulo -->
+                    <Label Text="SEGUIDORES" TextColor="Black" FontAttributes="Bold" FontSize="Medium"
                         HorizontalOptions="Start" VerticalOptions="CenterAndExpand" Margin="10"
                     Grid.Row="0"/>
 
-                    <StackLayout Grid.Row="1" BackgroundColor="Blue">
+                    <!-- Usuarios y mas -->
+                    <Grid Grid.Row="1" Margin="10">
+                        <Grid.RowDefinitions>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.10*"/>
+                            <ColumnDefinition Width="0.10*"/>
+                            <ColumnDefinition Width="0.10*"/>
+                            <ColumnDefinition Width="0.10*"/>
+                            <ColumnDefinition Width="0.15*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- imagne 1 -->
+
+                        <ffimageloading:CachedImage  
+                                                Grid.Column="0"
+                                                HeightRequest="100"
+                                                WidthRequest="100" 
+                                                DownsampleUseDipUnits="false" 
+                                                LoadingPlaceholder="image_loading.png"
+                                                ErrorPlaceholder="image_error.png" 
+                                                Source="PhotoPerfil1.jpg"
+                                                Margin="5,0,5,0">
+                                                <ffimageloading:CachedImage.Transformations>
+                                                    <fftransformations:CircleTransformation />
+                                                </ffimageloading:CachedImage.Transformations>
+                                            </ffimageloading:CachedImage>
+
+                        <!-- imagne 2 -->                        
+
+
+                        <ffimageloading:CachedImage  
+                                                Grid.Column="1"
+                                                HeightRequest="100"
+                                                WidthRequest="100" 
+                                                DownsampleUseDipUnits="false" 
+                                                LoadingPlaceholder="image_loading.png"
+                                                ErrorPlaceholder="image_error.png" 
+                                                Source="PhotoPerfil2.png"
+                                                Margin="5,0,5,0">
+                                                <ffimageloading:CachedImage.Transformations>
+                                                    <fftransformations:CircleTransformation />
+                                                </ffimageloading:CachedImage.Transformations>
+                                            </ffimageloading:CachedImage>
+
+                        <!-- imagne 3 -->                        
+
+
+                        <ffimageloading:CachedImage  
+                                                Grid.Column="2"
+                                                HeightRequest="100"
+                                                WidthRequest="100" 
+                                                DownsampleUseDipUnits="false" 
+                                                LoadingPlaceholder="image_loading.png"
+                                                ErrorPlaceholder="image_error.png" 
+                                                Source="PhotoPerfil3.jpg"
+                                                Margin="5,0,5,0">
+                                                <ffimageloading:CachedImage.Transformations>
+                                                    <fftransformations:CircleTransformation />
+                                                </ffimageloading:CachedImage.Transformations>
+                                            </ffimageloading:CachedImage>
+
+                        <!-- imagne 4 -->                        
+
+
+                        <ffimageloading:CachedImage  
+                                                Grid.Column="3"
+                                                HeightRequest="100"
+                                                WidthRequest="100" 
+                                                DownsampleUseDipUnits="false" 
+                                                LoadingPlaceholder="image_loading.png"
+                                                ErrorPlaceholder="image_error.png" 
+                                                Source="PhotoPerfil4.jpg"
+                                                Margin="5,0,5,0">
+                                                <ffimageloading:CachedImage.Transformations>
+                                                    <fftransformations:CircleTransformation />
+                                                </ffimageloading:CachedImage.Transformations>
+                                            </ffimageloading:CachedImage>
+
+                        <!-- imagne 5 -->  
+                        <StackLayout HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand" Grid.Column="4"  >
+                             <Button Text="24K"  BackgroundColor="#e9eaed"
+                                TextColor="White" FontAttributes="Bold" FontSize="Large"
+                                HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"
+                                BorderRadius="20" BorderWidth="1"
+                                Command="{Binding followers}"/>
+                             
                         
-                    </StackLayout>
+                        </StackLayout>
+                       
+                    </Grid>
 
                 </Grid>
 

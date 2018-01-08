@@ -253,6 +253,16 @@
     <AndroidResource Include="Resources\drawable\send.png" />
     <AndroidResource Include="Resources\drawable\backIcon.png" />
     <AndroidResource Include="Resources\drawable\ProfileImage.JPG" />
+    <AndroidResource Include="Resources\drawable\EditProfile.png" />
+    <AndroidResource Include="Resources\drawable\email.png" />
+    <AndroidResource Include="Resources\drawable\phoneIcon.png" />
+    <AndroidResource Include="Resources\drawable\PhotoPerfil1.jpg" />
+    <AndroidResource Include="Resources\drawable\PhotoPerfil2.png" />
+    <AndroidResource Include="Resources\drawable\PhotoPerfil3.jpg" />
+    <AndroidResource Include="Resources\drawable\PhotoPerfil4.jpg" />
+    <AndroidResource Include="Resources\drawable\Profile11.jpg" />
+    <AndroidResource Include="Resources\drawable\Profile22.jpg" />
+    <AndroidResource Include="Resources\drawable\Profile33.jpg" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\seeCommentIcon.png" />
