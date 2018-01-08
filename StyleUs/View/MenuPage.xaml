@@ -6,7 +6,10 @@
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
     prism:ViewModelLocator.AutowireViewModel="true"
     NavigationPage.HasNavigationBar="true"
-    Padding="0,40,0,0">
+    Padding="0,40,0,0"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+    >
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="nombreBotones" TargetType="Label">
@@ -58,14 +61,35 @@
                     HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
                         <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                            <Button Image="ICONO2.png"
+
+                         <ffimageloading:CachedImage  
+                                                HeightRequest="80"
+                                                WidthRequest="80"
+                                                MinimumWidthRequest="50"
+                                                MinimumHeightRequest="50"
+                                                DownsampleUseDipUnits="false" 
+                                                LoadingPlaceholder="image_loading.png"
+                                                ErrorPlaceholder="image_error.png" 
+                                                Source="ICONO2.png"
+                                                Margin="5,0,5,0">
+                                                <ffimageloading:CachedImage.Transformations>
+                                                   
+                                                    <fftransformations:CircleTransformation />
+                                                </ffimageloading:CachedImage.Transformations>
+                                                <ffimageloading:CachedImage.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding perfil}" NumberOfTapsRequired="1" />
+                                                </ffimageloading:CachedImage.GestureRecognizers>
+                            
+                                            </ffimageloading:CachedImage>
+                    <!--<Button Image="ICONO2.png"
                             HorizontalOptions="Center"
                             VerticalOptions="Center"
                             HeightRequest="50" WidthRequest="50"
-                            MinimumHeightRequest="50" MinimumWidthRequest="50"
+                            MinimumHeightRequest="10" MinimumWidthRequest="10"
                             Command="{Binding perfil}"
                             BackgroundColor="White"
-                            BorderRadius="45" BorderWidth="0"/>
+                            BorderRadius="45" BorderWidth="0"/>-->
+                    
                         </StackLayout>
 
                 
@@ -95,8 +119,16 @@
                     <StackLayout HorizontalOptions="Start" VerticalOptions="CenterAndExpand">
 
                         <Label Text="Adeury Camilo" TextColor="White" FontSize="Large"
-                        FontAttributes="Bold"/>
-                        <Label Text="Santo Domingo" TextColor="White"/>
+                        FontAttributes="Bold">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding perfil}" NumberOfTapsRequired="1" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Label Text="Santo Domingo" TextColor="White">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding perfil}" NumberOfTapsRequired="1" />
+                            </Label.GestureRecognizers>
+                        </Label>
 
                     </StackLayout>
                     
