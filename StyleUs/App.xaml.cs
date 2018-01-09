@@ -27,12 +27,12 @@ namespace StyleUs
 
 			InitializeComponent();
 
-            string navPage = "/NavigationPage/LoginPage";
+            string navPage = "/NavigationPage/Comments";
 
             // TODO: this is insecure.
 
             if (Application.Current.Properties.ContainsKey("token") || true) {
-                navPage = "/MainTabbedPage/HomePage";
+                navPage = "/MainTabbedPage/Comments";
             }
 
             //Application.Current.Properties["token"] = "123";

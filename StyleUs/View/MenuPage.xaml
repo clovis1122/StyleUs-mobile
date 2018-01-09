@@ -9,7 +9,7 @@
     Padding="0,40,0,0"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
     xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
-    Title="Menu">
+    >
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="nombreBotones" TargetType="Label">
@@ -133,6 +133,8 @@
                     
                 </StackLayout>
 
+            
+
                 <!-- Segundo cuadro 1,0 -->
 
                 <Label Grid.Row="1" Grid.Column="0" BackgroundColor="#e9eaed"/>
@@ -186,6 +188,10 @@
                 Style="{StaticResource nombreBotones}" Command="{Binding salir}"/>
 
 
-      </Grid>
+        </Grid>
+
+
+
+
     </ContentPage.Content>
 </ContentPage>
