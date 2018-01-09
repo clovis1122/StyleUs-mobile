@@ -14,7 +14,7 @@
 	<ContentPage.Content>
         <Grid RowSpacing="0" ColumnSpacing="0" BackgroundColor="White">
             <Grid.RowDefinitions>
-                <RowDefinition Height="2.90*"/>
+                <RowDefinition Height="4*"/>
 
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -26,10 +26,6 @@
                         <ViewCell>
                             <StackLayout Padding="30,10,30,10" Orientation="Vertical" BackgroundColor="White" VerticalOptions="FillAndExpand">
                                 <StackLayout Orientation="Horizontal" >
-
-
-                                    <!--<Image Source="{Binding img}" WidthRequest="50" HeightRequest="50"
-                                    MinimumWidthRequest="50" MinimumHeightRequest="50"/> -->
 
                                     <ffimageloading:CachedImage  
                                                 HeightRequest="50"
@@ -60,7 +56,7 @@
                                     
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
-                                    <Label Text="{Binding descriptionComment}" HorizontalOptions="EndAndExpand"
+                                    <Label Text="{Binding descriptionComment}" HorizontalOptions="StartAndExpand"
                                      TextColor="Gray"/>
                                 </StackLayout>
                             </StackLayout>
@@ -76,11 +72,16 @@
                 </ListView.Behaviors>
             </ListView>
             
-            <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="0" VerticalOptions="End" Padding="10">
-                <Entry TextColor="Black" x:Name="comentario"
+            <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="0" VerticalOptions="StartAndExpand" Padding="5">
+                <!--<Entry TextColor="Black" x:Name="comentario"
                 Placeholder="Di algo!" PlaceholderColor="Silver"
                 FontSize="Large" Margin="1" HorizontalOptions="FillAndExpand"
-                />
+                />-->
+                <StackLayout BackgroundColor="Black" Margin="1" HorizontalOptions="FillAndExpand" >
+                <Editor TextColor="Black" FontSize="Large" BackgroundColor="White" Margin="1" HeightRequest="80"
+                 />
+                </StackLayout>
+
             
                 <Button Image="send.png"  Grid.Row="1" Grid.Column="0" 
                 HeightRequest="50" WidthRequest="50"

@@ -48,15 +48,24 @@ namespace StyleUs.ViewModel
         public CommentsViewModel()
         {
             //loadComment();
+            Random random = new Random();
+
+            String[] comentarios = new string[]{
+                "Este es mi comentario, corto para probar",
+                "Aqui voy yo, probando con un comentario mas o menos para ver como crece el campo",
+                "Klk, Damas y caballeros",
+                "Llegue yo, tambien soy parte del grupo, reportanto desde Intec a todo el mundo, activo con mi aplicacion" +
+                "Style Us lo mejor que he podido usar, muy cool"
+            };
+
             for (int i = 0; i <= 10; i++)
             {
                 var du = new StyleUs.Models.Comment();
                 du.name = listadoNombre[random.Next(listadoNombre.Length - 1)] + " " +
                     listadoApellido[random.Next(listadoApellido.Length - 1)];
                 du.time = DateTime.Now.ToString("h:mm");
-                du.descriptionComment = "Creando comentarios disponibles sobre las piezas, conjuntos y demas" +
-                    " para que sea largo y podemos ver de que tipo de damano queda en el celular bla bla bla";
-                du.img = "ICONO2.png";
+                du.descriptionComment = comentarios[random.Next(0, 4)];
+                du.img = "PhotoPerfil" + random.Next(1, 5).ToString();
                 commentsList.Add(du);
             }
 
@@ -66,6 +75,8 @@ namespace StyleUs.ViewModel
 
         public async void loadComment()
         {
+            
+
             try
             {
                 var du2 = await CommentServices.get();
@@ -76,16 +87,25 @@ namespace StyleUs.ViewModel
                 }
             }
             catch
-            {
+            {   
+                Random random = new Random();
+
+                String[] comentarios = new string[]{
+                "1 - Este es mi comentario, corto para probar",
+                "2 - Aqui voy yo, probando con un comentario mas o menos para ver como crece el campo",
+                "3 - Klk, Damas y caballeros",
+                "4 - Llegue yo, tambien soy parte del grupo, reportanto desde Intec a todo el mundo, activo con mi aplicacion" +
+                "Style Us lo mejor que he podido usar, muy cool"
+            };
+
                 for (int i = 0; i <= 10; i++)
                 {
                     var du = new StyleUs.Models.Comment();
                     du.name = listadoNombre[random.Next(listadoNombre.Length - 1)] + " " +
                         listadoApellido[random.Next(listadoApellido.Length - 1)];
                     du.time = DateTime.Now.ToString("h:mm");
-                    du.descriptionComment = "Creando comentarios disponibles sobre las piezas, conjuntos y demas" +
-                        " para que sea largo y podemos ver de que tipo de damano queda en el celular bla bla bla";
-                    du.img = "ICONO2.png";
+                    du.descriptionComment = comentarios[random.Next(0, 3)];
+                    du.img = "PhotoPerfil" + random.Next(1, 4).ToString();
                     commentsList.Add(du);
                 }
             }

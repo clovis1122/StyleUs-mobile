@@ -4,7 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms" 
     x:Class="StyleUs.View.Notification.NotificationList"
-    
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     Padding="0,20,0,0"
     BackgroundColor="White">
 	<ContentPage.Content>
@@ -14,13 +15,55 @@
          <ListView HasUnevenRows="true" ItemsSource="{Binding notificationList}">
            <ListView.ItemTemplate>
              <DataTemplate >
-               <ImageCell
+
+                   <ViewCell>
+                            <StackLayout Padding="30,10,30,10" Orientation="Horizontal" BackgroundColor="White" VerticalOptions="FillAndExpand">
+                               <!-- <StackLayout Orientation="Vertical" >-->
+
+                                    <ffimageloading:CachedImage  
+                                                HeightRequest="50"
+                                                WidthRequest="50"
+                                                MinimumWidthRequest="30"
+                                                MinimumHeightRequest="30"
+                                                DownsampleUseDipUnits="false" 
+                                                LoadingPlaceholder="image_loading.png"
+                                                ErrorPlaceholder="image_error.png" 
+                                                Source="{Binding img}"
+                                                Margin="5,0,5,0">
+                                                 <ffimageloading:CachedImage.Transformations>
+                                                    <fftransformations:CircleTransformation />
+                                                </ffimageloading:CachedImage.Transformations>
+                                                <!--<ffimageloading:CachedImage.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding perfil}" NumberOfTapsRequired="1" />
+                                                </ffimageloading:CachedImage.GestureRecognizers>-->
+                            
+                                            </ffimageloading:CachedImage>
+                                    
+
+                                    <!--<Label Text="{Binding time}" TextColor="Black" HorizontalOptions="End"
+                                    VerticalOptions="Center"/>
+
+                                    <Label Text="h" TextColor="Black" HorizontalOptions="End"
+                                    VerticalOptions="Center"/>-->
+                                    
+                                <!--</StackLayout>-->
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding title}" TextColor="Black" HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="Center"/>
+                                    <Label Text="{Binding detail}" HorizontalOptions="EndAndExpand"
+                                     TextColor="Gray"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+
+                        
+                        <!--<ImageCell
                    Text="{Binding title}"
                    TextColor="Black"
                    Detail="{Binding detail}"
 
                    DetailColor="Black"
-                   ImageSource="{Binding img}" />
+                   ImageSource="{Binding img}" />-->
              </DataTemplate>
            </ListView.ItemTemplate>
            <ListView.Behaviors>
