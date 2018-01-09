@@ -27,13 +27,15 @@ namespace StyleUs
 
 			InitializeComponent();
 
-            string navPage = "/NavigationPage/Comments";
+            string navPage = "/NavigationPage/Login";
 
             // TODO: this is insecure.
 
-            if (Application.Current.Properties.ContainsKey("token") || true) {
-                navPage = "/MainTabbedPage/Comments";
+            if (Application.Current.Properties.ContainsKey("token")) {
+                navPage = "/MainTabbedPage/HomePage";
             }
+
+            // navPage = "/MainTabbedPage/Comments";
 
             //Application.Current.Properties["token"] = "123";
             //Application.Current.SavePropertiesAsync();
@@ -49,7 +51,7 @@ namespace StyleUs
 
             Container.RegisterTypeForNavigation<View.HomePage, HomePageViewModel>("HomePage");
             Container.RegisterTypeForNavigation<FriendPage, FriendViewModel>("FriendPage");
-            Container.RegisterTypeForNavigation<LoginPage, LoginPageViewModel>("LoginPage");
+            Container.RegisterTypeForNavigation<LoginPage, LoginPageViewModel>("Login");
             Container.RegisterTypeForNavigation<View.ProfilePage, ViewModel.ProfileViewModel>("ProfilePage");
             Container.RegisterTypeForNavigation<ProfilePage, ProfileViewModel>("ProfilePage");
             Container.RegisterTypeForNavigation<View.ClothPieces.NewClothPage,ViewModel.ClothPieceViewModel>("ClothPieces");
