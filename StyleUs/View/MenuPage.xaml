@@ -70,7 +70,7 @@
                                                 DownsampleUseDipUnits="false" 
                                                 LoadingPlaceholder="image_loading.png"
                                                 ErrorPlaceholder="image_error.png" 
-                                                Source="ICONO2.png"
+                                                Source="{Binding user.image}"
                                                 Margin="5,0,5,0">
                                                 <ffimageloading:CachedImage.Transformations>
                                                     <fftransformations:CircleTransformation />
@@ -117,7 +117,7 @@
 
                     <StackLayout HorizontalOptions="Start" VerticalOptions="CenterAndExpand">
 
-                        <Label Text="Adeury Camilo" TextColor="White" FontSize="Large"
+                        <Label Text="{Binding user.first_name}" TextColor="White" FontSize="Large"
                         FontAttributes="Bold">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding perfil}" NumberOfTapsRequired="1" />

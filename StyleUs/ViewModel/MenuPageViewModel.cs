@@ -12,6 +12,9 @@ using Prism.Events;
 using System.Threading.Tasks;
 using Prism.Mvvm;
 
+using StyleUs.Models;
+using StyleUs.Services;
+
 namespace StyleUs.ViewModel
 {
     public class MenuPageViewModel : INotifyPropertyChanged
@@ -22,6 +25,8 @@ namespace StyleUs.ViewModel
         public ICommand salir { get; set; }
 
         public DelegateCommand perfil { get; set; }
+
+        public User user { get; set; }
 
         readonly INavigationService navigation;
         IEventAggregator events;
@@ -41,21 +46,40 @@ namespace StyleUs.ViewModel
             salir = new Command(OnSalirClick);
             perfil = new DelegateCommand(OnPerfilClick);
 
+            onGetUserProfile();
         }
 
-        public void OnPerfilClick(){
+        public async void onGetUserProfile() 
+        {
+            try {
+                var response = await UserServices.getProfile();
+                if (!response.Key) {
+                    throw new Exception("FAILED!");
+                }
 
+                user = response.Value as User;
+            } catch {
+
+                // Failed :(
+
+                var newUser = new StyleUs.Models.User();
+                newUser.first_name = "Juan";
+                newUser.last_name = "Perez";
+                newUser.email = "dududu@chamuel.co";
+                newUser.image = "icon1.png";
+
+                user = newUser;
+            }
+        }
+
+        public void OnPerfilClick()
+        {
             navigation.NavigateAsync("ProfilePage");
-
         }
 
         public void OnPiezasClick()
         {
-
-            //navigation.NavigateAsync(new Uri("/MainTabbedPage/AboutUsPage", UriKind.Absolute));
             navigation.NavigateAsync("ClothPieces");
-            //navegacion.PushAsync(new AboutUsPage());
-            //navigation.NavigateAsync(new Uri("/NavigationPage/AboutUsPage", UriKind.Absolute));
         }
 
         public void OnConjuntoClick()
@@ -66,13 +90,13 @@ namespace StyleUs.ViewModel
         public void OnSobreNosotrosClick()
         {
             navigation.NavigateAsync("AboutUsPage");
-            //navigation.NavigateAsync(new Uri("/MainTabbedPage/AboutUsPage", UriKind.Absolute));
-
         }
 
-        public void OnSalirClick()
+        public async void OnSalirClick()
         {
-            navigation.NavigateAsync("LoginPage");
+            Application.Current.Properties.Clear();
+            await Application.Current.SavePropertiesAsync();
+            navigation.NavigateAsync("Login");
         }
     }
 }

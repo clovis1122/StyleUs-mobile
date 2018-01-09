@@ -10,8 +10,7 @@
     <AssemblyName>StyleUs</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <NuGetPackageImportStamp></NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -185,7 +184,7 @@
     <Compile Include="Services\API\IApiResponse.cs" />
     <Compile Include="Services\AuthServices.cs" />
     <None Include="FodyWeavers.xml" />
-    <Compile Include="Events\onLoginEvent.cs" />
+    <Compile Include="Events\Events.cs" />
     <Compile Include="Models\App\RegisterUser.cs" />
     <Compile Include="View\Users\FollowerLists.cs">
       <DependentUpon>FollowerLists.xaml</DependentUpon>
@@ -214,11 +213,11 @@
     <Compile Include="View\AboutUsPage.xaml.cs">
       <DependentUpon>AboutUsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\MenuPageViewModel.cs" />
     <Compile Include="ViewModel\AboutUsPageViewModel.cs" />
     <Compile Include="View\MenuPage.xaml.cs">
       <DependentUpon>MenuPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\MenuPageViewModel.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="View\PictureUpload\AddPicturePost.xaml.cs">
       <DependentUpon>AddPicturePost.xaml</DependentUpon>

@@ -14,11 +14,21 @@ namespace StyleUs.Services
     {
         public static async Task<KeyValuePair<bool,object>> get()
         {
-            var resp = await ApiConnector.getJsonFromUrl("/users/");
+            var resp = await ApiConnector.getJsonFromUrl("users/");
             if (resp.GetStatusCode() != 200) {
                 return new KeyValuePair<bool, object>(false,resp.GetResponseAsModel<Dictionary<string,ApiFieldError>>());
             }
             return new KeyValuePair<bool, object>(true, resp.GetResponseAsModel<List<User>>());
+        }
+
+        public static async Task<KeyValuePair<bool, object>> getProfile()
+        {
+            var resp = await ApiConnector.getJsonFromUrl("users/profile");
+            if (resp.GetStatusCode() != 200)
+            {
+                return new KeyValuePair<bool, object>(false, resp.GetResponseAsModel<Dictionary<string, ApiFieldError>>());
+            }
+            return new KeyValuePair<bool, object>(true, resp.GetResponseAsModel<User>());
         }
     }
 }

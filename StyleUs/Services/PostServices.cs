@@ -15,12 +15,12 @@ namespace StyleUs.Services
     {
         public static async Task<KeyValuePair<bool,object>> createPost(MediaFile file, string body)
         {
-            var resp = await ApiConnector.postJsonFromUrl("/posts/", new { body = body }, new MediaFile[] { file } );
+            var resp = await ApiConnector.postJsonFromUrl("posts/", new { body = body }, new MediaFile[] { file } );
             return new KeyValuePair<bool,object>();
         }
         public static async Task<KeyValuePair<bool, object>> fetchPosts()
         {
-            var resp = await ApiConnector.getJsonFromUrl("/posts/");
+            var resp = await ApiConnector.getJsonFromUrl("posts/");
             if (resp.GetStatusCode() != 200)
             {
                 return new KeyValuePair<bool, object>(false, resp.GetResponseAsModel<Dictionary<string, ApiFieldError>>());
