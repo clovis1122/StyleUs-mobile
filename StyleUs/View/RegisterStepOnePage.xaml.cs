@@ -13,6 +13,7 @@ namespace StyleUs.View
     {
         public RegisterStepOnePage()
         {
+            NavigationPage.SetHasBackButton(this, false);
            InitializeComponent();
         }
     }

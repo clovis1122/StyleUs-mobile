@@ -10,9 +10,12 @@ namespace StyleUs.View
 {
     public partial class RegisterStepTwoPage : ContentPage
     {
+
+
         public RegisterStepTwoPage() { InitializeComponent(); }
         public RegisterStepTwoPage(IEventAggregator events)
         {
+            NavigationPage.SetHasBackButton(this, false);
             try {
             InitializeComponent();
             } catch(Exception ex) {
