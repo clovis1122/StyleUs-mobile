@@ -35,6 +35,8 @@ namespace StyleUs
                 navPage = "/MainTabbedPage/HomePage";
             }
 
+            // navPage = "/MainTabbedPage/Comments";
+
             //Application.Current.Properties["token"] = "123";
             //Application.Current.SavePropertiesAsync();
 
