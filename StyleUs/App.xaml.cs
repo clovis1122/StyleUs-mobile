@@ -25,7 +25,7 @@ namespace StyleUs
 
         protected override void OnInitialized(){
 
-			      InitializeComponent();
+			InitializeComponent();
 
             string navPage = "/NavigationPage/Login";
 
@@ -66,12 +66,13 @@ namespace StyleUs
             Container.RegisterTypeForNavigation<AnswersPage,AnswersPageViewModel>();
             Container.RegisterTypeForNavigation<View.Users.FollowerLists, ViewModel.Users.FollowersListViewModel>("FollowerLists");
             Container.RegisterTypeForNavigation<View.Users.FollowingLists, ViewModel.Users.FollowingListViewModel>("FollowingLists");
-            Container.RegisterTypeForNavigation<View.Menu, ViewModel.MenuViewModel>();
             Container.RegisterTypeForNavigation<View.AddPicturePost, AddPicturePostViewModel>("AddPicturePost");
             Container.RegisterTypeForNavigation<View.Comments, CommentsViewModel>("Comments");
             Container.RegisterTypeForNavigation<AddCameraButton, AddCameraButtonViewModel>("AddCameraButton");
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainTabbedPage>();
+            Container.RegisterTypeForNavigation<AboutUsPage, AboutUsPageViewModel>("AboutUsPage");
+            Container.RegisterTypeForNavigation<View.Menu, MenuPageViewModel>("Menu");
             Container.RegisterTypeForNavigation<EditProfilePage>();
         }
 
