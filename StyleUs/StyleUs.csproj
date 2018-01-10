@@ -249,6 +249,7 @@
     <Compile Include="View\AboutUsPage.xaml.cs">
       <DependentUpon>AboutUsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\AboutUsPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">
