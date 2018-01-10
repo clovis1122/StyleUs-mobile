@@ -1,14 +1,4 @@
-﻿//using System;
-//namespace StyleUs.ViewModel
-//{
-//    public class ShowProfilePageViewModel
-//    {
-//        public ShowProfilePageViewModel()
-//        {
-//        }
-//    }
-//}
-using StyleUs.ViewModel;
+﻿using StyleUs.ViewModel;
 using Xamarin.Forms;
 using Prism.Navigation;
 using Prism.Commands;
@@ -25,7 +15,7 @@ public class ShowProfilePageViewModel : ContentPage
     readonly INavigationService navigation;
     IEventAggregator events;
 
-    public new event PropertyChangedEventHandler PropertyChanged;
+    //public new event PropertyChangedEventHandler PropertyChanged;
 
     public ShowProfilePageViewModel(INavigationService navigationService, IEventAggregator eventAgregator)
     {

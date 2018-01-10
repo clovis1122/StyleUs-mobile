@@ -253,11 +253,11 @@
     <Compile Include="View\ShowProfilePage.xaml.cs">
       <DependentUpon>ShowProfilePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\ShowProfilePageViewModel.cs" />
     <Compile Include="View\EditProfilePage.xaml.cs">
       <DependentUpon>EditProfilePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\EditProfilePageViewModel.cs" />
+    <Compile Include="ViewModel\ShowProfilePageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">

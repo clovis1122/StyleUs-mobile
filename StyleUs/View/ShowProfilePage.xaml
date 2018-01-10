@@ -117,8 +117,7 @@
                 <StackLayout  Orientation="Vertical" Margin="20"
                     HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
 
-                <Button HorizontalOptions="FillAndExpand" Text="Editar" BackgroundColor="Gray" BorderRadius="20" 
-                    Command=""/>
+                <Button HorizontalOptions="FillAndExpand" Text="Editar" BackgroundColor="Gray" BorderRadius="20" Command="{Binding edit}" />
                     
                     
                 </StackLayout>
