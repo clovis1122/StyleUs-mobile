@@ -26,7 +26,10 @@
     </ContentPage.Resources>
    
     <ContentPage.Content >
+    <ScrollView>
 
+
+        
         <Grid RowSpacing="0" Margin="5" BackgroundColor="#e9eaed">
 
            <Grid.RowDefinitions>
@@ -38,12 +41,6 @@
 
             <!-- Primer cuadro -->
             <StackLayout Orientation="Vertical">
-<!--                    <StackLayout Grid.Row="0" Orientation="Horizontal" BackgroundColor="#e9eaed">
-
-                        <Button Image="backIcon.png" HorizontalOptions="Start"
-                            Command="{Binding back}" Style="{StaticResource iconosBotones}"/>
-                        
-                    </StackLayout>-->
 
                      <StackLayout Grid.Row="0" Orientation="Horizontal" BackgroundColor="#e9eaed">
 
@@ -128,8 +125,8 @@
                 <StackLayout  Orientation="Horizontal" Margin="20"
                     HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
 
-                <Button HorizontalOptions="FillAndExpand" Text="Cancel" BackgroundColor="Gray" BorderRadius="20" />
-                <Button HorizontalOptions="FillAndExpand" Text="Save" BackgroundColor="#F84D58" BorderRadius="20" />
+                <Button HorizontalOptions="FillAndExpand" Text="Cancel" BackgroundColor="Gray" BorderRadius="20" Command="{Binding cancel}" />
+                <Button HorizontalOptions="FillAndExpand" Text="Save" BackgroundColor="#F84D58" BorderRadius="20" Command="{Binding save}"/>
                     
                     
                 </StackLayout>
@@ -139,8 +136,8 @@
 
             
         </Grid>
-
-        
+    
+        </ScrollView>    
     </ContentPage.Content>
     
 </ContentPage>
