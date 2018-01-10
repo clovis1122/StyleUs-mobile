@@ -20,6 +20,7 @@ public class ShowProfilePageViewModel : ContentPage
 {
 
     public DelegateCommand back { get; set; }
+    public DelegateCommand edit { get; set; }
 
     readonly INavigationService navigation;
     IEventAggregator events;
@@ -32,6 +33,7 @@ public class ShowProfilePageViewModel : ContentPage
         events = eventAgregator;
 
         back = new DelegateCommand(OnBackClick);
+        edit = new DelegateCommand(OnEditClick);
     }
 
 
@@ -41,6 +43,11 @@ public class ShowProfilePageViewModel : ContentPage
         navigation.GoBackAsync();
         //navigation.NavigateAsync(new Uri("/MainTabbedPage/MenuPage", UriKind.Absolute));
 
+    }
+
+    public void OnEditClick()
+    {
+        navigation.NavigateAsync("EditProfilePage");
     }
 
 
