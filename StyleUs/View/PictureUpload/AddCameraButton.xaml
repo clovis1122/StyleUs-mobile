@@ -5,6 +5,11 @@
     x:Class="StyleUs.View.AddCameraButton">
 	<ContentPage.Content>
         <ScrollView>
+            <!--      /*
+         *  THIS FILE IS A SAMPLE!! NOT REAL FILE LINKED.
+         * 
+         */
+-->
             <StackLayout>
                     <Button Command="{Binding TakePhoto}" Text="Take Photo" />
                     <Image Source="{Binding image}" />
@@ -16,3 +21,4 @@
         </ScrollView>
 	</ContentPage.Content>
 </ContentPage>
+

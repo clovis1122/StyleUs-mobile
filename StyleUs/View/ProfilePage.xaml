@@ -1,72 +1,269 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage 
-	xmlns="http://xamarin.com/schemas/2014/forms" 
-	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-	xmlns:effect="clr-namespace:StyleUs.Effect" 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:effect="clr-namespace:StyleUs.Effect" 
     x:Class="StyleUs.View.ProfilePage"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
-    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:views="clr-namespace:StyleUs.View.Component"
     NavigationPage.HasNavigationBar="True"
-    Title="Profile">
-
+    Padding="0,20,0,0"
+    BackgroundColor="#e9eaed">
+     <ContentPage.Resources>
+        <ResourceDictionary>
+             <Style x:Key="iconosBotones" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HeightRequest" Value="40"/>
+                <Setter Property="WidthRequest" Value="40"/>
+                <Setter Property="MinimumHeightRequest" Value="40"/>
+                <Setter Property="MinimumWidthRequest" Value="40"/>
+             </Style> 
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-       <StackLayout HorizontalOptions="FillAndExpand">
-           <Label Text="PERFIL" 
-                TextColor="Black" 
-                Margin="30" 
-                HorizontalOptions="Center" 
-                FontSize="30"
-                FontFamily="monospace"
-                FontAttributes="Bold" />
+       <Grid BackgroundColor="#e9eaed" RowSpacing="20" Margin="20">
             
-            <BoxView HeightRequest="1" Color="Black" />
-            
-            <StackLayout Margin="0,10,0,0">
-                <StackLayout Orientation="Horizontal">
-                    <Label FontAttributes="Bold" TextColor="Black" Text="Fecha de nacimiento:" />
-                    <Label TextColor="Black" Text="22/10/2005" />
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label FontAttributes="Bold" TextColor="Black" Text="Correo:" />
-                    <Label TextColor="Black" Text="juanma@hotmail.com" />
-                </StackLayout>
-            </StackLayout>
+            <!-- Definicion de filas -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.05*"/>
+                <RowDefinition Height="0.25*"/>
+                <RowDefinition Height="0.15*"/>
+                <RowDefinition Height="0.18*"/>
 
-            <Label
-                Margin="0,20,0,0"
-                FontAttributes="Bold" 
-                TextColor="Black"
-                FontSize="25"
-                HorizontalOptions="Center"
-                Text="Últimas Publicaciones">
+            </Grid.RowDefinitions>
+
+            <!-- Definicion de Columnas -->
+            <Grid.ColumnDefinitions>
+            </Grid.ColumnDefinitions>
+
+            <!-- Primer bloque -->
+            <Grid BackgroundColor="#e9eaed" Grid.Row="0">
                 
-                <Label.Effects>
-                    <effect:UnderlineEffect />
-                </Label.Effects>
-             </Label>
+                <Button Image="backIcon.png" 
+                    Command="{Binding back}" Style="{StaticResource iconosBotones}"/>
+              
+                <Label Text="Adeury Camilo" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold"/>
+            </Grid>
             
-             <flv:FlowListView x:Name="flowListView" SeparatorVisibility="None" HasUnevenRows="true"
-                FlowColumnMinWidth="130" FlowItemsSource="{Binding imageList}">
+            <!-- Segundo bloque -->
 
-                <flv:FlowListView.FlowColumnTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="200" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
+            <Grid BackgroundColor="White" Grid.Row="1"> 
 
-                            <ffimageloading:CachedImage Aspect="AspectFill" DownsampleUseDipUnits="false" 
-                                LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png"
-                                Source="{Binding imageUrl}"/>
-                        </Grid>
-                    </DataTemplate> 
-                </flv:FlowListView.FlowColumnTemplate>
-            </flv:FlowListView>
-            
-           </StackLayout>
+               <!-- Definiciones segundo bloque -->
+
+                <Grid.RowDefinitions>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.40*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+               <!-- Parte para visualizar la imagen -->
+
+                <StackLayout Orientation="Vertical" BackgroundColor="White"
+                    Grid.Column="0" VerticalOptions="StartAndExpand" Margin="5">
+
+                    <ffimageloading:CachedImage  
+                                                HeightRequest="100"
+                                                WidthRequest="100" 
+                                                DownsampleUseDipUnits="false" 
+                                                LoadingPlaceholder="image_loading.png"
+                                                ErrorPlaceholder="image_error.png" 
+                                                Source="ProfileImage.JPG"
+                                                Margin="5,0,5,0">
+                                                <ffimageloading:CachedImage.Transformations>
+                                                    <fftransformations:CircleTransformation />
+                                                </ffimageloading:CachedImage.Transformations>
+                                            </ffimageloading:CachedImage>
+                    
+                </StackLayout>
+                
+               <!-- Parte para visualizar la informacion y el boton editar -->
+                
+                <StackLayout Orientation="Vertical" Grid.Column="1" BackgroundColor="White" Margin="20">
+
+                    <!-- Layout para el correo -->
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <Image Source="email.png"/> 
+                        <Label Text="adeury09@gmail.com" TextColor="Gray" FontSize="Medium" 
+                        HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </StackLayout>
+
+                    <!-- Layout para el numero -->
+                    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                        <Image Source="phoneIcon.png"/> 
+                        <Label Text="8098045245" TextColor="Gray" FontSize="Medium" 
+                        HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </StackLayout>
+                    
+                    <!-- Layout para el boton editar -->
+                    <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" HorizontalOptions="End">
+                        <Button Image="EditProfile.png" HeightRequest="50" WidthRequest="50" MinimumHeightRequest="30"
+                            MinimumWidthRequest="30" HorizontalOptions="End" VerticalOptions="End"
+                            />
+                    </StackLayout>
+                </StackLayout>
+                
+            </Grid>
+
+            <!-- Tercer bloque -->
+
+            <Grid BackgroundColor="White" Grid.Row="2">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.50*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                    </Grid.ColumnDefinitions>
+                    <!-- Titulo -->
+                    <Label Text="SEGUIDORES" TextColor="Black" FontAttributes="Bold" FontSize="Medium"
+                        HorizontalOptions="Start" VerticalOptions="CenterAndExpand" Margin="10"
+                    Grid.Row="0"/>
+
+                    <!-- Usuarios y mas -->
+                    <Grid Grid.Row="1" Margin="10">
+                        <Grid.RowDefinitions>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.10*"/>
+                            <ColumnDefinition Width="0.10*"/>
+                            <ColumnDefinition Width="0.10*"/>
+                            <ColumnDefinition Width="0.10*"/>
+                            <ColumnDefinition Width="0.15*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- imagne 1 -->
+
+                        <ffimageloading:CachedImage  
+                                                Grid.Column="0"
+                                                HeightRequest="100"
+                                                WidthRequest="100" 
+                                                DownsampleUseDipUnits="false" 
+                                                LoadingPlaceholder="image_loading.png"
+                                                ErrorPlaceholder="image_error.png" 
+                                                Source="PhotoPerfil1.jpg"
+                                                Margin="5,0,5,0">
+                                                <ffimageloading:CachedImage.Transformations>
+                                                    <fftransformations:CircleTransformation />
+                                                </ffimageloading:CachedImage.Transformations>
+                                            </ffimageloading:CachedImage>
+
+                        <!-- imagne 2 -->                        
+
+
+                        <ffimageloading:CachedImage  
+                                                Grid.Column="1"
+                                                HeightRequest="100"
+                                                WidthRequest="100" 
+                                                DownsampleUseDipUnits="false" 
+                                                LoadingPlaceholder="image_loading.png"
+                                                ErrorPlaceholder="image_error.png" 
+                                                Source="PhotoPerfil2.png"
+                                                Margin="5,0,5,0">
+                                                <ffimageloading:CachedImage.Transformations>
+                                                    <fftransformations:CircleTransformation />
+                                                </ffimageloading:CachedImage.Transformations>
+                                            </ffimageloading:CachedImage>
+
+                        <!-- imagne 3 -->                        
+
+
+                        <ffimageloading:CachedImage  
+                                                Grid.Column="2"
+                                                HeightRequest="100"
+                                                WidthRequest="100" 
+                                                DownsampleUseDipUnits="false" 
+                                                LoadingPlaceholder="image_loading.png"
+                                                ErrorPlaceholder="image_error.png" 
+                                                Source="PhotoPerfil3.jpg"
+                                                Margin="5,0,5,0">
+                                                <ffimageloading:CachedImage.Transformations>
+                                                    <fftransformations:CircleTransformation />
+                                                </ffimageloading:CachedImage.Transformations>
+                                            </ffimageloading:CachedImage>
+
+                        <!-- imagne 4 -->                        
+
+
+                        <ffimageloading:CachedImage  
+                                                Grid.Column="3"
+                                                HeightRequest="100"
+                                                WidthRequest="100" 
+                                                DownsampleUseDipUnits="false" 
+                                                LoadingPlaceholder="image_loading.png"
+                                                ErrorPlaceholder="image_error.png" 
+                                                Source="PhotoPerfil4.jpg"
+                                                Margin="5,0,5,0">
+                                                <ffimageloading:CachedImage.Transformations>
+                                                    <fftransformations:CircleTransformation />
+                                                </ffimageloading:CachedImage.Transformations>
+                                            </ffimageloading:CachedImage>
+
+                        <!-- imagne 5 -->  
+                        <StackLayout HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand" Grid.Column="4"  >
+                             <Button Text="24K"  BackgroundColor="#e9eaed"
+                                TextColor="White" FontAttributes="Bold" FontSize="Large"
+                                HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"
+                                BorderRadius="20" BorderWidth="1"
+                                Command="{Binding followers}"/>
+                             
+                        
+                        </StackLayout>
+                       
+                    </Grid>
+
+                </Grid>
+
+            </Grid>
+
+            <!-- Cuerto bloque -->
+
+            <Grid BackgroundColor="White" Grid.Row="3">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.30*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                    </Grid.ColumnDefinitions>
+                    <!-- Titulo -->
+                    
+                    <Label Text="RECIENTES" TextColor="Black" FontAttributes="Bold" FontSize="Medium"
+                        HorizontalOptions="Start" VerticalOptions="CenterAndExpand" Margin="10"
+                    Grid.Row="0"/>
+
+                    <!-- Grid para las fotos -->
+                    <Grid Grid.Row="1" Margin="10" ColumnSpacing="10">
+
+                        <Grid.RowDefinitions>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.30*"/>
+                            <ColumnDefinition Width="0.30*"/>
+                            <ColumnDefinition Width="0.30*"/>
+                            
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="Profile11.jpg" Grid.Column="0"/>
+
+                        <Image Source="Profile11.jpg" Grid.Column="1" />
+                         
+                        <Image Source="Profile11.jpg" Grid.Column="2"/>
+
+
+                    </Grid>
+
+                </Grid>
+                
+            </Grid>
+                    
+       </Grid>
       </ContentPage.Content>
-</ContentPage>
+</ContentPage> 

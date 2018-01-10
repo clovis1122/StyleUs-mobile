@@ -5,6 +5,7 @@ using Xamarin.Auth;
 
 namespace StyleUs
 {
+    // TODO: to be implemented...
     public class AccountManager
     {
         

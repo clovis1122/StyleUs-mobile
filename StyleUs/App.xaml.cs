@@ -27,32 +27,33 @@ namespace StyleUs
 
 			      InitializeComponent();
 
-            string navPage = "LoginPage";
+            string navPage = "/NavigationPage/Login";
 
-            try {
-                // AccountManager.SaveCredentials("Usernames123","Password456");
-                if (AccountManager.UserName != null) {
-                    navPage = "HomePage";
-                }
+            // TODO: this is insecure.
 
-            } catch(Exception e) {
-                // No keychain :(
+            if (Application.Current.Properties.ContainsKey("token")) {
+                navPage = "/MainTabbedPage/HomePage";
             }
 
-            NavigationService.NavigateAsync(new Uri("/NavigationPage/" + navPage, UriKind.Absolute));
+            //Application.Current.Properties["token"] = "123";
+            //Application.Current.SavePropertiesAsync();
+
+            NavigationService.NavigateAsync(new Uri(navPage, UriKind.Absolute));
 		}
 
 		protected override void RegisterTypes()
+
         {
             Container.RegisterTypeForNavigation<View.Friend.FriendProfile, FriendProfileViewModel>();
             Container.RegisterTypeForNavigation<View.ClothPieces.SingleClothPiece, SingleClothPieceViewModel>();
 
-            Container.RegisterTypeForNavigation<View.HomePage, HomePageViewModel>();
-			      Container.RegisterTypeForNavigation<FriendPage, FriendViewModel>();
-		        Container.RegisterTypeForNavigation<LoginPage, LoginPageViewModel>();
-            Container.RegisterTypeForNavigation<ProfilePage, ProfileViewModel>();
-            Container.RegisterTypeForNavigation<ClothPiecePage, ClothPieceViewModel>();
-            Container.RegisterTypeForNavigation<View.Notification.NotificationList,ViewModel.Notification.NotificationListViewModel>();
+            Container.RegisterTypeForNavigation<View.HomePage, HomePageViewModel>("HomePage");
+            Container.RegisterTypeForNavigation<FriendPage, FriendViewModel>("FriendPage");
+            Container.RegisterTypeForNavigation<LoginPage, LoginPageViewModel>("Login");
+            Container.RegisterTypeForNavigation<View.ProfilePage, ViewModel.ProfileViewModel>("ProfilePage");
+            Container.RegisterTypeForNavigation<ProfilePage, ProfileViewModel>("ProfilePage");
+            Container.RegisterTypeForNavigation<View.ClothPieces.NewClothPage,ViewModel.ClothPieceViewModel>("ClothPieces");
+            Container.RegisterTypeForNavigation<View.Notification.NotificationList,ViewModel.Notification.NotificationListViewModel>("NotificationList");
             Container.RegisterTypeForNavigation<AddCommentPage, AddCommentPageViewModel>();
             Container.RegisterTypeForNavigation<ForgotPasswordPage,ForgotPasswordPageViewModel>();
             Container.RegisterTypeForNavigation<ClothCombinationPage, ClothCombinationViewModel>();

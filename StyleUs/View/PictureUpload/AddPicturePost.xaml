@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="StyleUs.View.AddPicturePost"
+             Title="Subir foto" BackgroundColor="White"
+             xmlns:Converter="clr-namespace:StyleUs.Converter">
+
+      <ContentPage.Resources>
+    <ResourceDictionary>
+      <Converter:IsValueConverter x:Key="isValue"/>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+
+    <ContentPage.Content>
+
+        <ScrollView>
+        <StackLayout Orientation="Vertical" BackgroundColor="White">
+
+            <Label Text="Subir foto" TextColor="Red" ></Label>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Fill"  >
+
+                <!--<ffimageloading:CachedImage
+                                                HeightRequest="40"
+                                                WidthRequest="40"
+                                                DownsampleUseDipUnits="false"
+                                                LoadingPlaceholder="image_loading.png"
+                                                ErrorPlaceholder="image_error.png"
+                                                Source="{Binding ProfileImage}"
+                                                Margin="5,0,5,0">
+                    <ffimageloading:CachedImage.Transformations>
+                        <fftransformations:CircleTransformation />
+                    </ffimageloading:CachedImage.Transformations>
+                </ffimageloading:CachedImage>-->
+
+                <!--<Image Source="icon1.png" WidthRequest="40" HeightRequest="40"></Image>-->
+
+            </StackLayout>
+
+            <Frame OutlineColor="Black" HeightRequest="350" Padding="0">
+                <Image Source="{Binding image}" />
+            </Frame>
+
+            <Editor Text="{Binding body, Mode=TwoWay}" BackgroundColor="White" VerticalOptions="FillAndExpand" />
+
+           <Button
+            Command="{Binding TakePhoto}"
+            Text="Subir Imagen"
+            BackgroundColor="Gray"
+            Margin="20"
+            BorderRadius="50" BorderWidth="2" BorderColor="White" VerticalOptions="End" />
+            <Button
+            IsVisible="{Binding showSubmit}"
+            Command="{Binding CreatePost}"
+            Text="Crear publicación"
+            BackgroundColor="Gray"
+            Margin="20"
+            BorderRadius="50" BorderWidth="2" BorderColor="White" VerticalOptions="End" />
+
+        </StackLayout>
+            </ScrollView>
+
+
+
+    </ContentPage.Content>
+
+</ContentPage>

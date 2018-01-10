@@ -6,19 +6,15 @@
             x:Class="StyleUs.View.MainTabbedPage"
             xmlns:local="clr-namespace:StyleUs.View"
             xmlns:localNotification="clr-namespace:StyleUs.View.Notification"
-            xmlns:localUsers="clr-namespace:StyleUs.View.Users" 
+            xmlns:localUsers="clr-namespace:StyleUs.View.Users"
             BarTextColor="Black">
 
     <TabbedPage.Children>
-
-        <local:HomePage />
-        <localNotification:NotificationList />
-        <local:ProfilePage />
-        <local:Comments />
-        <localUsers:FollowerLists />
-        <local:Menu/>
-        <local:AddPicturePost/>
-
+        <local:AddPicturePost  Icon="AddPhotos.png"/>
+        <localUsers:FollowerLists Icon="followers.png" />
+        <local:HomePage  Icon="Home.png" />
+        <localNotification:NotificationList Icon="Notifications.png" />
+        <local:Menu Icon="Menu.png"/>
     </TabbedPage.Children>
-  
+
 </TabbedPage>

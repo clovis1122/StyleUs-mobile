@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage 
-    xmlns="http://xamarin.com/schemas/2014/forms" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
     x:Class="StyleUs.View.Menu"
     prism:ViewModelLocator.AutowireViewModel="true"
     NavigationPage.HasNavigationBar="true"
     Padding="0,40,0,0"
-    Title="Menu">
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="nombreBotones" TargetType="Label">
@@ -23,14 +24,14 @@
                 <Setter Property="WidthRequest" Value="20"/>
                 <Setter Property="MinimumHeightRequest" Value="20"/>
                 <Setter Property="MinimumWidthRequest" Value="20"/>
-             </Style> 
+             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
     <ContentPage.Content>
 
             <Grid RowSpacing="0" ColumnSpacing="0" BackgroundColor="#e9eaed">
-                
+
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.30*"/>
                     <RowDefinition Height="0.10*"/>
@@ -38,25 +39,66 @@
                     <RowDefinition Height="0.10*"/>
                     <RowDefinition Height="0.10*"/>
                     <RowDefinition Height="*"/>
-                
+
                 </Grid.RowDefinitions>
-            
+
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.30*"/>
-                    
+
                 </Grid.ColumnDefinitions>
 
                 <!-- Cuadro 0,0 -->
-                <Label Grid.Row="0" Grid.Column="0" BackgroundColor="#a8afb8"/>
+               <!-- <Label Grid.Row="0" Grid.Column="0" BackgroundColor="#a8afb8"/>
 
-                <Image x:Name="imagen_circular" Source="ICONO2.png" Grid.Row="0" Grid.Column="0" 
+                <Image x:Name="imagen_circular" Source="ICONO2.png" Grid.Row="0" Grid.Column="0"
                  HorizontalOptions="Center"
                 VerticalOptions="Center"
                 HeightRequest="50" WidthRequest="50"
-                MinimumHeightRequest="50" MinimumWidthRequest="50"/>
+                MinimumHeightRequest="50" MinimumWidthRequest="50"/>-->
+
+                <StackLayout Grid.Row="0" Grid.Column="0" BackgroundColor="#a8afb8"
+                    HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+                         <ffimageloading:CachedImage
+                                                HeightRequest="80"
+                                                WidthRequest="80"
+                                                MinimumWidthRequest="50"
+                                                MinimumHeightRequest="50"
+                                                DownsampleUseDipUnits="false"
+                                                LoadingPlaceholder="image_loading.png"
+                                                ErrorPlaceholder="image_error.png"
+                                                Source="{Binding user.image}"
+                                                Margin="5,0,5,0">
+                                                <ffimageloading:CachedImage.Transformations>
+                                                    <fftransformations:CircleTransformation />
+                                                </ffimageloading:CachedImage.Transformations>
+                                                <ffimageloading:CachedImage.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding perfil}" NumberOfTapsRequired="1" />
+                                                </ffimageloading:CachedImage.GestureRecognizers>
+
+                                            </ffimageloading:CachedImage>
+                    <!--<Button Image="ICONO2.png"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            HeightRequest="50" WidthRequest="50"
+                            MinimumHeightRequest="10" MinimumWidthRequest="10"
+                            Command="{Binding perfil}"
+                            BackgroundColor="White"
+                            BorderRadius="45" BorderWidth="0"/>-->
+
+                        </StackLayout>
+
+
+                </StackLayout>
+
 
                 <!--Cuadro 0,1 -->
-                <Label Grid.Row="0" Grid.Column="1" BackgroundColor="#a8afb8"/>
+
+
+
+                <!--<Label Grid.Row="0" Grid.Column="1" BackgroundColor="#a8afb8"/>
 
                 <Label TextColor="White" Grid.Row="0" Grid.Column="1"
                     VerticalOptions="Center" HorizontalOptions="Start">
@@ -66,12 +108,35 @@
                             <Span Text="Santo Domingo" FontSize="Micro"/>
                         </FormattedString>
                     </Label.FormattedText>
-                </Label>
-            
+                </Label>-->
+
+                <StackLayout Grid.Row="0" Grid.Column="1"  BackgroundColor="#a8afb8"
+                    Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+
+                    <StackLayout HorizontalOptions="Start" VerticalOptions="CenterAndExpand">
+
+                        <Label Text="{Binding user.first_name}" TextColor="White" FontSize="Large"
+                        FontAttributes="Bold">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding perfil}" NumberOfTapsRequired="1" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Label Text="Santo Domingo" TextColor="White">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding perfil}" NumberOfTapsRequired="1" />
+                            </Label.GestureRecognizers>
+                        </Label>
+
+                    </StackLayout>
+
+                </StackLayout>
+
+               
                 <!-- Segundo cuadro 1,0 -->
 
                 <Label Grid.Row="1" Grid.Column="0" BackgroundColor="#e9eaed"/>
-            
+
                 <Image x:Name="imgPiezas" Source="Path668.png" Grid.Row="1" Grid.Column="0"
                 Style="{StaticResource iconosBotones}">
                     <Image.GestureRecognizers>
@@ -79,10 +144,10 @@
                     </Image.GestureRecognizers>
                 </Image>
 
-                
+
                 <!-- Segundo cuadro 1,1 -->
                 <Label Grid.Row="1" Grid.Column="1" BackgroundColor="#e9eaed"/>
-            
+
                 <Label Text="PIEZAS" Grid.Row="1" Grid.Column="1"
                 Style="{StaticResource nombreBotones}">
                     <Label.GestureRecognizers>
@@ -90,8 +155,8 @@
                     </Label.GestureRecognizers>
 
                 </Label>
-            
-            
+
+
                 <!-- Tercera fila 2,0 -->
                 <Label Grid.Row="2" Grid.Column="0" BackgroundColor="#e9eaed"/>
 
@@ -101,7 +166,7 @@
                         <TapGestureRecognizer Command="{Binding conjunto}" NumberOfTapsRequired="1" />
                     </Image.GestureRecognizers>
                 </Image>
-            
+
                 <!-- Tercera fila 2,1 -->
                 <Label Grid.Row="2" Grid.Column="1" BackgroundColor="#e9eaed"/>
 
@@ -111,18 +176,18 @@
                         <TapGestureRecognizer Command="{Binding conjunto}" NumberOfTapsRequired="1" />
                     </Label.GestureRecognizers>
                 </Label>
-            
+
                 <!-- Cuarta fila 3,0 -->
                 <Label Grid.Row="3" Grid.Column="0" BackgroundColor="#e9eaed"/>
-            
+
                 <Image x:Name="Sobre_nosotros" Source="Help.png" Grid.Row="3" Grid.Column="0"
                 Style="{StaticResource iconosBotones}">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding sobreNosotros}" NumberOfTapsRequired="1" />
                     </Image.GestureRecognizers>
                 </Image>
-                
-            
+
+
                 <!-- Cuarta fila 3,1 -->
                 <Label Grid.Row="3" Grid.Column="1" BackgroundColor="#e9eaed"/>
 
@@ -132,8 +197,8 @@
                         <TapGestureRecognizer Command="{Binding sobreNosotros}" NumberOfTapsRequired="1" />
                     </Label.GestureRecognizers>
                 </Label>
-                
-                
+
+
                 <!-- Quinta fila 4,0-->
                 <Label Grid.Row="4" Grid.Column="0" BackgroundColor="#e9eaed"/>
 
@@ -143,7 +208,7 @@
                         <TapGestureRecognizer Command="{Binding salir}" NumberOfTapsRequired="1" />
                     </Image.GestureRecognizers>
                 </Image>
-            
+
                 <!-- Quinta fila 4,1-->
                 <Label Grid.Row="4" Grid.Column="1" BackgroundColor="#e9eaed"/>
 
@@ -153,14 +218,14 @@
                         <TapGestureRecognizer Command="{Binding salir}" NumberOfTapsRequired="1" />
                     </Label.GestureRecognizers>
                 </Label>
-            
-               
-                
-            
-        </Grid>
-            
-         
 
-        
+
+
+
+        </Grid>
+
+
+
+
 	</ContentPage.Content>
 </ContentPage>

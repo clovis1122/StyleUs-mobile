@@ -6,12 +6,17 @@ using StyleUs.Models;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using System.ComponentModel;
+using Prism.Commands;
 
 namespace StyleUs.ViewModel.Users
 {
     public class FollowersListViewModel : INotifyPropertyChanged
     {
+
+        public DelegateCommand back { get; set; }
         public ObservableCollection<User> _followerList = new ObservableCollection<User>();
+
+
         public ObservableCollection<User> followerList
         {
             get

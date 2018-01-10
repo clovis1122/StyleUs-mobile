@@ -10,8 +10,7 @@
     <AssemblyName>StyleUs</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <NuGetPackageImportStamp></NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,12 +30,9 @@
   <ItemGroup>
     <EmbeddedResource Include="App.xaml" />
     <EmbeddedResource Include="StyleUsPage.xaml" />
-    <EmbeddedResource Include="View\LoginPage.xaml" />
     <EmbeddedResource Include="View\ForgotPasswordPage.xaml" />
     <EmbeddedResource Include="View\NotificationPage.xaml" />
     <EmbeddedResource Include="View\ProfilePage.xaml" />
-    <EmbeddedResource Include="View\RegisterStepOnePage.xaml" />
-    <EmbeddedResource Include="View\RegisterStepTwoPage.xaml" />
     <EmbeddedResource Include="View\HomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -87,10 +83,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\AddCameraButton.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\Comments.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
@@ -99,6 +91,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\PictureUpload\AddPicturePost.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PictureUpload\AddCameraButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Authentication\LoginPage.xaml" />
+    <EmbeddedResource Include="View\Authentication\RegisterStepOnePage.xaml" />
+    <EmbeddedResource Include="View\Authentication\RegisterStepTwoPage.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountManager.cs" />
@@ -108,12 +111,8 @@
     <Compile Include="StyleUsPage.xaml.cs">
       <DependentUpon>StyleUsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\AddPicturePostViewModel.cs" />
     <Compile Include="ViewModel\AnswersPageViewModel.cs" />
     <Compile Include="ViewModel\ViewCommentsViewModel.cs" />
-    <Compile Include="View\AddPicturePost.xaml.cs">
-      <DependentUpon>AddPicturePost.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\AnswersPage.xaml.cs">
       <DependentUpon>AnswersPage.xaml</DependentUpon>
     </Compile>
@@ -123,34 +122,31 @@
     <Compile Include="View\ViewComments.xaml.cs">
       <DependentUpon>ViewComments.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Authentication\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Authentication\RegisterStepOnePage.xaml.cs">
+      <DependentUpon>RegisterStepOnePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Authentication\RegisterStepTwoPage.xaml.cs">
+      <DependentUpon>RegisterStepTwoPage.xaml</DependentUpon>
+    </Compile>
     <None Include="DesignTimeData.jason" />
     <None Include="packages.config" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\AddCommentPageViewModel.cs" />
     <Compile Include="ViewModel\Component\SmallPostViewModel.cs" />
-    <Compile Include="ViewModel\LoginPageViewModel.cs" />
-    <Compile Include="ViewModel\RegisterStepOnePageViewModel.cs" />
-    <Compile Include="ViewModel\RegisterStepTwoPageViewModel.cs" />
     <Compile Include="View\AddCommentPage.xaml.cs">
       <DependentUpon>AddCommentPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ForgotPasswordPage.xaml.cs">
       <DependentUpon>ForgotPasswordPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\LoginPage.xaml.cs">
-      <DependentUpon>LoginPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\NotificationPage.xaml.cs">
       <DependentUpon>NotificationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ProfilePage.xaml.cs">
       <DependentUpon>View\ProfilePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RegisterStepOnePage.xaml.cs">
-      <DependentUpon>RegisterStepOnePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RegisterStepTwoPage.xaml.cs">
-      <DependentUpon>RegisterStepTwoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
@@ -194,14 +190,14 @@
     <Compile Include="ViewModel\SingleClothPieceViewModel.cs" />
     <Compile Include="Effect\UnderlineEffect.cs" />
     <Compile Include="Effect\ShadowEffect.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Post.cs" />
     <Compile Include="Models\Notification.cs" />
     <Compile Include="Services\API\ApiConnector.cs" />
     <Compile Include="Services\API\ApiFieldError.cs" />
     <Compile Include="Services\API\IApiResponse.cs" />
     <Compile Include="Services\AuthServices.cs" />
     <None Include="FodyWeavers.xml" />
-    <Compile Include="Events\onLoginEvent.cs" />
+    <Compile Include="Events\Events.cs" />
     <Compile Include="Models\App\RegisterUser.cs" />
     <Compile Include="View\Users\FollowerLists.cs">
       <DependentUpon>FollowerLists.xaml</DependentUpon>
@@ -224,10 +220,6 @@
       <DependentUpon>Menu.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\MenuViewModel.cs" />
-    <Compile Include="View\AddCameraButton.xaml.cs">
-      <DependentUpon>AddCameraButton.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewModel\AddCameraButtonViewModel.cs" />
     <Compile Include="Services\UserServices.cs" />
     <Compile Include="View\Comments.xaml.cs">
       <DependentUpon>Comments.xaml</DependentUpon>
@@ -239,6 +231,21 @@
       <DependentUpon>EditProfilePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\EditProfilePageViewModel.cs" />
+    <Compile Include="ViewModel\MenuPageViewModel.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="View\PictureUpload\AddPicturePost.xaml.cs">
+      <DependentUpon>AddPicturePost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\IsValueConverter.cs" />
+    <Compile Include="ViewModel\PictureUpload\AddPicturePostViewModel.cs" />
+    <Compile Include="ViewModel\PictureUpload\AddCameraButtonViewModel.cs" />
+    <Compile Include="IPhoto.cs" />
+    <Compile Include="View\PictureUpload\AddCameraButton.xaml.cs">
+      <DependentUpon>AddCameraButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\Authentication\LoginPageViewModel.cs" />
+    <Compile Include="ViewModel\Authentication\RegisterStepOnePageViewModel.cs" />
+    <Compile Include="ViewModel\Authentication\RegisterStepTwoPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">
@@ -347,15 +354,14 @@
     <Folder Include="ViewModel\Users\" />
     <Folder Include="View\Notification\" />
     <Folder Include="ViewModel\Notification\" />
+    <Folder Include="View\PictureUpload\" />
+    <Folder Include="Converter\" />
+    <Folder Include="ViewModel\PictureUpload\" />
+    <Folder Include="View\Authentication\" />
+    <Folder Include="ViewModel\Authentication\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="View\MainTabbedPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="View\AddPicturePost.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

@@ -15,7 +15,8 @@ namespace StyleUs.View
 		public ProfilePage ()
 		{
 			InitializeComponent ();
-            BindingContext = new StyleUs.ViewModel.ProfileViewModel();
+            NavigationPage.SetHasNavigationBar(this, false);
+            //BindingContext = new StyleUs.ViewModel.ProfileViewModel();
 		}
 	}
 }

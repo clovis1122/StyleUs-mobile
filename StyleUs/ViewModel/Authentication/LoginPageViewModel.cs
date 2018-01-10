@@ -10,6 +10,7 @@ using Prism.Navigation;
 using Prism.Commands;
 using Prism.Events;
 using System.Threading.Tasks;
+using StyleUs.Models;
 
 namespace StyleUs.ViewModel
 {
@@ -37,6 +38,8 @@ namespace StyleUs.ViewModel
         {
             navigation = navigationService;
             events = eventAgregator;
+            email = "";
+            password = "";
 
             register = new Command(onRegisterClick);
             login = new Command(onLoginClick);
@@ -58,14 +61,14 @@ namespace StyleUs.ViewModel
         {
             //TODO: Validate the data!
 
+            if (email.Length == 0 || password.Length == 0) {
+                events.GetEvent<Events.displayMessage>().Publish("Introduzca sus credenciales para iniciar sesión.");
+                return;
+            }
+
             events.GetEvent<Events.onLoginEvent>().Publish(true);
 
-            // AttemptLogin();
-
-            navigation.NavigateAsync(new Uri("/MainTabbedPage/HomePage", UriKind.Absolute));
-
-      
-
+            AttemptLogin();
         }
 
         private async void AttemptLogin()
@@ -74,11 +77,19 @@ namespace StyleUs.ViewModel
             {
                 var res = await StyleUs.Services.AuthServices.login(email, password);
 
-               /* if (!res.Key)
+                if (!res.Key)
                 {
                     events.GetEvent<Events.displayMessage>().Publish("No hemos podido iniciar sesion. Por favor, verifique sus credenciales.");
                     return;
-                }*/
+                }
+
+                var user = res.Value as User;
+
+                Application.Current.Properties["token"] = user.token;
+                Application.Current.SavePropertiesAsync();
+
+                // Logged in!
+
 
                 await navigation.NavigateAsync(new Uri("/MainTabbedPage/HomePage", UriKind.Absolute));
 

@@ -15,7 +15,7 @@ namespace StyleUs.Services
         
         public static async Task<KeyValuePair<bool,object>> get()
         {
-            var resp = await ApiConnector.getJsonFromUrl("/notification/");
+            var resp = await ApiConnector.getJsonFromUrl("notification/");
             if (resp.GetStatusCode() != 200)
             {
                 return new KeyValuePair<bool, object>(false, resp.GetResponseAsModel<Dictionary<string, ApiFieldError>>());

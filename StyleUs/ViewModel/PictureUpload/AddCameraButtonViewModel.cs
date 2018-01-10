@@ -25,6 +25,11 @@ namespace StyleUs.ViewModel
             get { return file != null; }
         }
 
+        /*
+         *  THIS FILE IS A SAMPLE!! NOT REAL FILE LINKED.
+         * 
+         */
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public AddCameraButtonViewModel()
@@ -56,7 +61,7 @@ namespace StyleUs.ViewModel
 
         public async void createPost()
         {
-            var x = await StyleUs.Services.PostServices.createPost(file);
+            var x = await StyleUs.Services.PostServices.createPost(file, "");
             // Post created! 
         }
     }
