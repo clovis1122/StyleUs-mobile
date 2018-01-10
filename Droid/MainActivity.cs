@@ -15,7 +15,7 @@ using Xamarin.Auth;
 
 namespace StyleUs.Droid
 {
-    [Activity(Label = "PrismUnitySample.Droid", Icon = "@drawable/icon", Theme = "@style/splashscreen", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "StyleUs", Icon = "@drawable/icon", Theme = "@style/splashscreen", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
 	{
 		protected override void OnCreate(Bundle bundle)
@@ -42,7 +42,7 @@ namespace StyleUs.Droid
 		{
 			public void RegisterTypes(IUnityContainer container)
 			{
-                
+
 			}
 		}
 	}
