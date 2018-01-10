@@ -10,6 +10,8 @@ namespace StyleUs.View
         public ShowProfilePage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
+
         }
     }
 }

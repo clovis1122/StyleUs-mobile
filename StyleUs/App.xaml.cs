@@ -73,6 +73,7 @@ namespace StyleUs
             Container.RegisterTypeForNavigation<MainTabbedPage>();
             Container.RegisterTypeForNavigation<AboutUsPage,AboutUsPageViewModel>("AboutUsPage");
             Container.RegisterTypeForNavigation<MenuPage,MenuPageViewModel>("MenuPage");
+            Container.RegisterTypeForNavigation<ShowProfilePage, ShowProfilePageViewModel>("ShowProfilePage");
         }
 
 		protected override void OnStart()

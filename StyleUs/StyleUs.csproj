@@ -102,6 +102,10 @@
     <EmbeddedResource Include="View\Authentication\LoginPage.xaml" />
     <EmbeddedResource Include="View\Authentication\RegisterStepOnePage.xaml" />
     <EmbeddedResource Include="View\Authentication\RegisterStepTwoPage.xaml" />
+    <EmbeddedResource Include="View\ShowProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountManager.cs" />
@@ -242,6 +246,10 @@
     <Compile Include="ViewModel\Authentication\LoginPageViewModel.cs" />
     <Compile Include="ViewModel\Authentication\RegisterStepOnePageViewModel.cs" />
     <Compile Include="ViewModel\Authentication\RegisterStepTwoPageViewModel.cs" />
+    <Compile Include="View\ShowProfilePage.xaml.cs">
+      <DependentUpon>ShowProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\ShowProfilePageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">
