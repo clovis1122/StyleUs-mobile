@@ -20,6 +20,10 @@ namespace StyleUs.ViewModel {
     public class HomePageViewModel : INotifyPropertyChanged
     {
         public ObservableCollection<Post> _PostList = new ObservableCollection<Post>();
+        public Boolean hasLike = false;
+        public String LikeIcon { get; set; }
+
+
         public ObservableCollection<Post> PostList {
             get { return _PostList; }
             set { _PostList = value; }
@@ -28,6 +32,7 @@ namespace StyleUs.ViewModel {
 
         public ICommand AddCommentView { get; set; }
         public ICommand SeeCommentView { get; set; }
+        public ICommand LikeComment { get; set; }
 
         public INavigationService navigation;
 
@@ -36,11 +41,20 @@ namespace StyleUs.ViewModel {
             navigation = navigationService;
             AddCommentView = new Command(GoToAddComment);
             SeeCommentView = new Command(GoToSeeComment);
+            LikeComment = new Command(ChangeLikeIcon);
+            LikeIcon = "heart_dark.png";
 
             fetchPosts();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public void ChangeLikeIcon()
+        {
+            
+            hasLike = !hasLike;
+            LikeIcon = hasLike ? "heart_red.png" : "heart_dark.png";
+        }
 
         public void GoToAddComment()
         {

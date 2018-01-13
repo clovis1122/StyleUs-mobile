@@ -10,17 +10,43 @@
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
     xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     >
-   
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+             <Style x:Key="iconosBotones" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HeightRequest" Value="40"/>
+                <Setter Property="WidthRequest" Value="40"/>
+                <Setter Property="MinimumHeightRequest" Value="40"/>
+                <Setter Property="MinimumWidthRequest" Value="40"/>
+             </Style> 
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
 	<ContentPage.Content>
         <Grid RowSpacing="0" ColumnSpacing="0" BackgroundColor="White">
             <Grid.RowDefinitions>
+                <RowDefinition Height="0.3*"/>
                 <RowDefinition Height="4*"/>
 
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
             </Grid.ColumnDefinitions>
-            <ListView HasUnevenRows="true" ItemsSource="{Binding commentsList}" Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand">
-               <ListView.ItemTemplate>
+
+            <Button Image="backIcon.png" Grid.Row="0" HorizontalOptions="Start"
+                VerticalOptions="Center"
+                    Command="{Binding back}" Style="{StaticResource iconosBotones}"/>
+            
+            <Label Text="Comentarios" TextColor="{StaticResource dark}" Grid.Row="0"
+            HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"
+            FontSize="Large"/>
+            
+            <ListView HasUnevenRows="true" ItemsSource="{Binding commentsList}" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand">
+
+                
+                
+                <ListView.ItemTemplate>
                     <DataTemplate>
                            
                         <ViewCell>
@@ -72,7 +98,7 @@
                 </ListView.Behaviors>
             </ListView>
             
-            <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="0" VerticalOptions="StartAndExpand" Padding="5">
+            <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.Column="0" VerticalOptions="StartAndExpand" Padding="5">
                 <!--<Entry TextColor="Black" x:Name="comentario"
                 Placeholder="Di algo!" PlaceholderColor="Silver"
                 FontSize="Large" Margin="1" HorizontalOptions="FillAndExpand"

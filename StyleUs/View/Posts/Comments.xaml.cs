@@ -15,7 +15,7 @@ namespace StyleUs.View
         public Comments()
         {
             InitializeComponent();
-            BindingContext = new StyleUs.ViewModel.CommentsViewModel();
+            //BindingContext = new StyleUs.ViewModel.CommentsViewModel();
         }
     }
 }

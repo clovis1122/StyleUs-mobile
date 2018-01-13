@@ -266,6 +266,9 @@
     <AndroidResource Include="Resources\drawable\password_gray.png" />
     <AndroidResource Include="Resources\drawable\phone_gray.png" />
     <AndroidResource Include="Resources\drawable\profile_gray.png" />
+    <AndroidResource Include="Resources\drawable\comment.png" />
+    <AndroidResource Include="Resources\drawable\heart_dark.png" />
+    <AndroidResource Include="Resources\drawable\heart_red.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\seeCommentIcon.png" />
