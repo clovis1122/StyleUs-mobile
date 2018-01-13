@@ -32,9 +32,6 @@
     <EmbeddedResource Include="View\ForgotPasswordPage.xaml" />
     <EmbeddedResource Include="View\NotificationPage.xaml" />
     <EmbeddedResource Include="View\ProfilePage.xaml" />
-    <EmbeddedResource Include="View\HomePage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\Component\SmallPost.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -82,10 +79,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Comments.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\EditProfilePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -107,6 +100,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\AboutUsPage.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Posts\Comments.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Home\HomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -151,9 +151,6 @@
     <Compile Include="View\ProfilePage.xaml.cs">
       <DependentUpon>View\ProfilePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\HomePage.xaml.cs">
-      <DependentUpon>HomePage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ViewModel\ForgotPasswordPageViewModel.cs" />
     <Compile Include="View\Component\SmallPost.xaml.cs">
       <DependentUpon>SmallPost.xaml</DependentUpon>
@@ -161,7 +158,6 @@
     <Compile Include="View\Component\FloatingMenu.xaml.cs">
       <DependentUpon>FloatingMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\HomePageViewModel.cs" />
     <Compile Include="ViewModel\ClothCombinationViewModel.cs" />
     <Compile Include="ViewModel\ClothPieceViewModel.cs" />
     <Compile Include="ViewModel\NotificationViewModel.cs" />
@@ -224,10 +220,6 @@
     </Compile>
     <Compile Include="ViewModel\MenuViewModel.cs" />
     <Compile Include="Services\UserServices.cs" />
-    <Compile Include="View\Comments.xaml.cs">
-      <DependentUpon>Comments.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewModel\CommentsViewModel.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Services\CommentServices.cs" />
     <Compile Include="ViewModel\MenuPageViewModel.cs" />
@@ -257,6 +249,14 @@
       <DependentUpon>AboutUsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\AboutUsPageViewModel.cs" />
+    <Compile Include="View\Posts\Comments.xaml.cs">
+      <DependentUpon>Comments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\Posts\CommentsViewModel.cs" />
+    <Compile Include="View\Home\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\Home\HomePageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">
@@ -370,6 +370,10 @@
     <Folder Include="ViewModel\PictureUpload\" />
     <Folder Include="View\Authentication\" />
     <Folder Include="ViewModel\Authentication\" />
+    <Folder Include="View\Posts\" />
+    <Folder Include="ViewModel\Posts\" />
+    <Folder Include="View\Home\" />
+    <Folder Include="ViewModel\Home\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="View\MainTabbedPage.xaml">
