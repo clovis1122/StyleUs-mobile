@@ -10,8 +10,7 @@
     <AssemblyName>StyleUs</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <NuGetPackageImportStamp></NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -79,15 +78,15 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Comments.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\AboutUsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\MenuPage.xaml">
+    <EmbeddedResource Include="View\EditProfilePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -107,6 +106,7 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="View\EditProfilePage.xaml">
+    <EmbeddedResource Include="View\AboutUsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -126,6 +126,15 @@
     </Compile>
     <Compile Include="View\ViewComments.xaml.cs">
       <DependentUpon>ViewComments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Authentication\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Authentication\RegisterStepOnePage.xaml.cs">
+      <DependentUpon>RegisterStepOnePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Authentication\RegisterStepTwoPage.xaml.cs">
+      <DependentUpon>RegisterStepTwoPage.xaml</DependentUpon>
     </Compile>
     <None Include="DesignTimeData.jason" />
     <None Include="packages.config" />
@@ -193,7 +202,7 @@
     <Compile Include="Services\API\IApiResponse.cs" />
     <Compile Include="Services\AuthServices.cs" />
     <None Include="FodyWeavers.xml" />
-    <Compile Include="Events\onLoginEvent.cs" />
+    <Compile Include="Events\Events.cs" />
     <Compile Include="Models\App\RegisterUser.cs" />
     <Compile Include="View\Users\FollowerLists.cs">
       <DependentUpon>FollowerLists.xaml</DependentUpon>
@@ -212,6 +221,10 @@
     </Compile>
     <Compile Include="ViewModel\Notification\NotificationListViewModel.cs" />
     <Compile Include="Services\NotificationServices.cs" />
+    <Compile Include="View\Menu.xaml.cs">
+      <DependentUpon>Menu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\MenuViewModel.cs" />
     <Compile Include="Services\UserServices.cs" />
     <Compile Include="View\Comments.xaml.cs">
       <DependentUpon>Comments.xaml</DependentUpon>
@@ -219,13 +232,10 @@
     <Compile Include="ViewModel\CommentsViewModel.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Services\CommentServices.cs" />
-    <Compile Include="View\AboutUsPage.xaml.cs">
-      <DependentUpon>AboutUsPage.xaml</DependentUpon>
+    <Compile Include="View\EditProfilePage.xaml.cs">
+      <DependentUpon>EditProfilePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\AboutUsPageViewModel.cs" />
-    <Compile Include="View\MenuPage.xaml.cs">
-      <DependentUpon>MenuPage.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="ViewModel\EditProfilePageViewModel.cs" />
     <Compile Include="ViewModel\MenuPageViewModel.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="View\PictureUpload\AddPicturePost.xaml.cs">
@@ -238,15 +248,6 @@
     <Compile Include="View\PictureUpload\AddCameraButton.xaml.cs">
       <DependentUpon>AddCameraButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Authentication\LoginPage.xaml.cs">
-      <DependentUpon>LoginPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Authentication\RegisterStepOnePage.xaml.cs">
-      <DependentUpon>RegisterStepOnePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Authentication\RegisterStepTwoPage.xaml.cs">
-      <DependentUpon>RegisterStepTwoPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ViewModel\Authentication\LoginPageViewModel.cs" />
     <Compile Include="ViewModel\Authentication\RegisterStepOnePageViewModel.cs" />
     <Compile Include="ViewModel\Authentication\RegisterStepTwoPageViewModel.cs" />
@@ -258,6 +259,10 @@
     </Compile>
     <Compile Include="ViewModel\EditProfilePageViewModel.cs" />
     <Compile Include="ViewModel\ShowProfilePageViewModel.cs" />
+    <Compile Include="View\AboutUsPage.xaml.cs">
+      <DependentUpon>AboutUsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\AboutUsPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">

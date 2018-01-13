@@ -1,4 +1,5 @@
 ﻿using System;
+using System;
 
 using System.ComponentModel;
 using System.Windows.Input;
@@ -33,12 +34,12 @@ namespace StyleUs.ViewModel
         }
 
 
-        public void OnBackClick(){
+        public void OnBackClick()
+        {
             //navigation.NavigateAsync("AboutUsPage");
             navigation.GoBackAsync();
             //navigation.NavigateAsync(new Uri("/MainTabbedPage/MenuPage", UriKind.Absolute));
-           
+
         }
     }
 }
-

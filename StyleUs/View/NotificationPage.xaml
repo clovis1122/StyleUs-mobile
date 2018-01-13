@@ -5,7 +5,7 @@
 	xmlns:local="clr-namespace:StyleUs" 
 	x:Class="StyleUs.View.NotificationPage"
     xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms" 
-    xmlns:views="clr-namespace:StyleUs.View.Component">
+    xmlns:views="clr-namespace:StyleUs.View.Component" Title="Notificacion">
     
     
     <ContentPage.Content>

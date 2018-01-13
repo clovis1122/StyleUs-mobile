@@ -10,6 +10,9 @@ using Prism.Events;
 
 using StyleUs.Models.App;
 using System;
+using System.Collections.Generic;
+using StyleUs.Services.API;
+using static StyleUs.View.RegisterStepTwoPage;
 
 namespace StyleUs.ViewModel
 {
@@ -66,15 +69,45 @@ namespace StyleUs.ViewModel
           */
 		public async void onFinish()
 		{
-            var res = await StyleUs.Services.AuthServices.register(registerUser);
-
-            if (!res.Key)
+            events.GetEvent<Events.payload>().Publish(new Alert
             {
-                events.GetEvent<Events.displayMessage>().Publish("No hemos podido crear su cuenta. Por favor, intente mas tarde.");
-                return;
+                title = "Iniciando sesión",
+                message = "Iniciando sesión, por favor, espere."
+            });
+
+            try {
+                var res = await StyleUs.Services.AuthServices.register(registerUser);
+
+                if (!res.Key)
+                {
+                    var errors = res.Value as Dictionary<string, ApiFieldError>;
+                    string message = "Ha habido un error. Por favor, verifique sus datos e intente de nuevo.";
+
+                    foreach(var entry in errors) {
+                        message += $"\n {entry.Key}: {entry.Value.message}";
+                    }
+                    
+                    events.GetEvent<Events.payload>().Publish(new Alert
+                    {
+                        title = "Error!",
+                        message = message
+                    });
+                } else {
+                    var user = res.Value as StyleUs.Models.User;
+                    Application.Current.Properties["token"] = user.token;
+
+                    await navigation.NavigateAsync(new Uri("/MainTabbedPage/HomePage", UriKind.Absolute));
+                }
+
+            } catch {
+                // 
+                events.GetEvent<Events.payload>().Publish(new Alert
+                {
+                    title = "Oops!",
+                    message = "Something went wrong :( No hemos podido crear su cuenta. Por favor, intente mas tarde.",
+                });
             }
 
-            await navigation.NavigateAsync(new Uri("http://www.StyleUs.com/HomePage/", UriKind.Absolute));
 		}
 
         // INavigationAware

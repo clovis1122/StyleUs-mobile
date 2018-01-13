@@ -11,7 +11,6 @@ namespace StyleUs.View
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
-
         }
     }
 }

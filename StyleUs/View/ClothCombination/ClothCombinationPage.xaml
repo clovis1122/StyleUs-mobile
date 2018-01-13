@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="StyleUs.View.ClothCombinationPage"
     xmlns:views="clr-namespace:StyleUs.View.ClothPieces"
+    
     Title="Combination">
     <views:NewClothPage Title="Recientes" BindingContext="{Binding .}" />
     <views:NewClothPage Title="Populares"  BindingContext="{Binding .}" />

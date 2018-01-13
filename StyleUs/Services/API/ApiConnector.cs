@@ -8,12 +8,14 @@ using Plugin.Connectivity;
 using StyleUs.Models;
 using Plugin.Media.Abstractions;
 using System.IO;
+using Xamarin.Forms;
+using System.Linq;
 
 namespace StyleUs.Services.API
 {
     public class ApiConnector
     {
-        public static string API_ROOT = "https://quiet-gorge-89832.herokuapp.com/api/v1";
+        public static string API_ROOT = "http://quiet-gorge-89832.herokuapp.com/api/v1/";
 
         /**
          * The idea is to return this class to remove some of the complexity
@@ -44,7 +46,17 @@ namespace StyleUs.Services.API
         {
             // The client to use in our connection.
             HttpClient client = new HttpClient();
+
+
+            if (Application.Current.Properties.ContainsKey("token"))
+            {
+                var token = Application.Current.Properties["token"] as string;
+                client.DefaultRequestHeaders.Add("X-Api-Token","Bearer " + token);
+            }
+
             string url = API_ROOT + relativeUrl;
+
+            // Adds the user's token if it exists
 
             HttpResponseMessage result;
 
@@ -90,6 +102,12 @@ namespace StyleUs.Services.API
             // The client to use in our connection.
             HttpClient client = new HttpClient();
             string url = API_ROOT + relativeUrl;
+
+            if (Application.Current.Properties.ContainsKey("token"))
+            {
+                var token = Application.Current.Properties["token"] as string;
+                client.DefaultRequestHeaders.Add("X-Api-Token", "Bearer " + token);
+            }
 
             // The data to send in our request.
             var serializedData = JsonConvert.SerializeObject(data);

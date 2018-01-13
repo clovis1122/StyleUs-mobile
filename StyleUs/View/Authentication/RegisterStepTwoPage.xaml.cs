@@ -10,17 +10,30 @@ namespace StyleUs.View
 {
     public partial class RegisterStepTwoPage : ContentPage
     {
+        public class Alert {
+            public string title { get; set; } = "";
+            public string message { get; set; } = "";
+            public string button { get; set; } = "Vale";
+        }
+
         public RegisterStepTwoPage() { InitializeComponent(); }
         public RegisterStepTwoPage(IEventAggregator events)
         {
-            try {
             InitializeComponent();
-            } catch(Exception ex) {
-                var du = ex.Message;
-            }
-            events.GetEvent<Events.displayMessage>().Subscribe(message => {
-                DisplayAlert("¡Error!", message, "Vale");
+
+            events.GetEvent<Events.payload>().Subscribe(payload => {
+
+                var resp = payload as Alert;
+                
+                showMessage(resp);
             });
+        }
+
+        private void showMessage(Alert alert) 
+        {
+            if (alert == null) return;
+
+            DisplayAlert(alert.title, alert.message, alert.button);
         }
     }
 }

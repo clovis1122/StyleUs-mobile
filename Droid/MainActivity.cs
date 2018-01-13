@@ -42,7 +42,7 @@ namespace StyleUs.Droid
 		{
 			public void RegisterTypes(IUnityContainer container)
 			{
-                
+
 			}
 		}
 	}

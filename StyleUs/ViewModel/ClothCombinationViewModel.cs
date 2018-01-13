@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 using System.ComponentModel;
 using System.Windows.Input;
@@ -63,7 +63,7 @@ namespace StyleUs.ViewModel
             events = eventAgregator;
 
             back = new DelegateCommand(OnBackClick);
-        
+
 		}
 
         static Random rnd = new Random();
@@ -77,7 +77,7 @@ namespace StyleUs.ViewModel
 				"http://www.institutoferrolvello.es/images/rtgn7/Modelos%20Ropa%20-%20Mochini%20Playera%20Blanca%20con%20Estampado%20Blanco%20-%20Playeras%20em5sddpn_02.jpg",
 				"https://www.estarguapas.com/pics/2012/03/modelo-mark-jacobs.jpg",
 				"https://firstgroupstaff.files.wordpress.com/2013/05/oysho_gym_fg-staff.jpg",
-				"http://www.okchicas.com/wp-content/uploads/2016/03/A-esta-modelo-se-le-dijo-que-era-demasiado-gorda-ahora-es-modelo-de-ropa-interior-9.jpg",		
+				"http://www.okchicas.com/wp-content/uploads/2016/03/A-esta-modelo-se-le-dijo-que-era-demasiado-gorda-ahora-es-modelo-de-ropa-interior-9.jpg",
                 "http://www.mistermoda.com/wp-content/uploads/2010/09/Jon-Kortajarena-for-HM-Fall-Winter-201011-02.jpg",
 				"https://thumbs.dreamstime.com/z/mujer-modelo-de-la-belleza-en-ropa-del-invierno-22551783.jpg",
 				"nocarga",

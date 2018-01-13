@@ -14,7 +14,7 @@ namespace StyleUs.Services
     {
         public static async Task<KeyValuePair<bool,object>> login(string email, string password)
         {
-            var resp = await ApiConnector.postJsonFromUrl("/auth/login/", new { email, password});
+            var resp = await ApiConnector.postJsonFromUrl("auth/login/", new { email, password});
 
             if (resp.GetStatusCode() != 200) {
                 return new KeyValuePair<bool, object>(false,resp.GetResponseAsModel<Dictionary<string,ApiFieldError>>());
@@ -24,13 +24,20 @@ namespace StyleUs.Services
 
         public static async Task<KeyValuePair<bool, object>> register(StyleUs.Models.App.RegisterUser user)
         {
-            var resp = await ApiConnector.postJsonFromUrl("/auth/register/", user);
+            var resp = await ApiConnector.postJsonFromUrl("auth/register/", user);
 
-            if (resp.GetStatusCode() != 200)
+            if (resp.GetStatusCode() == 400)
             {
                 return new KeyValuePair<bool, object>(false, resp.GetResponseAsModel<Dictionary<string, ApiFieldError>>());
             }
-            return new KeyValuePair<bool, object>(true, resp.GetResponseAsModel<User>());
+
+            if (resp.GetStatusCode() == 200)
+            {
+                return new KeyValuePair<bool, object>(true, resp.GetResponseAsModel<User>());
+            }
+
+            return new KeyValuePair<bool, object>();
+
         }
     }
 }

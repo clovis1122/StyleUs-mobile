@@ -4,10 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="StyleUs.View.ClothPiecePage"
     xmlns:views="clr-namespace:StyleUs.View.ClothPieces"
-    Title="Todas las piezas"
-    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
-    prism:ViewModelLocator.AutowireViewModel="true"
-    NavigationPage.HasNavigationBar="true">
+    Title="Todas las piezas">
     
     <views:NewClothPage Title="Recientes" BindingContext="{Binding .}" />
     <views:NewClothPage Title="Populares" BindingContext="{Binding .}" />

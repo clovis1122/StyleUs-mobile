@@ -3,7 +3,8 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="StyleUs.View.RegisterStepOnePage"
-    BackgroundImage="Forget_password_Background.png">
+    BackgroundImage="Forget_password_Background.png"
+     NavigationPage.HasNavigationBar="false">
 	<ContentPage.Content>
         <ScrollView Orientation="Vertical" Padding="0,0,0,20">
                <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
