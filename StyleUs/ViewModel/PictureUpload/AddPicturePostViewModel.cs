@@ -11,12 +11,15 @@ using Prism.Commands;
 using System.Windows.Input;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
+using Prism.Navigation;
 
 namespace StyleUs.ViewModel
 {
     public class AddPicturePostViewModel : INotifyPropertyChanged
     {
         private MediaFile file = null;
+
+        INavigationService navigation;
 
         public ICommand TakePhoto { get; set; }
         public ICommand CreatePost { get; set; }
@@ -26,32 +29,32 @@ namespace StyleUs.ViewModel
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public AddPicturePostViewModel()
+        public AddPicturePostViewModel(INavigationService _navigation)
         {
            // image = "https://freerangestock.com/thumbnail/27083/steampunk-woman-tips-hat.jpg";
             TakePhoto = new Command(takePhoto);
             CreatePost = new Command(createPost);
-
+            navigation = _navigation;
         }
 
         public async void takePhoto()
         {
-            if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
-            {
-                // "No Camera", ":( No camera available.", "OK");
-                return;
-            }
+            //if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+            //{
+            //    // "No Camera", ":( No camera available.", "OK");
+            //    return;
+            //}
 
-            var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
-            {
-                Directory = "Sample",
-                Name = "test.jpg"
-            });
+            //var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+            //{
+            //    Directory = "Sample",
+            //    Name = "test.jpg"
+            //});
 
-            if (file == null) return;
+            //if (file == null) return;
 
-            this.file = file;
-            image = ImageSource.FromFile(file.Path);
+            //this.file = file;
+            //image = ImageSource.FromFile(file.Path);
             showSubmit = true;
         }
 
@@ -62,8 +65,14 @@ namespace StyleUs.ViewModel
             } catch {
                 // Error! :(
             }
-           
-            // Post created! 
+
+            // Post created! Clean up before exit.
+            file = null;
+            image = null;
+            body = "";
+            showSubmit = false;
+
+            navigation.NavigateAsync(new Uri("/MainTabbedPage/HomePage",UriKind.Absolute));
         }
     }
 }
