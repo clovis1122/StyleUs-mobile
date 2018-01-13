@@ -15,6 +15,7 @@ namespace StyleUs.View
 		public NotificationPage ()
 		{
 			InitializeComponent ();
+            
 		}
 	}
 }

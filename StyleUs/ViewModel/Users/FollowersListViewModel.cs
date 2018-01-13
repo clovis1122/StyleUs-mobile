@@ -7,6 +7,8 @@ using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using System.ComponentModel;
 using Prism.Commands;
+using Prism.Events;
+using Prism.Navigation;
 
 namespace StyleUs.ViewModel.Users
 {
@@ -15,7 +17,8 @@ namespace StyleUs.ViewModel.Users
 
         public DelegateCommand back { get; set; }
         public ObservableCollection<User> _followerList = new ObservableCollection<User>();
-
+        INavigationService navigation;
+        IEventAggregator events;
 
         public ObservableCollection<User> followerList
         {
@@ -31,10 +34,21 @@ namespace StyleUs.ViewModel.Users
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public FollowersListViewModel()
+        public FollowersListViewModel(INavigationService navigationService, IEventAggregator eventAgregator )
         {
+            navigation = navigationService;
+            events = eventAgregator;
+
             loadUsers();
+            back = new DelegateCommand(OnBackClick);
         }
+
+
+        public void OnBackClick()
+        {
+            navigation.GoBackAsync();
+        }
+
 
         public async void loadUsers() {
             try {

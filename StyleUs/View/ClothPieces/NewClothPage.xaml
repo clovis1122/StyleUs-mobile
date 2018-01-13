@@ -22,14 +22,23 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 	<ContentPage.Content>
+    
            <StackLayout HorizontalOptions="FillAndExpand">
-            <Label Text="PIEZAS"
-                TextColor="Black"
-                Margin="30"
-                HorizontalOptions="Center"
-                FontSize="30"
-                FontFamily="monospace"
-                FontAttributes="Bold" />
+            
+           <!--<Grid >-->
+                
+                <Button Image="backIcon.png" HorizontalOptions="Start"
+                        Command="{Binding back}" Style="{StaticResource iconosBotones}"/>
+                
+                <!--<Label Text="{Binding fileName}"
+                    TextColor="Black"
+                    Margin="30"
+                    HorizontalOptions="Center"
+                    FontSize="30"
+                    FontFamily="monospace"
+                    FontAttributes="Bold" />-->
+
+            <!--</Grid>-->
 
              <flv:FlowListView x:Name="flowListView" SeparatorVisibility="None" HasUnevenRows="true"
                 FlowColumnMinWidth="100" FlowItemsSource="{Binding imageList}">
