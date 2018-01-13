@@ -22,7 +22,10 @@ namespace StyleUs.ViewModel
 {
     public class CommentsViewModel : INotifyPropertyChanged
     {
+        public DelegateCommand back { get; set; }
 
+        readonly INavigationService navigation;
+        IEventAggregator events;
 
         public ObservableCollection<Comment> _commentsList = new ObservableCollection<Comment>();
         public ObservableCollection<Comment> commentsList
@@ -45,7 +48,7 @@ namespace StyleUs.ViewModel
         static Random random = new Random();
 
 
-        public CommentsViewModel()
+        public CommentsViewModel(INavigationService navigationService, IEventAggregator eventAgregator)
         {
             //loadComment();
             Random random = new Random();
@@ -68,6 +71,18 @@ namespace StyleUs.ViewModel
                 du.img = "PhotoPerfil" + random.Next(1, 5).ToString();
                 commentsList.Add(du);
             }
+
+
+            navigation = navigationService;
+            events = eventAgregator;
+
+            back = new DelegateCommand(OnBackClick);
+        }
+
+
+        public void OnBackClick()
+        {
+            navigation.GoBackAsync();
 
         }
 

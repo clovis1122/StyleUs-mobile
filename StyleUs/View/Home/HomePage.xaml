@@ -25,16 +25,22 @@
                                             <BoxView HeightRequest="0.3" Color="#AFB4BB">
                                             </BoxView>
                                             <StackLayout Orientation="Horizontal">
-                                                <Image x:Name="corazon" Source="LikeHeartIcon.png" Margin="5,5,0,5" WidthRequest="20" HeightRequest="20" />
-                                                <Label FontAttributes="Bold" Text="{Binding like_count}" TextColor="Gray" VerticalOptions="Center" />
+                                                
+                                                <StackLayout Orientation="Horizontal">
+                                                    <StackLayout.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="OnTapGestureRecognizerLike" NumberOfTapsRequired="1" />
+                                                    </StackLayout.GestureRecognizers>
+                                                    <Image x:Name="corazon" Source="{Binding LikeIcon}" Margin="5,5,0,5" WidthRequest="25" HeightRequest="25" />
+                                                    <Label Margin="0,5,20,5"  FontAttributes="Bold" Text="{Binding like_count}" TextColor="Gray" VerticalOptions="Center" />
+                                                </StackLayout>
+                                               
                                                 <StackLayout Orientation="Horizontal">
                                                     <StackLayout.GestureRecognizers>
                                                         <TapGestureRecognizer Tapped="OnTapGestureRecognizerTapped" NumberOfTapsRequired="1" />
                                                     </StackLayout.GestureRecognizers>
-                                                    <ffimageloading:CachedImage HeightRequest="20" WidthRequest="20" DownsampleUseDipUnits="false" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="seeCommentIcon.png" />
+                                                    <ffimageloading:CachedImage HeightRequest="25" WidthRequest="25" DownsampleUseDipUnits="false" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="comment.png" />
                                                     <Label FontAttributes="Bold" Text="{Binding comments_count}" TextColor="Gray" VerticalOptions="Center" Margin="0,0,5,0" />
                                                     <!-- Aqui va el comentario -->
-                                                    <Image Source="WriteCommentIcon.png" WidthRequest="25" HeightRequest="25" HorizontalOptions="EndAndExpand" Margin="0,0,15,5" />
                                                 </StackLayout>
                                             </StackLayout>
                                         </StackLayout>

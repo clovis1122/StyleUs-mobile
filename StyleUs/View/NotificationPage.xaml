@@ -5,12 +5,14 @@
 	xmlns:local="clr-namespace:StyleUs" 
 	x:Class="StyleUs.View.NotificationPage"
     xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms" 
-    xmlns:views="clr-namespace:StyleUs.View.Component" Title="Notificacion">
-    
+    xmlns:views="clr-namespace:StyleUs.View.Component">
+
     
     <ContentPage.Content>
       <StackLayout HorizontalOptions="FillAndExpand"> 
-     
+            
+       
+            
          <ListView ItemsSource="{Binding notificationList}">
            <ListView.ItemTemplate>
              <DataTemplate>

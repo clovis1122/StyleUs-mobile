@@ -25,5 +25,14 @@ namespace StyleUs.View
             if ((vm != null) && (vm.SeeCommentView.CanExecute(null)))
                 vm.SeeCommentView.Execute(null);
         }
+
+        public void OnTapGestureRecognizerLike(object sender, EventArgs args)
+        {
+            HomePageViewModel vm = BindingContext as HomePageViewModel;
+
+            //Call command from viewmodel     
+            if ((vm != null) && (vm.LikeComment.CanExecute(null)))
+                vm.LikeComment.Execute(null);
+        }
     }
 }
