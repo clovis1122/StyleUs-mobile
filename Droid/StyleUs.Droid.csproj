@@ -262,6 +262,10 @@
     <AndroidResource Include="Resources\drawable\EditProfile.png" />
     <AndroidResource Include="Resources\drawable\email.png" />
     <AndroidResource Include="Resources\drawable\phoneIcon.png" />
+    <AndroidResource Include="Resources\drawable\location.png" />
+    <AndroidResource Include="Resources\drawable\password_gray.png" />
+    <AndroidResource Include="Resources\drawable\phone_gray.png" />
+    <AndroidResource Include="Resources\drawable\profile_gray.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\seeCommentIcon.png" />

@@ -5,12 +5,13 @@ using Xamarin.Forms;
 
 namespace StyleUs.View
 {
-    public partial class EditProfilePage : ContentPage
+    public partial class ShowProfilePage : ContentPage
     {
-        public EditProfilePage()
+        public ShowProfilePage()
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
+
         }
     }
 }

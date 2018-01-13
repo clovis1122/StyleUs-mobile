@@ -5,36 +5,35 @@ using Prism.Commands;
 using Prism.Events;
 using System.ComponentModel;
 
-public class EditProfilePageViewModel
-    {
-        public class EditProfileViewModel : ContentPage
+namespace StyleUs.ViewModel
+{
+    public class EditProfilePageViewModel : ContentPage
     {
 
-        public DelegateCommand back { get; set; }
+        public DelegateCommand cancel { get; set; }
+        public DelegateCommand save { get; set; }
 
         readonly INavigationService navigation;
         IEventAggregator events;
 
-        public new event PropertyChangedEventHandler PropertyChanged;
-
-        public EditProfileViewModel(INavigationService navigationService, IEventAggregator eventAgregator)
+        public EditProfilePageViewModel(INavigationService navigationService, IEventAggregator eventAgregator)
         {
             navigation = navigationService;
             events = eventAgregator;
 
-            back = new DelegateCommand(OnBackClick);
+            cancel = new DelegateCommand(OnCancelClick);
+            save = new DelegateCommand(OnSaveClick);
         }
 
+        public void OnCancelClick(){
 
-        public void OnBackClick()
-        {
-            //navigation.NavigateAsync("AboutUsPage");
             navigation.GoBackAsync();
-            //navigation.NavigateAsync(new Uri("/MainTabbedPage/MenuPage", UriKind.Absolute));
 
         }
 
+        public void OnSaveClick(){
 
-    
+            navigation.GoBackAsync();
+        }
     }
 }

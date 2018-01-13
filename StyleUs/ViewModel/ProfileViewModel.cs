@@ -21,7 +21,7 @@ namespace StyleUs.ViewModel
     {
 
         public DelegateCommand back { get; set; }
-        public DelegateCommand edit { get; set; }
+        public DelegateCommand more { get; set; }
         public DelegateCommand followers { get; set; }
 
         readonly INavigationService navigation;
@@ -35,7 +35,7 @@ namespace StyleUs.ViewModel
             events = eventAgregator;
 
             back = new DelegateCommand(OnBackClick);
-            edit = new DelegateCommand(OnEditClick);
+            more = new DelegateCommand(OnMoreClick);
             followers = new DelegateCommand(OnFollowersClick);
         }
 
@@ -48,10 +48,10 @@ namespace StyleUs.ViewModel
 
         }
 
-        public void OnEditClick()
+        public void OnMoreClick()
         {
             //Poner navigation a la pantalla de miguel
-
+            navigation.NavigateAsync("ShowProfilePage");
         }
 
         public void OnFollowersClick()
