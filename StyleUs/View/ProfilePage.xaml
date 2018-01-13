@@ -103,7 +103,7 @@
                     <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" HorizontalOptions="End">
                         <Button Image="EditProfile.png" HeightRequest="50" WidthRequest="50" MinimumHeightRequest="30"
                             MinimumWidthRequest="30" HorizontalOptions="End" VerticalOptions="End"
-                            />
+                            Command="{Binding more}"/>
                     </StackLayout>
                 </StackLayout>
                 

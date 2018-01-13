@@ -101,6 +101,11 @@
     <EmbeddedResource Include="View\Authentication\LoginPage.xaml" />
     <EmbeddedResource Include="View\Authentication\RegisterStepOnePage.xaml" />
     <EmbeddedResource Include="View\Authentication\RegisterStepTwoPage.xaml" />
+    <EmbeddedResource Include="View\ShowProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\EditProfilePage.xaml">
     <EmbeddedResource Include="View\AboutUsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -246,6 +251,14 @@
     <Compile Include="ViewModel\Authentication\LoginPageViewModel.cs" />
     <Compile Include="ViewModel\Authentication\RegisterStepOnePageViewModel.cs" />
     <Compile Include="ViewModel\Authentication\RegisterStepTwoPageViewModel.cs" />
+    <Compile Include="View\ShowProfilePage.xaml.cs">
+      <DependentUpon>ShowProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditProfilePage.xaml.cs">
+      <DependentUpon>EditProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\EditProfilePageViewModel.cs" />
+    <Compile Include="ViewModel\ShowProfilePageViewModel.cs" />
     <Compile Include="View\AboutUsPage.xaml.cs">
       <DependentUpon>AboutUsPage.xaml</DependentUpon>
     </Compile>
