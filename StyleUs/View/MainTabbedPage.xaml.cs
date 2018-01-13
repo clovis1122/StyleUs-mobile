@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
 
 namespace StyleUs.View
 {
@@ -6,7 +7,12 @@ namespace StyleUs.View
     {
         public MainTabbedPage()
         {
-            InitializeComponent();
+            try {
+                InitializeComponent();
+            } catch (Exception e) {
+                var du = e;
+
+            }
         }
     }
 }

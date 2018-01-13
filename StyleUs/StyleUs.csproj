@@ -105,7 +105,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\EditProfilePage.xaml">
     <EmbeddedResource Include="View\AboutUsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -136,7 +135,6 @@
     <Compile Include="View\Authentication\RegisterStepTwoPage.xaml.cs">
       <DependentUpon>RegisterStepTwoPage.xaml</DependentUpon>
     </Compile>
-    <None Include="DesignTimeData.jason" />
     <None Include="packages.config" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\AddCommentPageViewModel.cs" />
@@ -232,10 +230,6 @@
     <Compile Include="ViewModel\CommentsViewModel.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Services\CommentServices.cs" />
-    <Compile Include="View\EditProfilePage.xaml.cs">
-      <DependentUpon>EditProfilePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewModel\EditProfilePageViewModel.cs" />
     <Compile Include="ViewModel\MenuPageViewModel.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="View\PictureUpload\AddPicturePost.xaml.cs">

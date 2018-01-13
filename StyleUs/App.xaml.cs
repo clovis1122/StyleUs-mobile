@@ -72,7 +72,7 @@ namespace StyleUs
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainTabbedPage>();
             Container.RegisterTypeForNavigation<AboutUsPage,AboutUsPageViewModel>("AboutUsPage");
-            Container.RegisterTypeForNavigation<MenuPage,MenuPageViewModel>("MenuPage");
+            Container.RegisterTypeForNavigation<View.Menu,MenuPageViewModel>("MenuPage");
             Container.RegisterTypeForNavigation<View.ShowProfilePage,ShowProfilePageViewModel>("ShowProfilePage");
             Container.RegisterTypeForNavigation<View.EditProfilePage, ViewModel.EditProfilePageViewModel>("EditProfilePage");
 

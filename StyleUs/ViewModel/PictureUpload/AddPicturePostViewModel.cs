@@ -29,32 +29,32 @@ namespace StyleUs.ViewModel
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public AddPicturePostViewModel(INavigationService _navigation)
+        public AddPicturePostViewModel(INavigationService navigationService)
         {
            // image = "https://freerangestock.com/thumbnail/27083/steampunk-woman-tips-hat.jpg";
             TakePhoto = new Command(takePhoto);
             CreatePost = new Command(createPost);
-            navigation = _navigation;
+            navigation = navigationService;
         }
 
         public async void takePhoto()
         {
-            //if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
-            //{
-            //    // "No Camera", ":( No camera available.", "OK");
-            //    return;
-            //}
+            if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+            {
+                // "No Camera", ":( No camera available.", "OK");
+                return;
+            }
 
-            //var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
-            //{
-            //    Directory = "Sample",
-            //    Name = "test.jpg"
-            //});
+            var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+            {
+                Directory = "Sample",
+                Name = "test.jpg"
+            });
 
-            //if (file == null) return;
+            if (file == null) return;
 
-            //this.file = file;
-            //image = ImageSource.FromFile(file.Path);
+            this.file = file;
+            image = ImageSource.FromFile(file.Path);
             showSubmit = true;
         }
 

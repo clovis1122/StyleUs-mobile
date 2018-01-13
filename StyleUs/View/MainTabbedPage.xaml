@@ -10,7 +10,7 @@
             BarTextColor="Black">
 
     <TabbedPage.Children>
-        <local:AddPicturePost  Icon="AddPhotos.png"/>
+        <local:AddPicturePost Icon="AddPhotos.png"/>
         <localUsers:FollowerLists Icon="followers.png" />
         <local:HomePage  Icon="Home.png" />
         <localNotification:NotificationList Icon="Notifications.png" />
