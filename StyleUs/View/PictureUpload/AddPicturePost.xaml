@@ -4,6 +4,7 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="StyleUs.View.AddPicturePost"
+             Title="Subir foto" BackgroundColor="White"
              xmlns:Converter="clr-namespace:StyleUs.Converter">
 
       <ContentPage.Resources>
@@ -12,7 +13,7 @@
     </ResourceDictionary>
   </ContentPage.Resources>
 
- 
+
     <ContentPage.Content>
 
         <ScrollView>
@@ -22,12 +23,12 @@
 
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Fill"  >
 
-                <!--<ffimageloading:CachedImage  
+                <!--<ffimageloading:CachedImage
                                                 HeightRequest="40"
-                                                WidthRequest="40" 
-                                                DownsampleUseDipUnits="false" 
+                                                WidthRequest="40"
+                                                DownsampleUseDipUnits="false"
                                                 LoadingPlaceholder="image_loading.png"
-                                                ErrorPlaceholder="image_error.png" 
+                                                ErrorPlaceholder="image_error.png"
                                                 Source="{Binding ProfileImage}"
                                                 Margin="5,0,5,0">
                     <ffimageloading:CachedImage.Transformations>
@@ -44,26 +45,26 @@
             </Frame>
 
             <Editor Text="{Binding body, Mode=TwoWay}" BackgroundColor="White" VerticalOptions="FillAndExpand" />
-            
+
            <Button
-            Command="{Binding TakePhoto}"  
-            Text="Subir Imagen" 
-            BackgroundColor="Gray" 
-            Margin="20" 
+            Command="{Binding TakePhoto}"
+            Text="Subir Imagen"
+            BackgroundColor="Gray"
+            Margin="20"
             BorderRadius="50" BorderWidth="2" BorderColor="White" VerticalOptions="End" />
-            <Button 
+            <Button
             IsVisible="{Binding showSubmit}"
-            Command="{Binding CreatePost}"  
+            Command="{Binding CreatePost}"
             Text="Crear publicación"
-            BackgroundColor="Gray" 
-            Margin="20" 
+            BackgroundColor="Gray"
+            Margin="20"
             BorderRadius="50" BorderWidth="2" BorderColor="White" VerticalOptions="End" />
-            
+
         </StackLayout>
             </ScrollView>
-        
-        
-        
+
+
+
     </ContentPage.Content>
-  
+
 </ContentPage>

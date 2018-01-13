@@ -71,8 +71,9 @@ namespace StyleUs
             Container.RegisterTypeForNavigation<AddCameraButton, AddCameraButtonViewModel>("AddCameraButton");
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainTabbedPage>();
-            Container.RegisterTypeForNavigation<AboutUsPage,AboutUsPageViewModel>("AboutUsPage");
-            Container.RegisterTypeForNavigation<MenuPage,MenuPageViewModel>("MenuPage");
+            Container.RegisterTypeForNavigation<AboutUsPage, AboutUsPageViewModel>("AboutUsPage");
+            Container.RegisterTypeForNavigation<View.Menu, MenuPageViewModel>("Menu");
+            Container.RegisterTypeForNavigation<EditProfilePage>();
         }
 
 		protected override void OnStart()

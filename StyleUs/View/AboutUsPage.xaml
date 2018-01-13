@@ -20,7 +20,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <!--Padding="0,40,0,0"-->
-	<ContentPage.Content>
+    <ContentPage.Content>
 
         <Grid RowSpacing="20" BackgroundColor="#e9eaed">
             <Grid.RowDefinitions>
@@ -71,5 +71,5 @@
 
         </Grid>
 
-	</ContentPage.Content>
+    </ContentPage.Content>
 </ContentPage>

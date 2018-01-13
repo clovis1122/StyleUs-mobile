@@ -12,9 +12,6 @@
         <local:FollowerLists></local:FollowerLists>
         <local:FollowingLists></local:FollowingLists>
 
-
-        
-        
     </TabbedPage.Children>
   
 </TabbedPage>

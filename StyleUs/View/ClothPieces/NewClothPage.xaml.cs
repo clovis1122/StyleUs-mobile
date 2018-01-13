@@ -10,14 +10,6 @@ namespace StyleUs.View.ClothPieces
         public NewClothPage()
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false);
-            //try {
-            //    InitializeComponent();
-            //} catch(Exception e) {
-            //    var f = e.Message;
-            //}
-
-
         }
     }
 }

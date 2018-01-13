@@ -78,15 +78,15 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Comments.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\AboutUsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\MenuPage.xaml">
+    <EmbeddedResource Include="View\EditProfilePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -101,6 +101,10 @@
     <EmbeddedResource Include="View\Authentication\LoginPage.xaml" />
     <EmbeddedResource Include="View\Authentication\RegisterStepOnePage.xaml" />
     <EmbeddedResource Include="View\Authentication\RegisterStepTwoPage.xaml" />
+    <EmbeddedResource Include="View\AboutUsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountManager.cs" />
@@ -117,6 +121,15 @@
     </Compile>
     <Compile Include="View\ViewComments.xaml.cs">
       <DependentUpon>ViewComments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Authentication\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Authentication\RegisterStepOnePage.xaml.cs">
+      <DependentUpon>RegisterStepOnePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Authentication\RegisterStepTwoPage.xaml.cs">
+      <DependentUpon>RegisterStepTwoPage.xaml</DependentUpon>
     </Compile>
     <None Include="DesignTimeData.jason" />
     <None Include="packages.config" />
@@ -203,6 +216,10 @@
     </Compile>
     <Compile Include="ViewModel\Notification\NotificationListViewModel.cs" />
     <Compile Include="Services\NotificationServices.cs" />
+    <Compile Include="View\Menu.xaml.cs">
+      <DependentUpon>Menu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\MenuViewModel.cs" />
     <Compile Include="Services\UserServices.cs" />
     <Compile Include="View\Comments.xaml.cs">
       <DependentUpon>Comments.xaml</DependentUpon>
@@ -210,14 +227,11 @@
     <Compile Include="ViewModel\CommentsViewModel.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Services\CommentServices.cs" />
-    <Compile Include="View\AboutUsPage.xaml.cs">
-      <DependentUpon>AboutUsPage.xaml</DependentUpon>
+    <Compile Include="View\EditProfilePage.xaml.cs">
+      <DependentUpon>EditProfilePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\EditProfilePageViewModel.cs" />
     <Compile Include="ViewModel\MenuPageViewModel.cs" />
-    <Compile Include="ViewModel\AboutUsPageViewModel.cs" />
-    <Compile Include="View\MenuPage.xaml.cs">
-      <DependentUpon>MenuPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Models\User.cs" />
     <Compile Include="View\PictureUpload\AddPicturePost.xaml.cs">
       <DependentUpon>AddPicturePost.xaml</DependentUpon>
@@ -229,18 +243,13 @@
     <Compile Include="View\PictureUpload\AddCameraButton.xaml.cs">
       <DependentUpon>AddCameraButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Authentication\LoginPage.xaml.cs">
-      <DependentUpon>LoginPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Authentication\RegisterStepOnePage.xaml.cs">
-      <DependentUpon>RegisterStepOnePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Authentication\RegisterStepTwoPage.xaml.cs">
-      <DependentUpon>RegisterStepTwoPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ViewModel\Authentication\LoginPageViewModel.cs" />
     <Compile Include="ViewModel\Authentication\RegisterStepOnePageViewModel.cs" />
     <Compile Include="ViewModel\Authentication\RegisterStepTwoPageViewModel.cs" />
+    <Compile Include="View\AboutUsPage.xaml.cs">
+      <DependentUpon>AboutUsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\AboutUsPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">

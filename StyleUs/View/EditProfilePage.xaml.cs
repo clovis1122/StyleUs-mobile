@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace StyleUs.View
 {
-    public partial class ClothCombinationPage : TabbedPage
+    public partial class EditProfilePage : ContentPage
     {
-        public ClothCombinationPage()
+        public EditProfilePage()
         {
             InitializeComponent();
         }

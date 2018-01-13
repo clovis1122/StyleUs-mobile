@@ -28,7 +28,7 @@ namespace StyleUs.View
             });
         }
 
-        public async void startAnimation() 
+        public async void startAnimation()
         {
 
             // Title animation.
@@ -39,9 +39,9 @@ namespace StyleUs.View
                 name: "colorchange",
                 animation: new Animation((val) =>
                 {
-                    //var newValue = (int)(255 * (1 - (val * 0.5)));
-                    //var newColor = Color.FromRgb(newValue, newValue, newValue);
-                    //title.FormattedText.Spans[0].ForegroundColor = newColor;
+                    // var newValue = (int)(255 * (1 - (val * 0.5)));
+                    // var newColor = Color.FromRgb(newValue, newValue, newValue);
+                    // title.FormattedText.Spans[0].ForegroundColor = newColor;
                 }),
                 length: 1500,
                 repeat: () => { return false; }
@@ -53,7 +53,7 @@ namespace StyleUs.View
             content.FadeTo(1, 2000);
         }
 
-        public async void onLoginStartAnimation() 
+        public async void onLoginStartAnimation()
         {
             await content.FadeTo(0,1000);
             await title.TranslateTo(0, 100, 1000);

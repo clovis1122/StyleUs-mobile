@@ -3,7 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="StyleUs.View.ClothPieces.NewClothPage"
-    Padding="0,20,0,0"
+
     xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:views="clr-namespace:StyleUs.View.Component"
@@ -22,10 +22,14 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 	<ContentPage.Content>
-           <StackLayout>
-
-            <Button Image="backIcon.png"
-                    Command="{Binding back}" Style="{StaticResource iconosBotones}"/>
+           <StackLayout HorizontalOptions="FillAndExpand">
+            <Label Text="PIEZAS"
+                TextColor="Black"
+                Margin="30"
+                HorizontalOptions="Center"
+                FontSize="30"
+                FontFamily="monospace"
+                FontAttributes="Bold" />
 
              <flv:FlowListView x:Name="flowListView" SeparatorVisibility="None" HasUnevenRows="true"
                 FlowColumnMinWidth="100" FlowItemsSource="{Binding imageList}">

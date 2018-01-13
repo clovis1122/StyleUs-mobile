@@ -17,7 +17,7 @@
             <!--PAGE WRAPPER-->
             <StackLayout
                 x:Name="pageWrapper"
-               
+
                 BackgroundColor="{StaticResource dark}"
                 Margin="-20,0"
                 AbsoluteLayout.LayoutBounds="1,1,1,1"
@@ -31,18 +31,18 @@
                 AbsoluteLayout.LayoutFlags="All"
                 HorizontalOptions="Center"
                 VerticalOptions="CenterAndExpand">
-  
+
                 <Label.FormattedText>
                     <FormattedString>
                         <FormattedString.Spans>
-                            <Span Text="Style" ForegroundColor="{StaticResource white}"  FontSize="90" />
-                            <Span Text="Us" ForegroundColor="{StaticResource red}" FontSize="90" />
+                            <Span Text="Style" ForegroundColor="{StaticResource white}" FontSize="90" />
+                            <Span Text=" Us" ForegroundColor="{StaticResource red}" FontSize="90" />
                         </FormattedString.Spans>
                     </FormattedString>
                 </Label.FormattedText>
-                <!--<Label.Effects>
-                    <effect:ShadowEffect Color="{StaticResource red}" Radius="1" DistanceX="3" DistanceY="5" />
-                </Label.Effects>-->
+                <Label.Effects>
+                    <effect:ShadowEffect Color="Black" Radius="1" DistanceX="3" DistanceY="5" />
+                </Label.Effects>
             </Label>
 
             <StackLayout
@@ -53,27 +53,26 @@
 
                 <Grid  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" ColumnSpacing="0" RowSpacing="10">
                     <Grid.RowDefinitions>
-  
+
                         <RowDefinition Height="20"/>
                         <RowDefinition Height="30"/>
                         <RowDefinition Height="30"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
-                        
+
                      </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="10*"/>
                         <ColumnDefinition Width="90*"/>
-                        
+
                      </Grid.ColumnDefinitions>
                     <Label Text="Bienvenido" FontSize="12" HorizontalOptions="Center" Margin="0,20" Grid.Row="0" Grid.Column="1"/>
                     <Image Source="mail.png" Grid.Column="0" Grid.Row="1"/>
                     <Entry Text="{Binding email}" Placeholder="Correo electronico" TextColor="{StaticResource white}" PlaceholderColor="{StaticResource grayMedium}" Keyboard="Email" Margin="0.8" Grid.Column="1" Grid.Row="1"/>
                     <Image Source="password.png" Grid.Column="0" Grid.Row="2"/>
-                    <Entry Text="{Binding password}" Placeholder="Contraseña" TextColor="{StaticResource white}" IsPassword="true" PlaceholderColor="{StaticResource grayMedium}" Margin="0.8" Grid.Column="1" Grid.Row="2"/>
-
-                    <Label TextColor="{StaticResource grayMedium}" Text="Olvidé mi contraseña" HorizontalOptions="Center" Margin="0,10" Grid.Column="1" Grid.Row="3">
+                    <Entry Text="{Binding password}" Placeholder="Contraseña" IsPassword="true" PlaceholderColor="Gray" Margin="0.8" Grid.Column="1" Grid.Row="2"/>
+                    <Label TextColor="Aqua" Text="Olvidé mi contraseña" HorizontalOptions="Center" Margin="0,10" Grid.Column="1" Grid.Row="3">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding forgotPassword}" NumberOfTapsRequired="1" />
                     </Label.GestureRecognizers>
@@ -82,15 +81,24 @@
                     </Label.Effects>
                     </Label>
 
-                    <Button Command="{Binding login}" Text="Iniciar" BackgroundColor="{StaticResource dark}" Margin="0,01" BorderRadius="22" BorderWidth="2" BorderColor="{StaticResource white}" Grid.Column="1" Grid.Row="4"/>
-                    <Button Command="{Binding register}" Text="Registrarse" TextColor="{StaticResource dark}" BackgroundColor="{StaticResource white}" Margin="0,01" BorderRadius="22" BorderWidth="2" BorderColor="{StaticResource dark}" Grid.Column="1" Grid.Row="5" />
+                    <Button Command="{Binding login}" Text="Iniciar" BackgroundColor="Gray" Margin="0,01" BorderRadius="22" BorderWidth="2" BorderColor="White" Grid.Column="1" Grid.Row="4"/>
+                    <Button Command="{Binding register}" Text="Registrarse" TextColor="Gray" BackgroundColor="White" Margin="0,01" BorderRadius="22" BorderWidth="2" BorderColor="Gray" Grid.Column="1" Grid.Row="5"/>
 
 
                     </Grid>
 
 
-               
-               
+
+                <!--SUBTITLE-->
+
+                <!--FORM ENTRIES-->
+
+
+
+
+                <!--SUBMIT-->
+
+
 
             </StackLayout>
 

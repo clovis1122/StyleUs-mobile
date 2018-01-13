@@ -16,6 +16,8 @@
 **/Android/**/[Rr]esource.[Dd]esigner.cs
 **/Droid/**/[Rr]esource.[Dd]esigner.cs
 
+Droid/Resources/Resource.designer.cs
+
 # Xamarin Components
 Components/
 

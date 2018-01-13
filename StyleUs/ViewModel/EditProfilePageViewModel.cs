@@ -1,21 +1,13 @@
-﻿using System;
-using System;
-
-using System.ComponentModel;
-using System.Windows.Input;
-
+﻿using StyleUs.ViewModel;
 using Xamarin.Forms;
-
-using StyleUs.View;
 using Prism.Navigation;
 using Prism.Commands;
 using Prism.Events;
-using System.Threading.Tasks;
-using Prism.Mvvm;
+using System.ComponentModel;
 
-namespace StyleUs.ViewModel
-{
-    public class AboutUsPageViewModel : ContentPage
+public class EditProfilePageViewModel
+    {
+        public class EditProfileViewModel : ContentPage
     {
 
         public DelegateCommand back { get; set; }
@@ -23,9 +15,9 @@ namespace StyleUs.ViewModel
         readonly INavigationService navigation;
         IEventAggregator events;
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public new event PropertyChangedEventHandler PropertyChanged;
 
-        public AboutUsPageViewModel(INavigationService navigationService, IEventAggregator eventAgregator)
+        public EditProfileViewModel(INavigationService navigationService, IEventAggregator eventAgregator)
         {
             navigation = navigationService;
             events = eventAgregator;
@@ -41,5 +33,8 @@ namespace StyleUs.ViewModel
             //navigation.NavigateAsync(new Uri("/MainTabbedPage/MenuPage", UriKind.Absolute));
 
         }
+
+
+    
     }
 }
