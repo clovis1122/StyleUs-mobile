@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" 
+    x:Class="StyleUs.View.Home.HomePost"
+    xmlns:Converter="clr-namespace:StyleUs.Converter"
+    x:Name="HomePost">
+    
+    <StackLayout BackgroundColor="#353A41" Padding="10">
+        <StackLayout.Resources>
+            <ResourceDictionary>
+                <Converter:IsLikedPost x:Key="isLiked"/>
+            </ResourceDictionary>
+        </StackLayout.Resources>
+        <Frame HasShadow="True" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" Padding="0,5,0,5">
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Fill">
+                    <ffimageloading:CachedImage HeightRequest="40" WidthRequest="40" DownsampleUseDipUnits="false" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding user.image}" Margin="5,0,5,0">
+                        <ffimageloading:CachedImage.Transformations>
+                            <fftransformations:CircleTransformation />
+                        </ffimageloading:CachedImage.Transformations>
+                    </ffimageloading:CachedImage>
+                    <Label FontAttributes="Bold" FontSize="Medium" TextColor="Black" Text="{Binding user.first_name}" VerticalOptions="Center" />
+                    <Label Text="123" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,15,0" />
+                </StackLayout>
+                <Image Source="{Binding image}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" WidthRequest="10000" HeightRequest="200" Aspect="AspectFill" />
+                <Label TextColor="#AFB4BB" Margin="10,0,5,0" Text="{Binding body}" FontSize="Small" HorizontalOptions="Fill">
+                </Label>
+                <BoxView HeightRequest="0.3" Color="#AFB4BB">
+                </BoxView>
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLikePost" NumberOfTapsRequired="1" />
+                        </StackLayout.GestureRecognizers>
+                        <Image x:Name="corazon" Source="{Binding is_liked, Converter={StaticResource isLiked}}" Margin="5,5,0,5" WidthRequest="25" HeightRequest="25" />
+                        <Label Margin="0,5,20,5" FontAttributes="Bold" Text="{Binding like_count}" TextColor="Gray" VerticalOptions="Center" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" ClassId="{Binding Path=(ListView.AlternationIndex)}">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnCommentPost" NumberOfTapsRequired="1" />
+                        </StackLayout.GestureRecognizers>
+                        <ffimageloading:CachedImage HeightRequest="25" WidthRequest="25" DownsampleUseDipUnits="false" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="comment.png" />
+                        <Label FontAttributes="Bold" Text="{Binding comments_count}" TextColor="Gray" VerticalOptions="Center" Margin="0,0,5,0" />
+                        <!-- Aqui va el comentario -->
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ViewCell>

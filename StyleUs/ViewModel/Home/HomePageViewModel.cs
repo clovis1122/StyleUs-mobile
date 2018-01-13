@@ -13,6 +13,8 @@ using System.Collections.ObjectModel;
 using StyleUs.Models;
 using StyleUs.Services;
 using System.Collections.Generic;
+using System.Linq;
+using StyleUs.Models;
 
 namespace StyleUs.ViewModel {
 
@@ -20,51 +22,42 @@ namespace StyleUs.ViewModel {
     public class HomePageViewModel : INotifyPropertyChanged
     {
         public ObservableCollection<Post> _PostList = new ObservableCollection<Post>();
-        public Boolean hasLike = false;
-        public String LikeIcon { get; set; }
-
 
         public ObservableCollection<Post> PostList {
             get { return _PostList; }
             set { _PostList = value; }
         }
 
-
-        public ICommand AddCommentView { get; set; }
-        public ICommand SeeCommentView { get; set; }
-        public ICommand LikeComment { get; set; }
+        public ICommand OnLike { get; set; }
+        public ICommand OnComment { get; set; }
 
         public INavigationService navigation;
 
         public HomePageViewModel(INavigationService navigationService)
         {
             navigation = navigationService;
-            AddCommentView = new Command(GoToAddComment);
-            SeeCommentView = new Command(GoToSeeComment);
-            LikeComment = new Command(ChangeLikeIcon);
-            LikeIcon = "heart_dark.png";
+            OnLike = new Command(OnLikePost);
+            OnComment = new Command(OnCommentPost);
 
             fetchPosts();
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnLikePost(object _post) {
+            var post = _post as Post;
+            if (post == null) return;
 
-        public void ChangeLikeIcon()
-        {
-            
-            hasLike = !hasLike;
-            LikeIcon = hasLike ? "heart_red.png" : "heart_dark.png";
         }
 
-        public void GoToAddComment()
+        public void OnCommentPost(object _post)
         {
-            navigation.NavigateAsync("AddCommentPage");
-        }
+            var post = _post as Post;
+            if (post == null) return;
 
-        public void GoToSeeComment()
-        {
             navigation.NavigateAsync("Comments");
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
 
         public async void fetchPosts() 
         {

@@ -109,6 +109,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Home\HomePost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountManager.cs" />
@@ -255,6 +259,10 @@
     <Compile Include="ViewModel\Profile\ShowProfilePageViewModel.cs" />
     <Compile Include="View\Profile\ShowProfilePage.xaml.cs">
       <DependentUpon>ShowProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\IsLikedPost.cs" />
+    <Compile Include="View\Home\HomePost.xaml.cs">
+      <DependentUpon>HomePost.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

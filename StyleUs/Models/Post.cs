@@ -10,5 +10,6 @@ namespace StyleUs.Models
         public int like_count { get; set; }
         public string clothe { get; set; }
         public int comments_count { get; set; }
+        public bool is_liked { get; set; }
     }
 }
