@@ -63,7 +63,7 @@
                     DownsampleUseDipUnits="false" 
                     LoadingPlaceholder="image_loading.png"
                     ErrorPlaceholder="image_error.png" 
-                    Source="ProfileImage.JPG"
+                    Source="{Binding user.image}"
                     Margin="5,0,5,0"
                     HorizontalOptions="CenterAndExpand">
                     <ffimageloading:CachedImage.Transformations>
@@ -84,7 +84,7 @@
                    
                    <StackLayout Padding="0,10" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                    <Image Source="profile_gray.png" Margin="0,0,30,0"/>
-                    <Label Text="Adeury Cammilo" /> 
+                    <Label Text="{Binding user.full_name}" /> 
                     </StackLayout>
                     
                     <StackLayout Padding="0,10" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
@@ -94,12 +94,12 @@
 
                     <StackLayout Padding="0,10" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                    <Image Source="email.png" Margin="0,0,30,0"/>
-                    <Label Text="adeury09@gmail.com" /> 
+                    <Label Text="{Binding user.email}" /> 
                     </StackLayout>
 
                     <StackLayout Padding="0,10" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                    <Image Source="phone_gray.png" Margin="0,0,30,0"/>
-                    <Label Text="8098045245" /> 
+                    <Label Text="{Binding user.phone}" /> 
                     </StackLayout>
 
 

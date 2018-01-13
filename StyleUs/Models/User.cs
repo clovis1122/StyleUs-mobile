@@ -1,4 +1,6 @@
 ﻿using System;
+using Newtonsoft.Json;
+
 namespace StyleUs.Models
 {
     public class User
@@ -13,5 +15,17 @@ namespace StyleUs.Models
         public string token { get; set; }
         public string created_at { get; set; }
         public string updated_at { get; set; }
+
+        [JsonIgnore]
+        public string full_name {
+            get {
+                return first_name + " " + last_name;
+            }
+        }
+        public string phone { get; set; } = "809-000-0000";
+
+        public object clone() {
+            return this.MemberwiseClone();
+        }
     }
 }

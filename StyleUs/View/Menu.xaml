@@ -116,7 +116,7 @@
 
                     <StackLayout HorizontalOptions="Start" VerticalOptions="CenterAndExpand">
 
-                        <Label Text="{Binding user.first_name}" TextColor="White" FontSize="Large"
+                        <Label Text="{Binding user.full_name}" TextColor="White" FontSize="Large"
                         FontAttributes="Bold">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding perfil}" NumberOfTapsRequired="1" />

@@ -17,7 +17,7 @@ using StyleUs.Services;
 
 namespace StyleUs.ViewModel
 {
-    public class MenuPageViewModel : INotifyPropertyChanged
+    public class MenuPageViewModel : INotifyPropertyChanged, INavigationAware
     {
         public ICommand pieza { get; set; }
         public ICommand conjunto { get; set; }
@@ -74,7 +74,10 @@ namespace StyleUs.ViewModel
 
         public void OnPerfilClick()
         {
-            navigation.NavigateAsync("ProfilePage");
+            var navParameters = new NavigationParameters();
+            navParameters.Add("user", user);
+
+            navigation.NavigateAsync("ProfilePage",navParameters);
         }
 
         public void OnPiezasClick()
@@ -97,6 +100,34 @@ namespace StyleUs.ViewModel
             Application.Current.Properties.Clear();
             await Application.Current.SavePropertiesAsync();
             navigation.NavigateAsync("Login");
+        }
+
+        // INavigationAware
+
+        public void OnNavigatedFrom(NavigationParameters parameters)
+        {
+            // When you go out
+        }
+
+        public void OnNavigatedTo(NavigationParameters parameters)
+        {
+            var newUser = parameters["user"] as User;
+
+            if (newUser != null)
+            {
+                user = newUser as User;
+                return;
+            }
+
+            if (user == null)
+            {
+                onGetUserProfile();
+            }
+        }
+
+        public void OnNavigatingTo(NavigationParameters parameters)
+        {
+            // todo
         }
     }
 }

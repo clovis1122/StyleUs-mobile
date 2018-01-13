@@ -31,7 +31,6 @@
     <EmbeddedResource Include="App.xaml" />
     <EmbeddedResource Include="View\ForgotPasswordPage.xaml" />
     <EmbeddedResource Include="View\NotificationPage.xaml" />
-    <EmbeddedResource Include="View\ProfilePage.xaml" />
     <EmbeddedResource Include="View\Component\SmallPost.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -79,10 +78,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\EditProfilePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\PictureUpload\AddPicturePost.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
@@ -94,10 +89,6 @@
     <EmbeddedResource Include="View\Authentication\LoginPage.xaml" />
     <EmbeddedResource Include="View\Authentication\RegisterStepOnePage.xaml" />
     <EmbeddedResource Include="View\Authentication\RegisterStepTwoPage.xaml" />
-    <EmbeddedResource Include="View\ShowProfilePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\AboutUsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -107,6 +98,15 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Home\HomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Profile\EditProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Profile\ProfilePage.xaml" />
+    <EmbeddedResource Include="View\Profile\ShowProfilePage.xaml">
+      <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -148,9 +148,6 @@
     <Compile Include="View\NotificationPage.xaml.cs">
       <DependentUpon>NotificationPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ProfilePage.xaml.cs">
-      <DependentUpon>View\ProfilePage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ViewModel\ForgotPasswordPageViewModel.cs" />
     <Compile Include="View\Component\SmallPost.xaml.cs">
       <DependentUpon>SmallPost.xaml</DependentUpon>
@@ -162,7 +159,6 @@
     <Compile Include="ViewModel\ClothPieceViewModel.cs" />
     <Compile Include="ViewModel\NotificationViewModel.cs" />
     <Compile Include="ViewModel\FriendViewModel.cs" />
-    <Compile Include="ViewModel\ProfileViewModel.cs" />
     <Compile Include="ViewModel\Component\FloatingMenuViewModel.cs" />
     <Compile Include="View\ClothPieces\ClothPiecePage.xaml.cs">
       <DependentUpon>ClothPiecePage.xaml</DependentUpon>
@@ -218,7 +214,6 @@
     <Compile Include="View\Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\MenuViewModel.cs" />
     <Compile Include="Services\UserServices.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Services\CommentServices.cs" />
@@ -237,14 +232,6 @@
     <Compile Include="ViewModel\Authentication\LoginPageViewModel.cs" />
     <Compile Include="ViewModel\Authentication\RegisterStepOnePageViewModel.cs" />
     <Compile Include="ViewModel\Authentication\RegisterStepTwoPageViewModel.cs" />
-    <Compile Include="View\ShowProfilePage.xaml.cs">
-      <DependentUpon>ShowProfilePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\EditProfilePage.xaml.cs">
-      <DependentUpon>EditProfilePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewModel\EditProfilePageViewModel.cs" />
-    <Compile Include="ViewModel\ShowProfilePageViewModel.cs" />
     <Compile Include="View\AboutUsPage.xaml.cs">
       <DependentUpon>AboutUsPage.xaml</DependentUpon>
     </Compile>
@@ -257,6 +244,18 @@
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\Home\HomePageViewModel.cs" />
+    <Compile Include="View\Profile\EditProfilePage.xaml.cs">
+      <DependentUpon>EditProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Profile\ProfilePage.xaml.cs">
+      <DependentUpon>..\View\ProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\Profile\ProfileViewModel.cs" />
+    <Compile Include="ViewModel\Profile\EditProfilePageViewModel.cs" />
+    <Compile Include="ViewModel\Profile\ShowProfilePageViewModel.cs" />
+    <Compile Include="View\Profile\ShowProfilePage.xaml.cs">
+      <DependentUpon>ShowProfilePage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">
@@ -374,6 +373,8 @@
     <Folder Include="ViewModel\Posts\" />
     <Folder Include="View\Home\" />
     <Folder Include="ViewModel\Home\" />
+    <Folder Include="View\Profile\" />
+    <Folder Include="ViewModel\Profile\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="View\MainTabbedPage.xaml">
