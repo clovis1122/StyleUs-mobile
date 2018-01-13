@@ -9,9 +9,14 @@
     Padding="0,20,0,0"
     BackgroundColor="White">
 	<ContentPage.Content>
-      <StackLayout HorizontalOptions="FillAndExpand">
+       
+      <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="White">
 
-
+        <StackLayout  BackgroundColor="#A8AFB8" >
+            <Label Text="Notificaciones" TextColor="Black" Margin="10"
+                    FontAttributes="Bold" FontSize="Large" HorizontalOptions="CenterAndExpand"/>
+        </StackLayout>
+            
          <ListView HasUnevenRows="true" ItemsSource="{Binding notificationList}">
            <ListView.ItemTemplate>
              <DataTemplate >

@@ -6,6 +6,7 @@
     x:Class="StyleUs.View.Users.FollowerLists"
     Padding="0,20,0,0"
     NavigationPage.HasNavigationBar="True"
+    BackgroundColor="White"
     >
     <ContentPage.Resources>
        <ResourceDictionary>
@@ -21,11 +22,15 @@
     </ContentPage.Resources>
 	<ContentPage.Content>
 
-      <StackLayout HorizontalOptions="FillAndExpand">
-
-             <Button Image="backIcon.png" HorizontalOptions="Start"
-                        Command="{Binding back}" Style="{StaticResource iconosBotones}"/>
+      <StackLayout HorizontalOptions="FillAndExpand" >
+        <Grid BackgroundColor="#A8AFB8" >
                 
+            <Button Image="backIcon.png" HorizontalOptions="Start"
+                            Command="{Binding back}" Style="{StaticResource iconosBotones}"/>
+                <Label Text="Seguidores" FontAttributes="Bold" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                
+        </Grid>
+              
          <SearchBar Placeholder="buscar" />
          <ListView ItemsSource="{Binding followerList}" >
            <ListView.ItemTemplate>

@@ -19,7 +19,8 @@
         <ScrollView>
         <StackLayout Orientation="Vertical" BackgroundColor="White">
 
-            <Label Text="Subir foto" TextColor="Red" ></Label>
+            <Label Text="Subir foto" TextColor="Red" FontAttributes="Bold" 
+                HorizontalOptions="CenterAndExpand" VerticalOptions="Center" FontSize="Large" ></Label>
 
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Fill"  >
 
