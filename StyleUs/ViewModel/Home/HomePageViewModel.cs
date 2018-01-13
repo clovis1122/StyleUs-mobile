@@ -28,6 +28,7 @@ namespace StyleUs.ViewModel {
 
         public ICommand AddCommentView { get; set; }
         public ICommand SeeCommentView { get; set; }
+
         public INavigationService navigation;
 
         public HomePageViewModel(INavigationService navigationService)
@@ -48,22 +49,22 @@ namespace StyleUs.ViewModel {
 
         public void GoToSeeComment()
         {
-            navigation.NavigateAsync("ViewComments");
+            navigation.NavigateAsync("Comments");
         }
 
         public async void fetchPosts() 
         {
-            try
-            {
-                var posts = await PostServices.fetchPosts();
+            //try
+            //{
+            //    var posts = await PostServices.fetchPosts();
 
-                if (posts.Key)
-                {
-                    PostList = new ObservableCollection<Post>(posts.Value as List<Post>);
-                }
-            }
-            catch (Exception e)
-            {
+            //    if (posts.Key)
+            //    {
+            //        PostList = new ObservableCollection<Post>(posts.Value as List<Post>);
+            //    }
+            //}
+            //catch (Exception e)
+            //{
                 for (int i = 0; i < 5; i++)
                 {
                     var post = new Post();
@@ -83,7 +84,7 @@ namespace StyleUs.ViewModel {
 
                     PostList.Add(post);
                 }
-            }
+            //}
         }
 
     }
