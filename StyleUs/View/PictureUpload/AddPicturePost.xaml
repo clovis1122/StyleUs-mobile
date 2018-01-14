@@ -45,8 +45,13 @@
                 <Image Source="{Binding image}" />
             </Frame>
             <StackLayout BackgroundColor="Black" VerticalOptions="Fill">
-                <Editor Text="{Binding body, Mode=TwoWay}" BackgroundColor="White" Margin="2" />
+                <Entry Text="{Binding body, Mode=TwoWay}" Placeholder="Descripcion" BackgroundColor="White" Margin="2" />
             </StackLayout>
+
+             <StackLayout Orientation="Horizontal" IsVisible="{Binding showSubmit}">
+                 <Label Text="Pieza / Conjunto"/>
+                    <Switch />
+             </StackLayout>
                 
            <StackLayout Orientation="Horizontal">
                <Button
@@ -64,7 +69,9 @@
                 Margin="10"
                 HorizontalOptions="Fill"
                 BorderRadius="50" BorderWidth="2" BorderColor="White" VerticalOptions="Center" />
-            </StackLayout>
+
+              </StackLayout>
+
                 
         </StackLayout>
             </ScrollView>

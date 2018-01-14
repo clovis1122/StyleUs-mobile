@@ -7,6 +7,7 @@ using Prism.Navigation;
 
 using StyleUs.View;
 using StyleUs.ViewModel;
+using StyleUs.View.Users;
 
 namespace StyleUs
 {
@@ -75,7 +76,7 @@ namespace StyleUs
             Container.RegisterTypeForNavigation<View.Menu,MenuPageViewModel>("MenuPage");
             Container.RegisterTypeForNavigation<View.ShowProfilePage,ShowProfilePageViewModel>("ShowProfilePage");
             Container.RegisterTypeForNavigation<View.EditProfilePage, ViewModel.EditProfilePageViewModel>("EditProfilePage");
-
+            Container.RegisterTypeForNavigation<View.Users.FollowerListsProfile, ViewModel.Users.FollowersListViewModel >("FollowerListsProfile");
         }
 
 		protected override void OnStart()

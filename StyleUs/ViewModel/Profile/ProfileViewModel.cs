@@ -92,7 +92,7 @@ namespace StyleUs.ViewModel
 
         public void OnFollowersClick()
         {
-            navigation.NavigateAsync("FollowerLists");
+            navigation.NavigateAsync("FollowerListsProfile");
 
         }
 
