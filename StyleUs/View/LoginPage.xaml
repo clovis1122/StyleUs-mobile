@@ -48,10 +48,10 @@
             <StackLayout
                 x:Name="content"
                 Opacity="0"
-                AbsoluteLayout.LayoutBounds="1,1,1,0.75"
+                AbsoluteLayout.LayoutBounds="1,1,1,0.65"
                 AbsoluteLayout.LayoutFlags="All">
 
-                <Grid  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" ColumnSpacing="0" RowSpacing="10">
+                <!--<Grid  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" ColumnSpacing="0" RowSpacing="10">
                     <Grid.RowDefinitions>
   
                         <RowDefinition Height="20"/>
@@ -86,11 +86,37 @@
                     <Button Command="{Binding register}" Text="Registrarse" TextColor="{StaticResource dark}" BackgroundColor="{StaticResource white}" Margin="0,01" BorderRadius="22" BorderWidth="2" BorderColor="{StaticResource dark}" Grid.Column="1" Grid.Row="5" />
 
 
-                    </Grid>
+                    </Grid>-->
 
 
-               
-               
+                <Label Text="Bienvenido" FontSize="16" HorizontalOptions="Center" Margin="0,15" />
+
+                <StackLayout Orientation="Horizontal"  Margin="0,0,0,20" >
+
+                    <Image Source="email.png" HeightRequest="20" WidthRequest="20"  />
+                    <Entry Text="{Binding email}" Placeholder="Correo electronico" TextColor="White" PlaceholderColor="{StaticResource grayMedium}}" Keyboard="Email" Margin="0.8" HorizontalOptions="FillAndExpand" MinimumHeightRequest="5" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal"   >
+                    <Image Source="password.png"  HeightRequest="20" WidthRequest="20"  />
+                    <Entry Text="{Binding password}" Placeholder="Contraseña" TextColor="{StaticResource white}" IsPassword="true" PlaceholderColor="{StaticResource grayMedium}" Margin="0" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+
+
+
+
+                <Label BackgroundColor="{StaticResource dark}"  VerticalOptions="Center" TextColor="{StaticResource grayMedium}" Text="Olvidé mi contraseña"  HorizontalOptions="Center" Margin="0" ></Label>
+
+
+                <Button Command="{Binding login}" Text="Iniciar" BackgroundColor="{StaticResource dark}" Margin= "0,5"  BorderRadius="22" BorderWidth="2" BorderColor="{StaticResource white}" VerticalOptions="EndAndExpand"/>
+
+
+                <Button Command="{Binding register}" Text="Registrarse" TextColor="{StaticResource dark}" Margin="0,0,0,10" BackgroundColor="{StaticResource white}"  BorderRadius="22" BorderWidth="2" BorderColor="{StaticResource dark}" VerticalOptions="End"  />
+
+
+
+
+
 
             </StackLayout>
 
