@@ -40,9 +40,9 @@
                         </FormattedString.Spans>
                     </FormattedString>
                 </Label.FormattedText>
-                <Label.Effects>
+                <!--<Label.Effects>
                     <effect:ShadowEffect Color="Black" Radius="1" DistanceX="3" DistanceY="5" />
-                </Label.Effects>
+                </Label.Effects>-->
             </Label>
 
             <StackLayout
@@ -119,18 +119,33 @@
                 <StackLayout Orientation="Horizontal"  Margin="0,0,0,20" >
 
                     <Image Source="mail.png" HeightRequest="20" WidthRequest="20"  />
-                    <Entry Text="{Binding email}" Placeholder="Correo electronico" TextColor="White" PlaceholderColor="{StaticResource grayMedium}}" Keyboard="Email" Margin="0.8" HorizontalOptions="FillAndExpand" MinimumHeightRequest="5" />
+                    <Entry Text="{Binding email}" 
+                           Placeholder="Correo electronico" 
+                           BackgroundColor="Transparent"  
+                           TextColor="{StaticResource white}" 
+                           PlaceholderColor="{StaticResource grayMedium}" 
+                           Keyboard="Email" 
+                           Margin="0.8"
+                           HorizontalOptions="FillAndExpand"
+                           MinimumHeightRequest="5" />
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal"   >
                     <Image Source="password.png"  HeightRequest="20" WidthRequest="20"  />
-                    <Entry Text="{Binding password}" Placeholder="Contraseña" TextColor="{StaticResource white}" IsPassword="true" PlaceholderColor="{StaticResource grayMedium}" Margin="0" HorizontalOptions="FillAndExpand" />
+                    <Entry Text="{Binding password}" 
+                           Placeholder="Contraseña" 
+                           BackgroundColor="Transparent" 
+                           TextColor="{StaticResource white}" 
+                           IsPassword="true" 
+                           PlaceholderColor="{StaticResource grayMedium}"
+                           Margin="0" 
+                           HorizontalOptions="FillAndExpand" />
                 </StackLayout>
 
 
 
 
-                <Label BackgroundColor="{StaticResource dark}"  VerticalOptions="Center" TextColor="{StaticResource grayMedium}" Text="Olvidé mi contraseña"  HorizontalOptions="Center" Margin="0" ></Label>
+                <Label BackgroundColor="{StaticResource dark}"   VerticalOptions="Center" TextColor="{StaticResource grayMedium}" Text="Olvidé mi contraseña"  HorizontalOptions="Center" Margin="0" ></Label>
 
 
                 <Button Command="{Binding login}" Text="Iniciar" BackgroundColor="{StaticResource dark}" Margin= "0,5"  BorderRadius="22" BorderWidth="2" BorderColor="{StaticResource white}" VerticalOptions="EndAndExpand"/>
