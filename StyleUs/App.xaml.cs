@@ -25,21 +25,21 @@ namespace StyleUs
 
         protected override void OnInitialized(){
 
-			      InitializeComponent();
+			InitializeComponent();
 
-            string navPage = "LoginPage";
+            string navPage = "/NavigationPage/LoginPage";
 
-            //try {
-            //    // AccountManager.SaveCredentials("Usernames123","Password456");
-            //    if (AccountManager.UserName != null) {
-            //        navPage = "HomePage";
-            //    }
+            try {
+                AccountManager.SaveCredentials("Usernames123","Password456");
+                if (AccountManager.UserName != null) {
+                    navPage = "/MainTabbedPage/HomePage";
+                }
 
-            //} catch(Exception e) {
-            //    // No keychain :(
-            //}
-
-            NavigationService.NavigateAsync(new Uri("/NavigationPage/MainTabbedPage/" + navPage, UriKind.Absolute));
+            } catch(Exception e) {
+                // No keychain :(
+                var du = "a";
+            }
+            NavigationService.NavigateAsync(new Uri(navPage, UriKind.Absolute));
 		}
 
 		protected override void RegisterTypes()
@@ -48,28 +48,29 @@ namespace StyleUs
             Container.RegisterTypeForNavigation<View.Friend.FriendProfile, FriendProfileViewModel>();
             Container.RegisterTypeForNavigation<View.ClothPieces.SingleClothPiece, SingleClothPieceViewModel>();
 
-            Container.RegisterTypeForNavigation<View.HomePage, HomePageViewModel>();
-			      Container.RegisterTypeForNavigation<FriendPage, FriendViewModel>();
-		        Container.RegisterTypeForNavigation<LoginPage, LoginPageViewModel>();
-            Container.RegisterTypeForNavigation<ProfilePage, ProfileViewModel>();
-            Container.RegisterTypeForNavigation<ClothPiecePage, ClothPieceViewModel>();
-            Container.RegisterTypeForNavigation<View.Notification.NotificationList,ViewModel.Notification.NotificationListViewModel>();
+            Container.RegisterTypeForNavigation<View.HomePage, HomePageViewModel>("HomePage");
+            Container.RegisterTypeForNavigation<FriendPage, FriendViewModel>("FriendPage");
+            Container.RegisterTypeForNavigation<LoginPage, LoginPageViewModel>("LoginPage");
+            Container.RegisterTypeForNavigation<ProfilePage, ProfileViewModel>("ProfilePage");
+            Container.RegisterTypeForNavigation<View.ClothPieces.NewClothPage,ViewModel.ClothPieceViewModel>("ClothPieces");
+            Container.RegisterTypeForNavigation<View.Notification.NotificationList,ViewModel.Notification.NotificationListViewModel>("NotificationList");
             Container.RegisterTypeForNavigation<AddCommentPage, AddCommentPageViewModel>();
-            Container.RegisterTypeForNavigation<ForgotPasswordPage,ForgotPasswordPageViewModel>();
-            Container.RegisterTypeForNavigation<ClothCombinationPage, ClothCombinationViewModel>();
+            Container.RegisterTypeForNavigation<ForgotPasswordPage,ForgotPasswordPageViewModel>("ForgotPasswordPage");
+            Container.RegisterTypeForNavigation<ClothCombinationPage, ClothCombinationViewModel>("ClothCombinationPage");
             Container.RegisterTypeForNavigation<RegisterStepOnePage, RegisterStepOnePageViewModel>();
             Container.RegisterTypeForNavigation<RegisterStepTwoPage, RegisterStepTwoPageViewModel>();
             Container.RegisterTypeForNavigation<AddCommentPage,AddCommentPageViewModel>();
             Container.RegisterTypeForNavigation<ViewComments,ViewCommentsViewModel>();
             Container.RegisterTypeForNavigation<AnswersPage,AnswersPageViewModel>();
-            Container.RegisterTypeForNavigation<View.Users.FollowerLists, ViewModel.Users.FollowersListViewModel>();
-            Container.RegisterTypeForNavigation<View.Users.FollowingLists, ViewModel.Users.FollowingListViewModel>();
-            Container.RegisterTypeForNavigation<View.Menu, ViewModel.MenuViewModel>();
-            Container.RegisterTypeForNavigation<View.AddPicturePost, AddPicturePostViewModel>();
-            Container.RegisterTypeForNavigation<View.Comments, CommentsViewModel>();
-            Container.RegisterTypeForNavigation<AddCameraButton, AddCameraButtonViewModel>();
+            Container.RegisterTypeForNavigation<View.Users.FollowerLists, ViewModel.Users.FollowersListViewModel>("FollowerLists");
+            Container.RegisterTypeForNavigation<View.Users.FollowingLists, ViewModel.Users.FollowingListViewModel>("FollowingLists");
+            Container.RegisterTypeForNavigation<View.AddPicturePost, AddPicturePostViewModel>("AddPicturePost");
+            Container.RegisterTypeForNavigation<View.Comments, CommentsViewModel>("Comments");
+            Container.RegisterTypeForNavigation<AddCameraButton, AddCameraButtonViewModel>("AddCameraButton");
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainTabbedPage>();
+            Container.RegisterTypeForNavigation<AboutUsPage,AboutUsPageViewModel>("AboutUsPage");
+            Container.RegisterTypeForNavigation<MenuPage,MenuPageViewModel>("MenuPage");
         }
 
 		protected override void OnStart()

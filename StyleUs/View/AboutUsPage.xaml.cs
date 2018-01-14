@@ -5,12 +5,13 @@ using Xamarin.Forms;
 
 namespace StyleUs.View
 {
-    public partial class ClothCombinationPage : TabbedPage
+    public partial class AboutUsPage : ContentPage
     {
-        public ClothCombinationPage()
+        public AboutUsPage()
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
+            
 
         }
     }
