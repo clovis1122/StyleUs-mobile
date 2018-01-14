@@ -4,11 +4,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
     x:Class="StyleUs.View.Users.FollowerLists"
-    Padding="0,20,0,0"
     NavigationPage.HasNavigationBar="True"
-    BackgroundColor="White"
+    BackgroundColor="#A8AFB8"
     >
     <ContentPage.Resources>
+        
        <ResourceDictionary>
              <Style x:Key="iconosBotones" TargetType="Label">
                 <Setter Property="HorizontalOptions" Value="Start"/>
@@ -19,11 +19,31 @@
                 <Setter Property="MinimumWidthRequest" Value="40"/>
              </Style>
         </ResourceDictionary>
+        
     </ContentPage.Resources>
+
+    <!--<ContentPage.BackgroundColor>
+        <OnPlatform x:TypeArguments="Thickness">
+            <OnPlatform.Platforms>
+                <On Platform="iOS" Value="#A8AFB8" />
+                <On Platform="Android" Value="White" />
+            </OnPlatform.Platforms>
+        </OnPlatform>
+    </ContentPage.BackgroundColor>-->
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <OnPlatform.Platforms>
+                <On Platform="iOS" Value="0, 20, 0, 0" />
+                <On Platform="Android" Value="0, 0, 0, 0" />
+            </OnPlatform.Platforms>
+        </OnPlatform>
+    </ContentPage.Padding>
+    
 	<ContentPage.Content>
 
-      <StackLayout HorizontalOptions="FillAndExpand" >
-        <Grid BackgroundColor="#A8AFB8" >
+      <StackLayout HorizontalOptions="FillAndExpand"  >
+        <Grid >
                 
             <Button Image="backIcon.png" HorizontalOptions="Start"
                             Command="{Binding back}" Style="{StaticResource iconosBotones}"/>
@@ -31,8 +51,18 @@
                 
         </Grid>
               
-         <SearchBar Placeholder="buscar" />
-         <ListView ItemsSource="{Binding followerList}" >
+         <SearchBar Placeholder="buscar" Margin="2"  >
+            <!--<SearchBar.BackgroundColor>
+                    
+            <OnPlatform.Platforms>
+                <On Platform="iOS" Value="Transparent" />
+                <On Platform="Android" Value="White" />
+            </OnPlatform.Platforms>
+                    
+            </SearchBar.BackgroundColor>-->
+
+            </SearchBar>
+         <ListView ItemsSource="{Binding followerList}" BackgroundColor="White">
            <ListView.ItemTemplate>
              <DataTemplate >
                <ImageCell
