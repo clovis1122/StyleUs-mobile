@@ -65,9 +65,24 @@
                         <StackLayout Padding="0,05" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                             <Image Source="password_gray.png" Margin="0,0,30,0" />
                             <StackLayout BackgroundColor="Black" HorizontalOptions="FillAndExpand">
-                                <Entry Text="........" IsPassword="true" BackgroundColor="White" Margin="1" HorizontalOptions="FillAndExpand" />
+                                <Entry Placeholder="Clave actual" IsPassword="true" BackgroundColor="White" Margin="1" HorizontalOptions="FillAndExpand" />
                             </StackLayout>
                         </StackLayout>
+                        
+                        <StackLayout Padding="0,05" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Image Source="password_gray.png" Margin="0,0,30,0" />
+                            <StackLayout BackgroundColor="Black" HorizontalOptions="FillAndExpand">
+                                <Entry Placeholder="Nueva Clave" IsPassword="true" BackgroundColor="White" Margin="1" HorizontalOptions="FillAndExpand" />
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Padding="0,05" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Image Source="password_gray.png" Margin="0,0,30,0" />
+                            <StackLayout BackgroundColor="Black" HorizontalOptions="FillAndExpand">
+                                <Entry Placeholder="Repetir nueva Clave" IsPassword="true" BackgroundColor="White" Margin="1" HorizontalOptions="FillAndExpand" />
+                            </StackLayout>
+                        </StackLayout>
+                        
                     </StackLayout>
                     <StackLayout Orientation="Horizontal" Margin="20" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
                         <Button HorizontalOptions="FillAndExpand" Text="Cancel" BackgroundColor="Gray" BorderRadius="20" Command="{Binding cancel}" />
