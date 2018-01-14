@@ -14,46 +14,27 @@ using StyleUs.Models;
 using StyleUs.Services;
 using System.Collections.Generic;
 using System.Linq;
-using StyleUs.Models;
+
 
 namespace StyleUs.ViewModel {
 
 
     public class HomePageViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<Post> _PostList = new ObservableCollection<Post>();
+        public ObservableCollection<HomePostViewModel> _PostList = new ObservableCollection<HomePostViewModel>();
 
-        public ObservableCollection<Post> PostList {
+        public ObservableCollection<HomePostViewModel> PostList {
             get { return _PostList; }
             set { _PostList = value; }
         }
-
-        public ICommand OnLike { get; set; }
-        public ICommand OnComment { get; set; }
 
         public INavigationService navigation;
 
         public HomePageViewModel(INavigationService navigationService)
         {
             navigation = navigationService;
-            OnLike = new Command(OnLikePost);
-            OnComment = new Command(OnCommentPost);
 
             fetchPosts();
-        }
-
-        public void OnLikePost(object _post) {
-            var post = _post as Post;
-            if (post == null) return;
-
-        }
-
-        public void OnCommentPost(object _post)
-        {
-            var post = _post as Post;
-            if (post == null) return;
-
-            navigation.NavigateAsync("Comments");
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -89,7 +70,9 @@ namespace StyleUs.ViewModel {
                     post.id = 1;
                     post.user = user;
 
-                    PostList.Add(post);
+                    PostList.Add(new HomePostViewModel(navigation) {
+                        Post = post
+                    });
                 }
             //}
         }

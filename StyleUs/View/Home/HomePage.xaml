@@ -15,10 +15,7 @@
                 <ListView ItemsSource="{Binding PostList}" HasUnevenRows="True" SeparatorVisibility="None">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <posts:HomePost 
-                                OnLike="{Binding Path=BindingContext.OnLike, Source={x:Reference HomePage}}" 
-                                OnComment="{Binding Path=BindingContext.OnComment, Source={x:Reference HomePage}}" 
-                            />
+                            <posts:HomePost />
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
