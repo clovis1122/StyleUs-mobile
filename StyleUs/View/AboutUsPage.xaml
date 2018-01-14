@@ -6,8 +6,8 @@
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
     prism:ViewModelLocator.AutowireViewModel="true"
     NavigationPage.HasNavigationBar="true"
-    Title="Sobre Nosotros"
-    Padding="0,20,0,0">
+    Title="Sobre Nosotros">
+    
      <ContentPage.Resources>
         <ResourceDictionary>
              <Style x:Key="iconosBotones" TargetType="Label">
@@ -20,7 +20,16 @@
              </Style> 
         </ResourceDictionary>
     </ContentPage.Resources>
-    <!--Padding="0,40,0,0"-->
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <OnPlatform.Platforms>
+                <On Platform="iOS" Value="0, 20, 0, 0" />
+                <On Platform="Android" Value="0, 0, 0, 0" />
+            </OnPlatform.Platforms>
+        </OnPlatform>
+    </ContentPage.Padding>
+    
     <ContentPage.Content>
 
         <Grid RowSpacing="20" BackgroundColor="#e9eaed">

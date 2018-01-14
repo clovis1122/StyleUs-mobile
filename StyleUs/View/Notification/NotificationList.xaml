@@ -6,8 +6,17 @@
     x:Class="StyleUs.View.Notification.NotificationList"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
-    Padding="0,20,0,0"
     BackgroundColor="White">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <OnPlatform.Platforms>
+                <On Platform="iOS" Value="0, 20, 0, 0" />
+                <On Platform="Android" Value="0, 0, 0, 0" />
+            </OnPlatform.Platforms>
+        </OnPlatform>
+    </ContentPage.Padding>
+    
 	<ContentPage.Content>
        
       <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="White">
