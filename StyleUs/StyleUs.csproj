@@ -113,6 +113,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\FollowerListsProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountManager.cs" />
@@ -265,6 +269,9 @@
       <DependentUpon>HomePost.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\Home\HomePostViewModel.cs" />
+    <Compile Include="View\Users\FollowerListsProfile.xaml.cs">
+      <DependentUpon>FollowerListsProfile.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">
