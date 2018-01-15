@@ -118,7 +118,7 @@
 
                 <StackLayout Orientation="Horizontal"  Margin="0,0,0,20" >
 
-                    <Image Source="mail.png" HeightRequest="20" WidthRequest="20"  />
+                    <Image Source="mail.png" HeightRequest="2" WidthRequest="2"  />
                     <Entry Text="{Binding email}" 
                            Placeholder="Correo electronico" 
                            BackgroundColor="Transparent"  
@@ -142,6 +142,10 @@
                            Margin="0" 
                            HorizontalOptions="FillAndExpand" />
                 </StackLayout>
+                
+                
+                
+                
 
 
 
