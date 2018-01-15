@@ -127,7 +127,8 @@
                            Keyboard="Email" 
                            Margin="0.8"
                            HorizontalOptions="FillAndExpand"
-                           MinimumHeightRequest="5" />
+                           MinimumHeightRequest="5"
+                           />
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal"   >
@@ -145,7 +146,7 @@
 
 
 
-                <Label BackgroundColor="{StaticResource dark}"   VerticalOptions="Center" TextColor="{StaticResource grayMedium}" Text="Olvidé mi contraseña"  HorizontalOptions="Center" Margin="0" ></Label>
+                <Label   VerticalOptions="Center" TextColor="{StaticResource grayMedium}" Text="Olvidé mi contraseña"  HorizontalOptions="Center" Margin="0" ></Label>
 
 
                 <Button Command="{Binding login}" Text="Iniciar" BackgroundColor="{StaticResource dark}" Margin= "0,5"  BorderRadius="22" BorderWidth="2" BorderColor="{StaticResource white}" VerticalOptions="EndAndExpand"/>
