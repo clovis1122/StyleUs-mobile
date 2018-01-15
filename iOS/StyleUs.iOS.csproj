@@ -330,6 +330,8 @@
     <BundleResource Include="Resources\comment.png" />
     <BundleResource Include="Resources\heart_dark.png" />
     <BundleResource Include="Resources\heart_red.png" />
+    <BundleResource Include="Resources\back_white.png" />
+    <BundleResource Include="Resources\x_white.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\LikeHeartIcon.png" />

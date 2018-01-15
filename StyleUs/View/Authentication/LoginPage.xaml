@@ -119,12 +119,12 @@
                 <StackLayout Orientation="Horizontal"  Margin="0,0,0,20" >
 
                     <Image Source="mail.png" HeightRequest="20" WidthRequest="20"  />
-                    <Entry Text="{Binding email}" Placeholder="Correo electronico" TextColor="White" PlaceholderColor="{StaticResource grayMedium}}" Keyboard="Email" Margin="0.8" HorizontalOptions="FillAndExpand" MinimumHeightRequest="5" />
+                    <Entry Text="{Binding email}" Placeholder="Correo electronico" TextColor="White" PlaceholderColor="{StaticResource grayMedium}}" Keyboard="Email" Margin="0.8" HorizontalOptions="FillAndExpand" MinimumHeightRequest="5"  BackgroundColor="Transparent" />
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal"   >
                     <Image Source="password.png"  HeightRequest="20" WidthRequest="20"  />
-                    <Entry Text="{Binding password}" Placeholder="Contraseña" TextColor="{StaticResource white}" IsPassword="true" PlaceholderColor="{StaticResource grayMedium}" Margin="0" HorizontalOptions="FillAndExpand" />
+                    <Entry Text="{Binding password}" Placeholder="Contraseña" TextColor="{StaticResource white}" IsPassword="true" PlaceholderColor="{StaticResource grayMedium}" Margin="0" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" />
                 </StackLayout>
 
 

@@ -5,16 +5,44 @@
     x:Class="StyleUs.View.RegisterStepOnePage"
     BackgroundImage="Forget_password_Background.png"
      NavigationPage.HasNavigationBar="false">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+             <Style x:Key="iconosBotones" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HeightRequest" Value="22"/>
+                <Setter Property="WidthRequest" Value="22"/>
+                <Setter Property="MinimumHeightRequest" Value="20"/>
+                <Setter Property="MinimumWidthRequest" Value="20"/>
+             </Style> 
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
 	<ContentPage.Content>
+        
         <ScrollView Orientation="Vertical" Padding="0,0,0,20">
+
+            
+            
                <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
+
+
+                    <Grid Margin="10,10,0,0">
+            <Button Image="x_white.png" VerticalOptions="Start" Margin="20,20,0,0"
+                    Command="{Binding cancel}" Style="{StaticResource iconosBotones}"/>
+                    
+                <Label Text="Registrarse" FontAttributes="Bold" TextColor="White" FontSize="25"
+                    HorizontalOptions="Center" VerticalOptions="End"/>
+             </Grid>
+                
             <StackLayout Orientation="Horizontal" Margin="0,20,0,0" HorizontalOptions="Center">
                 <Label Text="Style " TextColor="Gray" FontSize="80" />
                 <Label Text="US" TextColor="Red" FontSize="80" />
             </StackLayout>
-            <StackLayout Orientation="Horizontal" Margin="0,10,0,0" HorizontalOptions="Center">
+            <!--<StackLayout Orientation="Horizontal" Margin="0,10,0,0" HorizontalOptions="Center">
                 <Label Text="Registrarse" FontAttributes="Bold" TextColor="Gray" FontSize="20" />
-            </StackLayout>
+            </StackLayout>-->
             <StackLayout Orientation="Vertical" Padding="40,10">
                 <Label FontSize="12" TextColor="Gray" Text="Paso 1 de 2: Informacion Basica" />
             </StackLayout>
@@ -35,11 +63,12 @@
                 </Picker>
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="0,40">
-                <StackLayout MinimumWidthRequest="100">
-                     <Button BackgroundColor="Gray" TextColor="White" Text="Cancelar" Command="{Binding cancel}" WidthRequest="140" BorderRadius="22" BorderWidth="2" BorderColor="White"/>
-                </StackLayout>
-                <StackLayout MinimumWidthRequest="100">
-                     <Button BackgroundColor="Gray" TextColor="White" Text="Continuar" Command="{Binding next}" WidthRequest="140" BorderRadius="22" BorderWidth="2" BorderColor="White"/>
+                
+                <StackLayout MinimumWidthRequest="100" >
+                     <Button BackgroundColor="Gray" TextColor="White" Text="Continuar" Command="{Binding next}" 
+                        WidthRequest="240" BorderRadius="22" BorderWidth="2" BorderColor="White"
+                        FontAttributes="Bold"
+                        FontSize="Large"/>
                 </StackLayout>
                
             </StackLayout>
