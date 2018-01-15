@@ -23,7 +23,7 @@
                         </ffimageloading:CachedImage.Transformations>
                     </ffimageloading:CachedImage>
                     <Label FontAttributes="Bold" FontSize="Medium" TextColor="Black" Text="{Binding Post.user.first_name}" VerticalOptions="Center" />
-                    <Label Text="123" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,15,0" />
+                    <Label Text="{Binding Post.created_at}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,15,0" />
                 </StackLayout>
                 <Image Source="{Binding Post.image}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" WidthRequest="10000" HeightRequest="200" Aspect="AspectFill" />
                 <Label TextColor="#AFB4BB" Margin="10,0,5,0" Text="{Binding Post.body}" FontSize="Small" HorizontalOptions="Fill">
@@ -36,14 +36,14 @@
                             <TapGestureRecognizer Command="{Binding OnLike}" NumberOfTapsRequired="1" />
                         </StackLayout.GestureRecognizers>
                         <Image x:Name="corazon" Source="{Binding Post.is_liked, Converter={StaticResource isLiked}}" Margin="5,5,0,5" WidthRequest="25" HeightRequest="25" />
-                        <Label Margin="0,5,20,5" FontAttributes="Bold" Text="{Binding Post.like_count}" TextColor="Gray" VerticalOptions="Center" />
+                        <Label Margin="0,5,20,5" FontAttributes="Bold" Text="{Binding Post.likes_count}" TextColor="Gray" VerticalOptions="Center" />
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding OnComment}" NumberOfTapsRequired="1" />
                         </StackLayout.GestureRecognizers>
                         <ffimageloading:CachedImage HeightRequest="25" WidthRequest="25" DownsampleUseDipUnits="false" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="comment.png" />
-                        <Label FontAttributes="Bold" Text="{Binding Post.comments_count}" TextColor="Gray" VerticalOptions="Center" Margin="0,0,5,0" />
+                        <Label FontAttributes="Bold" Text="{Binding Post.comments.Count}" TextColor="Gray" VerticalOptions="Center" Margin="0,0,5,0" />
                         <!-- Aqui va el comentario -->
                     </StackLayout>
                 </StackLayout>

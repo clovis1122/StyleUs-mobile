@@ -86,7 +86,8 @@ namespace StyleUs.ViewModel
                 var user = res.Value as User;
 
                 Application.Current.Properties["token"] = user.token;
-                Application.Current.SavePropertiesAsync();
+                Application.Current.Properties["user"] = user;
+                await Application.Current.SavePropertiesAsync();
 
                 // Logged in!
 

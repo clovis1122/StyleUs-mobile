@@ -19,7 +19,7 @@ using System.Linq;
 namespace StyleUs.ViewModel {
 
 
-    public class HomePageViewModel : INotifyPropertyChanged
+    public class HomePageViewModel : INotifyPropertyChanged, INavigationAware
     {
         public ObservableCollection<HomePostViewModel> _PostList = new ObservableCollection<HomePostViewModel>();
 
@@ -42,17 +42,26 @@ namespace StyleUs.ViewModel {
 
         public async void fetchPosts() 
         {
-            //try
-            //{
-            //    var posts = await PostServices.fetchPosts();
+            PostList.Clear();
+            try
+            {
+                var posts = await PostServices.fetchPosts();
+                PostList.Clear();
 
-            //    if (posts.Key)
-            //    {
-            //        PostList = new ObservableCollection<Post>(posts.Value as List<Post>);
-            //    }
-            //}
-            //catch (Exception e)
-            //{
+                if (posts.Key)
+                {
+                    var postList = posts.Value as List<Post>;
+
+                    foreach(var post in postList) {
+                        PostList.Add(new HomePostViewModel(navigation)
+                        {
+                            Post = post
+                        });
+                    }
+                }
+            }
+            catch (Exception e)
+            {
                 for (int i = 0; i < 5; i++)
                 {
                     var post = new Post();
@@ -65,8 +74,8 @@ namespace StyleUs.ViewModel {
 
                     post.body = "Prueba";
                     post.image = "icon1.png";
-                    post.comments_count = 5;
-                    post.like_count = 5;
+                    post.comments = new List<Comment>();
+                    post.likes_count = 5;
                     post.id = 1;
                     post.user = user;
 
@@ -74,7 +83,24 @@ namespace StyleUs.ViewModel {
                         Post = post
                     });
                 }
-            //}
+            }
+        }
+
+        // INavigationAware
+        public void OnNavigatedFrom(NavigationParameters parameters)
+        {
+            // When you navigate away from this page
+        }
+
+        public async void OnNavigatedTo(NavigationParameters parameters)
+        {
+            // Reload the posts when the user navigates again to this screen.
+            fetchPosts();
+        }
+
+        public void OnNavigatingTo(NavigationParameters parameters)
+        {
+
         }
 
     }

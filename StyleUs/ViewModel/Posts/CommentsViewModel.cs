@@ -16,13 +16,16 @@ using Prism.Navigation;
 using Prism.Commands;
 using Prism.Events;
 using System.Threading.Tasks;
-
+using StyleUs.Services;
 
 namespace StyleUs.ViewModel
 {
-    public class CommentsViewModel : INotifyPropertyChanged
+    public class CommentsViewModel : INotifyPropertyChanged, INavigationAware
     {
         public DelegateCommand back { get; set; }
+        public ICommand comment { get; set; }
+        private Post post;
+        public string body { get; set; }
 
         readonly INavigationService navigation;
         IEventAggregator events;
@@ -37,8 +40,6 @@ namespace StyleUs.ViewModel
             set{
                 _commentsList = value;
             }
-
-
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -47,86 +48,90 @@ namespace StyleUs.ViewModel
         String[] listadoApellido = new string[] { "Polanco", "Camilo", "Ramirez", "Castillo", "Oviedo", "Luna" };
         static Random random = new Random();
 
-
         public CommentsViewModel(INavigationService navigationService, IEventAggregator eventAgregator)
         {
-            //loadComment();
-            Random random = new Random();
-
-            String[] comentarios = new string[]{
-                "Este es mi comentario, corto para probar",
-                "Aqui voy yo, probando con un comentario mas o menos para ver como crece el campo",
-                "Klk, Damas y caballeros",
-                "Llegue yo, tambien soy parte del grupo, reportanto desde Intec a todo el mundo, activo con mi aplicacion" +
-                "Style Us lo mejor que he podido usar, muy cool"
-            };
-
-            for (int i = 0; i <= 10; i++)
-            {
-                var du = new StyleUs.Models.Comment();
-                du.name = listadoNombre[random.Next(listadoNombre.Length - 1)] + " " +
-                    listadoApellido[random.Next(listadoApellido.Length - 1)];
-                du.time = DateTime.Now.ToString("h:mm");
-                du.descriptionComment = comentarios[random.Next(0, 4)];
-                du.img = "PhotoPerfil" + random.Next(1, 5).ToString();
-                commentsList.Add(du);
-            }
-
-
             navigation = navigationService;
             events = eventAgregator;
 
             back = new DelegateCommand(OnBackClick);
+            comment = new Command(onComment);
         }
-
 
         public void OnBackClick()
         {
             navigation.GoBackAsync();
-
         }
 
-
-
-        public async void loadComment()
+        public void onComment() 
         {
-            
+            User user = null;
 
-            try
-            {
-                var du2 = await CommentServices.get();
-
-                if (du2.Key)
+            if (Application.Current.Properties.ContainsKey("user")) {
+                user = Application.Current.Properties["user"] as User;
+            } else {
+                user = new User()
                 {
-                    commentsList = new ObservableCollection<Comment>(du2.Value as List<Comment>);
-                }
+                    id = "1",
+                    last_name = "John",
+                    first_name = "Doe",
+                };
             }
-            catch
-            {   
-                Random random = new Random();
 
-                String[] comentarios = new string[]{
-                "1 - Este es mi comentario, corto para probar",
-                "2 - Aqui voy yo, probando con un comentario mas o menos para ver como crece el campo",
-                "3 - Klk, Damas y caballeros",
-                "4 - Llegue yo, tambien soy parte del grupo, reportanto desde Intec a todo el mundo, activo con mi aplicacion" +
-                "Style Us lo mejor que he podido usar, muy cool"
+            var com = new Comment()
+            {
+                body = body,
+                user = user,
             };
 
-                for (int i = 0; i <= 10; i++)
-                {
-                    var du = new StyleUs.Models.Comment();
-                    du.name = listadoNombre[random.Next(listadoNombre.Length - 1)] + " " +
-                        listadoApellido[random.Next(listadoApellido.Length - 1)];
-                    du.time = DateTime.Now.ToString("h:mm");
-                    du.descriptionComment = comentarios[random.Next(0, 3)];
-                    du.img = "PhotoPerfil" + random.Next(1, 4).ToString();
-                    commentsList.Add(du);
-                }
+            commentsList.Add(com);
+            post.comments.Add(com);
+
+            try {
+                PostServices.commentPost(post.id, body);
+            } catch { }
+        }
+
+        public void generateComments()
+        {
+            string[] comentarios = new string[]{
+            "1 - Este es mi comentario, corto para probar",
+            "2 - Aqui voy yo, probando con un comentario mas o menos para ver como crece el campo",
+            "3 - Klk, Damas y caballeros",
+            "4 - Llegue yo, tambien soy parte del grupo, reportanto desde Intec a todo el mundo, activo con mi aplicacion" +
+            "Style Us lo mejor que he podido usar, muy cool"
+            };
+            
+            for (int i = 0; i <= 10; i++)
+            {
+                var comment = new StyleUs.Models.Comment();
+                comment.body = "Body!";
+            }
+        }
+
+        // INavigationAware
+        public void OnNavigatedFrom(NavigationParameters parameters)
+        {
+            // When you navigate away from this page
+        }
+
+        public async void OnNavigatedTo(NavigationParameters parameters)
+        {
+            var comments = parameters["comments"] as List<Comment>;
+            var _post = parameters["post"] as Post;
+
+            if (comments != null)
+            {
+                commentsList = new ObservableCollection<Comment>(comments);
+                post = _post;
+            } else {
+                generateComments();
             }
 
         }
 
+        public void OnNavigatingTo(NavigationParameters parameters)
+        {
 
+        }
     }
 }

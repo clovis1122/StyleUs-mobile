@@ -82,10 +82,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\PictureUpload\AddCameraButton.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\Authentication\LoginPage.xaml" />
     <EmbeddedResource Include="View\Authentication\RegisterStepOnePage.xaml" />
     <EmbeddedResource Include="View\Authentication\RegisterStepTwoPage.xaml" />
@@ -232,11 +228,7 @@
     </Compile>
     <Compile Include="Converter\IsValueConverter.cs" />
     <Compile Include="ViewModel\PictureUpload\AddPicturePostViewModel.cs" />
-    <Compile Include="ViewModel\PictureUpload\AddCameraButtonViewModel.cs" />
     <Compile Include="IPhoto.cs" />
-    <Compile Include="View\PictureUpload\AddCameraButton.xaml.cs">
-      <DependentUpon>AddCameraButton.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ViewModel\Authentication\LoginPageViewModel.cs" />
     <Compile Include="ViewModel\Authentication\RegisterStepOnePageViewModel.cs" />
     <Compile Include="ViewModel\Authentication\RegisterStepTwoPageViewModel.cs" />
@@ -273,6 +265,8 @@
     <Compile Include="View\Users\FollowerListsProfile.xaml.cs">
       <DependentUpon>FollowerListsProfile.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converter\IsNotValue.cs" />
+    <Compile Include="Models\Enums\PostTypes.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">
@@ -392,6 +386,7 @@
     <Folder Include="ViewModel\Home\" />
     <Folder Include="View\Profile\" />
     <Folder Include="ViewModel\Profile\" />
+    <Folder Include="Models\Enums\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="View\MainTabbedPage.xaml">

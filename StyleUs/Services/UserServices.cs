@@ -27,7 +27,7 @@ namespace StyleUs.Services
             return new KeyValuePair<bool, object>(true, resp.GetResponseAsModel<User>());
         }
 
-        public static async Task<KeyValuePair<bool, object>> addRelationship(int id, UserRelations relationId)
+        public static async Task<KeyValuePair<bool, object>?> addRelationship(int id, UserRelations relationId)
         {
             var resp = await ApiConnector.postJsonFromUrl($"users/{id}/relation", new { relationId = (int)relationId });
 
