@@ -98,8 +98,6 @@ namespace StyleUs.ViewModel
             {
                 events.GetEvent<Events.displayMessage>().Publish("No hemos podido iniciar sesion. Por favor, verifique sus credenciales.");
             }
-
-   
         }
 
         /**
