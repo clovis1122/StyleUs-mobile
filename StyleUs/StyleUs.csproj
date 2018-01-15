@@ -265,6 +265,7 @@
       <DependentUpon>HomePost.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\Home\HomePostViewModel.cs" />
+    <Compile Include="Models\UserRelations.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">

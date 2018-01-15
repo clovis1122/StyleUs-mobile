@@ -3,14 +3,10 @@ namespace StyleUs.Models
 {
     public class Comment
     {
-        public Comment()
-        {
-            
-        }
-
-        public String img { get; set; }
-        public String name { get; set; }
-        public String time { get; set; }
-        public String descriptionComment { get; set; }
+        public int id { get; set; }
+        public User user { get; set; }
+        public Post post { get; set; }
+        public string body { get; set; }
+        public string created_at { get; set; }
     }
 }

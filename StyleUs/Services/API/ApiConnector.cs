@@ -15,7 +15,7 @@ namespace StyleUs.Services.API
 {
     public class ApiConnector
     {
-        public static string API_ROOT = "http://quiet-gorge-89832.herokuapp.com/api/v1/";
+        public static string API_ROOT = "http://styleus.local/api/v1/";
 
         /**
          * The idea is to return this class to remove some of the complexity
