@@ -3,7 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
-    x:Class="StyleUs.View.Users.FollowerLists"
+    x:Class="StyleUs.View.Users.FollowerListsProfile"
     NavigationPage.HasNavigationBar="True"
     BackgroundColor="#A8AFB8"
     >
@@ -22,14 +22,6 @@
         
     </ContentPage.Resources>
 
-    <!--<ContentPage.BackgroundColor>
-        <OnPlatform x:TypeArguments="Thickness">
-            <OnPlatform.Platforms>
-                <On Platform="iOS" Value="#A8AFB8" />
-                <On Platform="Android" Value="White" />
-            </OnPlatform.Platforms>
-        </OnPlatform>
-    </ContentPage.BackgroundColor>-->
 
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness">
@@ -40,12 +32,13 @@
         </OnPlatform>
     </ContentPage.Padding>
     
-	<ContentPage.Content>
+    <ContentPage.Content>
 
       <StackLayout HorizontalOptions="FillAndExpand"  >
         <Grid >
-                
-            <Label Text="Seguidores" FontAttributes="Bold" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                <Button Image="backIcon.png" HorizontalOptions="Start"
+                                    Command="{Binding back}" Style="{StaticResource iconosBotones}"/>
+                <Label Text="Seguidores" FontAttributes="Bold" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
                 
         </Grid>
               

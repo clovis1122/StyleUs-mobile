@@ -6,7 +6,6 @@
     x:Class="StyleUs.View.Menu"
     prism:ViewModelLocator.AutowireViewModel="true"
     NavigationPage.HasNavigationBar="true"
-    Padding="0,40,0,0"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations">
     <ContentPage.Resources>
@@ -28,6 +27,15 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <OnPlatform.Platforms>
+                <On Platform="iOS" Value="0, 20, 0, 0" />
+                <On Platform="Android" Value="0, 0, 0, 0" />
+            </OnPlatform.Platforms>
+        </OnPlatform>
+    </ContentPage.Padding>
+    
     <ContentPage.Content>
 
             <Grid RowSpacing="0" ColumnSpacing="0" BackgroundColor="#e9eaed">
