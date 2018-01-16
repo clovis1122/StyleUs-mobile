@@ -1,21 +1,13 @@
-﻿using System;
-
-using Android.App;
-using Android.Content;
+﻿using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
-using Prism.Unity;
 using Microsoft.Practices.Unity;
 using Plugin.Permissions;
-using StyleUs;
+using Prism.Unity;
 using Xamarin.Auth;
 
-namespace StyleUs.Droid
-{
-    [Activity(Label = "StyleUs", Icon = "@drawable/icon", Theme = "@style/splashscreen", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+namespace StyleUs.Droid {
+    [Activity(Label = "StyleUs", Icon = "@drawable/appIcon", Theme = "@style/splashscreen", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
 	{
 		protected override void OnCreate(Bundle bundle)
