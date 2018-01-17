@@ -314,7 +314,6 @@
     <BundleResource Include="Resources\background.png" />
     <BundleResource Include="Resources\mail.png" />
     <BundleResource Include="Resources\Forget_password_Background.png" />
-    <BundleResource Include="Resources\Group 177.png" />
     <BundleResource Include="Resources\Unknown.jpg" />
     <BundleResource Include="Resources\ICONO2.png" />
     <BundleResource Include="Resources\Export.png" />
@@ -341,6 +340,7 @@
     <BundleResource Include="Resources\heart_red.png" />
     <BundleResource Include="Resources\back_white.png" />
     <BundleResource Include="Resources\x_white.png" />
+    <BundleResource Include="Resources\Group_177.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\LikeHeartIcon.png" />
