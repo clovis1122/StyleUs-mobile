@@ -130,7 +130,7 @@
 
 
 
-                <Label BackgroundColor="{StaticResource dark}"  VerticalOptions="Center" TextColor="{StaticResource grayMedium}" Text="Olvidé mi contraseña"  HorizontalOptions="Center" Margin="0" ></Label>
+                <Button BackgroundColor="Transparent" VerticalOptions="Center" TextColor="{StaticResource grayMedium}" Text="Olvidé mi contraseña"  HorizontalOptions="Center" Margin="0" Command="{Binding forgotPassword}" ></Button>
 
 
                 <Button Command="{Binding login}" Text="Iniciar" BackgroundColor="{StaticResource dark}" Margin= "0,5"  BorderRadius="22" BorderWidth="2" BorderColor="{StaticResource white}" VerticalOptions="EndAndExpand"/>
