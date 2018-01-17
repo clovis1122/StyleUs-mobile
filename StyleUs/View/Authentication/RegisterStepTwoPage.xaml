@@ -5,18 +5,44 @@
     x:Class="StyleUs.View.RegisterStepTwoPage"
     BackgroundImage="Forget_password_Background.png"
     NavigationPage.HasNavigationBar="false">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+             <Style x:Key="iconosBotones" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HeightRequest" Value="25"/>
+                <Setter Property="WidthRequest" Value="25"/>
+                <Setter Property="MinimumHeightRequest" Value="20"/>
+                <Setter Property="MinimumWidthRequest" Value="20"/>
+             </Style> 
+        </ResourceDictionary>
+    </ContentPage.Resources>
     
 	   <ContentPage.Content>
         <ScrollView Orientation="Vertical" Padding="0,0,0,20">
                
                <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
+
+               <Grid Margin="0,10,0,0">
+            <Button Image="back_white.png" VerticalOptions="Start" Margin="20,20,0,0"
+                    Command="{Binding goBack}" Style="{StaticResource iconosBotones}"/>
+                    
+                <Label Text="Registrarse" FontAttributes="Bold" TextColor="White" FontSize="25"
+                    HorizontalOptions="Center" VerticalOptions="End"/>
+             </Grid>
+                
             <StackLayout Orientation="Horizontal" Margin="0,20,0,0" HorizontalOptions="Center">
                 <Label Text="Style " TextColor="Gray" FontSize="80" />
                 <Label Text="US" TextColor="Red" FontSize="80" />
             </StackLayout>
-            <StackLayout Orientation="Horizontal" Margin="0,10,0,0" HorizontalOptions="Center">
-                <Label Text="Registrarse" FontAttributes="Bold" TextColor="White" FontSize="20" />
-            </StackLayout>
+            <!--<StackLayout Orientation="Horizontal" Margin="0,10,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                   
+                    
+            </StackLayout>-->
+
+                
+                
             <StackLayout Orientation="Vertical" Padding="40,10">
                 <Label FontSize="12" TextColor="White" Text="Paso 2 de 2: credenciales de acceso" />
             </StackLayout>
@@ -26,16 +52,18 @@
                 <Entry Text="{Binding email} " Placeholder="Juan@example.com" />
                 <Label Text="Contraseña" Margin="0,10" TextColor="White"/>
                 <Entry Text="{Binding password}" Placeholder="***********" IsPassword="true" />
-                <Label Text="Confirmar contraseña" Margin="0,10" TextColor="White"/>
+                <Label Text="Confirmar contraseña" Margin="0,10" TextColor="White" />
                 <Entry Text="{Binding password_confirmation}" Placeholder="***********" IsPassword="true"  />
             </StackLayout>
                 
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="0,55">
+                <!--<StackLayout MinimumWidthRequest="100">
+                     <Button BackgroundColor="Gray" TextColor="White" Text="Atras" Command="{Binding goBack}" WidthRequest="140" BorderRadius="22" BorderWidth="2" BorderColor="White" />
+                </StackLayout>-->
                 <StackLayout MinimumWidthRequest="100">
-                     <Button BackgroundColor="Gray" TextColor="White" Text="Atras" Command="{Binding goBack}" WidthRequest="100" />
-                </StackLayout>
-                <StackLayout MinimumWidthRequest="100">
-                     <Button Command="{Binding finish}" BackgroundColor="Gray" TextColor="White" Text="Crear cuenta" WidthRequest="100"/>
+                     <Button Command="{Binding finish}" BackgroundColor="Gray" TextColor="White" Text="Crear cuenta" 
+                        WidthRequest="240" BorderRadius="22" BorderWidth="2" BorderColor="White" 
+                        FontAttributes="Bold" FontSize="Large"/>
                 </StackLayout>
                
             </StackLayout>

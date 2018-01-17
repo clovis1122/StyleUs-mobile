@@ -62,11 +62,18 @@
                 <StackLayout BackgroundColor="Black" Margin="1" HorizontalOptions="FillAndExpand">
                     <Editor Text="{Binding body, Mode=TwoWay}" TextColor="Black" FontSize="Large" BackgroundColor="White" Margin="1" HeightRequest="80" />
                 </StackLayout>
-                <Image Source="send.png" Grid.Row="1" Grid.Column="0" HeightRequest="50" WidthRequest="50" MinimumHeightRequest="50" MinimumWidthRequest="50">
+            <Button Image="send.png" Grid.Row="1" Grid.Column="0" 
+                HeightRequest="50" WidthRequest="50"
+                MinimumHeightRequest="50" MinimumWidthRequest="50"
+                Command="{Binding comment}"/>
+                <!--<Image Source="send.png"  Grid.Row="1" Grid.Column="0" 
+                HeightRequest="50" WidthRequest="50"
+                MinimumHeightRequest="50" MinimumWidthRequest="50">
+
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding comment}" NumberOfTapsRequired="1" />
                     </Image.GestureRecognizers>
-                </Image>
+                </Image>-->
             </StackLayout>
         </Grid>
     </ContentPage.Content>
