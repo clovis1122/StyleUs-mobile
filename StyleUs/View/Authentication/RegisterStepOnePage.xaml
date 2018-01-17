@@ -1,79 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage
-    xmlns="http://xamarin.com/schemas/2014/forms" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    x:Class="StyleUs.View.RegisterStepOnePage"
-    BackgroundImage="Forget_password_Background.png"
-     NavigationPage.HasNavigationBar="false">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="StyleUs.View.RegisterStepOnePage" BackgroundImage="Forget_password_Background.png" NavigationPage.HasNavigationBar="false">
 
-    <ContentPage.Resources>
-        <ResourceDictionary>
-             <Style x:Key="iconosBotones" TargetType="Label">
-                <Setter Property="HorizontalOptions" Value="Start"/>
-                <Setter Property="VerticalOptions" Value="Center"/>
-                <Setter Property="HeightRequest" Value="22"/>
-                <Setter Property="WidthRequest" Value="22"/>
-                <Setter Property="MinimumHeightRequest" Value="20"/>
-                <Setter Property="MinimumWidthRequest" Value="20"/>
-             </Style> 
-        </ResourceDictionary>
-    </ContentPage.Resources>
-    
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<Style x:Key="iconosBotones" TargetType="Label">
+				<Setter Property="HorizontalOptions" Value="Start"/>
+				<Setter Property="VerticalOptions" Value="Center"/>
+				<Setter Property="HeightRequest" Value="22"/>
+				<Setter Property="WidthRequest" Value="22"/>
+				<Setter Property="MinimumHeightRequest" Value="20"/>
+				<Setter Property="MinimumWidthRequest" Value="20"/>
+			</Style>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
 	<ContentPage.Content>
-        
-        <ScrollView Orientation="Vertical" Padding="0,0,0,20">
 
-            
-            
-               <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
+		<ScrollView Orientation="Vertical" Padding="0,0,0,20">
 
+			<StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
 
-                    <Grid Margin="10,10,0,0">
-            <Button Image="x_white.png" VerticalOptions="Start" Margin="20,20,0,0"
-                    Command="{Binding cancel}" Style="{StaticResource iconosBotones}"/>
-                    
-                <Label Text="Registrarse" FontAttributes="Bold" TextColor="White" FontSize="25"
-                    HorizontalOptions="Center" VerticalOptions="End"/>
-             </Grid>
-                
-            <StackLayout Orientation="Horizontal" Margin="0,20,0,0" HorizontalOptions="Center">
-                <Label Text="Style " TextColor="Gray" FontSize="80" />
-                <Label Text="US" TextColor="Red" FontSize="80" />
-            </StackLayout>
-            <!--<StackLayout Orientation="Horizontal" Margin="0,10,0,0" HorizontalOptions="Center">
-                <Label Text="Registrarse" FontAttributes="Bold" TextColor="Gray" FontSize="20" />
-            </StackLayout>-->
-            <StackLayout Orientation="Vertical" Padding="40,10">
-                <Label FontSize="12" TextColor="Gray" Text="Paso 1 de 2: Informacion Basica" />
-            </StackLayout>
-            
-            <StackLayout Orientation="Vertical" Margin="0,10,0,0" Padding="40,10">
-                <Label Text="Nombre" />
-                <Entry Text="{Binding first_name}" Placeholder="Nombre"/>
-                <Label Text="Apellido" Margin="0,10" />
-                <Entry Text="{Binding last_name}" Placeholder="Apellido" />
-                <Label Text="Fecha de nacimiento" Margin="0,10" />
-                <DatePicker Format="MM/dd/yyyy" Date="{Binding birthdate}" />
-                <Label Text="Sexo" Margin="0,10" />
-                <Picker SelectedIndex="{Binding is_male}">
-                    <Picker.Items>
-                        <x:String>Femenino</x:String> 
-                        <x:String>Masculino</x:String>
-                    </Picker.Items>
-                </Picker>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="0,40">
-                
-                <StackLayout MinimumWidthRequest="100" >
-                     <Button BackgroundColor="Gray" TextColor="White" Text="Continuar" Command="{Binding next}" 
-                        WidthRequest="240" BorderRadius="22" BorderWidth="2" BorderColor="White"
-                        FontAttributes="Bold"
-                        FontSize="Large"/>
-                </StackLayout>
-               
-            </StackLayout>
+				<Grid Margin="10,10,0,0">
+					<Button Image="x_white.png" VerticalOptions="Start" Margin="20,20,0,0" Command="{Binding cancel}" Style="{StaticResource iconosBotones}"/>
 
-        </StackLayout>
-            </ScrollView>
+					<Label Text="Registrarse" FontAttributes="Bold" TextColor="White" FontSize="25" HorizontalOptions="Center" VerticalOptions="End"/>
+				</Grid>
+
+				<StackLayout Orientation="Horizontal" Margin="0,20,0,0" HorizontalOptions="Center">
+					<Label Text="Style " TextColor="Gray" FontSize="80"/>
+					<Label Text="US" TextColor="Red" FontSize="80"/>
+				</StackLayout>
+				<!--<StackLayout Orientation="Horizontal" Margin="0,10,0,0" HorizontalOptions="Center"> <Label Text="Registrarse" FontAttributes="Bold" TextColor="Gray" FontSize="20" /> </StackLayout>-->
+				<StackLayout Orientation="Vertical" Padding="40,10">
+					<Label FontSize="12" TextColor="Gray" Text="Paso 1 de 2: Informacion Basica"/>
+				</StackLayout>
+
+				<StackLayout Orientation="Vertical" Margin="0,10,0,0" Padding="40,10">
+					<Label Text="Nombre"/>
+					<Entry Text="{Binding first_name}" Placeholder="Nombre"/>
+					<Label Text="Apellido" Margin="0,10"/>
+					<Entry Text="{Binding last_name}" Placeholder="Apellido"/>
+					<Label Text="Fecha de nacimiento" Margin="0,10"/>
+					<DatePicker Format="MM/dd/yyyy" Date="{Binding birthdate}"/>
+					<Label Text="Sexo" Margin="0,10"/>
+					<Picker SelectedIndex="{Binding is_male}">
+						<Picker.Items>
+							<x:String>Femenino</x:String>
+							<x:String>Masculino</x:String>
+						</Picker.Items>
+					</Picker>
+				</StackLayout>
+				<StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="0,40">
+
+					<StackLayout MinimumWidthRequest="100">
+						<Button BackgroundColor="Gray" TextColor="White" Text="Continuar" Command="{Binding next}" WidthRequest="240" BorderRadius="22" BorderWidth="2" BorderColor="White" FontAttributes="Bold" FontSize="Large"/>
+					</StackLayout>
+
+				</StackLayout>
+
+			</StackLayout>
+		</ScrollView>
 	</ContentPage.Content>
 </ContentPage>
