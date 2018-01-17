@@ -1,30 +1,18 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
-             prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="StyleUs.View.AddPicturePost"
-             BackgroundColor="White"
-             xmlns:Converter="clr-namespace:StyleUs.Converter">
-
-      <ContentPage.Resources>
-    <ResourceDictionary>
-      <Converter:IsValueConverter x:Key="isValue"/>
-    </ResourceDictionary>
-  </ContentPage.Resources>
-
-
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="True" x:Class="StyleUs.View.AddPicturePost" BackgroundColor="White" xmlns:Converter="clr-namespace:StyleUs.Converter">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Converter:IsValueConverter x:Key="isValue" />
+            <Converter:IsNotValue x:Key="isNotValue" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-
         <ScrollView>
-        <StackLayout Orientation="Vertical" BackgroundColor="White">
-
-            <Label Text="Subir foto" TextColor="Red" FontAttributes="Bold" 
-                HorizontalOptions="CenterAndExpand" VerticalOptions="Center" FontSize="Large" ></Label>
-
-            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Fill"  >
-
-                <!--<ffimageloading:CachedImage
+            <StackLayout Orientation="Vertical" BackgroundColor="White">
+                <Label Text="Subir foto" TextColor="Red" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" FontSize="Large">
+                </Label>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Fill">
+                    <!--<ffimageloading:CachedImage
                                                 HeightRequest="40"
                                                 WidthRequest="40"
                                                 DownsampleUseDipUnits="false"
@@ -36,48 +24,24 @@
                         <fftransformations:CircleTransformation />
                     </ffimageloading:CachedImage.Transformations>
                 </ffimageloading:CachedImage>-->
-
-                <!--<Image Source="icon1.png" WidthRequest="40" HeightRequest="40"></Image>-->
-
+                    <!--<Image Source="icon1.png" WidthRequest="40" HeightRequest="40"></Image>-->
+                </StackLayout>
+                <Frame OutlineColor="Black" HeightRequest="350" Padding="0">
+                    <Image Source="{Binding image}" />
+                </Frame>
+                <StackLayout BackgroundColor="Black" VerticalOptions="Fill">
+                    <Entry Text="{Binding body, Mode=TwoWay}" Placeholder="Descripcion" BackgroundColor="White" Margin="2" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding showSubmit}">
+                    <Label IsVisible="{Binding isCloth}" Text="Pieza" />
+                    <Label IsVisible="{Binding isCloth, Converter={StaticResource isNotValue}}" Text="Conjunto" />
+                    <Switch IsToggled="{Binding isCloth, Mode=TwoWay}" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Button Command="{Binding TakePhoto}" Text="Tomar Imagen" BackgroundColor="Gray" Margin="10" HorizontalOptions="Fill" BorderRadius="50" BorderWidth="2" BorderColor="White" VerticalOptions="Center" />
+                    <Button IsVisible="{Binding showSubmit}" Command="{Binding CreatePost}" Text="Crear publicación" BackgroundColor="#F84D58" Margin="10" HorizontalOptions="Fill" BorderRadius="50" BorderWidth="2" BorderColor="White" VerticalOptions="Center" />
+                </StackLayout>
             </StackLayout>
-
-            <Frame OutlineColor="Black" HeightRequest="350" Padding="0">
-                <Image Source="{Binding image}" />
-            </Frame>
-            <StackLayout BackgroundColor="Black" VerticalOptions="Fill">
-                <Entry Text="{Binding body, Mode=TwoWay}" Placeholder="Descripcion" BackgroundColor="White" Margin="2" />
-            </StackLayout>
-
-             <StackLayout Orientation="Horizontal" IsVisible="{Binding showSubmit}">
-                 <Label Text="Pieza / Conjunto"/>
-                    <Switch />
-             </StackLayout>
-                
-           <StackLayout Orientation="Horizontal">
-               <Button
-                Command="{Binding TakePhoto}"
-                Text="Tomar Imagen"
-                BackgroundColor="Gray"
-                Margin="10"
-                HorizontalOptions="Fill"
-                BorderRadius="50" BorderWidth="2" BorderColor="White" VerticalOptions="Center" />
-                <Button
-                IsVisible="{Binding showSubmit}"
-                Command="{Binding CreatePost}"
-                Text="Crear publicación"
-                BackgroundColor="#F84D58"
-                Margin="10"
-                HorizontalOptions="Fill"
-                BorderRadius="50" BorderWidth="2" BorderColor="White" VerticalOptions="Center" />
-
-              </StackLayout>
-
-                
-        </StackLayout>
-            </ScrollView>
-
-
-
+        </ScrollView>
     </ContentPage.Content>
-
 </ContentPage>

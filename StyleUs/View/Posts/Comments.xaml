@@ -1,113 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage 
-    xmlns="http://xamarin.com/schemas/2014/forms" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms" 
-    x:Class="StyleUs.View.Comments"
-    Title="Comentarios"
-    Padding="0,20,0,0" 
-    BackgroundColor="White"
-    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
-    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
-    >
-
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms" x:Class="StyleUs.View.Comments" Title="Comentarios" Padding="0,20,0,0" BackgroundColor="White" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations">
     <ContentPage.Resources>
         <ResourceDictionary>
-             <Style x:Key="iconosBotones" TargetType="Label">
-                <Setter Property="HorizontalOptions" Value="Start"/>
-                <Setter Property="VerticalOptions" Value="Center"/>
-                <Setter Property="HeightRequest" Value="40"/>
-                <Setter Property="WidthRequest" Value="40"/>
-                <Setter Property="MinimumHeightRequest" Value="40"/>
-                <Setter Property="MinimumWidthRequest" Value="40"/>
-             </Style> 
+            <Style x:Key="iconosBotones" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="WidthRequest" Value="40" />
+                <Setter Property="MinimumHeightRequest" Value="40" />
+                <Setter Property="MinimumWidthRequest" Value="40" />
+            </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-    
-	<ContentPage.Content>
+    <ContentPage.Content>
         <Grid RowSpacing="0" ColumnSpacing="0" BackgroundColor="White">
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.3*"/>
-                <RowDefinition Height="4*"/>
-
+                <RowDefinition Height="0.3*" />
+                <RowDefinition Height="4*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
             </Grid.ColumnDefinitions>
-
-            <Button Image="backIcon.png" Grid.Row="0" HorizontalOptions="Start"
-                VerticalOptions="Center"
-                    Command="{Binding back}" Style="{StaticResource iconosBotones}"/>
-            
-            <Label Text="Comentarios" TextColor="{StaticResource dark}" Grid.Row="0"
-            HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"
-            FontSize="Large"/>
-            
+            <Button Image="backIcon.png" Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Center" Command="{Binding back}" Style="{StaticResource iconosBotones}" />
+            <Label Text="Comentarios" TextColor="{StaticResource dark}" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="Large" />
             <ListView HasUnevenRows="true" ItemsSource="{Binding commentsList}" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand">
-
-                
-                
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                           
                         <ViewCell>
                             <StackLayout Padding="30,10,30,10" Orientation="Vertical" BackgroundColor="White" VerticalOptions="FillAndExpand">
-                                <StackLayout Orientation="Horizontal" >
-
-                                    <ffimageloading:CachedImage  
-                                                HeightRequest="50"
-                                                WidthRequest="50"
-                                                MinimumWidthRequest="30"
-                                                MinimumHeightRequest="30"
-                                                DownsampleUseDipUnits="false" 
-                                                LoadingPlaceholder="image_loading.png"
-                                                ErrorPlaceholder="image_error.png" 
-                                                Source="{Binding img}"
-                                                Margin="5,0,5,0">
-                                                 <ffimageloading:CachedImage.Transformations>
-                                                    <fftransformations:CircleTransformation />
-                                                </ffimageloading:CachedImage.Transformations>
-                                                <ffimageloading:CachedImage.GestureRecognizers>
-                                                    <TapGestureRecognizer Command="{Binding perfil}" NumberOfTapsRequired="1" />
-                                                </ffimageloading:CachedImage.GestureRecognizers>
-                            
-                                            </ffimageloading:CachedImage>
-                                    
-                                    <Label Text="{Binding name}" TextColor="Black" HorizontalOptions="StartAndExpand"
-                                    VerticalOptions="Center"/>
-                                    <Label Text="{Binding time}" TextColor="Black" HorizontalOptions="End"
-                                    VerticalOptions="Center"/>
-
-                                    <Label Text="h" TextColor="Black" HorizontalOptions="End"
-                                    VerticalOptions="Center"/>
-                                    
+                                <StackLayout Orientation="Horizontal">
+                                    <ffimageloading:CachedImage 
+                                        HeightRequest="50" WidthRequest="50" 
+                                        MinimumWidthRequest="30" MinimumHeightRequest="30" 
+                                        DownsampleUseDipUnits="false" LoadingPlaceholder="image_loading.png" 
+                                        ErrorPlaceholder="image_error.png" Source="{Binding user.image}" Margin="5,0,5,0">
+                                        <ffimageloading:CachedImage.Transformations>
+                                            <fftransformations:CircleTransformation />
+                                        </ffimageloading:CachedImage.Transformations>
+                                        <ffimageloading:CachedImage.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding perfil}" NumberOfTapsRequired="1" />
+                                        </ffimageloading:CachedImage.GestureRecognizers>
+                                    </ffimageloading:CachedImage>
+                                    <Label Text="{Binding user.full_name}" TextColor="Black" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+                                    <Label Text="{Binding created_at}" TextColor="Black" HorizontalOptions="End" VerticalOptions="Center" />
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
-                                    <Label Text="{Binding descriptionComment}" HorizontalOptions="StartAndExpand"
-                                     TextColor="Gray"/>
+                                    <Label Text="{Binding body}" HorizontalOptions="StartAndExpand" TextColor="Gray" />
                                 </StackLayout>
                             </StackLayout>
-                        </ViewCell>  
-
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
                 <ListView.Behaviors>
-                <b:EventToCommandBehavior 
-                    EventName="ItemTapped" 
-                    Command="{Binding ItemTappedCommand}"
-                    EventArgsParameterPath="Item" />
+                    <b:EventToCommandBehavior EventName="ItemTapped" Command="{Binding ItemTappedCommand}" EventArgsParameterPath="Item" />
                 </ListView.Behaviors>
             </ListView>
-            
             <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.Column="0" VerticalOptions="StartAndExpand" Padding="5">
                 <!--<Entry TextColor="Black" x:Name="comentario"
                 Placeholder="Di algo!" PlaceholderColor="Silver"
                 FontSize="Large" Margin="1" HorizontalOptions="FillAndExpand"
                 />-->
-                <StackLayout BackgroundColor="Black" Margin="1" HorizontalOptions="FillAndExpand" >
-                <Editor TextColor="Black" FontSize="Large" BackgroundColor="White" Margin="1" HeightRequest="80"
-                 />
+                <StackLayout BackgroundColor="Black" Margin="1" HorizontalOptions="FillAndExpand">
+                    <Editor Text="{Binding body, Mode=TwoWay}" TextColor="Black" FontSize="Large" BackgroundColor="White" Margin="1" HeightRequest="80" />
                 </StackLayout>
-
             <Button Image="send.png" Grid.Row="1" Grid.Column="0" 
                 HeightRequest="50" WidthRequest="50"
                 MinimumHeightRequest="50" MinimumWidthRequest="50"
@@ -115,14 +69,12 @@
                 <!--<Image Source="send.png"  Grid.Row="1" Grid.Column="0" 
                 HeightRequest="50" WidthRequest="50"
                 MinimumHeightRequest="50" MinimumWidthRequest="50">
+
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding comment}" NumberOfTapsRequired="1" />
                     </Image.GestureRecognizers>
                 </Image>-->
             </StackLayout>
-
-
-
         </Grid>
-	</ContentPage.Content>
+    </ContentPage.Content>
 </ContentPage>

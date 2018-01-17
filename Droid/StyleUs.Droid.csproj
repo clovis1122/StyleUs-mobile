@@ -235,7 +235,6 @@
     <AndroidResource Include="Resources\values\styles.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable\icon.png" />
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
@@ -274,6 +273,7 @@
     <AndroidResource Include="Resources\drawable\x_white.png" />
     <AndroidResource Include="Resources\drawable\back_white.png" />
     <AndroidResource Include="Resources\drawable\Forget_password_Background.png" />
+    <AndroidResource Include="Resources\drawable\appIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\seeCommentIcon.png" />

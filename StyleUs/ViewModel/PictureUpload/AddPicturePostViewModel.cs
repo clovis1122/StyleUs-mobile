@@ -12,6 +12,7 @@ using System.Windows.Input;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
 using Prism.Navigation;
+using StyleUs.Models.Enums;
 
 namespace StyleUs.ViewModel
 {
@@ -26,6 +27,7 @@ namespace StyleUs.ViewModel
         public ImageSource image { get; set; }
         public string body { get; set; }
         public bool showSubmit { get; set; }
+        public bool isCloth { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -61,8 +63,8 @@ namespace StyleUs.ViewModel
         public async void createPost()
         {
             try {
-                var x = await StyleUs.Services.PostServices.createPost(file, body);
-            } catch {
+                var x = await StyleUs.Services.PostServices.createPost(file, body, isCloth ? PostTypes.CLOTH : PostTypes.PIERCE);
+            } catch(Exception e) {
                 // Error! :(
             }
 

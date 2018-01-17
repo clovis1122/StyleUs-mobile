@@ -3,6 +3,7 @@ using System.Windows.Input;
 using Prism.Navigation;
 using StyleUs.Models;
 using Xamarin.Forms;
+using StyleUs.Services;
 
 namespace StyleUs.ViewModel
 {
@@ -30,14 +31,19 @@ namespace StyleUs.ViewModel
         {
             // Mark as liked, adds 1 to the counter.
             Post.is_liked = !Post.is_liked;
-            Post.like_count += Post.is_liked ? 1 : -1;
+            Post.likes_count += Post.is_liked ? 1 : -1;
 
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Post"));
+            PostServices.likePost(Post.id, Post.is_liked);
         }
 
         public void OnCommentPost()
         {
-            navigation.NavigateAsync("Comments");
+            var navParameters = new NavigationParameters();
+            navParameters.Add("comments", Post.comments);
+            navParameters.Add("post", Post);
+
+            navigation.NavigateAsync("Comments",navParameters);
         }
     }
 }

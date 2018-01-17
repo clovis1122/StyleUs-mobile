@@ -24,9 +24,10 @@ namespace StyleUs
             InitializeComponent();
         }
 
-        protected override void OnInitialized(){
+        protected override void OnInitialized()
+        {
 
-			InitializeComponent();
+          	InitializeComponent();
 
             string navPage = "/NavigationPage/Login";
 
@@ -42,11 +43,10 @@ namespace StyleUs
             //Application.Current.SavePropertiesAsync();
 
             NavigationService.NavigateAsync(new Uri(navPage, UriKind.Absolute));
-		}
+    		}
 
-		protected override void RegisterTypes()
-
-        {
+    		protected override void RegisterTypes()
+            {
             Container.RegisterTypeForNavigation<View.Friend.FriendProfile, FriendProfileViewModel>();
             Container.RegisterTypeForNavigation<View.ClothPieces.SingleClothPiece, SingleClothPieceViewModel>();
 
@@ -69,7 +69,6 @@ namespace StyleUs
             Container.RegisterTypeForNavigation<View.Users.FollowingLists, ViewModel.Users.FollowingListViewModel>("FollowingLists");
             Container.RegisterTypeForNavigation<View.AddPicturePost, AddPicturePostViewModel>("AddPicturePost");
             Container.RegisterTypeForNavigation<View.Comments, CommentsViewModel>("Comments");
-            Container.RegisterTypeForNavigation<AddCameraButton, AddCameraButtonViewModel>("AddCameraButton");
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainTabbedPage>();
             Container.RegisterTypeForNavigation<AboutUsPage,AboutUsPageViewModel>("AboutUsPage");
