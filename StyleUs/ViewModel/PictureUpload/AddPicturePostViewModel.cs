@@ -28,6 +28,7 @@ namespace StyleUs.ViewModel
         public string body { get; set; }
         public bool showSubmit { get; set; }
         public bool isCloth { get; set; }
+        public bool isLoading { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -37,6 +38,7 @@ namespace StyleUs.ViewModel
             TakePhoto = new Command(takePhoto);
             CreatePost = new Command(createPost);
             navigation = navigationService;
+            isLoading = false;
         }
 
         public async void takePhoto()
@@ -50,7 +52,7 @@ namespace StyleUs.ViewModel
             var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
             {
                 Directory = "Sample",
-                Name = "test.jpg"
+                Name = "test.jpg",
             });
 
             if (file == null) return;
@@ -62,6 +64,8 @@ namespace StyleUs.ViewModel
 
         public async void createPost()
         {
+            isLoading = true;
+
             try {
                 var x = await StyleUs.Services.PostServices.createPost(file, body, isCloth ? PostTypes.CLOTH : PostTypes.PIERCE);
             } catch(Exception e) {
@@ -69,10 +73,16 @@ namespace StyleUs.ViewModel
             }
 
             // Post created! Clean up before exit.
-            file = null;
+
+
+            if (file != null) {
+                file.Dispose();
+            }
+
             image = null;
             body = "";
             showSubmit = false;
+            isLoading = false;
 
             navigation.NavigateAsync(new Uri("/MainTabbedPage/HomePage",UriKind.Absolute));
         }

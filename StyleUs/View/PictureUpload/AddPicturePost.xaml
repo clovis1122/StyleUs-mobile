@@ -29,6 +29,7 @@
                 <Frame OutlineColor="Black" HeightRequest="350" Padding="0">
                     <Image Source="{Binding image}" />
                 </Frame>
+                <ActivityIndicator Color="Red" IsRunning="{Binding isLoading}" />
                 <StackLayout BackgroundColor="Black" VerticalOptions="Fill">
                     <Entry Text="{Binding body, Mode=TwoWay}" Placeholder="Descripcion" BackgroundColor="White" Margin="2" />
                 </StackLayout>
