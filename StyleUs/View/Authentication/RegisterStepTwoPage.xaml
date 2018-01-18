@@ -49,11 +49,11 @@
             
             <StackLayout Orientation="Vertical" Margin="0,10,0,0" Padding="40,10">
                 <Label Text="Correo Electrónico" TextColor="White"/>
-                <Entry Text="{Binding email} " Placeholder="Juan@example.com" />
+                <Entry Text="{Binding email} " Placeholder="Juan@example.com" Keyboard="Email" />
                 <Label Text="Contraseña" Margin="0,10" TextColor="White"/>
-                <Entry Text="{Binding password}" Placeholder="***********" IsPassword="true" />
+                <Entry Text="{Binding password}" Placeholder="***********" IsPassword="true" Keyboard="Text" />
                 <Label Text="Confirmar contraseña" Margin="0,10" TextColor="White" />
-                <Entry Text="{Binding password_confirmation}" Placeholder="***********" IsPassword="true"  />
+                <Entry Text="{Binding password_confirmation}" Placeholder="***********" IsPassword="true" Keyboard="Text" />
             </StackLayout>
                 
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="0,55">
