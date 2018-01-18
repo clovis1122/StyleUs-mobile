@@ -66,7 +66,6 @@
 						MinimumHeightRequest="5"
 						BackgroundColor="Transparent"/>
 				</StackLayout>
-			</StackLayout>
 
 			<StackLayout Orientation="Horizontal">
 				<Image Source="password.png" HeightRequest="20" WidthRequest="20"/>
